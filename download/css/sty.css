@@ -1,0 +1,113 @@
+@charset "utf-8";
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	color: #A9B1B3;
+	font-size: 14px;
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	font-family: Arial, 'Microsoft Jhenghei', 'Noto Sans SC', 'Noto Sans TC', sans-serif;
+}
+.pattern {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	max-width: 312px;
+	width: 21.66%;
+	transition: all .5s
+}
+.pattern.left {
+	left: 0
+}
+.pattern.right {
+	right: 0
+}
+.pattern img {
+	width: 100%;
+	-webkit-transition: all 1s;
+	transition: all 1s;
+	pointer-events: none
+}
+
+@media (max-width: 1280px) {
+.pattern {
+	width: 18%
+}
+}
+.combo .pattern {
+	max-width: 220px
+}
+
+@media (min-width: 1280px) {
+.combo .pattern {
+	max-width: 312px;
+	width: 21%
+}
+}
+.table-container {
+	display: table;
+	width: 100%;
+	height: 100%
+}
+.cell-container {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+}
+.yblogo {
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	background: url(../images/yblogo.png) no-repeat;
+	background-size: 100%;
+	border-radius: 17.54%;
+	margin-top: 20px;
+}
+.actions a {
+	display: inline-block;
+	padding: 12px 46px;
+	min-width: 200px;
+	border: 1px solid #32B2A7;
+	border-radius: 40px;
+	font-size: 14px;
+	background: #32B2A7;
+	color: #fff;
+	outline: 0;
+	text-decoration: none;
+}
+.icon-ios {
+	display: inline-block;
+	width: 1em;
+	background: url(../images/apple_ico.svg) no-repeat;
+	background-size: 100%;
+}
+.name {
+	margin-bottom: 1em;
+}
+.release-info {
+	margin-bottom: 2em;
+}
+.icon-warp {
+	font-weight: normal;
+}
+.section {
+    border-top: 1px solid #DAE2E3;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+h2.title {
+	font-weight: normal;
+}
+.section p {
+	line-height: 1.8em;
+}
+.tip img{    
+	width: 80%;
+    position: absolute;
+    right: 0px;
+    z-index: 99;
+	display:none;
+}}

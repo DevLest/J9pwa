@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+body.main {
+    /*background-image: url("../images/background_home/CFF.png");*/
+}
+/*body.BBIN {
+    background-image: url("../images/background_home/BBIN.png");
+}
+body.IM {
+    background-image: url("../images/background_home/IM.png");
+}
+body.AG {
+    background-image: url("../images/background_home/AG.png");
+}
+body.GG {
+    background-image: url("../images/background_home/GG.png");
+}
+body.PT {
+    background-image: url("../images/background_home/PT.png");
+}
+body.JSPT {
+    background-image: url("../images/background_home/JSPT.png");
+}
+body.MG {
+    background-image: url("../images/background_home/MG.png");
+}
+body.JSMG {
+    background-image: url("../images/background_home/jsMG.png");
+}
+*/
+body.Android {
+    overflow: hidden;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+#mask {
+    background: #000;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    text-align: right;
+    z-index: 99999;
+}
+
+.title {
+    margin: 0px auto;
+   /* padding-top: 20px;
+     left: 0;
+    right: 0;
+    top: 50px; */
+}
+
+.title img {
+	width:100px;
+	/*margin-bottom: 2em;
+	margin-top: 2em;
+    width: 60%;*/
+}
+.title h3 {
+  font-size: 40px;
+  color: rgb(252, 100, 42);
+  line-height: 0.844;
+  margin-bottom: 0.3em;
+}
+.title p {
+  font-size: 20px;
+  color:#000;
+  line-height: 1.688;
+}
+.shell {
+    /*background-image: url("../images/design.png"/*tpa=http://cc.ss88ss88.com/multiple/images/design.png*/);*/
+    background-repeat: no-repeat;
+    background-position: left 1px;
+    background-size: contain;
+    position: relative;
+}
+
+.mobile {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+    width: 310px;
+}
+
+.ios .mobile {
+    background-image: url("../images/ios.png");
+}
+
+.Android .mobile {
+    background-image: url("../images/Android.png");
+}
+
+.swiper-container {
+    height: 370px;
+    width: 275px;
+    position: absolute;
+    left: 18px;
+    top: 95px;
+}
+
+.downBtn {
+    background: #fff;
+    position: relative;
+    padding-top: 5px;
+}
+
+.Android .destail {
+    position: fixed;
+    bottom: 0;
+    height: 300px;
+    z-index: 99
+}
+
+.destail {
+    background: #fff;
+    font-size: 0px;
+    width: 100%;
+}
+
+.ty_02 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    -webkit-transform: translate(0%, -98%);
+    transform: translate(0%, -98%);
+    width: 100%;
+}
+
+.iosdestail {
+    margin-top: 50px;
+}
+
+.towap {
+    width: 280px;
+    margin-bottom: 20px;
+}
+
+.ty_04 {
+    height: 25px;
+}
+
+.ios_02 {
+}
+
+.iostwoBtn,
+.AndroidtwoBtn {
+    overflow: auto;
+    display: none;
+    width: 100%;
+}
+
+.iostwoBtn .btn,
+.AndroidtwoBtn .btn {
+    width: 50%;
+	margin: 0 auto;
+    padding: 20px;
+}
+
+.Android .iosdestail {
+    display: none;
+}
+
+/* .Android .AndroidtwoBtn {
+    display: block;
+}
+
+.ios .iostwoBtn {
+    display: block;
+} */
+
+.apps{
+    position: fixed;
+    right: 10px;
+    width: 15%;
+    top: 35px;
+    z-index: 9999;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding: 5px;
+    font-size: 0;
+}
+ul li.active{
+    background: #fff;
+    border-radius: 15px;
+    position: relative;
+}
+ul li.active+div.appTitle{
+    background:#ff5a1f;
+	color:#fff;
+}
+.qdaz,.qdios{
+    display: none
+}
+.appTitle{
+    background: #fff;
+    color:#8d8d8d;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    height: 2rem;
+    margin: 5px -3px;
+    font-weight: bold;
+}
+#forAll ul li.active:after{
+    content: '';
+    position: absolute;
+    width: 0;
+	height: 0;
+	border-style: solid;
+    border-width: 15px;
+    /*border-color: transparent transparent transparent #ffffff;
+    top: 35%;
+    right: -28px;*/
+	border-color: transparent #ffffff transparent transparent ;
+    top: 35%;
+    left: -28px;
+}
+#androidOnly .active:after{
+    content: '';
+    position: absolute;
+    width: 0;
+	height: 0;
+	border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent transparent #ffffff;
+    top: 35%;
+    right: -28px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>U Sports - Detalles de la promoción</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link href="../newCss/style.css" rel="stylesheet">
+    <link href="../newCss/active.css" rel="stylesheet">
+    <script src="../newJs/jquery_2.1.3.js"></script>
+    <style>
+        body {
+            background: #fff;
+            margin: 8px;
+            color: #8d8d8d;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="active-dtt" class="active-dtt">Cargando...</div>
+    <script>
+        $.getJSON("ajax_check.php", {
+            "type": "get_promotion_content",
+            "pro_id": location.hash.slice(1)
+        }, function(data) {
+            if (data.status == 1) {
+                $('#active-dtt').html(data.info);
+            }
+        });
+    </script>
+</body>
+
+</html>

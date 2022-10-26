@@ -1,0 +1,54 @@
+.reg_box{padding: 8% 10%; text-align: left; margin-top: 30px; background: #fff; }
+.word_reg{font-size: 14px; color: #452d00; line-height: 20px; float: left; margin-left: 32px; }
+.squaredFour {position: relative; top: 10px; }
+.squaredFour label {width: 20px; height: 20px; position: absolute; top: 0; left: 0; background: #2A8FBD; border-radius: 4px; }
+.squaredFour label:after {content: ''; width: 8px; height: 4px; position: absolute; top: 5px; left: 5px; border: 2px solid #fff; border-top: none; border-right: none; background: transparent; opacity: 1; -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+}
+.squaredFour input[type=checkbox] {
+  visibility: hidden;
+}
+.squaredFour input[type=checkbox]:checked + label:after {
+  opacity: 0;
+}
+
+.sex-box{position:relative; overflow:hidden; margin:5px 0 20px 0; padding-left:17px; }
+.sex-box label:first-of-type{ margin-right:26px;}
+
+/*radio样式重写*/
+.reg2-radio{visibility: hidden; cursor: pointer;}  
+@media \0screen\,screen\9{.reg2-radio{visibility:visible; cursor: pointer;} } /*只对IE6/7/8有效*/
+.reg2-radio+label{position: relative; display:inline-block;padding-right:4px; padding-left:3px;} 
+.reg2-radio+label:before ,.reg2-radio:checked+label:before{position: absolute;top:1px;left:-23px;z-index:4;content: '';height: 18px;width: 18px;box-shadow: none;border-radius: 4px;outline: none;} 
+.reg2-radio+label:after ,.reg2-radio:checked+label:after{
+    position: absolute;	z-index:5;content: '';display:block;width: 8px;height: 4px;	top:7px;left:-18px;border: 2px solid #fff;border-top: none;border-right: none;background: transparent;opacity: 1;
+	transform: rotate(-45deg);	-webkit-transform: rotate(-45deg);	-moz-transform: rotate(-45deg);	-o-transform: rotate(-45deg);	-ms-transform: rotate(-45deg);
+} 
+/*未选中转态*/
+.reg2-radio+label:before{background-color:#fff;border: 1px solid #B7B7B7;} 
+.reg2-radio+label:after{	display:none;} 
+/*选中转态*/
+.reg2-radio:checked+label:before{background-color:#2A8FBD;border:1px solid #0B709D;} 
+.reg2-radio:checked+label:after{display:block;} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+20160422 15:21:33--create-- 
+20160422 15:32:40--member_login256:Problem preparing query (SELECT  account,member_status,balance,member_type FROM ns_member WHERE  account='feng12345' and password='00c351677029d3840898d241bc542fb9' LIMIT 1) Table 'admin_yuebet.ns_member' doesn't exist in /var/www/nginx/admin.yuebet.com/phprpc/dbaccess/MysqliDb.class.php on line 1091-- 
+20160422 15:34:03--member_login1001-- 
+20160422 15:37:59--member_login1002-- 
+20160422 15:38:43--member_loginArray-- 
+20160422 15:41:58--member_loginArray-- 
+20160422 15:42:18--member_loginArray-- 
+20160422 15:42:43--member_loginArray-- 
+20160422 15:45:17--member_loginArray-- 
+20160422 15:46:25--member_loginArray-- 
+20160422 15:47:18--member_logina:5:{s:7:"account";s:9:"feng12345";s:12:"memberStatus";i:1;s:7:"balance";s:8:"29316.50";s:10:"memberType";i:3;s:8:"realName";s:9:"外星人";}-- 
+20160422 16:59:55--check_member_info#1007-- 
+20160422 17:01:10--check_member_info#1007-- 
+20160422 17:01:20--check_member_info#1007-- 
+20160422 17:01:34--check_member_info#1007-- 
+20160422 17:01:40--check_member_info#1007-- 
+20160422 17:01:43--check_member_info#1007-- 
+20160422 17:01:48--check_member_info#1007-- 
+20160422 17:02:06--check_member_info#1007-- 
+20160422 17:02:15--check_member_info#1007-- 
+20160422 17:03:05--check_member_info#1006-- 
+20160422 17:16:21--check_member_info#1006-- 
+20160422 17:19:42--check_member_info#1006-- 
+20160422 17:20:46--check_member_info#1006-- 
+20160422 17:20:54--change_password#1:Call to undefined function md5pwd() in /var/www/nginx/admin.yuebet.com/phprpc/cashier_mobile.php on line 162-- 
+20160422 17:21:32--check_member_info#1006-- 
+20160422 17:21:39--change_password#1-- 
+20160422 17:22:07--member_logini:1001;-- 
+20160422 17:22:17--member_logina:5:{s:7:"account";s:9:"feng12345";s:12:"memberStatus";i:1;s:7:"balance";s:8:"29316.50";s:10:"memberType";i:3;s:8:"realName";s:9:"外星人";}-- 
+20160422 17:23:38--check_member_info#1006-- 
+20160422 17:23:51--check_member_info#1006-- 
+20160422 17:23:57--check_member_info#1006-- 
+20160422 17:24:00--check_member_info#1006-- 
+20160422 17:24:21--check_member_info#1006-- 
+20160422 17:24:57--check_member_info#1006#aa1234567-- 
+20160422 17:26:23--check_member_info#1006#aa123123-- 
+20160422 17:27:55--check_member_info#N;#aa12312-- 
+20160422 17:33:02--change_password#1001-- 
+20160422 17:34:08--change_password#1001-- 
+20160422 17:34:19--change_password#1-- 
+20160422 18:02:17--record_list#a:0:{}-- 
+20160422 18:02:28--record_list#a:0:{}-- 
+20160422 18:03:15--record_list#a:7:{i:0;a:4:{s:2:"id";i:1173238;s:7:"subject";s:27:"手机支付已经开通了";s:14:"message_status";i:0;s:9:"send_time";s:19:"2016-04-18 19:20:14";}i:1;a:4:{s:2:"id";i:1148464;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-18 13:58:18";}i:2;a:4:{s:2:"id";i:1123789;s:7:"subject";s:27:"支付宝最新存款方式";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-14 13:28:07";}i:3;a:4:{s:2:"id";i:1098123;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-09 14:23:03";}i:4;a:4:{s:2:"id";i:1073832;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:46:42";}i:5;a:4:{s:2:"id";i:1049543;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:16:18";}i:6;a:4:{s:2:"id";i:1025307;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-03-31 01:00:43";}}-- 
+20160422 18:05:01--record_list#a:7:{i:0;a:4:{s:2:"id";i:1173238;s:7:"subject";s:27:"手机支付已经开通了";s:14:"message_status";i:0;s:9:"send_time";s:19:"2016-04-18 19:20:14";}i:1;a:4:{s:2:"id";i:1148464;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-18 13:58:18";}i:2;a:4:{s:2:"id";i:1123789;s:7:"subject";s:27:"支付宝最新存款方式";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-14 13:28:07";}i:3;a:4:{s:2:"id";i:1098123;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-09 14:23:03";}i:4;a:4:{s:2:"id";i:1073832;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:46:42";}i:5;a:4:{s:2:"id";i:1049543;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:16:18";}i:6;a:4:{s:2:"id";i:1025307;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-03-31 01:00:43";}}-- 
+20160422 18:06:18--record_list#a:7:{i:0;a:4:{s:2:"id";i:1173238;s:7:"subject";s:27:"手机支付已经开通了";s:14:"message_status";i:0;s:9:"send_time";s:19:"2016-04-18 19:20:14";}i:1;a:4:{s:2:"id";i:1148464;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-18 13:58:18";}i:2;a:4:{s:2:"id";i:1123789;s:7:"subject";s:27:"支付宝最新存款方式";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-14 13:28:07";}i:3;a:4:{s:2:"id";i:1098123;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-09 14:23:03";}i:4;a:4:{s:2:"id";i:1073832;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:46:42";}i:5;a:4:{s:2:"id";i:1049543;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:16:18";}i:6;a:4:{s:2:"id";i:1025307;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-03-31 01:00:43";}}-- 
+20160422 18:07:58--member_logina:5:{s:7:"account";s:9:"feng12345";s:12:"memberStatus";i:1;s:7:"balance";s:8:"29316.50";s:10:"memberType";i:3;s:8:"realName";s:9:"外星人";}-- 
+20160422 18:08:07--record_list#a:7:{i:0;a:4:{s:2:"id";i:1173238;s:7:"subject";s:27:"手机支付已经开通了";s:14:"message_status";i:0;s:9:"send_time";s:19:"2016-04-18 19:20:14";}i:1;a:4:{s:2:"id";i:1148464;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-18 13:58:18";}i:2;a:4:{s:2:"id";i:1123789;s:7:"subject";s:27:"支付宝最新存款方式";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-14 13:28:07";}i:3;a:4:{s:2:"id";i:1098123;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-09 14:23:03";}i:4;a:4:{s:2:"id";i:1073832;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:46:42";}i:5;a:4:{s:2:"id";i:1049543;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:16:18";}i:6;a:4:{s:2:"id";i:1025307;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-03-31 01:00:43";}}-- 
+20160422 19:18:44--member_logina:5:{s:7:"account";s:9:"feng12345";s:12:"memberStatus";i:1;s:7:"balance";s:8:"29316.50";s:10:"memberType";i:3;s:8:"realName";s:9:"外星人";}-- 
+20160422 19:18:56--record_list#a:7:{i:0;a:4:{s:2:"id";i:1173238;s:7:"subject";s:27:"手机支付已经开通了";s:14:"message_status";i:0;s:9:"send_time";s:19:"2016-04-18 19:20:14";}i:1;a:4:{s:2:"id";i:1148464;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-18 13:58:18";}i:2;a:4:{s:2:"id";i:1123789;s:7:"subject";s:27:"支付宝最新存款方式";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-14 13:28:07";}i:3;a:4:{s:2:"id";i:1098123;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-09 14:23:03";}i:4;a:4:{s:2:"id";i:1073832;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:46:42";}i:5;a:4:{s:2:"id";i:1049543;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:16:18";}i:6;a:4:{s:2:"id";i:1025307;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-03-31 01:00:43";}}-- 
+20160422 19:36:55--record_list#a:7:{i:0;a:4:{s:2:"id";i:1173238;s:7:"subject";s:27:"手机支付已经开通了";s:14:"message_status";i:0;s:9:"send_time";s:19:"2016-04-18 19:20:14";}i:1;a:4:{s:2:"id";i:1148464;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-18 13:58:18";}i:2;a:4:{s:2:"id";i:1123789;s:7:"subject";s:27:"支付宝最新存款方式";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-14 13:28:07";}i:3;a:4:{s:2:"id";i:1098123;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-09 14:23:03";}i:4;a:4:{s:2:"id";i:1073832;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:46:42";}i:5;a:4:{s:2:"id";i:1049543;s:7:"subject";s:12:"好消息！";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-04-08 17:16:18";}i:6;a:4:{s:2:"id";i:1025307;s:7:"subject";s:12:"紧急通知";s:14:"message_status";i:1;s:9:"send_time";s:19:"2016-03-31 01:00:43";}}-- 

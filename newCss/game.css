@@ -1,0 +1,42 @@
+.container {
+	padding:5%;
+}
+.container:after {
+	content:'';
+	display:inline-block;
+	width:100%;
+}
+.container .mix,.container .gap {
+	display:inline-block;
+	width:49%;
+}
+.container .mix {
+	margin-bottom:3%;
+	cursor:pointer;
+}
+.container img {
+	border-radius:10%;
+}
+.container .inpimg {
+	border-radius:0%;
+}
+
+.container .mix:before {
+	content:'';
+	display:inline-block;
+	padding-top:60%;
+}
+.game_name {
+	color:#636363;
+	font-size:12px;
+	text-align:center;
+}
+@media all and (min-width:420px) {
+	.container .mix,.container .gap {
+	width:30%;
+}
+;}@media all and (min-width:640px) {
+	.container .mix,.container .gap {
+	width:23.5%;
+}
+;}

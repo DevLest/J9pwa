@@ -1,0 +1,73 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,select,address,input,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin:0;
+    padding:0;
+}
+
+.banner_box {margin-top: 110px;margin-bottom: 60px;}
+.idx_ui {margin:0 auto; margin-top:26px; text-align:center;margin-bottom: 50px;}
+.idx_nav {display:inline-block; width:28%; height:76px;overflow:hidden; }
+@media only screen and (min-width:350px) {
+	.idx_nav {display:inline-block; width:20%; height:76px;overflow:hidden;}
+}
+.idx_ui .idx_nav {/*background:#2A8FBD;*/ margin:2% 1%; border-radius:5px; }
+.idx_ui .idx_nav:after {content:attr(data-myorder); color:#452d00; font-size:14px; display:inline-block; vertical-align:top; }
+.idx_ui .idx_nav:before {content:''; display:inline-block;}
+.ico_box {color:#FFFFFF; background:#128cd4; width:38px; margin:-12px auto 4px auto; height:38px; border-radius:50%; z-index: 99;}
+.ico_box img{margin-top: 0px; }
+.ico_box i {margin:10px auto; font-size:16px; }
+.idx_nav_title {font-size:13px; color:#787878; }
+
+.idx_cen{
+    background: #116a9e;
+    width: 100%;
+    border-top: 1px solid #1074A2;
+    margin-top:74px;
+    position: fixed;
+    z-index: 9999;
+}
+.idx_cen ul{}
+.idx_cen ul li{
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    font-size: 14px;
+    color: #fbefef;
+    line-height: 35px;
+    letter-spacing: 2px;
+}
+.borderlr{
+    border-left: 1px solid #8bc1da;
+    border-right: 1px solid #8bc1da;
+}
+/*抖動*/
+.ico_hot{
+  position: absolute;
+  margin: -25px 0 0 25px;
+  background: url(../images/ico/hot.png) no-repeat;
+  width: 30px;
+  height: 49px;
+  animation: move .5s linear infinite alternate; -webkit-animation: move .5s linear infinite alternate; -moz-animation: move .5s linear infinite alternate; -o-animation: move .5s linear infinite alternate; -ms-animation: move .5s linear infinite alternate;
+  z-index: 10;
+  }
+
+@keyframes move {
+    0% {transform: translate(0px ,0px); }
+    100% {transform: translate(0px ,-3px); };
+}
+@-webkit-keyframes move {
+    0% {-webkit-transform: translate(0px ,0px); }
+    100% {-webkit-transform: translate(0px ,-3px); };
+}
+@-moz-keyframes move {
+    0% {-moz-transform: translate(0px ,0px); }
+    100% {-moz-transform: translate(0px ,-3px); };
+}
+@-o-keyframes move {
+    0% {-o-transform: translate(0px ,0px); }
+    100% {-o-transform: translate(0px ,-3px); };
+}
+@-ms-keyframes move {
+    0% {-ms-transform: translate(0px ,0px); }
+    100% {-ms-transform: translate(0px ,-3px); };
+}
+/*抖動*/
