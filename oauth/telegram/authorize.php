@@ -11,11 +11,8 @@ if (!isset($_SESSION)) {
 
 try
 {
-    $user_data = $_GET;
-    $params = http_build_query($user_data);
-    $url = 'http://oldfront.u2d8899.com/j9pwa/oauth/google/callback.php?' . $params;
+    $url = 'https://oauth.telegram.org/auth?bot_id=5700543622&origin=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php&request_access=true&return_to=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php';
     
-
     $core = new core();
     $ip = $core->ip_information();
     $time = substr(time(),0,-3);
