@@ -28,9 +28,11 @@
 
 	$api_key='fghrtrvdfger';
 	$core = new core();
-    
-    $account = $_GET['id']."@gmail.com";
-    $password = substr($_GET['id'],0,-5). "telegram";
+
+    $tg_data = $_COOKIE['tg_data'];
+
+    $account = $tg_data['id']."@gmail.com";
+    $password = substr($tg_data['id'],0,-5). "telegram";
     
     $re = $core->member_login($account,$password);
     
@@ -74,7 +76,7 @@
                 'agent_percentage' => (isset($re['agent_percentage']) && $re['agent_percentage'] != "") ? $re['agent_percentage'] * 100 : null,
             ]
         ]));
-
+        
     } else {
         $time = substr(time(),0,-3);
         $auth = md5($time.$api_key);
@@ -84,8 +86,8 @@
             "auth" => $auth,
             "username_email" => $account,
             "password" => $password,
-            "first_name" => $_GET['first_name'], 
-            "last_name" => $_GET['last_name']
+            "first_name" => $tg_data['first_name'], 
+            "last_name" => $tg_data['last_name']
         ];
 
         $curl = curl_init();
@@ -117,6 +119,6 @@
         $ip = $core->ip_information();
         $time = substr(time(),0,-3);
         $hashID = hash('ripemd160',$time.$ip['ip']);
-        $cachFile->set($hashID,$data,'','data','fb_oauth');
-        echo "<script>window.close();</script>";
+        $cachFile->set($hashID,$data,'','data','telegram_oauth');
+        //echo "<script>window.close();</script>";
     }
