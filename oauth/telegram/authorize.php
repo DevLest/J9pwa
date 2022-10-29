@@ -11,7 +11,7 @@ if (!isset($_SESSION)) {
 
 try
 {
-    $url = 'https://oauth.telegram.org/auth?bot_id=5700543622&origin=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php&request_access=true&return_to=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php';
+    $url = 'https://oauth.telegram.org/auth?bot_id=5664886742&origin=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php&request_access=true&return_to=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php';
     
     $core = new core();
     $ip = $core->ip_information();
