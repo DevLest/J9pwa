@@ -9,9 +9,13 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+$bot_id = 5664886742;
+$redirectUrl = "https%3A%2F%2F999j9azx.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php";
+
 try
 {
-    $url = 'https://oauth.telegram.org/auth?bot_id=5664886742&origin=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php&request_access=true&return_to=https%3A%2F%2Foldfront.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php';
+    $url = 'https://oauth.telegram.org/auth?bot_id='.$bot_id.'&origin='.$redirectUrl.'&request_access=true&return_to='.$redirectUrl;
+    // $url = 'https://oauth.telegram.org/auth?bot_id=5664886742&origin=https%3A%2F%2F999j9azx.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fcallback.php?&request_access=true&return_to=https%3A%2F%2F999j9azx.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fcallback.php?';
     
     $core = new core();
     $ip = $core->ip_information();
