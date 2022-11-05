@@ -13,9 +13,7 @@
 		}
 		var user = window.atob(data);
 		
-		//set user data to a cookie
-		document.cookie = 'tg_data=' + user;
-		window.location.href = 'http://oldfront.u2d8899.com/j9pwa/oauth/telegram/callback.php'
+		window.location.href = 'https://999j9azx.u2d8899.com/j9pwa/oauth/telegram/callback.php?tg_data=' + user;
 	  }
 	} catch (e) {}
 </script>
