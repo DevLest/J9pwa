@@ -70,10 +70,10 @@
 
             curl_close($curl);
 
-            $checkData = json_decode($response);
-            if (!$checkData->status){
-                $response = loginMember($account,$password);
-            }
+            // $checkData = json_decode($response);
+            // if (!$checkData->status){
+            //     $response = loginMember($account,$password);
+            // }
             cacheData($response);
         }
         else
@@ -138,20 +138,7 @@
         $ip = $core->ip_information();
         $time = substr(time(),0,-3);
         $hashID = hash('ripemd160',$time.$ip['ip']);
-        $cachFile->set($hashID,$data,'','data','telegram_oauth');
+        $result = $cachFile->set($hashID,$data,'','data','telegram_oauth');
         echo $data;
-        // echo "<script>window.close();</script>";
+        echo "<script>window.close();</script>";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-

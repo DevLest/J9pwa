@@ -16,7 +16,7 @@
 				cache: false,
 				success: function(response){
 				  	response = $.parseJSON(response);
-				  	window.open(response.info.url)
+				  	window.open(response.info.url);
 
 		    		$.ajax({
 					    type: "GET",
