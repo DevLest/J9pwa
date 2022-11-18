@@ -6,7 +6,7 @@ define("WEB_PATH", __DIR__);
 
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
-//  error_reporting(E_ALL);
+error_reporting(E_ALL);
 
 include_once "core.class.php";
 
@@ -50,6 +50,12 @@ switch ($data->type) {
     case "autopromotion_list":
         echo autopromotion_list($data);
         break;
+     case "j9_autopromotion_list":
+        echo j9_autopromotion_list($data);
+        break;
+     case "submit_autopromotion":
+        echo submit_autopromotion($data);
+        break;
     case "checkdeposit":
         echo checkdeposit($data);
         break;
@@ -57,7 +63,7 @@ switch ($data->type) {
         echo canceldeposit($data);
         break;
     case "network_list":
-        echo network_list($data);
+        echo networkList($data);
         break;
 }
 
@@ -368,6 +374,41 @@ function autopromotion_list($data)
     }
 }
 
+function j9_autopromotion_list($data)
+{
+    if (checkLogin($data) != true) {
+        exit();
+    }
+
+    $client = new PHPRPC_Client(SERVER_URL);
+    $results = unserialize($client->web_autopromotion_active($data->username_email));
+    if (is_array($results)) {
+        unset($results['status']);
+        foreach ($results as $index => $result) {
+            $output[$index]['id'] = $result['id'];
+            $output[$index]['title'] = $result['title'];
+            $output[$index]['content'] = $result['content'];
+        }
+        return json_encode(["status" => 1, "info" => $output], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    } else {
+        return json_encode(["status" => 0, "info" => 'Without discount'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    }
+}
+
+function submit_autopromotion($data)
+{
+     if (checkLogin($data) != true) {
+        exit();
+    }
+        $core = new core();
+    $info = $core->submit_autopromotion($data->username_email,$data->promotion_id);
+    if($info==1){
+         return json_encode(["status" => 1, "info" => "application has been successful"], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    } else {
+        return json_encode(["status" => 0, "info" => 'application failed'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    }
+    
+}
 function checkdeposit($data)
 {
     if (checkLogin($data) != true) {
@@ -617,94 +658,203 @@ function IPThrottling()
     }
 }
 
-function network_list($data)
+function networkList($data)
 {
-    $coins = [
-        "USDT" => 825,
-        "mETH" => 1027,
-        "mBTC" => 1,
-        "AAVE" => 7278,
-        "ADA" => 2010,
-        "AIRT" => 10905,
-        "ALU" => 9637,
-        "AVAX" => 5805,
-        "BABY" => 10334,
-        "BCH" => 1831,
-        "BFG" => 11038,
-        "BNB" => 1839,
-        "BSW" => 10746,
-        "BTT(OLD)" => 3718,
-        "BTT(NEW)" => 16086,
-        "C98" => 10903,
-        "CAKE" => 7186,
-        "CHZ" => 4066,
-        "COMP" => 5692,
-        "DAI" => 4943,
-        "DASH" => 131,
-        "DOGE" => 74,
-        "ENJ" => 2130,
-        "ETC" => 1321,
-        "FTM" => 3513,
-        "GLM" => 1455,
-        "HOT" => 2682,
-        "LAZIO" => 12687,
-        "LINK" => 1975,
-        "LTC" => 2,
-        "MATIC" => 3890,
-        "MKR" => 1518,
-        "OMG" => 1808,
-        "ONT" => 2566,
-        "PORTO" => 14052,
-        "REEF" => 6951,
-        "SHIB" => 5994,
-        "SNX" => 2586,
-        "STORJ" => 1772,
-        "SUSHI" => 6758,
-        "TRX" => 1958,
-        "UMA" => 5617,
-        "UNI" => 7083,
-        "USDC" => 3408,
-        "XLM" => 512,
-        "YFI" => 5864,
-        "ZIL" => 2469,
-        "ZRX" => 1896,
-    ];
+    $coins = ["USDT", "ETH", "BTC", "AAVE", "ADA", "AIRT", "ALU", "AVAX", "BABY", "BCH", "BFG", "BNB", "BSW", "BTT", "C98", "CAKE", "CHZ", "COMP", "DAI", "DASH", "DOGE", "ENJ", "ETC", "FTM", "GLM", "HOT", "LAZIO", "LINK", "LTC", "MATIC", "MKR", "OMG", "ONT", "PORTO", "REEF", "SHIB", "SNX", "STORJ", "SUSHI", "TRX","UMA","UNI","USDC","XLM","YFI","ZIL","ZRX"];
     $network = [];
+    $pin_network = [];
+    
+    include_once WEB_PATH . "/common/cache_file.class.php";
+    $cachFile = new cache_file();
+    $data_list = $cachFile->get("s6_api", '', 'data', 'currency');
+    $response = json_decode($data_list);
+
+    $skipCoin = [
+        "heco"
+    ];
+
+    $pinned = [
+        "USDT",
+        "USDC",
+        "BTC",
+        "ETH",
+        "BNB",
+        "TRX",
+        "DAI",
+        "LTC",
+        "BCH",
+        "DOGE"
+    ];
+    
+    if (is_array($response->data)) {
+        foreach ($response->data as $wallet) {
+            $wallet_name = strtoupper($wallet->item_name);
+            if ($wallet_name == $data->currency && in_array($wallet_name, $coins)) {
+                foreach ($wallet->chain_list as $chain) {
+                    if (in_array($chain->chain_tag, $skipCoin)) continue;
+
+                    $address = "";
+                    $address = s6getAddress($data->username_email, $data->password, $chain->chain_tag, $wallet->item_id);
+
+                    if ( $address->status == 1 && ($address->info != "" || !is_null($address->info))) {
+                        if (in_array(strtoupper($wallet_name), $pinned)) {
+                            array_push($pin_network, [
+                                "address" => $address->info, 
+                                "network" => $chain->chain_tag,
+                                "name" => strtoupper($chain->chain_tag),
+                                "currency" => $wallet->item_id,
+                                "fee" => (float) $chain->fee,
+                                "min" => (float) $chain->minout,
+                                "max" => (float) $chain->maxout,
+                            ]);
+                        }
+                        else {
+                            array_push($network, [
+                                "address" => $address->info, 
+                                "network" => $chain->chain_tag,
+                                "name" => strtoupper($chain->chain_tag),
+                                "currency" => $wallet->item_id,
+                                "fee" => (float) $chain->fee,
+                                "min" => (float) $chain->minout,
+                                "max" => (float) $chain->maxout,
+                            ]);
+                        }
+                    }
+                }
+            }
+        }
+
+        $network = array_merge($pin_network,$network);
+
+        return json_encode(['status' => 1, 'info' => $network]);
+    }
+    return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
+
+    // $coins = [
+    //     "USDT" => 825,
+    //     "ETH" => 1027,
+    //     "BTC" => 1,
+    //     "AAVE" => 7278,
+    //     "ADA" => 2010,
+    //     "AIRT" => 10905,
+    //     "ALU" => 9637,
+    //     "AVAX" => 5805,
+    //     "BABY" => 10334,
+    //     "BCH" => 1831,
+    //     "BFG" => 11038,
+    //     "BNB" => 1839,
+    //     "BSW" => 10746,
+    //     "BTT(OLD)" => 3718,
+    //     "BTT(NEW)" => 16086,
+    //     "C98" => 10903,
+    //     "CAKE" => 7186,
+    //     "CHZ" => 4066,
+    //     "COMP" => 5692,
+    //     "DAI" => 4943,
+    //     "DASH" => 131,
+    //     "DOGE" => 74,
+    //     "ENJ" => 2130,
+    //     "ETC" => 1321,
+    //     "FTM" => 3513,
+    //     "GLM" => 1455,
+    //     "HOT" => 2682,
+    //     "LAZIO" => 12687,
+    //     "LINK" => 1975,
+    //     "LTC" => 2,
+    //     "MATIC" => 3890,
+    //     "MKR" => 1518,
+    //     "OMG" => 1808,
+    //     "ONT" => 2566,
+    //     "PORTO" => 14052,
+    //     "REEF" => 6951,
+    //     "SHIB" => 5994,
+    //     "SNX" => 2586,
+    //     "STORJ" => 1772,
+    //     "SUSHI" => 6758,
+    //     "TRX" => 1958,
+    //     "UMA" => 5617,
+    //     "UNI" => 7083,
+    //     "USDC" => 3408,
+    //     "XLM" => 512,
+    //     "YFI" => 5864,
+    //     "ZIL" => 2469,
+    //     "ZRX" => 1896,
+    // ];
+
+    // $curl = curl_init();
+    // curl_setopt_array($curl, array(
+    //     CURLOPT_URL => "152.32.214.196:8917/account/getAddress",
+    //     CURLOPT_FOLLOWLOCATION => 0,
+    //     CURLOPT_RETURNTRANSFER => true,
+    //     CURLOPT_TIMEOUT => 3,
+    //     CURLOPT_POST => 1,
+    //     CURLOPT_CUSTOMREQUEST => "POST",
+    //     CURLOPT_TIMEOUT => 100,
+    //     CURLOPT_POSTFIELDS => json_encode([
+    //         "merchant" => "j9",
+    //         "outmemid" => $data->username_email,
+    //         "notifyurl" => "https://999.game",
+    //     ]),
+    //     CURLOPT_HTTPHEADER => [
+    //         'Content-Type: application/json; charset=utf-8',
+    //     ],
+    // ));
+
+    // $response = curl_exec($curl);
+
+    // if (curl_errno($curl)) {
+    //     return curl_error($curl);
+    // }
+    // curl_close($curl);
+
+    // $response = json_decode($response);
+
+    // if (isset($response->data)) {
+    //     foreach ($response->data as $wallet) {
+    //         array_push($network, [
+    //             "address" => $wallet->address,
+    //             "network" => $wallet->currency,
+    //             "name" => strtoupper($wallet->currencytype),
+    //         ]);
+    //     }
+
+    //     return json_encode(['status' => 1, 'info' => $network]);
+    // }
+    // return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
+}
+
+function s6getAddress($email, $password, $network, $currencyId){
+
+    $time = substr(time(),0,-3);
+    $auth = md5($time."fghrtrvdfger");
+
+    $postData = [
+        "type" => "s6_deposit_address",
+        "auth" => $auth,
+        "username_email" => $email,
+        "password" => $password,
+        "net_work" => $network,
+        "currency_id" => $currencyId,
+    ];
 
     $curl = curl_init();
+    
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "152.32.214.196:8917/account/getAddress",
+        CURLOPT_URL => 'https://999j9azx.u2d8899.com/j9pwa/conduct.php',
         CURLOPT_FOLLOWLOCATION => 0,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT => 3,
         CURLOPT_POST => 1,
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_TIMEOUT => 100,
-        CURLOPT_POSTFIELDS => json_encode([
-            "merchant" => "j9",
-            "outmemid" => $data->username_email,
-        ]),
-        CURLOPT_HTTPHEADER => [
-            'Content-Type: application/json; charset=utf-8',
-        ],
+        CURLOPT_POSTFIELDS => $postData,
+        CURLOPT_HTTPHEADER => array(
+        'Content-Type: multipart/form-data; '
+        ),
     ));
-
+    
     $response = curl_exec($curl);
-
-    if (curl_errno($curl)) {
-        return curl_error($curl);
-    }
     curl_close($curl);
 
-    $response = json_decode($response);
-
-    foreach ($response->data as $wallet) {
-        array_push($network, [
-            "address" => $wallet->address,
-            "network" => $wallet->currency,
-            "name" => strtoupper($wallet->currencytype),
-        ]);
-    }
-
-    return json_encode(['status' => 1, 'info' => $network]);
+    return json_decode($response);
 }

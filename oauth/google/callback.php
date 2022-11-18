@@ -140,6 +140,7 @@
                     'regTime' => $re['regTime'],
                     'is_agent' => $re['is_agent'],
                     'nickName' => $re['nickName'],
+                    'userID' => $re['uid'],
                     'agent_percentage' => (isset($re['agent_percentage']) && $re['agent_percentage'] != "") ? $re['agent_percentage'] * 100 : null,
                 ],
             ]);
@@ -148,7 +149,7 @@
     }
 
     function cacheData($data){
-	    include_once (WEB_PATH."../../common/cache_file.class.php");
+        include_once (WEB_PATH."../../common/cache_file.class.php");
         $cachFile = new cache_file();
         $core = new core();
         $ip = $core->ip_information();
@@ -156,5 +157,5 @@
         $hashID = hash('ripemd160',$time.$ip['ip']);
         $cachFile->set($hashID,$data,'','data','google_oauth');
         echo $data;
-        // echo "<script>window.close();</script>";
+        echo "<script>window.close();</script>";
     }

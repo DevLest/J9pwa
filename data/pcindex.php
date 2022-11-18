@@ -1,25 +1,34 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-echo 
-'
-{
-	"status": 1,
-    "info": {
-		"banner":[
-                  {
-				"imgUrl":"https://www.u2d8899.com/mexicoimages/pcbanner/01.jpg",
-				"imgClickUrl":"111"
-			},
-                    {
-				"imgUrl":"https://www.u2d8899.com/mexicoimages/pcbanner/02.jpg",
-				"imgClickUrl":"113"
-			},
-           
-                          {
-				"imgUrl":"https://www.u2d8899.com/mexicoimages/pcbanner/03.jpg",
-				"imgClickUrl":"114"
-			}
-		]
-	
-	}
-}';
+$data = (Object) $_POST;
+
+if(isset($data->username_email)){
+	echo 
+	'
+	{
+		"status": 1,
+	    "info": {
+			"banner":[
+	                  {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/DESKTOP_BANNERS/01.webp",
+					"imgClickUrl":"111"
+				},
+	                    {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/DESKTOP_BANNERS/02.webp",
+					"imgClickUrl":"113"
+				},
+	           
+	            {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/DESKTOP_BANNERS/03.webp",
+					"imgClickUrl":"114"
+				},
+	           
+	            {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/DESKTOP_BANNERS/04.webp",
+					"imgClickUrl":"124"
+				}
+			]
+		
+		}
+	}';
+}

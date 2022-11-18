@@ -1,26 +1,64 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-echo 
-'
-{
-	"status": 1,
-    "info": {
-		"banner":[
-                  {
-				"imgUrl":"https://www.u2d8899.com/mexicoimages/banner/01.jpg",
-				"imgClickUrl":"111"
-			},
-                    {
-				"imgUrl":"https://www.u2d8899.com/mexicoimages/banner/02.jpg",
-				"imgClickUrl":"113"
-			},
-           
-                          {
-				"imgUrl":"https://www.u2d8899.com/mexicoimages/banner/03.jpg",
-				"imgClickUrl":"114"
-			}
-			
-		]
-	
-	}
-}';
+$data = (Object) $_POST;
+
+if(isset($data->username_email)){
+	echo 
+	'
+	{
+		"status": 1,
+	    "info": {
+			"banner":[
+	                  {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_MEMBER/01.webp",
+					"imgClickUrl":"111"
+				},
+	                    {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_MEMBER/02.webp",
+					"imgClickUrl":"113"
+				},
+	           
+	            {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_MEMBER/03.webp",
+					"imgClickUrl":"114"
+				},
+	           
+	            {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_MEMBER/04.webp",
+					"imgClickUrl":"124"
+				}
+			]
+		
+		}
+	}';
+}
+else {
+	echo 
+	'
+	{
+		"status": 1,
+	    "info": {
+			"banner":[
+	                  {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_GUEST/01.webp",
+					"imgClickUrl":"111"
+				},
+	                    {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_GUEST/02.webp",
+					"imgClickUrl":"113"
+				},
+	           
+	            {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_GUEST/03.webp",
+					"imgClickUrl":"114"
+				},
+	           
+	            {
+					"imgUrl":"https://999j9azx.u2d8899.com/j9pwa/images/MOBILE_BANNERS_GUEST/04.webp",
+					"imgClickUrl":"124"
+				}
+			]
+		
+		}
+	}';
+}

@@ -254,7 +254,7 @@ function get_promotion_list($account){
                      $result1[$k]['title']=$v['title'];
                       $result1[$k]['startTime']=$v['startTime'];
                        $result1[$k]['endTime']=$v['endTime'];
-                        $result1[$k]['bannerurl']="https://www.u2d8899.com/mexicoimages/banner/".$v['sPicURL'];
+                        $result1[$k]['bannerurl']="https://www.u2d8899.com/999images/banner/".$v['sPicURL'];
                        //  $result1[$k]['content']=$v['content'];
                 }
                 

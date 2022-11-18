@@ -344,8 +344,9 @@ function change_account_info($data)
     $postal = (isset($data->postal)) ? $data->postal : "";
     $country = (isset($data->country)) ? $data->country : "";
     $landline = (isset($data->landline)) ? $data->landline : "";
+    $nickName = (isset($data->nickName)) ? $data->nickName : "";
 
-    $change = $core->change_informationV2($data->username_email, ['state' => $state, 'city' => $city, 'postal' => $postal, 'country' => $country, 'landline' => $landline, "realName" => $realName, "birthday" => $birthday, "telephone" => $telephone]);
+    $change = $core->change_informationV2($data->username_email, ['state' => $state, 'city' => $city, 'postal' => $postal, 'country' => $country, 'landline' => $landline, "realName" => $realName, "birthday" => $birthday, "telephone" => $telephone, "nickName" => $nickName]);
 
     return json_encode(['status' => 1, 'info' => "Information modified successfully"], JSON_UNESCAPED_UNICODE);
 }
@@ -375,7 +376,7 @@ function send_reset_password($data)
             $mail->SMTPSecure = "ssl";
             $mail->Port = 465;
 
-            $mail->setFrom('999game@mycasinos.online', '999 Games');
+            $mail->setFrom('999game@mycasinos.online', '999 game');
             $mail->addAddress($re['email'], $re['realName']);
             $mail->isHTML(true);
 
@@ -384,14 +385,14 @@ function send_reset_password($data)
             "<div
                     style='
                     width: 100%;
-                    background-image: url(https://u2daszapp.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
+                    background-image: url(https://999j9azx.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
                     background-size: 100%;
                     background-position: top center;
                     '
                 >
                     <div>
                     <div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-                        <img src='https://u2daszapp.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
+                        <img src='https://999j9azx.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
                     </div>
                     <div style='width: 100%; height: 3px; display: flex'>
                         <div style='width: 50%; height: 3px; background-color: black'></div>
@@ -414,7 +415,7 @@ function send_reset_password($data)
                         <a href='mailto:999game@mycasinos.online' target='_blank'>999game@mycasinos.online</a>.
                         </p>
                         <a
-                        href='http://test999.ued988.vip/?reset_password=$base_key'
+                        href='https://999.game/?reset_password=$base_key'
                         style='
                             background-color: #0bafe6;
                             padding: 0.7rem 1.5rem;
@@ -511,14 +512,14 @@ function send_verification_email($data)
             "<div
                 style='
                 width: 100%;
-                background-image: url(https://u2daszapp.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
+                background-image: url(https://999j9azx.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
                 background-size: 100%;
                 background-position: top center;
                 '
             >
                 <div>
                 <div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-                    <img src='https://u2daszapp.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
+                    <img src='https://999j9azx.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
                 </div>
                 <div style='width: 100%; height: 3px; display: flex'>
                     <div style='width: 50%; height: 3px; background-color: black'></div>
@@ -702,6 +703,8 @@ function get_transaction($data, $type = 1)
                             "status" => "Pending",
                             "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
                             "verifyStatus" => $pending['depStatus'],
+                            "reydata" => $pending,
+
                         ]);
                     }
                 }
@@ -722,6 +725,8 @@ function get_transaction($data, $type = 1)
                             "status" => "unprocessed",
                             "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
                             "verifyStatus" => $pending['depStatus'],
+                            "reydata" => $unprocessed,
+
                         ]);
                     }
                 }
@@ -742,6 +747,9 @@ function get_transaction($data, $type = 1)
                             "status" => "Cancelled",
                             "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
                             "verifyStatus" => $pending['depStatus'],
+
+                            "reydata" => $cancelled,
+
                         ]);
                     }
                 }
@@ -762,6 +770,9 @@ function get_transaction($data, $type = 1)
                             "status" => "Success",
                             "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
                             "verifyStatus" => $pending['depStatus'],
+
+                            "reydata" => $success,
+
                         ]);
                     }
                 }
@@ -778,7 +789,7 @@ function get_transaction($data, $type = 1)
 
             }
 
-            if (in_array($data->status, [0, 2])) {
+            if (in_array($data->status, [0, 2, 3])) {
                 $withdraw = $core->record_list_v2($data->username_email, "withdraw_fin_transaction", $start_date, $end_date, 2);
                 if (is_array($withdraw)) {
                     $fin_transac = array_merge($fin_transac, $withdraw);
@@ -786,8 +797,16 @@ function get_transaction($data, $type = 1)
 
             }
 
-            if (in_array($data->status, [0, 3])) {
-                $withdraw = $core->record_list_v2($data->username_email, "withdraw_fin_transaction", $start_date, $end_date, 3);
+            if (in_array($data->status, [0, 4])) {
+                $withdraw = $core->record_list_v2($data->username_email, "withdraw_fin_transaction", $start_date, $end_date, 4);
+                if (is_array($withdraw)) {
+                    $fin_transac = array_merge($fin_transac, $withdraw);
+                }
+
+            }
+
+            if (in_array($data->status, [0, 5])) {
+                $withdraw = $core->record_list_v2($data->username_email, "withdraw_fin_transaction", $start_date, $end_date, 1);
                 if (is_array($withdraw)) {
                     $fin_transac = array_merge($fin_transac, $withdraw);
                 }
@@ -795,19 +814,21 @@ function get_transaction($data, $type = 1)
             }
 
             if (!empty($fin_transac)) {
+                $fin_transac = array_map("unserialize", array_unique(array_map("serialize", $fin_transac)));
                 foreach ($fin_transac as $v) {
                     switch ($v['verifyStatus']) {
                         case 2:
                             $status = (is_null($v['verify_name']) || $v['verify_name'] != "") ? "Failed" : "Cancelled";
                             break;
-                        case 3:
-                            $status = "Success";
+                        case 0:
+                            $status = "Pending";
                             break;
                         case 1:
-                            $status = "Success";
+                            $status = "Processing";
                             break;
-                        default:
-                            $status = "Pending";
+                        case 5:
+                            $status = "Success";
+                            $v['verifyStatus'] = 1;
                             break;
                     }
 

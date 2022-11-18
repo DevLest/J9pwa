@@ -314,31 +314,6 @@ function get_balance($account, $gameid)
         $output = [];
         $pin_output = [];
 
-        $skip_currency = [
-            "ZRX",
-            "ZIL",
-            "XRP",
-            "UMA",
-            "STORJ",
-            "REEF",
-            "BTT(NEW)",
-            "LAZIO",
-            "GLM",
-            "BSW",
-            "BFG",
-            "BABY",
-            "ALU",
-            "AIRT",
-            "MATIC",
-            "SOL",
-            "ONT",
-            "LINK",
-            "HOT",
-            "DASH",
-            "BTT(OLD)",
-            "DAI",
-        ];
-
         $pinned = [
             "USDT",
             "USDC",
@@ -354,24 +329,14 @@ function get_balance($account, $gameid)
 
         foreach ($files as $file) {
             $current = str_replace(".png", "", $file);
-            $balance = 0.00;
-
-            if (in_array($current, $skip_currency)) continue;
+            $balance = 0;
             foreach ($result as $currency => $value) {
-                if (in_array($currency, $skip_currency)) continue;
                 if ($currency == $current) {
-                    $balance = (float) $value;
+                    $balance = $value;
                 }
             }
             
             if (in_array(strtoupper($current), $pinned)) {
-                array_push($pin_output, [
-                    "currency" => $current,
-                    "icon" => "https://999j9azx.u2d8899.com/j9pwa/images/currency/$file",
-                    "balance" => $balance,
-                ]);
-            }
-            else if($current == "mBTC" || $current == "mETH"){
                 array_push($pin_output, [
                     "currency" => $current,
                     "icon" => "https://999j9azx.u2d8899.com/j9pwa/images/currency/$file",
@@ -387,32 +352,18 @@ function get_balance($account, $gameid)
             }
         }
         
-        $temp_arr = [];
-        foreach($pinned as $curr) {
-            foreach($pin_output as $detail) {
-                $currency = $detail["currency"];
-                if($curr == "BTC" || $curr == "ETH") {
-                    $currency = ltrim($currency, $currency[0]);
-                    $detail["currency"] = $currency;
-                }
-                if($curr == $currency) {
-                    array_push($temp_arr, $detail);
-                }
-            }
-        }
-
-        $pin_output = $temp_arr;
-        $balance = array_column($output, "balance");
-        array_multisort($balance, SORT_DESC, $output);
+        $sorted = array_map(function($v) use ($pin_output) {
+            return $pin_output[$v - 1];
+        }, $pinned);
+        
+        // print_r($sorted);
+        // print_r($pin_output);
         
         $output = array_merge($pin_output,$output);
-
         //$result = round($result,2);
         return json_encode(array('status' => 1, 'info' => $output));
     }
 }
-
-
 //获取可绑定的银行卡类型
 function get_bindCardBankType()
 {
@@ -933,7 +884,6 @@ function cancel_debit($id)
 {
     $core = new core();
     $status = $core->cancel_debit($_SESSION['account'], $id);
-   // print_r($status);exit;
     if ($status == 1) {
         return json_encode(array('status' => 1, 'info' => 'Cancel withdrawal successfully'));
     } elseif ($status == 1201) {
@@ -2798,36 +2748,104 @@ function get_collect_game($account)
     $output = [];
 
     $gameIDs = [
-        "PP" => 1228,
-        "REVOLVER" => 1233,
-        "CQ9" => 1233,
-        "PT" => 1202,
+        "USDT" => 1232,
+        "MBTC" => 1236,
+        "METH" => 1238,
+        "USD" => 1240,
+    ];
+
+    $game_id = 1240;
+
+    $currency = [
+        "BGAMING" => ["mBTC", "USDT", "mETH", "USD"],
+        "BNG" => ["mBTC", "USDT", "mETH", "USD"],
+        "CALETA" => ["mBTC", "USDT", "mETH", "USD"],
+        "ENDORPHINA" => ["mBTC", "USDT", "mETH", "USD"],
+        "HAB" => ["mBTC", "USDT", "mETH", "USD"],
+        "MG" => ["USD"],
+        "PGSOFT" => ["mBTC", "USD"],
+        "PNG" => ["mBTC", "USD"],
+        "PP" => ["mBTC", "USDT", "mETH", "USD"],
+        "PS" => ["mBTC", "USDT", "mETH", "USD"],
+        "PT" => ["USD"],
+        "PG" => ["USD"],
+        "RB" => ["USD"],
+        "RELAX" => ["USD"],
+        "SPB" => ["mBTC", "mETH", "USD"],
+        "SS" => ["mBTC", "USDT", "mETH", "USD"],
+        "SW" => ["USD"],
+        "BG" => ["mBTC", "USDT", "mETH", "USD"],
+        "CQ9" => ["mBTC", "USDT", "mETH"],
+        "EM" => ["USD"],
+        "EZG" => ["mBTC", "USDT", "mETH", "USD"],
+        "MPLAY" => ["mBTC", "USDT", "mETH", "USD"],
+        "REVOLVER" => ["mBTC", "USDT", "mETH", "USD"],
+        "RELAX" => ["USD"],
+        "TB" => ["mBTC", "USDT", "mETH", "USD"],
+        "REDTIGER" => ["USD"],
+        "NETENT" => ["USD"],
+        "GAMEART" => ["USD"],
+        "EVO" => ["USD"],
+        "BETBY" => ["USD"],
     ];
 
     $platformNames = [
-        "PG" => "PGSoft",
-        "SPB" => "Spribe",
-        "SW" => "Skywind",
-        "PT" => "PlayTech",
-        "BG" => "BetGames",
+        "BGAMING" => "BGaming",
         "BNG" => "Booongo",
         "CALETA" => "Caleta",
+        "ENDORPHINA" => "Endorphina",
+        "HAB" => "Habanero",
+        "MG" => "Microgaming",
+        "PGSOFT" => "PGSoft",
+        "PNG" => "Play'N'GO",
+        "PP" => "PragmaticPlay",
+        "PS" => "Playson",
+        "PT" => "PlayTech",
+        "PG" => "PocketGames",
+        "RB" => "RubyPlay",
+        "RELAX" => "Relax",
+        "SPB" => "Spribe",
+        "SS" => "SuperSpade",
+        "SW" => "Skywind",
+        "BG" => "BetGames",
         "CQ9" => "CQGames",
         "EM" => "EveryMatrix",
         "EZG" => "Ezugi",
-        "HAB" => "Habanero",
         "MPLAY" => "MPlay",
-        "PNG" => "Play'N'GO",
-        "PS" => "Playson",
-        "PP" => "PragmaticPlay",
         "REVOLVER" => "Revolver",
-        "RB" => "RubyPlay",
+        "RELAX" => "RELAX",
+        "TB" => "TVB",
+        "REDTIGER" => "RedTiger",
+        "NETENT" => "Netent",
+        "GAMEART" => "GameArt",
+        "EVO" => "Evolution",
+        "BETBY" => "Betby",
     ];
 
     foreach ($result as $index => $favorite) {
         $filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
 
         foreach ($filedata as $detail) {
+
+            foreach($currency[strtoupper($detail["platform"])] as $curr) {
+                if($curr == "USD") {
+                    $game_id = $gameIDs[strtoupper($curr)];
+                    break;
+                }
+                else if($curr == "USDT") {
+                    $game_id = $gameIDs[strtoupper($curr)];
+                    break;
+                }
+                else if($curr == "MBTC") {
+                    $game_id = $gameIDs[strtoupper($curr)];
+                    break;
+                }
+                else if($curr == "METH") {
+                    $game_id = $gameIDs[strtoupper($curr)];
+                    break;
+                }
+            }
+
             if ($detail['code'] == trim($favorite['gamecode'])) {
                 array_push($output, [
                     "name" => $detail['name'],
@@ -2836,7 +2854,7 @@ function get_collect_game($account)
                     "gameInfo" => [
                         "gameCode" => $detail['id'],
                         "gameCodeAlias" => isset($detail['alias_code']) ? $detail['alias_code'] : "",
-                        "gameId" => (isset($gameIDs[$detail['platform']])) ? $gameIDs[$detail['platform']] : 1232,
+                        "gameId" => $game_id,
                     ],
                 ]);
             } else {
@@ -2891,11 +2909,3 @@ function set_agent_percentage_default($account, $id)
     $core = new core();
 
     $result = $core->set_agent_percentage_default($account, $id);
-    // return  $result ;
-    return json_encode(array('status' => 1, 'info' => "success"));
-}
-
-function str_contains($haystack, $needle)
-{
-    return $needle !== '' && mb_strpos($haystack, $needle) !== false;
-}

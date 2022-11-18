@@ -38,10 +38,16 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 {
 	$account = strtolower(trim($_POST['username_email']));
 	$password = $_POST['password'];
+
+	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
+		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
+		exit();
+	}
 	
 	$data['referrer'] = $_SERVER['HTTP_HOST'];
 	$data['regTime'] = date("Y-m-d H:i:s");
 	$data['email'] = $_POST['username_email'];
+	$data['uid'] = date('d').mt_rand(52348169, 99871581);
 	$data['nickName'] = "User".mt_rand(2648963, 9895639);
 
 	if ( isset($_POST['promo_code']) && $_POST['promo_code'] !== ""){
@@ -390,15 +396,52 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
                 
                 
-                 $transfertime = $cachFile->get($account,'','data','transfer_limit');
-            if($transfertime){
-               if( (time() - $transfertime['limit_time'])<5 ){ 
-                echo json_encode(array('status'=>0,'info'=>'Operation failed, please wait a few seconds and try again'));
-			exit();
-                
-            }
-            }
-		$re = $core->debit($_SESSION['account'],$_POST['amount'],$_POST['card_number'],$_POST['bank_type'],$_POST['net_work']);
+		$transfertime = $cachFile->get($account,'','data','transfer_limit');
+		if($transfertime){
+			if( (time() - $transfertime['limit_time'])<5 ){ 
+				echo json_encode(array('status'=>0,'info'=>'Operation failed, please wait a few seconds and try again'));
+				exit();
+				
+			}
+		}
+
+		//check min max withdrawal amount
+		$min = 0;
+		$max = 0;
+		$currency = $_POST['bank_type'];
+		$network = $_POST['net_work'];
+		
+		include_once WEB_PATH . "/common/cache_file.class.php";
+		$data_list = $cachFile->get("s6_api", '', 'data', 'currency');
+		$fees = json_decode($data_list);
+		
+		if (is_array($fees->data)) {
+			foreach ($fees->data as $wallet) {
+				$wallet_name = strtoupper($wallet->item_name);
+				if ($wallet_name == $currency ) {
+					foreach ($wallet->chain_list as $chain) {
+						if ($chain->chain_tag == $network ) {
+							$min = (float) $chain->minout;
+							$max = (float) $chain->maxout;
+						}
+						else continue;
+					}
+				}
+				else continue;
+			}
+
+			if ($_POST['amount'] < $min ) {
+				echo json_encode(array('status'=>0,'info'=>'Withdrawal request failed, Minimun withdraw amount invalid'));
+				exit();
+			}
+			
+			if ($_POST['amount'] > $max ) {
+				echo json_encode(array('status'=>0,'info'=>'Withdrawal request failed, Maximun withdraw amount invalid'));
+				exit();
+			}
+		}
+
+		$re = $core->debit($_SESSION['account'],$_POST['amount'],$_POST['card_number'],$currency,$_POST['net_work']);
 		//print_r($re);exit;
                 if($re == 1)
 		{
@@ -1177,7 +1220,7 @@ function loginMember($username, $password)
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'The game account or password is wrong!13'
+			'info'=>'The game account or password is wrong!'
 		], JSON_UNESCAPED_UNICODE);
 	}
 	elseif($re == 1002)
@@ -1334,7 +1377,7 @@ function sendWelcomeEmail()
 			  <tr>
 				<td class="wrapper" align="center" width="100%">
 					<p>
-						<b>Enjoy the new and uncomplicated 999 Games</b>
+						<b>Enjoy the new and uncomplicated 999 game</b>
 					</p>
 					
 					<p>
@@ -1346,7 +1389,7 @@ function sendWelcomeEmail()
 					</p>
 					
 					<p>
-					Remember, your username in 999 Games is: '.$_SESSION['account'].'
+					Remember, your username in 999 game is: '.$_SESSION['account'].'
 					
 					</p>
 					

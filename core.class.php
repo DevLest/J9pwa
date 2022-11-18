@@ -183,6 +183,17 @@ class core
         return $status;
 
     }
+    
+        public function submit_autopromotion($username_email,$promotion_id)
+    {
+//return 1;
+        $client = new PHPRPC_Client(ACTIVITY_URL);
+
+        $status = $client->submit_autopromotion($username_email,$promotion_id);
+
+        return $status;
+
+    }
     /**
 
      *用户支付宝存款  帐号，金额，存款方式，数据信息。
