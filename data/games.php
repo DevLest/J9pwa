@@ -74,7 +74,7 @@
         $platform = str_replace(".webp", "", $image);
         array_push($output, [
             'name' => isset($platformNames[strtoupper($platform)]) ? $platformNames[strtoupper($platform)] : ucwords($platform),
-            'imgURL' => "https://999j9azx.u2d8899.com/j9pwa/images/game_providers_logo/$image",
+            'imgURL' => "https://game999.s3.ap-east-1.amazonaws.com/1223/game_providers_logo/$image",
             'category' => [],
         ]);
     }
