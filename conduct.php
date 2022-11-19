@@ -23,16 +23,8 @@ if(!isset($_SESSION))
 	
     $auth_check = md5($time.$api_key);
     $auth = $_POST['auth'];
-    /*print_r($_POST['auth']);
-    echo "</br>?";
- print_r($auth_check);exit;*/
-    // print_r($_POST['username']);
-//    print_r($_POST['auth']);exit;
     if($auth_check != $auth)
-	{
-		// print_r($auth);
-		// print_r($auth_check);exit;
-	
+	{	
 		echo json_encode(array('status'=>0,'info'=>"Verification failed"));
 		exit();
 	}
