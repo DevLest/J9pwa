@@ -9,7 +9,7 @@
 //error_reporting(E_ALL);
 header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
-//header("Access-Control-Allow-Origin: https://u2daszapp.u2d8899.com");
+//header("Access-Control-Allow-Origin: https://999j9azx.u2d8899.com");
 header("Access-Control-Allow-Credentials:true");
 define("WEB_PATH", __DIR__);
 //error_reporting(E_ALL);
@@ -309,7 +309,7 @@ function get_balance($account, $gameid)
     if (!$result) {
         return json_encode(array('status' => 0, 'info' => 'Query failed'));
     } else {
-        $path = '/www/wwwroot/u2daszapp.u2d8899.com/j9pwa/images/currency';
+        $path = '/www/wwwroot/999j9azx.u2d8899.com/j9pwa/images/currency';
         $files = array_diff(scandir($path), array('.', '..'));
         $output = [];
         $pin_output = [];

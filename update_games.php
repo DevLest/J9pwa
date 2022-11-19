@@ -14,7 +14,7 @@
         exit();
     }
 
-    $file = "/www/wwwroot/u2daszapp.u2d8899.com/j9pwa/data/games.json";
+    $file = "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/data/games.json";
     $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_UNICODE );
     $newJson = [];
 
