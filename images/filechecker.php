@@ -3,14 +3,14 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
     
-    $json = file_get_contents('/www/wwwroot/u2daszapp.u2d8899.com/j9pwa/data/games.json');
+    $json = file_get_contents('/www/wwwroot/999j9azx.u2d8899.com/j9pwa/data/games.json');
     $array = json_decode($json,true);
     $error_images = [];
 
     foreach ( $array as $data ) {
         $path_parts = pathinfo($data['pic']);
 
-        $img = "/www/wwwroot/u2daszapp.u2d8899.com/j9pwa/".str_replace('https://999j9azx.u2d8899.com/j9pwa/','',$data['pic']);
+        $img = "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/".str_replace('https://999j9azx.u2d8899.com/j9pwa/','',$data['pic']);
         try {
             if (file_exists($img)) {
                 if (filesize($img) >= 1) {

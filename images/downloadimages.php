@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
     
-    $json = file_get_contents('/www/wwwroot/u2daszapp.u2d8899.com/j9pwa/images/slots.json');
+    $json = file_get_contents('/www/wwwroot/999j9azx.u2d8899.com/j9pwa/images/slots.json');
     $array = json_decode($json,true);
     $error_images = [];
 
@@ -11,7 +11,7 @@
     {
         $path_parts = pathinfo($data['sourceImge']);
 
-        $img = "/www/wwwroot/u2daszapp.u2d8899.com/j9pwa/images/games/".$data['id'].".webp";
+        $img = "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/images/games/".$data['id'].".webp";
         try
         {
             if (file_exists($img)) 
