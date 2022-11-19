@@ -123,7 +123,7 @@ if(isset($_POST['type']) && $_POST['type'] == "ag")
 function agrecord($account,$page,$starttime,$endtime){
     
  //   echo 526;exit;
-		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -165,7 +165,7 @@ $list= $client->agrecord($account,$page,$starttime,$endtime);
 function uniterecord($account,$page,$starttime,$endtime){
     
  //   echo 526;exit;
-		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -205,7 +205,7 @@ $list= $client->uniterecord($account,$page,$starttime,$endtime);
 }
 function btirecord($account,$page,$starttime,$endtime){
     
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -247,7 +247,7 @@ $list= $client->btirecord($account,$page,$starttime,$endtime);
 
 function imrecord($account,$page,$starttime,$endtime){
     
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -290,7 +290,7 @@ $list= $client->imtyrecord($account,$page,$starttime,$endtime);
 
 function imnativerecord($account,$page,$starttime,$endtime){
     
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -332,7 +332,7 @@ $list= $client->imnativerecord($account,$page,$starttime,$endtime);
 }
 function ibcrecord($account,$page,$starttime,$endtime){
     
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -605,7 +605,7 @@ $pages=500;
 
 function imchessrecord($account,$page,$starttime,$endtime){
     
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -684,7 +684,7 @@ $list= $client->imchessrecord($account,$page,$starttime,$endtime);
     
     function kychessrecord($account,$page,$starttime,$endtime){
     
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -722,7 +722,7 @@ $list= $client->kyqprechord($account,$page,$starttime,$endtime);
 
 function imdjrecord($account,$page,$starttime,$endtime){
     $account='u2da'.$account;
-    		$client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
                
@@ -884,7 +884,7 @@ $params = [
 function bgrecord($account,$page,$starttime,$endtime) {
 
     // http://newrecordliushui.ybet102.com/bg.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
     if($starttime==''||$endtime=='') {
@@ -917,7 +917,7 @@ function bgrecord($account,$page,$starttime,$endtime) {
 function gdrecord($account, $page = 1) {
 
     // http://newrecordliushui.ybet102.com/bg.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
     // if($starttime==''||$endtime=='') {
@@ -950,7 +950,7 @@ function gdrecord($account, $page = 1) {
 function abrecord($account, $page = 1) {
 
     // http://newrecordliushui.ybet102.com/bg.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
     // ALL BET data response from their client name is exacly same as our user account name
@@ -979,7 +979,7 @@ function abrecord($account, $page = 1) {
 function ptrecord($account, $page = 1, $perpage = 200) {
 
     // http://newrecordliushui.ybet102.com/bg.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     // $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
     // ALL BET data response from their client name is exacly same as our user account name
@@ -1291,7 +1291,7 @@ function mgAuthenticate() {   // 认证
 function cqrecord($account, $page = 1) {
 
     // http://newrecordliushui.ybet102.com/cq.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
 
@@ -1321,7 +1321,7 @@ function cqrecord($account, $page = 1) {
 function vrrecord($account, $page = 1) {
 
     // http://newrecordliushui.ybet102.com/bg.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
     // ALL BET data response from their client name is exacly same as our user account name
@@ -1351,7 +1351,7 @@ function vrrecord($account, $page = 1) {
 function cmdrecord($account, $page = 1) {
 
     // http://newrecordliushui.ybet102.com/bg.start.php
-    // $client = new PHPRPC_Client("http://newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+    // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
 
     // ALL BET data response from their client name is exacly same as our user account name
