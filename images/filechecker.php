@@ -10,7 +10,8 @@
     foreach ( $array as $data ) {
         $path_parts = pathinfo($data['pic']);
 
-        $img = "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/".str_replace('https://999j9azx.u2d8899.com/j9pwa/','',$data['pic']);
+        // $img = "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/".str_replace('https://999j9azx.u2d8899.com/j9pwa/','',$data['pic']);
+        $img = $data['pic'];
         try {
             if (file_exists($img)) {
                 if (filesize($img) >= 1) {
