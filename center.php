@@ -1250,10 +1250,10 @@ function sendWelcomeEmail()
 	try {
 		$mail->isSMTP();
 		// $mail->SMTPDebug  = 2;
-		$mail->Host       = 'smtp.zoho.com';
+		$mail->Host       = 'smtpout.secureserver.net';
 		$mail->SMTPAuth   = true;
         $mail->Username = 'support@999.game';
-        $mail->Password = 'DFgTrrMK123';
+        $mail->Password = 'download15895';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
 
@@ -1495,10 +1495,10 @@ function send_verification_email($email)
 	try {
 		$mail->isSMTP();
 		// $mail->SMTPDebug  = 2;
-		$mail->Host       = 'smtp.zoho.com';
+		$mail->Host       = 'smtpout.secureserver.net';
 		$mail->SMTPAuth   = true;
         $mail->Username = 'support@999.game';
-        $mail->Password = 'DFgTrrMK123';
+        $mail->Password = 'download15895';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
 
