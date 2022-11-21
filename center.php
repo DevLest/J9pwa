@@ -354,6 +354,8 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "debit")
 	{
+            
+           // print_r($_POST['amount']);exit;
         
            // login_auth();
 		$account = $_SESSION['account'];
@@ -440,7 +442,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 				exit();
 			}
 		}
-
+//print_r($_POST['amount']);exit;
 		$re = $core->debit($_SESSION['account'],$_POST['amount'],$_POST['card_number'],$currency,$_POST['net_work']);
 		//print_r($re);exit;
                 if($re == 1)

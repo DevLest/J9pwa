@@ -14,7 +14,7 @@
     }
 
     if (isset($_GET['auth_id'])) {
-        include_once (WEB_PATH."../../common/cache_file.class.php");
+        include_once ("../../common/cache_file.class.php");
         $cachFile = new cache_file();
         $data_list = $cachFile->get($_GET['auth_id'],'','data','telegram_oauth');
 
@@ -53,7 +53,7 @@
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://oldfront.u2d8899.com/j9pwa/center.php',
+                CURLOPT_URL => 'https://999j9azx.u2d8899.com/j9pwa/center.php',
                 CURLOPT_FOLLOWLOCATION => 0,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 3,
@@ -133,7 +133,7 @@
     }
 
     function cacheData($data){
-        include_once (WEB_PATH."../../common/cache_file.class.php");
+        include_once ("../../common/cache_file.class.php");
         $cachFile = new cache_file();
         $core = new core();
         $ip = $core->ip_information();
