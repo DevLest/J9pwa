@@ -1361,8 +1361,8 @@ function sendWelcomeEmail()
 				  <table class="section header" cellpadding="0" cellspacing="0" width="100%">
 					<tr>
 					  <td class="main-banner">
-						<a href="http://test999.ued988.vip/?continue=free-bonus" target="_blank">
-						  <img src="https://u2daszapp.u2d8899.com/j9pwa/images/email/main-banner.png" alt="main-mexplay-banner.png" />
+						<a href="https://999.game/?continue=free-bonus" target="_blank">
+						  <img src="https://999j9azx.u2d8899.com/j9pwa/images/email/main-banner.png" alt="main-mexplay-banner.png" />
 						</div>
 					  </td>
 					</tr>
@@ -1400,7 +1400,7 @@ function sendWelcomeEmail()
 					</p>
 					
 					<div class="button-div">
-						<a class="button" href="http://test999.ued988.vip/casino" target="_blank">Play Now</a>
+						<a class="button" href="https://999.game/casino" target="_blank">Play Now</a>
 					</div>
 					
 					<p>
@@ -1408,7 +1408,7 @@ function sendWelcomeEmail()
 					</p>
 					
 					<div class="button-div">
-						<a class="button" href="http://test999.ued988.vip?continue=deposit" target="_blank">Deposit Now</a>
+						<a class="button" href="https://999.game?continue=deposit" target="_blank">Deposit Now</a>
 					</div>
 					
 					<p>
@@ -1426,18 +1426,18 @@ function sendWelcomeEmail()
 				  <table class="footer" cellpadding="0" cellspacing="0" width="100%" style="margin-left: auto; margin-right: auto;">
 					<tr>
 					  <td class="left" align="left">
-						<img src="https://u2daszapp.u2d8899.com/j9pwa/images/email/light-brand-logo.png" alt="light-brand-icon.png" />
+						<img src="https://999j9azx.u2d8899.com/j9pwa/images/email/light-brand-logo.png" alt="light-brand-icon.png" />
 					  </td>
 		
 					  <td class="right" align="right">
 					  	<a href="https://www.facebook.com/mexplay.mx">
-							<img src="https://u2daszapp.u2d8899.com/j9pwa/images/email/fb-icon.png" alt="fb-icon.png" />
+							<img src="https://999j9azx.u2d8899.com/j9pwa/images/email/fb-icon.png" alt="fb-icon.png" />
 						</a>
 						<a href="https://t.me/+P4WogkwLTHNkNzQ9">
-							<img src="https://u2daszapp.u2d8899.com/j9pwa/images/email/telegram-icon.png" alt="telegram-icon.png" />
+							<img src="https://999j9azx.u2d8899.com/j9pwa/images/email/telegram-icon.png" alt="telegram-icon.png" />
 						</a>
 						<a href="http://surl.li/cmuzx">
-							<img src="https://u2daszapp.u2d8899.com/j9pwa/images/email/whatsapp-icon.png" alt="whatsapp-icon.png" />
+							<img src="https://999j9azx.u2d8899.com/j9pwa/images/email/whatsapp-icon.png" alt="whatsapp-icon.png" />
 						</a>
 					  </td>
 					</tr>
@@ -1511,14 +1511,14 @@ function send_verification_email($email)
 		"<div
 			style='
 			width: 100%;
-			background-image: url(https://u2daszapp.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
+			background-image: url(https://999j9azx.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
 			background-size: 100%;
 			background-position: top center;
 			'
 		>
 			<div>
 			<div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-				<img src='https://u2daszapp.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
+				<img src='https://999j9azx.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
 			</div>
 			<div style='width: 100%; height: 3px; display: flex'>
 				<div style='width: 50%; height: 3px; background-color: black'></div>
