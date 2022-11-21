@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials:true");
 
 include_once "../../core.class.php";
-require 'google-api-client/vendor/autoload.php';
+require './google-api-client/vendor/autoload.php';
 
 if (!isset($_SESSION)) {
     session_start();

@@ -7,7 +7,7 @@
 	error_reporting(E_ALL);
 
     include_once ("../../core.class.php");
-    require 'google-api-client/vendor/autoload.php';
+    require './google-api-client/vendor/autoload.php';
 
     if(!isset($_SESSION))
     {
