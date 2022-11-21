@@ -371,12 +371,12 @@ function send_reset_password($data)
             // $mail->SMTPDebug  = 2;
             $mail->Host = 'smtp.zoho.com';
             $mail->SMTPAuth = true;
-            $mail->Username = '999game@mycasinos.online';
+            $mail->Username = 'support@999.game';
             $mail->Password = 'DFgTrrMK123';
             $mail->SMTPSecure = "ssl";
             $mail->Port = 465;
 
-            $mail->setFrom('999game@mycasinos.online', '999 game');
+            $mail->setFrom('support@999.game', '999 game');
             $mail->addAddress($re['email'], $re['realName']);
             $mail->isHTML(true);
 
@@ -412,7 +412,7 @@ function send_reset_password($data)
                         <p style='margin-top: 30px'>Remember to change your temporary password the next time you enter 999 Game</p>
                         <p style='margin-top: 0'>
                         If you have not attempted to change your password, please contact customer service immediately at - or
-                        <a href='mailto:999game@mycasinos.online' target='_blank'>999game@mycasinos.online</a>.
+                        <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.
                         </p>
                         <a
                         href='https://999.game/?reset_password=$base_key'
@@ -498,12 +498,12 @@ function send_verification_email($data)
         // $mail->SMTPDebug  = 2;
         $mail->Host = 'smtp.zoho.com';
         $mail->SMTPAuth = true;
-        $mail->Username = '999game@mycasinos.online';
+        $mail->Username = 'support@999.game';
         $mail->Password = 'DFgTrrMK123';
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
 
-        $mail->setFrom('999game@mycasinos.online', '999 Game');
+        $mail->setFrom('support@999.game', '999 Game');
         $mail->addAddress($data->email, $name);
         $mail->isHTML(true);
 
@@ -535,7 +535,7 @@ function send_verification_email($data)
                     </div>
                     </div>
                     If you have not attempted to verify your email, please contact customer service immediately at - or
-                    <a href='mailto:999game@mycasinos.online' target='_blank'>999game@mycasinos.online</a>.
+                    <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.
                     </p>
                 </div>
                 </div>

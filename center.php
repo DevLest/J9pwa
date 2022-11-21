@@ -1252,12 +1252,12 @@ function sendWelcomeEmail()
 		// $mail->SMTPDebug  = 2;
 		$mail->Host       = 'smtp.zoho.com';
 		$mail->SMTPAuth   = true;
-        $mail->Username = '999game@mycasinos.online';
+        $mail->Username = 'support@999.game';
         $mail->Password = 'DFgTrrMK123';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
 
-        $mail->setFrom('999game@mycasinos.online', '999 Game');
+        $mail->setFrom('support@999.game', '999 Game');
 		$mail->addAddress($_SESSION['email'], $_SESSION['member_name']);
 		$mail->isHTML(true);
 
@@ -1497,12 +1497,12 @@ function send_verification_email($email)
 		// $mail->SMTPDebug  = 2;
 		$mail->Host       = 'smtp.zoho.com';
 		$mail->SMTPAuth   = true;
-        $mail->Username = '999game@mycasinos.online';
+        $mail->Username = 'support@999.game';
         $mail->Password = 'DFgTrrMK123';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
 
-        $mail->setFrom('999game@mycasinos.online', '999 Game');
+        $mail->setFrom('support@999.game', '999 Game');
 		$mail->addAddress($email, $name);
 		$mail->isHTML(true);
 
@@ -1534,7 +1534,7 @@ function send_verification_email($email)
 				</div>
 				</div>
 				If you have not attempted to verify your email, please contact customer service immediately at - or
-				<a href='mailto:999game@mycasinos.online' target='_blank'>999game@mycasinos.online</a>.
+				<a href='mailto:support@999.game' target='_blank'>support@999.game</a>.
 				</p>
 			</div>
 			</div>
