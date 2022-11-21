@@ -187,7 +187,7 @@ class core
         public function submit_autopromotion($username_email,$promotion_id)
     {
 //return 1;
-        $client = new PHPRPC_Client(ACTIVITY_URL);
+        $client = new PHPRPC_Client(PHPRPC_CASHIER);
 
         $status = $client->submit_autopromotion($username_email,$promotion_id);
 
