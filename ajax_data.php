@@ -367,21 +367,21 @@ function get_balance($account, $gameid)
             if (in_array(strtoupper($current), $pinned)) {
                 array_push($pin_output, [
                     "currency" => $current,
-                    "icon" => "https://999j9azx.u2d8899.com/j9pwa/images/currency/$file",
+                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
                     "balance" => $balance,
                 ]);
             }
             else if($current == "mBTC" || $current == "mETH"){
                 array_push($pin_output, [
                     "currency" => $current,
-                    "icon" => "https://999j9azx.u2d8899.com/j9pwa/images/currency/$file",
+                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
                     "balance" => $balance,
                 ]);
             }
             else {
                 array_push($output, [
                     "currency" => $current,
-                    "icon" => "https://999j9azx.u2d8899.com/j9pwa/images/currency/$file",
+                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
                     "balance" => $balance,
                 ]);
             }
@@ -2569,7 +2569,7 @@ function get_imgurl($account)
     $core = new core();
     $result = $core->get_imgurl($account);
 
-    return json_encode(array('status' => 1, 'info' => "https://999j9azx.u2d8899.com/" . $result));
+    return json_encode(array('status' => 1, 'info' => "https://999j9azx.999game.online/" . $result));
 
 }
 

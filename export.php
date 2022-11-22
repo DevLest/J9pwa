@@ -60,7 +60,7 @@ $platformNames = [
 // print_r($data);
 // echo "</pre>";
 
-// $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
+// $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 
 // echo "<pre>";
 // print_r($filedata);
@@ -74,7 +74,7 @@ $platformNames = [
  */
 // if(isset($_POST['export']) && $_POST['export'] == "go") {
 	
-//     $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
+//     $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 
 // 	// Excel file name for download 
 // 	$fileName = "codexworld_export_data-" . date('Ymd') . ".xlsx"; 
@@ -158,7 +158,7 @@ $excelData = implode("\t", array_values($fields)) . "\n";
     // Output each row of the data 
     // while($row = $query->fetch_assoc()){ 
 
-$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
+$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 foreach($filedata as $row) { 
 
     $status = ($row['state'] == 1)?'Enabled':'Disabled'; 

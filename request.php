@@ -385,14 +385,14 @@ function send_reset_password($data)
             "<div
                     style='
                     width: 100%;
-                    background-image: url(https://999j9azx.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
+                    background-image: url(https://999j9azx.999game.online/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
                     background-size: 100%;
                     background-position: top center;
                     '
                 >
                     <div>
                     <div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-                        <img src='https://999j9azx.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
+                        <img src='https://999j9azx.999game.online/j9pwa/images/logo.png' style='width: 15%' />
                     </div>
                     <div style='width: 100%; height: 3px; display: flex'>
                         <div style='width: 50%; height: 3px; background-color: black'></div>
@@ -512,14 +512,14 @@ function send_verification_email($data)
             "<div
                 style='
                 width: 100%;
-                background-image: url(https://999j9azx.u2d8899.com/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
+                background-image: url(https://999j9azx.999game.online/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
                 background-size: 100%;
                 background-position: top center;
                 '
             >
                 <div>
                 <div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-                    <img src='https://999j9azx.u2d8899.com/j9pwa/images/logo.png' style='width: 15%' />
+                    <img src='https://999j9azx.999game.online/j9pwa/images/logo.png' style='width: 15%' />
                 </div>
                 <div style='width: 100%; height: 3px; display: flex'>
                     <div style='width: 50%; height: 3px; background-color: black'></div>

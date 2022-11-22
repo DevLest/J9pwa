@@ -851,7 +851,7 @@ function s6getAddress($email, $password, $network, $currencyId){
     $curl = curl_init();
     
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://999j9azx.u2d8899.com/j9pwa/conduct.php',
+        CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/conduct.php',
         CURLOPT_FOLLOWLOCATION => 0,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT => 3,

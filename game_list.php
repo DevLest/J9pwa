@@ -106,7 +106,7 @@ foreach ($filedata as $detail) {
             array_push($currency_data, [
                 "symbol" => $curr,
                 "gameId" => (isset($gameIDs[strtoupper($curr)])) ? $gameIDs[strtoupper($curr)] : 1240,
-                "icon" => "https://999j9azx.u2d8899.com/j9pwa/images/$curr.svg",
+                "icon" => "https://999j9azx.999game.online/j9pwa/images/$curr.svg",
             ]);
         }
 

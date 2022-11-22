@@ -9,8 +9,8 @@
 
     error_reporting(E_ALL);
 
-    // $file = "https://999j9azx.u2d8899.com/j9pwa/data/games_test.json";
-    $file = "https://999j9azx.u2d8899.com/j9pwa/data/games.json";
+    // $file = "https://999j9azx.999game.online/j9pwa/data/games_test.json";
+    $file = "https://999j9azx.999game.online/j9pwa/data/games.json";
 
     $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_UNICODE );
 
@@ -27,7 +27,7 @@
         "line" => "",
         "jackpot_ticker" => isset($_POST['jackpot_ticker']) ? $_POST['jackpot_ticker'] : "",
         "state" => isset($_POST['status']) ? $_POST['status'] : "",
-        "pic" => isset($_POST['game_code']) ? "https://999j9azx.u2d8899.com/j9pwa/images/games/".$_POST['game_code'].".webp" : "",
+        "pic" => isset($_POST['game_code']) ? "https://999j9azx.999game.online/j9pwa/images/games/".$_POST['game_code'].".webp" : "",
         "tag" => isset($_POST['category']) ? $_POST['category'] : "",
         "sourceImge" => "" ,
         "platform" => isset($_POST['platform']) ? $_POST['platform'] : "",
