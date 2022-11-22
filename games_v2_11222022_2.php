@@ -28,12 +28,6 @@ if (isset($d->type) && $d->type == "get_all_games_data") {
     get_all_games_data();
 }
 
-if (isset($d->type) && $d->type == "get_single_games_data") {
-    get_single_games_data();
-}
-
-
-
 function get_all_games_data()
 {
     $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
@@ -76,11 +70,4 @@ function get_all_games_data()
 
     echo json_encode($response);
     // var_dump($response);
-}
-
-function get_single_games_data()
-{
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
-    $response = $client->get_all_games_data();
-    echo json_encode($response);
 }
