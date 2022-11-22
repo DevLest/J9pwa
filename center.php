@@ -136,7 +136,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}elseif($re == 1001){
 			echo json_encode(array(
 					 'status'=>-2,
-					 'info'=>'The game account or password is wrong!32'
+					 'info'=>'The game account or password is wrong!'
 							), JSON_UNESCAPED_UNICODE);
 			exit();
 		}elseif($re == 1002){
@@ -1123,7 +1123,7 @@ function login_auth(){
 	}elseif($re == 1001){
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'The game account or password is wrong!12'
+				 'info'=>'The game account or password is wrong!'
 						));
 		exit();
 	}elseif($re == 1002){

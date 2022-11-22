@@ -699,13 +699,22 @@ function networkList($data)
                     $address = s6getAddress($data->username_email, $data->password, $chain->chain_tag, $wallet->item_id);
 
                     if ( $address->status == 1 && ($address->info != "" || !is_null($address->info))) {
+                        $fee = $chain->fee;
+                        
+                        if($chain->chain_tag == "erc20") {
+                            $fee = 5;
+                        }
+                        else if ($chain->chain_tag == "trc20") {
+                            $fee = 1.5;
+                        }
+
                         if (in_array(strtoupper($wallet_name), $pinned)) {
                             array_push($pin_network, [
                                 "address" => $address->info, 
                                 "network" => $chain->chain_tag,
                                 "name" => strtoupper($chain->chain_tag),
                                 "currency" => $wallet->item_id,
-                                "fee" => (float) $chain->fee,
+                                "fee" => (float) $fee,
                                 "min" => (float) $chain->minout,
                                 "max" => (float) $chain->maxout,
                             ]);
@@ -716,7 +725,7 @@ function networkList($data)
                                 "network" => $chain->chain_tag,
                                 "name" => strtoupper($chain->chain_tag),
                                 "currency" => $wallet->item_id,
-                                "fee" => (float) $chain->fee,
+                                "fee" => (float) $fee,
                                 "min" => (float) $chain->minout,
                                 "max" => (float) $chain->maxout,
                             ]);
