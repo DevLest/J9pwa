@@ -96,6 +96,9 @@ switch ($data->type) {
     case "free_spin_amount":
         echo free_spin_amount($data);
         break;
+    case "oauth_register":
+        echo oauthRegister($data);
+        break;
 }
 
 function getGameData($category = "", $format = 0, $seach_string = "", $game_code = "")
@@ -1460,4 +1463,44 @@ function free_spin_amount($data)
         return json_encode(['status' => 0, 'info' => "No bonus avaibale for the meantime"]);
     }
 
+}
+
+function oauthRegister($data) {
+    
+	$account = strtolower(trim($data->username_email));
+	$password = $data->password;
+
+	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
+		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
+		exit();
+	}
+	
+	$data['referrer'] = $_SERVER['HTTP_HOST'];
+	$data['regTime'] = date("Y-m-d H:i:s");
+	$data['email'] = $_POST['username_email'];
+	$data['uid'] = date('d').mt_rand(52348169, 99871581);
+	$data['nickName'] = "User".mt_rand(2648963, 9895639);
+
+	$info = $core->member_regist($account, $password, $data);
+
+	if(is_array($info)) {
+		echo loginMember($account, $password);
+	} elseif($info == 1006) {
+		echo json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
+		exit();
+	} elseif($info == 1007) {
+		echo json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
+		exit();
+	} elseif($info == 1008) {
+		echo json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
+		exit();
+	} elseif($info == 1009) {
+		echo json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
+		exit();
+	} else {
+		echo loginMember($_POST['username_email'], $_POST['password']);
+	}
+	send_verification_email($_POST['username_email']);
+	sendWelcomeEmail();
+	exit();
 }

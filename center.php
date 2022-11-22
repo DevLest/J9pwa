@@ -38,20 +38,17 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 {
 	$account = strtolower(trim($_POST['username_email']));
 	$password = $_POST['password'];
-	$verification_code = "";
 
 	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
 		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
 		exit();
 	}
 
-	if ( !isset($_POST['oauth']) ) {
-		if ( !isset($_POST['verification_code']) )
-			echo json_encode(['status' => 0, 'info' => "Please input verification code"]);
-			exit();
-		}
-		$verification_code = $_POST['verification_code'];
-	}
+	// if ( !isset($_POST['verification_code']) ) {
+	// 	echo json_encode(['status' => 0, 'info' => "Please input verification code"]);
+	// 	exit();
+	// }
+	// $verification_code = $_POST['verification_code'];
 	
 	$data['referrer'] = $_SERVER['HTTP_HOST'];
 	$data['regTime'] = date("Y-m-d H:i:s");
@@ -76,14 +73,14 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 	}
 
-	if ( $verification_code != "" ) {
-		$verified = verify_email_code($account, $verification_code);
+	// if ( $verification_code != "" ) {
+	// 	$verified = verify_email_code($account, $verification_code);
 
-		if (!$verified['status']) {
-			echo json_encode($verified);
-			exit();
-		}
-	}
+	// 	if (!$verified['status']) {
+	// 		echo json_encode($verified);
+	// 		exit();
+	// 	}
+	// }
 
 	$info = $core->member_regist($account, $password, $data);
 
