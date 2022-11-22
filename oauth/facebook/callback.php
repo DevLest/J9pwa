@@ -118,6 +118,7 @@
             "last_name" => (empty($userNode->getLastName())) ? "" : $userNode->getLastName(), 
             "birthday" => (empty($userNode->getBirthday())) ? "" : $userNode->getBirthday(), 
             "gender" => (empty($userNode->getGender())) ? 0 : $userNode->getGender(),
+            "oauth" => 1,
         ];
 
         $curl = curl_init();

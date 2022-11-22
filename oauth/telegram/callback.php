@@ -47,7 +47,8 @@
                 "username_email" => $account,
                 "password" => $password,
                 "first_name" => isset($tg_data['first_name']) ? $tg_data['first_name'] : "", 
-                "last_name" => isset($tg_data['last_name']) ? $tg_data['last_name'] : ""
+                "last_name" => isset($tg_data['last_name']) ? $tg_data['last_name'] : "",
+                "oauth" => 1,
             ];
 
             $curl = curl_init();

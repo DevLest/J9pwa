@@ -64,6 +64,7 @@
                 "auth" => $auth,
                 "username_email" => $account,
                 "password" => $password,
+                "oauth" => 1,
             ];
 
             $curl = curl_init();
