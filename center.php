@@ -1214,7 +1214,7 @@ function loginMember($username, $password)
 				'regTime' => $re['regTime'],
 				'is_agent' => $re['is_agent'],
 				'nickName' => $re['nickName'],
-				'uid' => $re['uid'],
+				'userID' => $re['uid'],
                 'agent_percentage' => ($re['agent_percentage'] != "") ? $re['agent_percentage'] * 100 : null,
 				]
 		]);
