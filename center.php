@@ -38,10 +38,19 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 {
 	$account = strtolower(trim($_POST['username_email']));
 	$password = $_POST['password'];
+	$verification_code = "";
 
 	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
 		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
 		exit();
+	}
+
+	if ( !isset($_POST['oauth']) ) {
+		if ( !isset($_POST['verification_code']) )
+			echo json_encode(['status' => 0, 'info' => "Please input verification code"]);
+			exit();
+		}
+		$verification_code = $_POST['verification_code'];
 	}
 	
 	$data['referrer'] = $_SERVER['HTTP_HOST'];
@@ -64,6 +73,15 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 				echo json_encode(['status' => 0, 'info' => "Agent not found! Enter the correct agent name if applicable, leave blank if you don't have it."]);
 				exit();
 			}
+		}
+	}
+
+	if ( $verification_code != "" ) {
+		$verified = verify_email_code($account, $verification_code);
+
+		if (!$verified['status']) {
+			echo json_encode($verified);
+			exit();
 		}
 	}
 
@@ -1554,6 +1572,34 @@ function send_verification_email($email)
 	}
 
 }
+
+
+function verify_email_code($email, $code)
+{
+    include_once WEB_PATH . "/common/cache_file.class.php";
+    $cachFile = new cache_file();
+    $core = new core();
+    $data_list = $cachFile->get($email, '', 'data', 'email_verification_code');
+
+    if ($code == $data_list) {
+        $re = $core->get_memberinfoByEmail($email);
+
+        if (is_array($re)) {
+            $request = $core->set_memberEmailVerified($re['account']);
+
+            if ($request) {
+                return ['status' => 1, 'info' => "Email Verified"];
+            } else {
+                return ['status' => 0, 'info' => 'Error in Verifying email'];
+            }
+
+        }
+    } else {
+        return ['status' => 0, 'info' => 'Error in Verifying email'];
+    }
+
+}
+
 
 
 ?>
