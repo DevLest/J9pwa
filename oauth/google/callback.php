@@ -30,7 +30,7 @@
     
     $client->setClientId("752252740023-ecbtv7ols8gjbsqn05mvc25khka9gosm.apps.googleusercontent.com");
     $client->setClientSecret("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");
-    $client->setRedirectUri("https://999j9azx.u2d8899.com/j9pwa/oauth/google/callback.php");
+    $client->setRedirectUri("https://999j9azx.999game.online/j9pwa/oauth/google/callback.php");
     
     $client->addScope("email");
     $client->addScope("profile");
@@ -69,7 +69,7 @@
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://999j9azx.u2d8899.com/j9pwa/center.php',
+                CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/center.php',
                 CURLOPT_FOLLOWLOCATION => 0,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 3,

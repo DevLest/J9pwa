@@ -14,7 +14,7 @@ $client = new Google_Client();
 
 $client->setClientId("752252740023-ecbtv7ols8gjbsqn05mvc25khka9gosm.apps.googleusercontent.com");
 $client->setClientSecret("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");
-$client->setRedirectUri("https://999j9azx.u2d8899.com/j9pwa/oauth/google/callback.php");
+$client->setRedirectUri("https://999j9azx.999game.online/j9pwa/oauth/google/callback.php");
 
 $client->addScope("email");
 $client->addScope("profile");

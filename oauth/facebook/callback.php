@@ -32,7 +32,7 @@
 	  'default_graph_version' => 'v2.10',
 	]);
 
-    $redirect = "https://999j9azx.u2d8899.com/j9pwa/oauth/facebook/callback.php";
+    $redirect = "https://999j9azx.999game.online/j9pwa/oauth/facebook/callback.php";
 	$permissions  = ['email'];
 
     $helper = $fb->getRedirectLoginHelper();
@@ -123,7 +123,7 @@
         $curl = curl_init();
         
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://999j9azx.u2d8899.com/j9pwa/center.php',
+            CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/center.php',
             CURLOPT_FOLLOWLOCATION => 0,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => 3,

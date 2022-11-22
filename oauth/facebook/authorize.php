@@ -21,7 +21,7 @@
 	]);
 
     $helper = $fb->getRedirectLoginHelper();
-    $redirect = "https://999j9azx.u2d8899.com/j9pwa/oauth/facebook/callback.php";
+    $redirect = "https://999j9azx.999game.online/j9pwa/oauth/facebook/callback.php";
 	$permissions  = ['email'];
 	$loginUrl = $helper->getLoginUrl($redirect,$permissions);
 	
