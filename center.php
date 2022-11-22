@@ -1276,7 +1276,7 @@ function sendWelcomeEmail()
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
 
-        $mail->setFrom('support@999.game', '999 Game');
+        $mail->setFrom('support@999.game', '999Game');
 		$mail->addAddress($_SESSION['email'], $_SESSION['member_name']);
 		$mail->isHTML(true);
 
@@ -1398,7 +1398,7 @@ function sendWelcomeEmail()
 			  <tr>
 				<td class="wrapper" align="center" width="100%">
 					<p>
-						<b>Enjoy the new and uncomplicated 999 game</b>
+						<b>Enjoy the new and uncomplicated 999Game</b>
 					</p>
 					
 					<p>
@@ -1410,24 +1410,16 @@ function sendWelcomeEmail()
 					</p>
 					
 					<p>
-					Remember, your username in 999 game is: '.$_SESSION['account'].'
+					Remember, your username in 999Game is: '.$_SESSION['account'].'
 					
 					</p>
 					
 					<p>
-						We want you to start in the best possible way for this, make your first deposit of at least $200 and we will give you 180% back up to $11,000.
+						We want you to start in the best possible way for this, make your first deposit of at least 10USDT and we will give you 180% back up to 600USDT.
 					</p>
 					
 					<div class="button-div">
 						<a class="button" href="https://999.game/casino" target="_blank">Play Now</a>
-					</div>
-					
-					<p>
-						You can deposit online in less time in a safe, simple and fast way with your debit, credit or cash card at Oxxo, Seven Eleven, BBVA and many more
-					</p>
-					
-					<div class="button-div">
-						<a class="button" href="https://999.game?continue=deposit" target="_blank">Deposit Now</a>
 					</div>
 					
 					<p>
@@ -1449,14 +1441,8 @@ function sendWelcomeEmail()
 					  </td>
 		
 					  <td class="right" align="right">
-					  	<a href="https://www.facebook.com/mexplay.mx">
-							<img src="https://999j9azx.999game.online/j9pwa/images/email/fb-icon.png" alt="fb-icon.png" />
-						</a>
 						<a href="https://t.me/+P4WogkwLTHNkNzQ9">
 							<img src="https://999j9azx.999game.online/j9pwa/images/email/telegram-icon.png" alt="telegram-icon.png" />
-						</a>
-						<a href="http://surl.li/cmuzx">
-							<img src="https://999j9azx.999game.online/j9pwa/images/email/whatsapp-icon.png" alt="whatsapp-icon.png" />
 						</a>
 					  </td>
 					</tr>
@@ -1471,7 +1457,7 @@ function sendWelcomeEmail()
 			  <tr>
 				<td class="wrapper" width="600" align="center">
 				  <p>
-					Copyright@2022 MEXPLAY All rights reserved
+					Copyright@2022 999Game All rights reserved
 				  </p>
 		
 				  <p>
@@ -1521,7 +1507,7 @@ function send_verification_email($email)
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
 
-        $mail->setFrom('support@999.game', '999 Game');
+        $mail->setFrom('support@999.game', '999Game');
 		$mail->addAddress($email, $name);
 		$mail->isHTML(true);
 

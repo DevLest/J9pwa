@@ -376,7 +376,7 @@ function send_reset_password($data)
             $mail->SMTPSecure = "ssl";
             $mail->Port = 465;
 
-            $mail->setFrom('support@999.game', '999 game');
+            $mail->setFrom('support@999.game', '999Game');
             $mail->addAddress($re['email'], $re['realName']);
             $mail->isHTML(true);
 
@@ -401,7 +401,7 @@ function send_reset_password($data)
                     <div style='padding: 1.25rem'>
                         <p style='margin-top: 0'>Hello " . strtoupper($re['firstName']) . ",</p>
                         <p style='margin-top: 0; margin-bottom: 30px'>
-                        Forgot your 999 Game password? For security reasons we have generated a temporary password for you.
+                        Forgot your 999Game password? For security reasons we have generated a temporary password for you.
                         </p>
                         <div style='width: 100%'>
                         <div style='background-color: #0bafe6; border-radius: 10px; padding: 0.5em 1.5em; margin: 0 auto; width: max-content'>
@@ -409,7 +409,7 @@ function send_reset_password($data)
                             <p style='color: white'>Temporal password: $verif_code</p>
                         </div>
                         </div>
-                        <p style='margin-top: 30px'>Remember to change your temporary password the next time you enter 999 Game</p>
+                        <p style='margin-top: 30px'>Remember to change your temporary password the next time you enter 999Game</p>
                         <p style='margin-top: 0'>
                         If you have not attempted to change your password, please contact customer service immediately at - or
                         <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.
@@ -503,7 +503,7 @@ function send_verification_email($data)
         $mail->SMTPSecure = "ssl";
         $mail->Port = 465;
 
-        $mail->setFrom('support@999.game', '999 Game');
+        $mail->setFrom('support@999.game', '999Game');
         $mail->addAddress($data->email, $name);
         $mail->isHTML(true);
 
