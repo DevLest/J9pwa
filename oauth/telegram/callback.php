@@ -42,18 +42,19 @@
             $auth = md5($time . $api_key);
 
             $postData = [
-                "type" => "oauth_register",
+                "type" => "regist",
                 "auth" => $auth,
                 "username_email" => $account,
                 "password" => $password,
                 "first_name" => isset($tg_data['first_name']) ? $tg_data['first_name'] : "", 
                 "last_name" => isset($tg_data['last_name']) ? $tg_data['last_name'] : "",
+                "oauth" => 1,
             ];
 
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/request.php',
+                CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/center.php',
                 CURLOPT_FOLLOWLOCATION => 0,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 3,

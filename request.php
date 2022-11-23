@@ -10,9 +10,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-//Throttling | 5  mins per IP payment request
-IPThrottling();
-
 $data = (object) $_POST;
 
 if (isset($data->debug)) {
@@ -97,7 +94,7 @@ switch ($data->type) {
         echo free_spin_amount($data);
         break;
     case "oauth_register":
-        echo oauthRegister($data);
+        // echo oauthRegister($data);
         break;
 }
 
@@ -248,34 +245,6 @@ function removeBomUtf8($s)
         return substr($s, 3);
     } else {
         return $s;
-    }
-}
-
-function IPThrottling()
-{
-    $core = new core();
-    $ips = $core->ip_information();
-
-    if (isset($_SESSION['throttle_depostRequest']) && $_SESSION['throttle_depostRequest'] == 1) {
-
-        if (isset($_SESSION['throttle_depostRequest']) && $_SESSION['throttle_depostRequest'] == 0) {
-            $now = new DateTime();
-            $then = new DateTime(date('Y-m-d', strtotime($_SESSION['throttle_date'])));
-            $diff = $now->diff($then);
-
-            if ($diff->format('%i') <= 5) {
-                echo json_encode(['status' => 0, 'info' => $diff->format('Hello, to provide you with a better user experience, to ensure the security of your account and to prevent IP monitoring. Your last request was %i minutes %s seconds ago, please wait 5 minutes before making a recharge request or contact customer service online for assistance. Happy gaming!')], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-                die;
-            } else {
-                $_SESSION['throttle_date'] = date('Y-m-d H:i:s');
-                $_SESSION['throttle_depostRequest'] = 0;
-            }
-        } else {
-            $_SESSION['throttle_date'] = date('Y-m-d H:i:s');
-            $_SESSION['throttle_depostRequest'] = 0;
-        }
-    } else {
-        $_SESSION['throttle_depostRequest'] = 0;
     }
 }
 
@@ -1098,86 +1067,90 @@ function create_md5content($id, $account, $email, $time)
 
 function loginMember($username, $password)
 {
-    $account = strtolower(trim($username));
-    $password = trim($password);
+	$account = strtolower(trim($username));
+	$password = trim($password);
+	
+	$core = new core();
 
-    $core = new core();
+	//check reset password request
+	$reset = $core->check_password_reset($account,$password);
+	if(is_array($reset))
+	{
+		$add_time = date("Y-m-d H:i:s",(time()-120));
 
-    //check reset password request
-    $reset = $core->check_password_reset($account, $password);
-    if (is_array($reset)) {
-        $add_time = date("Y-m-d H:i:s", (time() - 120));
+		if ( $reset['add_time'] < $add_time )
+		{
+			return json_encode(['status'=>0,'info'=>'Temporary password expired'], JSON_UNESCAPED_UNICODE);
+		}
 
-        if ($reset['add_time'] < $add_time) {
-            return json_encode(['status' => 0, 'info' => 'Temporary password expired'], JSON_UNESCAPED_UNICODE);
-        }
+		return json_encode([ 'status' => 2, 'info' => "?reset_password=".$reset['md5content']]);
+	}
 
-        return json_encode(['status' => 2, 'info' => "?reset_password=" . $reset['md5content']]);
-    }
+	$re = $core->member_login($account,$password);
+	
+	if(is_array($re))
+	{
+		$_SESSION['account'] = $re['account'];
+		$_SESSION['balance'] = $re['balance'];
+		$_SESSION['member_name'] = $re['realName'];
+		$_SESSION['member_type'] = $re['memberType'];
+		$_SESSION['password'] = $password;
+		$_SESSION['levelID'] = $re['levelID'];
+		$_SESSION['email'] = $re['email'];
+		setcookie("account", $_SESSION['account'], time()+86400);
+		setcookie("member_name", urlencode($_SESSION['member_name']), time()+86400);
 
-    $emailAccount = $core->get_memberinfoByEmail($username);
+		$imageResult = $core->get_imgurl($account);
 
-    if (is_array($emailAccount)) {
-        $account = $emailAccount['account'];
-    }
-
-    $re = $core->member_login($account, $password);
-
-    if (is_array($re)) {
-        $_SESSION['account'] = $re['account'];
-        $_SESSION['balance'] = $re['balance'];
-        $_SESSION['member_name'] = $re['realName'];
-        $_SESSION['member_type'] = $re['memberType'];
-        $_SESSION['password'] = $password;
-        $_SESSION['levelID'] = $re['levelID'];
-        $_SESSION['email'] = $re['email'];
-        setcookie("account", $_SESSION['account'], time() + 86400);
-        setcookie("member_name", urlencode($_SESSION['member_name']), time() + 86400);
-
-        $imageResult = $core->get_imgurl($account);
-
-        return json_encode([
-            'status' => 1,
-            'info' => [
-                'username' => $re['account'],
-                'balance' => $re['balance'],
-                'realName' => $re['realName'],
-                'email' => $re['email'],
+		return json_encode([
+			'status'=>1,
+			'info'=> [
+				'username' => $re['account'],
+				'balance' => $re['balance'],
+				'realName' => $re['realName'],
+				'password' => $password,
+				'email' => $re['email'],
                 'email_verified' => $re['email_verified'],
-                'sex' => ($re['sex']) ? "F" : "M",
-                'birthday' => $re['birthday'],
-                'phone' => $re['telephone'],
-                'pic' => $imageResult,
-                'first_name' => $re['firstName'],
-                'middle_name' => $re['middleName'],
-                'last_name' => $re['lastName'],
-                'city' => $re['city'],
-                'state' => $re['state'],
-                'landline' => $re['landline'],
-                'postal' => $re['postal'],
-                'regTime' => $re['regTime'],
-                'is_agent' => $re['is_agent'],
-				'userID' => $re['uid'],
+				'sex' => ($re['sex']) ? "F" : "M",
+				'birthday' => $re['birthday'],
+				'phone' => $re['telephone'],
+				'pic' => $imageResult,
+				'first_name' => $re['firstName'],
+				'middle_name' => $re['middleName'],
+				'last_name' => $re['lastName'],
+				'city' => $re['city'],
+				'state' => $re['state'],
+				'landline' => $re['landline'],
+				'postal' => $re['postal'],
+				'regTime' => $re['regTime'],
+				'is_agent' => $re['is_agent'],
 				'nickName' => $re['nickName'],
+				'userID' => $re['uid'],
                 'agent_percentage' => ($re['agent_percentage'] != "") ? $re['agent_percentage'] * 100 : null,
-            ],
-        ]);
-    } elseif ($re == 1001) {
-        return json_encode([
-            'status' => 0,
-            'info' => 'The game account or password is wrong!',
-        ], JSON_UNESCAPED_UNICODE);
-    } elseif ($re == 1002) {
-        return json_encode([
-            'status' => 0,
-            'info' => 'The account is locked, please contact online customer service!',
-        ], JSON_UNESCAPED_UNICODE);
-    } else {
-        return json_encode([
-            'status' => 0,
-            'info' => 'System error. Try again later!',
-        ], JSON_UNESCAPED_UNICODE);
-    }
+				]
+		]);
+	}
+	elseif($re == 1001)
+	{
+		return json_encode([
+			'status'=>0,
+			'info'=>'The game account or password is wrong!'
+		], JSON_UNESCAPED_UNICODE);
+	}
+	elseif($re == 1002)
+	{
+		return json_encode([
+			'status'=>0,
+			'info'=>'The account is locked, please contact online customer service!'
+		], JSON_UNESCAPED_UNICODE);
+	}
+	else
+	{
+		return json_encode([
+			'status'=>0,
+			'info'=>'System error. Try again later!'
+		], JSON_UNESCAPED_UNICODE);
+	}
 }
 
 function game_summary($data)
@@ -1465,38 +1438,38 @@ function free_spin_amount($data)
 
 }
 
-function oauthRegister($params) {
+// function oauthRegister($params) {
     
-	$account = strtolower(trim($params->username_email));
-	$password = $params->password;
+// 	$account = strtolower(trim($params->username_email));
+// 	$password = $params->password;
 
-	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
-		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
-		exit();
-	}
+// 	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
+// 		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
+// 		exit();
+// 	}
 	
-	$data['referrer'] = $_SERVER['HTTP_HOST'];
-	$data['regTime'] = date("Y-m-d H:i:s");
-	$data['email'] = $_POST['username_email'];
-	$data['uid'] = date('d').mt_rand(52348169, 99871581);
-	$data['nickName'] = "User".mt_rand(2648963, 9895639);
+// 	$data['referrer'] = $_SERVER['HTTP_HOST'];
+// 	$data['regTime'] = date("Y-m-d H:i:s");
+// 	$data['email'] = $_POST['username_email'];
+// 	$data['uid'] = date('d').mt_rand(52348169, 99871581);
+// 	$data['nickName'] = "User".mt_rand(2648963, 9895639);
 
-    $core = new core();
-	$info = $core->member_regist($account, $password, $data);
+//     $core = new core();
+// 	$info = $core->member_regist($account, $password, $data);
 
-	if(is_array($info)) {
-        sendWelcomeEmail();
-		return loginMember($account, $password);
-	} elseif($info == 1006) {
-		return json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
-	} elseif($info == 1007) {
-		return json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
-	} elseif($info == 1008) {
-		return json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
-	} elseif($info == 1009) {
-		return json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
-	} else {
-        sendWelcomeEmail();
-		return loginMember($_POST['username_email'], $_POST['password']);
-	}
-}
+// 	if(is_array($info)) {
+//         sendWelcomeEmail();
+// 		return loginMember($account, $password);
+// 	} elseif($info == 1006) {
+// 		return json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
+// 	} elseif($info == 1007) {
+// 		return json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
+// 	} elseif($info == 1008) {
+// 		return json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
+// 	} elseif($info == 1009) {
+// 		return json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
+// 	} else {
+//         sendWelcomeEmail();
+// 		return loginMember($_POST['username_email'], $_POST['password']);
+// 	}
+// }

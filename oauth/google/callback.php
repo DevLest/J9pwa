@@ -60,16 +60,17 @@
             $time = substr(time(), 0, -3);
             $auth = md5($time . $api_key);
             $postData = [
-                "type" => "oauth_register",
+                "type" => "regist",
                 "auth" => $auth,
                 "username_email" => $account,
                 "password" => $password,
+                "oauth" => 1,
             ];
 
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/request.php',
+                CURLOPT_URL => 'https://999j9azx.999game.online/j9pwa/center.php',
                 CURLOPT_FOLLOWLOCATION => 0,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 3,
