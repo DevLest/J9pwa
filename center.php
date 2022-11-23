@@ -104,6 +104,11 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	} else {
 		echo loginMember($_POST['username_email'], $_POST['password']);
 	}
+	
+	if ( $verification_code != "" ) {
+		$request = $core->set_memberEmailVerified($account);
+	}
+	
 	sendWelcomeEmail();
 	exit();
 	
@@ -1563,24 +1568,12 @@ function send_verification_email($email)
 
 function verify_email_code($email, $code)
 {
-    include_once "/common/cache_file.class.php";
+    include_once "common/cache_file.class.php";
     $cachFile = new cache_file();
-    $core = new core();
     $data_list = $cachFile->get($email, '', 'data', 'email_verification_code');
 
     if ($code == $data_list) {
-        $re = $core->get_memberinfoByEmail($email);
-
-        if (is_array($re)) {
-            $request = $core->set_memberEmailVerified($re['account']);
-
-            if ($request) {
-                return ['status' => 1, 'info' => "Email Verified"];
-            } else {
-                return ['status' => 0, 'info' => 'Error in Verifying email | Please contact your administrator'];
-            }
-
-        }
+		return ['status' => 1, 'info' => "Email Verified"];
     } else {
         return ['status' => 0, 'info' => 'Error in Verifying email | Code not matched'];
     }
