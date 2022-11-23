@@ -144,7 +144,7 @@
     }
 
     function cacheData($data){
-	    include_once (WEB_PATH."../../common/cache_file.class.php");
+	    include_once ("../../common/cache_file.class.php");
         $cachFile = new cache_file();
         $core = new core();
         $ip = $core->ip_information();
