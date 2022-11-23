@@ -44,11 +44,11 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		exit();
 	}
 
-	// if ( !isset($_POST['verification_code']) ) {
-	// 	echo json_encode(['status' => 0, 'info' => "Please input verification code"]);
-	// 	exit();
-	// }
-	// $verification_code = $_POST['verification_code'];
+	if ( !isset($_POST['verification_code']) ) {
+		echo json_encode(['status' => 0, 'info' => "Please input verification code"]);
+		exit();
+	}
+	$verification_code = $_POST['verification_code'];
 	
 	$data['referrer'] = $_SERVER['HTTP_HOST'];
 	$data['regTime'] = date("Y-m-d H:i:s");
@@ -73,14 +73,14 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 	}
 
-	// if ( $verification_code != "" ) {
-	// 	$verified = verify_email_code($account, $verification_code);
+	if ( $verification_code != "" ) {
+		$verified = verify_email_code($account, $verification_code);
 
-	// 	if (!$verified['status']) {
-	// 		echo json_encode($verified);
-	// 		exit();
-	// 	}
-	// }
+		if (!$verified['status']) {
+			echo json_encode($verified);
+			exit();
+		}
+	}
 
 	$info = $core->member_regist($account, $password, $data);
 
@@ -101,7 +101,6 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	} else {
 		echo loginMember($_POST['username_email'], $_POST['password']);
 	}
-	send_verification_email($_POST['username_email']);
 	sendWelcomeEmail();
 	exit();
 	
@@ -1445,7 +1444,7 @@ function sendWelcomeEmail()
 					</tr>
 				  </table>
 				</td>
-			  </tr>
+			  </tr> 
 			</tbody>
 		  </table>
 		

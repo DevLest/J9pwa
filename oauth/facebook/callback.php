@@ -15,7 +15,7 @@
     }
 
     if (isset($_GET['auth_id'])) {
-        include_once (WEB_PATH."../../common/cache_file.class.php");
+        include_once ("../../common/cache_file.class.php");
         $cachFile = new cache_file();
         $data_list = $cachFile->get($_GET['auth_id'],'','data','fb_oauth');
 

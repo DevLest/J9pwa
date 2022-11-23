@@ -1465,10 +1465,10 @@ function free_spin_amount($data)
 
 }
 
-function oauthRegister($data) {
+function oauthRegister($params) {
     
-	$account = strtolower(trim($data->username_email));
-	$password = $data->password;
+	$account = strtolower(trim($params->username_email));
+	$password = $params->password;
 
 	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
 		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
@@ -1481,26 +1481,26 @@ function oauthRegister($data) {
 	$data['uid'] = date('d').mt_rand(52348169, 99871581);
 	$data['nickName'] = "User".mt_rand(2648963, 9895639);
 
+    $core = new core();
 	$info = $core->member_regist($account, $password, $data);
 
 	if(is_array($info)) {
-		echo loginMember($account, $password);
+		return loginMember($account, $password);
 	} elseif($info == 1006) {
-		echo json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
+		return json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
 		exit();
 	} elseif($info == 1007) {
-		echo json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
+		return json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
 		exit();
 	} elseif($info == 1008) {
-		echo json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
+		return json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
 		exit();
 	} elseif($info == 1009) {
-		echo json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
+		return json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
 		exit();
 	} else {
-		echo loginMember($_POST['username_email'], $_POST['password']);
+		return loginMember($_POST['username_email'], $_POST['password']);
 	}
-	send_verification_email($_POST['username_email']);
 	sendWelcomeEmail();
 	exit();
 }
