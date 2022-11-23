@@ -1256,6 +1256,8 @@ function sendWelcomeEmail()
         $mail->Password = 'download15895';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
+		$mail->AddAttachment( "data/Bonus terms and conditions.pdf" , 'Bonus terms and conditions.pdf' );
+		$mail->AddAttachment( "data/Terms and Conditions.pdf" , 'Terms and Conditions.pdf' );
 
         $mail->setFrom('support@999.game', '999 Game');
 		$mail->addAddress($_SESSION['email'], $_SESSION['member_name']);
