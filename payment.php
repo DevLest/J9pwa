@@ -701,11 +701,13 @@ function networkList($data)
                     if ( $address->status == 1 && ($address->info != "" || !is_null($address->info))) {
                         $fee = $chain->fee;
                         
-                        if($chain->chain_tag == "erc20") {
-                            $fee = 5;
-                        }
-                        else if ($chain->chain_tag == "trc20") {
-                            $fee = 1.5;
+                        if ($wallet_name == "USDT") {
+                            if($chain->chain_tag == "erc20") {
+                                $fee = 5;
+                            }
+                            else if ($chain->chain_tag == "trc20") {
+                                $fee = 1.5;
+                            }
                         }
 
                         if (in_array(strtoupper($wallet_name), $pinned)) {
