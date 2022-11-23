@@ -360,7 +360,7 @@ function autopromotion_list($data)
     }
 
     $client = new PHPRPC_Client(SERVER_URL);
-    $results = unserialize($client->web_autopromotion_active($data->username_email, $data->amount, 1));
+    $results = unserialize($client->web_autopromotion_active($data->username_email));
     if (is_array($results)) {
         unset($results['status']);
         foreach ($results as $index => $result) {
