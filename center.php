@@ -1563,7 +1563,7 @@ function send_verification_email($email)
 
 function verify_email_code($email, $code)
 {
-    include_once WEB_PATH . "/common/cache_file.class.php";
+    include_once "/common/cache_file.class.php";
     $cachFile = new cache_file();
     $core = new core();
     $data_list = $cachFile->get($email, '', 'data', 'email_verification_code');
@@ -1577,12 +1577,12 @@ function verify_email_code($email, $code)
             if ($request) {
                 return ['status' => 1, 'info' => "Email Verified"];
             } else {
-                return ['status' => 0, 'info' => 'Error in Verifying email'];
+                return ['status' => 0, 'info' => 'Error in Verifying email | Please contact your administrator'];
             }
 
         }
     } else {
-        return ['status' => 0, 'info' => 'Error in Verifying email'];
+        return ['status' => 0, 'info' => 'Error in Verifying email | Code not matched'];
     }
 
 }
