@@ -7,7 +7,7 @@
 			
 			$.ajax({
 			    type: "POST",
-				url: "https://999j9azx.u2d8899.com/j9pwa/request.php",
+				url: "https://999j9azx.999game.online/j9pwa/request.php",
 				data: {
 					type: "play_game",
 					gameCode: val.code,
