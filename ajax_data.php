@@ -309,7 +309,7 @@ function get_balance($account, $gameid)
     if (!$result) {
         return json_encode(array('status' => 0, 'info' => 'Query failed'));
     } else {
-        $path = '/www/wwwroot/999j9azx.999game.online/j9pwa/images/currency';
+        $path = 'images/currency';
         $files = array_diff(scandir($path), array('.', '..'));
         $output = [];
         $pin_output = [];
