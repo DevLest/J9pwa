@@ -109,7 +109,7 @@
         $auth = md5($time.$api_key);
 
         $postData = [
-            "type" => "regist",
+            "submit_type" => "regist",
             "auth" => $auth,
             "username_email" => $account,
             "password" => $password,
