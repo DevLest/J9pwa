@@ -1485,22 +1485,18 @@ function oauthRegister($params) {
 	$info = $core->member_regist($account, $password, $data);
 
 	if(is_array($info)) {
+        sendWelcomeEmail();
 		return loginMember($account, $password);
 	} elseif($info == 1006) {
 		return json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
-		exit();
 	} elseif($info == 1007) {
 		return json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
-		exit();
 	} elseif($info == 1008) {
 		return json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
-		exit();
 	} elseif($info == 1009) {
 		return json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
-		exit();
 	} else {
+        sendWelcomeEmail();
 		return loginMember($_POST['username_email'], $_POST['password']);
 	}
-	sendWelcomeEmail();
-	exit();
 }
