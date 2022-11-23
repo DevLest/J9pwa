@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
     
-    $json = file_get_contents('/www/wwwroot/999j9azx.u2d8899.com/j9pwa/data/games.json');
+    $json = file_get_contents('/www/wwwroot/999j9azx.999game.online/j9pwa/data/games.json');
     $array = json_decode($json,true);
     $error_images = [];
 
