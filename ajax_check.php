@@ -37,9 +37,16 @@ function get_promotion_content($id){
                 	//return $result;
 	$result =unserialize($result);
 	if($result){
-	
-		return json_encode(array("status"=>1,"info"=>$result[0]['content']));
-	}else{
+		$link_pos = strpos($result[0]['content'], "href");
+
+		$href = substr($result[0]['content'], $link_pos);
+
+		$items = explode("/", $href);
+
+		$new_string = str_replace($items[2],$_SERVER['HTTP_HOST'],$result[0]['content']);
+		
+		return json_encode(array("status"=>1,"info"=>$new_string));
+	} else{
 		return json_encode(array("status"=>0,"info"=>"Unsuccessful offer"));
 	}
 }
