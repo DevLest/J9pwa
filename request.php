@@ -378,7 +378,7 @@ function send_reset_password($data)
                         <div style='width: 100%'>
                         <div style='background-color: #0bafe6; border-radius: 10px; padding: 0.5em 1.5em; margin: 0 auto; width: max-content'>
                             <p style='color: white'>Username: " . $re['account'] . "</p>
-                            <p style='color: white'>Temporal password: $verif_code</p>
+                            <p style='color: white'>Temporary password: $verif_code</p>
                         </div>
                         </div>
                         <p style='margin-top: 30px'>Remember to change your temporary password the next time you enter 999Game</p>
