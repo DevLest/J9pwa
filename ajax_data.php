@@ -314,29 +314,47 @@ function get_balance($account, $gameid)
         $output = [];
         $pin_output = [];
 
-        $skip_currency = [
-            "ZRX",
-            "ZIL",
+        // $skip_currency = [
+        //     "ZRX",
+        //     "ZIL",
+        //     "XRP",
+        //     "UMA",
+        //     "STORJ",
+        //     "REEF",
+        //     "BTT(NEW)",
+        //     "LAZIO",
+        //     "GLM",
+        //     "BSW",
+        //     "BFG",
+        //     "BABY",
+        //     "ALU",
+        //     "AIRT",
+        //     "MATIC",
+        //     "SOL",
+        //     "ONT",
+        //     "LINK",
+        //     "HOT",
+        //     "DASH",
+        //     "BTT(OLD)",
+        //     "DAI",
+        // ];
+       
+
+        $active_currencies = [
+            "BTC",
+            "ETH",
+            "WIN",
+            "BNB",
+            "TRX",
+            "USDT", 
+            "BCH", 
+            "LTC", 
+            "DOGE",
             "XRP",
-            "UMA",
-            "STORJ",
-            "REEF",
-            "BTT(NEW)",
-            "LAZIO",
-            "GLM",
-            "BSW",
-            "BFG",
-            "BABY",
-            "ALU",
-            "AIRT",
-            "MATIC",
-            "SOL",
-            "ONT",
-            "LINK",
-            "HOT",
-            "DASH",
-            "BTT(OLD)",
-            "DAI",
+            "ADA",
+            "TUSD",
+            "mBTC",
+            "mETH"
         ];
 
         $pinned = [
@@ -356,9 +374,9 @@ function get_balance($account, $gameid)
             $current = str_replace(".png", "", $file);
             $balance = 0.00;
 
-            if (in_array($current, $skip_currency)) continue;
+            if (in_array($current, $active_currencies) == false) continue;
             foreach ($result as $currency => $value) {
-                if (in_array($currency, $skip_currency)) continue;
+                if (in_array($currency, $active_currencies) == false) continue;
                 if ($currency == $current) {
                     $balance = (float) $value;
                 }

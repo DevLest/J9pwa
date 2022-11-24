@@ -662,7 +662,25 @@ function IPThrottling()
 
 function networkList($data)
 {
-    $coins = ["USDT", "ETH", "BTC", "AAVE", "ADA", "AIRT", "ALU", "AVAX", "BABY", "BCH", "BFG", "BNB", "BSW", "BTT", "C98", "CAKE", "CHZ", "COMP", "DAI", "DASH", "DOGE", "ENJ", "ETC", "FTM", "GLM", "HOT", "LAZIO", "LINK", "LTC", "MATIC", "MKR", "OMG", "ONT", "PORTO", "REEF", "SHIB", "SNX", "STORJ", "SUSHI", "TRX","UMA","UNI","USDC","XLM","YFI","ZIL","ZRX"];
+    // $coins = ["USDT", "ETH", "BTC", "AAVE", "ADA", "AIRT", "ALU", "AVAX", "BABY", "BCH", "BFG", "BNB", "BSW", "BTT", "C98", "CAKE", "CHZ", "COMP", "DAI", "DASH", "DOGE", "ENJ", "ETC", "FTM", "GLM", "HOT", "LAZIO", "LINK", "LTC", "MATIC", "MKR", "OMG", "ONT", "PORTO", "REEF", "SHIB", "SNX", "STORJ", "SUSHI", "TRX","UMA","UNI","USDC","XLM","YFI","ZIL","ZRX"];
+
+    $coins = [
+        "BTC",
+        "ETH",
+        "WIN",
+        "BNB",
+        "TRX",
+        "USDT", 
+        "BCH", 
+        "LTC", 
+        "DOGE",
+        "XRP",
+        "ADA",
+        "TUSD",
+        "mBTC",
+        "mETH"
+    ];
+    
     $network = [];
     $pin_network = [];
     
