@@ -385,21 +385,21 @@ function get_balance($account, $gameid)
             if (in_array(strtoupper($current), $pinned)) {
                 array_push($pin_output, [
                     "currency" => $current,
-                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
+                    "icon" => "https://img.999.game/currency/$file",
                     "balance" => $balance,
                 ]);
             }
             else if($current == "mBTC" || $current == "mETH"){
                 array_push($pin_output, [
                     "currency" => $current,
-                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
+                    "icon" => "https://img.999.game/currency/$file",
                     "balance" => $balance,
                 ]);
             }
             else {
                 array_push($output, [
                     "currency" => $current,
-                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
+                    "icon" => "https://img.999.game/currency/$file",
                     "balance" => $balance,
                 ]);
             }
