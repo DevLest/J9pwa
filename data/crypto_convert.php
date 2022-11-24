@@ -92,4 +92,4 @@ foreach ($coins as $index => $coin) {
 //     ]);
 // }
 
-file_put_contents("/data/999j9azx.999game.online/j9pwa/data/coins.json", json_encode($currency));
+file_put_contents("/data/999j9azx.u2d8899.com/j9pwa/data/coins.json", json_encode($currency));
