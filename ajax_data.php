@@ -374,35 +374,37 @@ function get_balance($account, $gameid)
             $current = str_replace(".png", "", $file);
             $balance = 0.00;
 
-            if (in_array($current, $active_currencies) == false) continue;
-            foreach ($result as $currency => $value) {
-                if (in_array($currency, $active_currencies) == false) continue;
-                if ($currency == $current) {
-                    $balance = (float) $value;
+            if (in_array($current, $active_currencies)) {
+                foreach ($result as $currency => $value) {
+                    if (in_array($currency, $active_currencies)) {
+                        if ($currency == $current) {
+                            $balance = (float) $value;
+                        }
+                    } 
                 }
-            }
-            
-            if (in_array(strtoupper($current), $pinned)) {
-                array_push($pin_output, [
-                    "currency" => $current,
-                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
-                    "balance" => $balance,
-                ]);
-            }
-            else if($current == "mBTC" || $current == "mETH"){
-                array_push($pin_output, [
-                    "currency" => $current,
-                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
-                    "balance" => $balance,
-                ]);
-            }
-            else {
-                array_push($output, [
-                    "currency" => $current,
-                    "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
-                    "balance" => $balance,
-                ]);
-            }
+                
+                if (in_array(strtoupper($current), $pinned)) {
+                    array_push($pin_output, [
+                        "currency" => $current,
+                        "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
+                        "balance" => $balance,
+                    ]);
+                }
+                else if($current == "mBTC" || $current == "mETH"){
+                    array_push($pin_output, [
+                        "currency" => $current,
+                        "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
+                        "balance" => $balance,
+                    ]);
+                }
+                else {
+                    array_push($output, [
+                        "currency" => $current,
+                        "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
+                        "balance" => $balance,
+                    ]);
+                }
+            }   
         }
         
         $temp_arr = [];
