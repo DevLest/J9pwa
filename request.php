@@ -684,7 +684,7 @@ function send_verification_email($data)
                                     <div
                                     style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
                                     If you did not make this request,<br>please contact customer service immediately at
-                                    support@999.game.</div>
+				                    <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.</div>
                                 </td>
                                 </tr>
                             </table>
