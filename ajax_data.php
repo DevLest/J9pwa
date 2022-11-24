@@ -341,8 +341,6 @@ function get_balance($account, $gameid)
        
 
         $active_currencies = [
-            "BTC",
-            "ETH",
             "WIN",
             "BNB",
             "TRX",
