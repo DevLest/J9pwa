@@ -9,7 +9,7 @@
 
     error_reporting(E_ALL);
 
-    // $file = "https://999j9azx.999game.online/j9pwa/data/games_test.json";
+    // $file = "https://999j9azx.u2d8899.com/j9pwa/data/games_test.json";
     $file = "https://999j9azx.999game.online/j9pwa/data/games.json";
 
     $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_UNICODE );
@@ -27,16 +27,34 @@
         "line" => "",
         "jackpot_ticker" => isset($_POST['jackpot_ticker']) ? $_POST['jackpot_ticker'] : "",
         "state" => isset($_POST['status']) ? $_POST['status'] : "",
-        "pic" => isset($_POST['game_code']) ? "https://999j9azx.999game.online/j9pwa/images/games/".$_POST['game_code'].".webp" : "",
+        "pic" => isset($_POST['game_code']) ? "https://999j9azx.u2d8899.com/j9pwa/images/games/".$_POST['game_code'].".webp" : "",
         "tag" => isset($_POST['category']) ? $_POST['category'] : "",
         "sourceImge" => "" ,
         "platform" => isset($_POST['platform']) ? $_POST['platform'] : "",
-        "alias_code" => isset($_POST['alias_code']) ? $_POST['alias_code'] : ""
+        "alias_code" => isset($_POST['alies_code']) ? $_POST['alies_code'] : ""
     ]);
 
+    if(isset($_FILES["game_image"])) {
+        $filename = $_FILES["game_image"]["name"];
+        $tempname = $_FILES["game_image"]["tmp_name"]; 
+        $upload_name = isset($_POST["game_code"]) ? "/".$_POST["game_code"].".webp" : "";
+        $destination = "images/games";
+
+        if(!move_uploaded_file($tempname, $destination.$upload_name)) {
+            echo json_encode(['status'=>0,'info'=> "Error uploading image! failed to save the game."]);
+            exit();
+        }
+    }
+
     array_push($filedata, $new_game[0]);
-    
-    json_encode(['status'=>0,'info'=> $new_game]);
+    $games = json_encode($filedata);
+
+    if(file_put_contents("/www/wwwroot/999j9azx.999game.online/j9pwa/data/games.json", $games) === false) {
+        echo json_encode(['status'=>0,'info'=> "Error saving game!"]);
+        exit();
+    }
+
+    echo json_encode(['status'=>1,'info'=> $new_game]);
     
     function removeBomUtf8($s){
         if(substr($s,0,3)==chr(hexdec('EF')).chr(hexdec('BB')).chr(hexdec('BF'))){
