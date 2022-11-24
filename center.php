@@ -1477,7 +1477,7 @@ function sendWelcomeEmail()
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
 										We want you to start in the best possible way for this, make your first deposit of at least
-										$200 and we will give you 180% back up to $11,000.</div>
+										10USDT and we will give you 180% back up to 600USDT.</div>
 									</td>
 									</tr>
 									<tr>
