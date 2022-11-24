@@ -1287,195 +1287,196 @@ function sendWelcomeEmail()
 		$mail->isHTML(true);
 
 		$mail->Subject = 'Hurry! There is a special unlimited 180% bonus for you today!';
-		$mail->Body    = 
-		'<!DOCTYPE html>
-		<html lang="en">
-		<head>
-		  <meta charset="UTF-8">
-		  <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
-		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		  <style>
-			* {
-			  font-family: \'Arial\' !important;
-			}
-		
-			p {
-			  font-size: 13px;
-			  font-weight: 400;
-			}
-		
-			img {
-			  width: 100%;
-			  display: block;
-			}
-		
-			a.button {
-			  padding: 10px 20px;
-			  border: 0;
-			  border-radius: 40px;
-			  font-size: 14px;
-			  font-weight: 700;
-			  text-decoration: none;
-			  color: #fff;
-			  background-color: #03B1E7;
-			  cursor: pointer;
-			}
-		
-			.button-div {
-			  padding: 15px 0;
-			}
-		
-			/* Main layout */
-			.main-layout {
-			  max-width: 600px !important;
-			  margin: 0 auto !important;
-			}
-		
-			/* Main banner */
-			.section.header {
-			  margin-bottom: 20px;
-			}
-		
-			.section.header .main-banner img {
-			  cursor: pointer;
-			}
-		
-			/* Footer */
-			.footer {
-			  border-top: solid 1px #D1D1D1;
-			  padding: 10px 0;
-			  margin-top: 20px;
-			}
-		
-			.footer .left img {
-			  height: 40px;
-			  width: 125px;
-			}
-		
-			.footer .right img {
-			  display: inline;
-			  height: 32px;
-			  width: 32px;
-			  margin-left: 10px;
-			}
-		
-			.footer p {
-			  font-style: italic;
-			  font-size: 12px;
-			}
-		
-			/* Media Queries */
-			@media only screen and (max-width: 600px) {
-				.wrapper table {
-					width: 100% !important;
-				}
-		
-				.wrapper .column {
-					width: 100% !important;
-					display: block !important;
-				}
-			}
-		  </style>
-		</head>
-		<body>
-		  <table width="600" class="main-layout">
-			<tbody>
-			  <tr>
-				<td class="wrapper" width="100%" align="center">
-				  <table class="section header" cellpadding="0" cellspacing="0" width="100%">
-					<tr>
-					  <td class="main-banner">
-						<a href="https://999.game/?continue=free-bonus" target="_blank">
-						  <img src="https://999j9azx.999game.online/j9pwa/images/email/main-banner.png" alt="main-mexplay-banner.png" />
-						</div>
-					  </td>
-					</tr>
-				  </table>
-				</td>
-			  </tr>
-		
-			  
-			</tbody>
-		  </table>
-		
-		  <table width="600" class="main-layout">
-			<tbody>
-			  <tr>
-				<td class="wrapper" align="center" width="100%">
-					<p>
-						<b>Enjoy the new and uncomplicated 999Game</b>
-					</p>
-					
-					<p>
-						Hello '.$_SESSION['member_name'].'
-					</p>
-					
-					<p>
-						This 2022 we improve for you and our main objective is that you enjoy yourself to the fullest.
-					</p>
-					
-					<p>
-					Remember, your username in 999Game is: '.$_SESSION['account'].'
-					
-					</p>
-					
-					<p>
-						We want you to start in the best possible way for this, make your first deposit of at least 10USDT and we will give you 180% back up to 600USDT.
-					</p>
-					
-					<div class="button-div">
-						<a class="button" href="https://999.game/casino" target="_blank">Play Now</a>
-					</div>
-					
-					<p>
-						Any questions? We solve them 24/7
-					</p>
-				</td>
-			  </tr>
-			</tbody>
-		  </table>
-		
-		  <table width="600" class="main-layout">
-			<tbody>
-			  <tr>
-				<td class="wrapper" width="600" align="center">
-				  <table class="footer" cellpadding="0" cellspacing="0" width="100%" style="margin-left: auto; margin-right: auto;">
-					<tr>
-					  <td class="left" align="left">
-						<img src="https://999j9azx.999game.online/j9pwa/images/email/light-brand-logo.png" alt="light-brand-icon.png" />
-					  </td>
-		
-					  <td class="right" align="right">
-						<a href="https://t.me/+P4WogkwLTHNkNzQ9">
-							<img src="https://999j9azx.999game.online/j9pwa/images/email/telegram-icon.png" alt="telegram-icon.png" />
+		$mail->Body    =
+			"<mjml>
+				<mj-head>
+				<mj-font
+					name='Rubik'
+					href='https://fonts.googleapis.com/css2?family=Rubik'
+				/>
+				<mj-attributes>
+					<mj-text
+					font-family='Rubik, sans-serif'
+					font-size='15px'
+					color='#888'
+					align='center'
+					/>
+					<mj-button
+					width='140px'
+					height='45px'
+					background-color='#2283F6'
+					font-family='Rubik, sans-serif'
+					font-weight='600'
+					font-size='15px'
+					color='white'
+					border-radius='10px'
+					padding-bottom='24px'
+					/>
+				</mj-attributes>
+				</mj-head>
+			
+				<mj-body background-color='#1c1e22' width='768px'>
+				<mj-section>
+					<mj-column>
+					<mj-image width='128px' src='https://img.999.game/email/999game.png' />
+					</mj-column>
+				</mj-section>
+			
+				<mj-section>
+					<mj-column>
+					<mj-image
+						src='https://img.999.game/email/main-banner.png'
+						href='https://999.game/promotions'
+					/>
+					</mj-column>
+				</mj-section>
+			
+				<mj-section>
+					<mj-column>
+					<mj-text font-weight='800'
+						>Enjoy the new and uncomplicated 999Game</mj-text
+					>
+					<mj-text
+						>This 2022 we improve for you and our main objective is that you enjoy
+						yourself to the fullest.</mj-text
+					>
+					<mj-text
+						>Remember, your username in 999 Game is: ".$_SESSION['account']."
+					</mj-text>
+					<mj-text padding-bottom='24px'
+						>We want you to start in the best possible way for this, make your
+						first deposit of at least $200 and we will give you 180% back up to
+						$11,000.</mj-text
+					>
+					<mj-button href='https://999.game/'> Play Now </mj-button>
+					<mj-text
+						>You can deposit online in less time in a safe, simple and fast way
+						with your debit, credit or cash card at Oxxo, Seven Eleven, BBVA and
+						many more</mj-text
+					>
+					</mj-column>
+				</mj-section>
+			
+				<mj-section
+					border-top='2px solid #24262b'
+					border-bottom='2px solid #24262b'
+				>
+					<mj-column>
+					<mj-text align='center'>
+						<a
+						href='https://bitcoin.org/en/'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/bitcoin.png'
+							width='140px'
+							style='padding: 16px'
+						/>
 						</a>
-					  </td>
-					</tr>
-				  </table>
-				</td>
-			  </tr> 
-			</tbody>
-		  </table>
-		
-		  <table width="600" class="main-layout">
-			<tbody>
-			  <tr>
-				<td class="wrapper" width="600" align="center">
-				  <p>
-					Copyright@2022 999Game All rights reserved
-				  </p>
-		
-				  <p>
-					Want to change how you receive these emails? <br />
-					You can update your preferences or unsubscribe from this list.
-				  </p>
-				</td>
-			  </tr>
-			</tbody>
-		  </table>
-		</body>
-		</html>';
+						<a
+						href='https://www.ethereum.org/'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/ethereum.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+						<a
+						href='https://tether.to/en/'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/tether.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+						<a
+						href='https://tron.network/'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/tron.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+						<a
+						href='https://docs.binance.org/smart-chain/guides/bsc-intro.html'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/binance.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+						<a
+						href='https://exchange.biswap.org/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/biswap.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+						<a
+						href='https://exchange.babyswap.finance/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/babyswap.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+						<a
+						href='https://app.bogged.finance/bsc/swap?tokenIn=BNB&amp;tokenOut'
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						style='text-decoration: none'
+						>
+						<img
+							src='https://img.999.game/email/bogged.png'
+							width='140px'
+							style='padding: 16px'
+						/>
+						</a>
+					</mj-text>
+					</mj-column>
+				</mj-section>
+			
+				<mj-section padding-top='40px'>
+					<mj-column>
+					<mj-text>
+						This service email contains essential information relating to your 999
+						Game account. 999Game's policy is to respect and protect individuals'
+						privacy. Read our Privacy Policy.
+					</mj-text>
+					<mj-text font-size='12px'>
+						Copyright © 2022 999Game. All rights reserved.</mj-text
+					>
+					</mj-column>
+				</mj-section>
+				</mj-body>
+			</mjml>";
 		
 		if ($mail->send())
 		{

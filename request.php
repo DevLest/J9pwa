@@ -480,38 +480,198 @@ function send_verification_email($data)
         $mail->isHTML(true);
 
         $mail->Subject = 'Email Verification';
-        $mail->Body =
-            "<div
-                style='
-                width: 100%;
-                background-image: url(https://999j9azx.999game.online/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
-                background-size: 100%;
-                background-position: top center;
-                '
-            >
-                <div>
-                <div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-                    <img src='https://999j9azx.999game.online/j9pwa/images/logo.png' style='width: 15%' />
-                </div>
-                <div style='width: 100%; height: 3px; display: flex'>
-                    <div style='width: 50%; height: 3px; background-color: black'></div>
-                    <div style='width: 50%; height: 3px; background-color: #0bafe6'></div>
-                </div>
-                <div style='padding: 1.25rem'>
-                    <p style='margin-top: 0; margin-bottom: 30px'>
-                    This verification code is intended for validation of user.
-                    </p>
-                    <div style='width: 100%'>
-                    <div style='background-color: #0bafe6; border-radius: 10px; padding: 0.5em 1.5em; margin: 0 auto; width: max-content'>
-                        <p style='color: white'>Verification Code: $verif_code</p>
-                    </div>
-                    </div>
-                    If you have not attempted to verify your email, please contact customer service immediately at - or
-                    <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.
-                    </p>
-                </div>
-                </div>
-            </div>";
+        $mail->Body = "
+            <mjml>
+                <mj-head>
+                    <mj-font
+                    name='Rubik'
+                    href='https://fonts.googleapis.com/css2?family=Rubik'
+                    />
+                    <mj-attributes>
+                    <mj-text
+                        font-family='Rubik, sans-serif'
+                        font-size='15px'
+                        color='#888'
+                        align='center'
+                        line-height='18px'
+                    />
+                    <mj-button
+                        font-family='Rubik, sans-serif'
+                        font-weight='600'
+                        font-size='15px'
+                        background-color='#2283F6'
+                        color='white'
+                        border-radius='5px'
+                        padding-bottom='24px'
+                        height='45px'
+                        width='140px'
+                    />
+                    </mj-attributes>
+                </mj-head>
+
+                <mj-body background-color='#1c1e22' width='768px'>
+                    <mj-section>
+                    <mj-column>
+                        <mj-image width='128px' src='https://img.999.game/email/999game.png' />
+                    </mj-column>
+                    </mj-section>
+
+                    <mj-wrapper
+                    background-url='https://img.999.game/email/background.png'
+                    background-size='contain'
+                    background-repeat='no-repeat'
+                    padding-bottom='50px'
+                    full-width='full-width'
+                    >
+                    <mj-section>
+                        <mj-column>
+                        <mj-text font-weight='600' font-size='20px'
+                            >Verification Code</mj-text
+                        >
+                        <mj-text
+                            font-weight='700'
+                            font-size='40px'
+                            text-decoration='underline'
+                            >verif_code</mj-text
+                        >
+                        <mj-text
+                            >This verification code is intended for <br />
+                            validation of user.</mj-text
+                        >
+                        </mj-column>
+                    </mj-section>
+                    </mj-wrapper>
+
+                    <mj-section>
+                    <mj-column>
+                        <mj-text
+                        >If you did not make this request, <br />
+                        please contact customer service immediately at
+                        support@999.game.</mj-text
+                        >
+                    </mj-column>
+                    </mj-section>
+
+                    <mj-section
+                    border-top='2px solid #24262b'
+                    border-bottom='2px solid #24262b'
+                    >
+                    <mj-column>
+                        <mj-text align='center'>
+                        <a
+                            href='https://bitcoin.org/en/'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/bitcoin.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://www.ethereum.org/'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/ethereum.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://tether.to/en/'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/tether.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://tron.network/'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/tron.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://docs.binance.org/smart-chain/guides/bsc-intro.html'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/binance.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://exchange.biswap.org/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/biswap.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://exchange.babyswap.finance/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/babyswap.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        <a
+                            href='https://app.bogged.finance/bsc/swap?tokenIn=BNB&amp;tokenOut'
+                            target='_blank'
+                            rel='noopener noreferrer nofollow'
+                            style='text-decoration: none'
+                        >
+                            <img
+                            src='https://img.999.game/email/bogged.png'
+                            width='140px'
+                            style='padding: 16px'
+                            />
+                        </a>
+                        </mj-text>
+                    </mj-column>
+                    </mj-section>
+
+                    <mj-section>
+                    <mj-column>
+                        <mj-text>
+                        This service email contains essential information relating to your 999
+                        Game account. 999Game's policy is to respect and protect individuals'
+                        privacy. Read our Privacy Policy.
+                        </mj-text>
+                        <mj-text font-size='12px'>
+                        Copyright © 2022 999Game. All rights reserved.</mj-text
+                        >
+                    </mj-column>
+                    </mj-section>
+                </mj-body>
+            </mjml>";
 
         if ($mail->send()) {
             return json_encode(['status' => 1, 'info' => "Verification email has been sent"], JSON_UNESCAPED_UNICODE);
