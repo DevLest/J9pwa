@@ -2,7 +2,7 @@
 
     foreach ( ["live", "table", "lotto", "poker", "arcade", "slot"] as $data )
     {
-        $files = glob("/www/wwwroot/999j9azx.u2d8899.com/j9pwa/images/$data"."_games/*.png");
+        $files = glob(__DIR__."/images/$data"."_games/*.png");
 
         foreach ($files as $file)
         {
@@ -16,7 +16,7 @@
             imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
             imagedestroy($image);
             
-            imagejpeg($bg, "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/images/games/$name.jpg", 80);
+            imagejpeg($bg, __DIR__."/images/games/$name.jpg", 80);
             imagedestroy($bg);
 
             echo $file."\n";

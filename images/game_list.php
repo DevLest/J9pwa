@@ -84,7 +84,7 @@ $pin_games = [
     'SGHotHotFruit',
 ];
 
-$file = "/www/wwwroot/999j9azx.u2d8899.com/j9pwa/data/games.json";
+$file = __DIR__."/data/games.json";
 $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_UNICODE);
 $newJson = [];
 $pinned = [];
@@ -176,7 +176,7 @@ foreach ($pinned as $first) {
 if (!isset($newJson['cards'])) $newJson['cards'] = [];
 
 $games = json_encode($newJson);
-file_put_contents("/www/wwwroot/999j9azx.u2d8899.com/j9pwa/data/games_list.json", $games);
+file_put_contents(__DIR__."/data/games_list.json", $games);
 
 print_r("Done");
 exit();
