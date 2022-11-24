@@ -112,6 +112,7 @@ foreach ($filedata as $detail) {
 
         if (in_array($detail['id'], $pin_games)) {
             array_push($pinned, [
+                "sort" => $detail['sort'],
                 "name" => $detail['name'],
                 "imgURL" => $detail['pic'],
                 "platform" => $platformNames[$detail['platform']],
@@ -133,6 +134,7 @@ foreach ($filedata as $detail) {
                 }
 
                 array_push($newJson[$categoryId], [
+                    "sort" => $detail['sort'],
                     "name" => $detail['name'],
                     "imgURL" => $detail['pic'],
                     "platform" => $platformNames[$detail['platform']],
