@@ -1569,8 +1569,7 @@ function sendWelcomeEmail()
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-										This service email contains essential information relating to your 999Game account. 999
-										Game's policy is to respect and protect individuals' privacy. Read our Privacy Policy.</div>
+										This service email contains essential information relating to your 999Game account. 999Game's policy is to respect and protect individuals' privacy. Read our Privacy Policy.</div>
 									</td>
 									</tr>
 									<tr>

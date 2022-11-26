@@ -23,7 +23,7 @@ if(isset($_GET['type']) && $_GET['type'] == "get_promotion_content")
 }elseif(isset($_POST['type']) && $_POST['type'] == "get_promotion_list")
 {
 	$account = (isset($_POST['username'])) ? $_POST['username'] : "";
-	$language = (isset($_POST['language'])) ? $_POST['language'] : "en";
+	$language = (isset($_POST['lang'])) ? $_POST['lang'] : "en";
 	echo get_promotion_list($account, $language);exit();
 }elseif(isset($_POST['type']) && $_POST['type'] == "get_footer_list")
 {
