@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
 define("WEB_PATH", __DIR__);
 
 $gameIDs = [
@@ -175,6 +175,17 @@ foreach ($pinned as $first) {
 }
 
 if (!isset($newJson['cards'])) $newJson['cards'] = [];
+
+// SEQUENCE SORT START HERE:
+$x = array();
+foreach ($newJson as $key => $row)
+{
+    $x[$key] = $row['sort'];
+}
+// array_multisort($x, SORT_DESC, $data);
+array_multisort($x, SORT_ASC, $newJson);
+// SEQUENCE SORT END HERE:
+
 
 $games = json_encode($newJson);
 file_put_contents(__DIR__."/data/games_list.json", $games);

@@ -1,7 +1,14 @@
 <?php
+    // ini_set('display_errors', '1');
+    // ini_set('display_startup_errors', '1');
+    // error_reporting(E_ALL);
+
     header("Content-type: text/html; charset=utf-8");
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Credentials:true");
+
+    header("Access-Control-Expose-Headers: Content-Length");
+
     
     $games = json_decode(file_get_contents("games_list.json"));
     
@@ -80,6 +87,30 @@
     }
     
     $games->providers = $output;
+
+    // SEQUENCE SORT START HERE:
+    $x_games = (array) $games;
+
+    foreach ($x_games as $key => $value) {
+      
+       $x = array();
+       foreach ($x_games[$key] as $key2 => $row)
+       {
+            $x[$key2] = $row->sort;
+       }
+       // array_multisort($x, SORT_DESC, $data);
+       array_multisort($x, SORT_ASC, $x_games[$key]);
+      
+    }
+    // SEQUENCE SORT END HERE:
+
+    $games = (object) $x_games;
+
+    // echo '<pre>';
+    // print_r($games);
+    // echo '</pre>';
+    // die();
+
 
     echo json_encode($games);
 ?>

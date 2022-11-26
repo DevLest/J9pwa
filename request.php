@@ -1288,8 +1288,8 @@ function https_submit($url, $data)
 {
     $curl = curl_init();
 
-    $data['requestId'] = (isset($data['requestId'])) ? $data['requestId'] : "SSFvobEqKOtgoafEZwmK";
-    $data['brandId'] = (isset($data['brandId'])) ? $data['brandId'] : 372;
+    $data['requestId'] = (isset($data['requestId'])) ? $data['requestId'] : "AqbUONfIDjQh057fIOno";
+    $data['brandId'] = (isset($data['brandId'])) ? $data['brandId'] : 621;
 
     ksort($data);
     $hash = md5(urldecode(http_build_query($data)) . $data['requestId']);
@@ -1666,12 +1666,12 @@ function sports_token($data)
 function free_spin_amount($data)
 {
     $params = [
-        "playerId" => "mx" . $data->username_email,
+        "playerId" => "usd_" . $data->username_email,
     ];
 
     $url = "https://api.vsr888.com/bonus/player/activated";
     $result = https_submit($url, $params);
-
+//return   $result;
     $bonus = $result->data;
     $free_spin = [];
     $total = 0;
