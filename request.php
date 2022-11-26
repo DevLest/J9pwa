@@ -1646,8 +1646,8 @@ function sports_token($data)
                     'brandId' => $urlData['brandId'],
                     'url' => $redirection_Url,
                     'source_url' => $game_url->info,
-                    // 'themeName' => (isset($urlData['themeName'])) ? $urlData['themeName'] : "default",
-                    'themeName' => "mexplay",
+                    'themeName' => (isset($urlData['themeName'])) ? $urlData['themeName'] : "default",
+                    // 'themeName' => "mexplay",
                 ]]);
             } else {
                 return json_encode(['status' => 0, 'info' => "Error in parsing URL Data"]);
