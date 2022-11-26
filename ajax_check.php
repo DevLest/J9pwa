@@ -23,7 +23,8 @@ if(isset($_GET['type']) && $_GET['type'] == "get_promotion_content")
 }elseif(isset($_POST['type']) && $_POST['type'] == "get_promotion_list")
 {
 	$account = (isset($_POST['username'])) ? $_POST['username'] : "";
-	echo get_promotion_list($account);exit();
+	$language = (isset($_POST['language'])) ? $_POST['language'] : "en";
+	echo get_promotion_list($account, $language);exit();
 }elseif(isset($_POST['type']) && $_POST['type'] == "get_footer_list")
 {
 	$account = (isset($_POST['username'])) ? $_POST['username'] : "";
@@ -214,7 +215,7 @@ function logout()
  * 获取优惠列表
  * return array 
  */
-function get_promotion_list($account){
+function get_promotion_list($account, $language = "en"){
 	//加载缓存
 	/*include_once (WEB_PATH."/common/cache_file.class.php");
 	//获取缓存数据
@@ -253,7 +254,7 @@ function get_promotion_list($account){
                      $result1[$k]['title']=$v['title'];
                       $result1[$k]['startTime']=$v['startTime'];
                        $result1[$k]['endTime']=$v['endTime'];
-                        $result1[$k]['bannerurl']="https://img.999.game/promo_banners/".$v['sPicURL'];
+                        $result1[$k]['bannerurl']="https://img.999.game/promo_banners/$language/".$v['sPicURL'];
                        //  $result1[$k]['content']=$v['content'];
                 }
                 
