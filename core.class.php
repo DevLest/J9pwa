@@ -2610,7 +2610,7 @@ class core
 
     public function uniterecord_sum($account, $start_date, $end_date, $page = 1)
     {
-        $client = new PHPRPC_Client("http://testrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
+        $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
 
         $list = $client->usdt_uniterecord_sum($account, $start_date, $end_date, $page);
         return $list;
