@@ -876,7 +876,7 @@ function get_transaction($data, $type = 1)
 
     include_once WEB_PATH . "/common/cache_file.class.php";
     $cacheFile = new cache_file();
-    $cacheData = $cacheFile->get("mx_game_data", '', 'data', "mexplay", substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
+    $cacheData = $cacheFile->get("game_data", '', 'data', "999", substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
 
     switch ($data->range) {
         case 2: //3 Days
