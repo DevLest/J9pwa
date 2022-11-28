@@ -482,9 +482,9 @@ function send_verification_email($data)
         $mail->Subject = 'Email Verification';
         $mail->Body = "
         <!doctype html>
-        <html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'
+            <html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'
             xmlns:o='urn:schemas-microsoft-com:office:office'>
-            
+
             <head>
                 <title></title>
                 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -494,33 +494,33 @@ function send_verification_email($data)
                 #outlook a {
                     padding: 0;
                 }
-            
+
                 .ReadMsgBody {
                     width: 100%;
                 }
-            
+
                 .ExternalClass {
                     width: 100%;
                 }
-            
+
                 .ExternalClass * {
                     line-height: 100%;
                 }
-            
+
                 body {
                     margin: 0;
                     padding: 0;
                     -webkit-text-size-adjust: 100%;
                     -ms-text-size-adjust: 100%;
                 }
-            
+
                 table,
                 td {
                     border-collapse: collapse;
                     mso-table-lspace: 0pt;
                     mso-table-rspace: 0pt;
                 }
-            
+
                 img {
                     border: 0;
                     height: auto;
@@ -529,19 +529,18 @@ function send_verification_email($data)
                     text-decoration: none;
                     -ms-interpolation-mode: bicubic;
                 }
-            
+
                 p {
                     display: block;
                     margin: 13px 0;
                 }
                 </style>
-                <!--[if !mso]><!-->
                 <style type='text/css'>
                 @media only screen and (max-width:480px) {
                     @-ms-viewport {
                     width: 320px;
                     }
-            
+
                     @viewport{ width:320px; }
                 }
                 </style>
@@ -549,7 +548,6 @@ function send_verification_email($data)
                 <style type='text/css'>
                 @import url(https://fonts.googleapis.com/css2?family=Rubik);
                 </style>
-                <!--<![endif]-->
                 <style type='text/css'>
                 @media only screen and (min-width:480px) {
                     .mj-column-per-100 {
@@ -563,101 +561,47 @@ function send_verification_email($data)
                     table.full-width-mobile {
                     width: 100% !important;
                     }
-            
+
                     td.full-width-mobile {
                     width: auto !important;
                     }
                 }
                 </style>
             </head>
-            
-            <body style='background-color:#1c1e22;'>
-                <div style='background-color:#1c1e22;'>
-                <div style='Margin:0px auto;max-width:768px;'>
-                    <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='width:100%;'>
+
+            <body>
+                <div>
+                <div style='background:#1c1e22;background-color:#1c1e22;Margin:0px auto;border-radius:24px;max-width:640px;'>
+                    <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                    style='background:#1c1e22;background-color:#1c1e22;width:100%;border-radius:24px;'>
                     <tbody>
                         <tr>
                         <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
-                            <div class='mj-column-per-100 outlook-group-fix'
-                            style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
-                            <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;'
-                                width='100%'>
-                                <tr>
-                                <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                    <table border='0' cellpadding='0' cellspacing='0' role='presentation'
-                                    style='border-collapse:collapse;border-spacing:0px;'>
-                                    <tbody>
-                                        <tr>
-                                        <td style='width:128px;'><img height='auto' src='https://img.999.game/email/999game.png'
-                                            style='border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;'
-                                            width='128'></td>
-                                        </tr>
-                                    </tbody>
-                                    </table>
-                                </td>
-                                </tr>
-                            </table>
-                            </div>
-                        </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <!--[if mso | IE]></td></tr></table><![endif]-->
-                <table align='center' background='https://img.999.game/email/background.png' border='0' cellpadding='0'
-                    cellspacing='0' role='presentation'
-                    style='background:url(https://img.999.game/email/background.png) top center / contain no-repeat;width:100%;'>
-                    <tbody>
-                    <tr>
-                        <td>
-                        <div style='Margin:0px auto;max-width:768px;'>
-                            <div style='line-height:0;font-size:0;'>
+                            <div style='Margin:0px auto;max-width:640px;'>
                             <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
                                 style='width:100%;'>
                                 <tbody>
                                 <tr>
-                                    <td
-                                    style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:50px;text-align:center;vertical-align:top;'>
-                                    <div style='Margin:0px auto;max-width:768px;'>
-                                        <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
-                                        style='width:100%;'>
-                                        <tbody>
-                                            <tr>
-                                            <td
-                                                style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
-                                                <div class='mj-column-per-100 outlook-group-fix'
-                                                style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
-                                                <table border='0' cellpadding='0' cellspacing='0' role='presentation'
-                                                    style='vertical-align:top;' width='100%'>
-                                                    <tr>
-                                                    <td align='center'
-                                                        style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                                        <div
-                                                        style='font-family:Rubik, sans-serif;font-size:20px;font-weight:600;line-height:18px;text-align:center;color:#888888;'>
-                                                        Verification Code</div>
-                                                    </td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td align='center'
-                                                        style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                                        <div
-                                                        style='font-family:Rubik, sans-serif;font-size:40px;font-weight:700;line-height:18px;text-align:center;text-decoration:underline;color:#888888;'>
-                                                        $verif_code</div>
-                                                    </td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td align='center'
-                                                        style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                                        <div
-                                                        style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                                        This verification code is intended for<br>validation of user.</div>
-                                                    </td>
-                                                    </tr>
-                                                </table>
-                                                </div>
+                                    <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
+                                    <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                        style='vertical-align:top;' width='100%'>
+                                        <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                            <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                                style='border-collapse:collapse;border-spacing:0px;'>
+                                                <tbody>
+                                                <tr>
+                                                    <td style='width:128px;'><img height='auto'
+                                                        src='https://img.999.game/email/999game.png'
+                                                        style='border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;'
+                                                        width='128'></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                             </td>
-                                            </tr>
-                                        </tbody>
+                                        </tr>
                                         </table>
                                     </div>
                                     </td>
@@ -665,103 +609,180 @@ function send_verification_email($data)
                                 </tbody>
                             </table>
                             </div>
-                        </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div style='Margin:0px auto;max-width:768px;'>
-                    <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='width:100%;'>
-                    <tbody>
-                        <tr>
-                        <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
-                            <div class='mj-column-per-100 outlook-group-fix'
-                            style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
-                            <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;'
-                                width='100%'>
+                            <table align='center' background='https://img.999.game/email/background.png' border='0' cellpadding='0'
+                            cellspacing='0' role='presentation'
+                            style='background:url(https://img.999.game/email/background.png) top center / contain no-repeat;width:100%;'>
+                            <tbody>
                                 <tr>
-                                <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                    <div
-                                    style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                    If you did not make this request,<br>please contact customer service immediately at
-				                    <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.</div>
+                                <td>
+                                    <div style='Margin:0px auto;max-width:640px;'>
+                                    <div style='line-height:0;font-size:0;'>
+                                        <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                        style='width:100%;'>
+                                        <tbody>
+                                            <tr>
+                                            <td
+                                                style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:50px;text-align:center;vertical-align:top;'>
+                                                <div style='Margin:0px auto;max-width:640px;'>
+                                                <table align='center' border='0' cellpadding='0' cellspacing='0'
+                                                    role='presentation' style='width:100%;'>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td
+                                                        style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;text-align:center;vertical-align:top;'>
+                                                        <div class='mj-column-per-100 outlook-group-fix'
+                                                            style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                                            <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                                            style='vertical-align:top;' width='100%'>
+                                                            <tr>
+                                                                <td align='center'
+                                                                style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                                                <div
+                                                                    style='font-family:Rubik, sans-serif;font-size:20px;font-weight:600;line-height:18px;text-align:center;color:#888888;'>
+                                                                    Verification Code</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align='center'
+                                                                style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                                                <div
+                                                                    style='font-family:Rubik, sans-serif;font-size:40px;font-weight:700;line-height:18px;text-align:center;text-decoration:underline;color:#888888;'>
+                                                                    $verif_code</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align='center'
+                                                                style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                                                <div
+                                                                    style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
+                                                                    This verification code is intended for<br>validation of user.
+                                                                </div>
+                                                                </td>
+                                                            </tr>
+                                                            </table>
+                                                        </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                </div>
+                                            </td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
                                 </td>
                                 </tr>
+                            </tbody>
+                            </table>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                            <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
+                                <tr>
+                                    <td
+                                    style='direction:ltr;font-size:0px;padding:20px 0;padding-top:0px;text-align:center;vertical-align:top;'>
+                                    <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                        style='vertical-align:top;' width='100%'>
+                                        <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                            <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
+                                                If you did not make this request,<br>please contact customer service immediately at
+                                                support@999.game.</div>
+                                            </td>
+                                        </tr>
+                                        </table>
+                                    </div>
+                                    </td>
+                                </tr>
+                                </tbody>
                             </table>
                             </div>
-                        </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div style='Margin:0px auto;max-width:768px;'>
-                    <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='width:100%;'>
-                    <tbody>
-                        <tr>
-                        <td
-                            style='border-bottom:2px solid #24262b;border-top:2px solid #24262b;direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
-                            <div class='mj-column-per-100 outlook-group-fix'
-                            style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
-                            <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;'
-                                width='100%'>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                            <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
                                 <tr>
-                                <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                    <div
-                                    style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                    <a href='https://bitcoin.org/en/' target='_blank' rel='noopener noreferrer nofollow'
-                                        style='text-decoration: none'><img src='https://img.999.game/email/bitcoin.png'
-                                        width='140px' style='padding: 16px'> </a><a href='https://www.ethereum.org/'
-                                        target='_blank' rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                        src='https://img.999.game/email/ethereum.png' width='140px' style='padding: 16px'> </a><a
-                                        href='https://tether.to/en/' target='_blank' rel='noopener noreferrer nofollow'
-                                        style='text-decoration: none'><img src='https://img.999.game/email/tether.png' width='140px'
-                                        style='padding: 16px'> </a><a href='https://tron.network/' target='_blank'
-                                        rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                        src='https://img.999.game/email/tron.png' width='140px' style='padding: 16px'> </a><a
-                                        href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
-                                        rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                        src='https://img.999.game/email/binance.png' width='140px' style='padding: 16px'> </a><a
-                                        href='https://exchange.biswap.org/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
-                                        target='_blank' rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                        src='https://img.999.game/email/biswap.png' width='140px' style='padding: 16px'> </a><a
-                                        href='https://exchange.babyswap.finance/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
-                                        target='_blank' rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                        src='https://img.999.game/email/babyswap.png' width='140px' style='padding: 16px'> </a><a
-                                        href='https://app.bogged.finance/bsc/swap?tokenIn=BNB&amp;tokenOut' target='_blank'
-                                        rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                        src='https://img.999.game/email/bogged.png' width='140px' style='padding: 16px'></a></div>
-                                </td>
+                                    <td
+                                    style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;'>
+                                    <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                        style='border-bottom:2px solid #24262b;border-top:2px solid #24262b;vertical-align:top;'
+                                        width='100%'>
+                                        <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                            <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
+                                                <a href='https://bitcoin.org/en/' target='_blank' rel='noopener noreferrer nofollow'
+                                                style='text-decoration: none'><img src='https://img.999.game/email/bitcoin.png'
+                                                    width='120px'> </a><a href='https://www.ethereum.org/' target='_blank'
+                                                rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+                                                    src='https://img.999.game/email/ethereum.png' width='120px'> </a><a
+                                                href='https://tether.to/en/' target='_blank' rel='noopener noreferrer nofollow'
+                                                style='text-decoration: none'><img src='https://img.999.game/email/tether.png'
+                                                    width='120px'> </a><a href='https://tron.network/' target='_blank'
+                                                rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+                                                    src='https://img.999.game/email/tron.png' width='120px'> </a><a
+                                                href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
+                                                rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+                                                    src='https://img.999.game/email/binance.png' width='120px'> </a><a
+                                                href='https://exchange.biswap.org/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
+                                                target='_blank' rel='noopener noreferrer nofollow'
+                                                style='text-decoration: none'><img src='https://img.999.game/email/biswap.png'
+                                                    width='120px'> </a><a
+                                                href='https://exchange.babyswap.finance/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
+                                                target='_blank' rel='noopener noreferrer nofollow'
+                                                style='text-decoration: none'><img src='https://img.999.game/email/babyswap.png'
+                                                    width='120px'> </a><a
+                                                href='https://app.bogged.finance/bsc/swap?tokenIn=BNB&amp;tokenOut'
+                                                target='_blank' rel='noopener noreferrer nofollow'
+                                                style='text-decoration: none'><img src='https://img.999.game/email/bogged.png'
+                                                    width='120px'></a></div>
+                                            </td>
+                                        </tr>
+                                        </table>
+                                    </div>
+                                    </td>
                                 </tr>
+                                </tbody>
                             </table>
                             </div>
-                        </td>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div style='Margin:0px auto;max-width:768px;'>
-                    <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='width:100%;'>
-                    <tbody>
-                        <tr>
-                        <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
-                            <div class='mj-column-per-100 outlook-group-fix'
-                            style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
-                            <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;'
-                                width='100%'>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                            <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
                                 <tr>
-                                <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                    <div
-                                    style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                    This service email contains essential information relating to your 999Game account. 999Game's policy is to respect and protect individuals' privacy. Read our Privacy Policy.</div>
-                                </td>
+                                    <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
+                                    <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                        style='vertical-align:top;' width='100%'>
+                                        <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                            <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
+                                                This service email contains essential information relating to your 999 Game account.
+                                                999 Game's policy is to respect and protect individuals' privacy. Read our Privacy
+                                                Policy.</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                            <div
+                                                style='font-family:Rubik, sans-serif;font-size:12px;line-height:18px;text-align:center;color:#888888;'>
+                                                Copyright © 2022 999Game. All rights reserved.</div>
+                                            </td>
+                                        </tr>
+                                        </table>
+                                    </div>
+                                    </td>
                                 </tr>
-                                <tr>
-                                <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-                                    <div
-                                    style='font-family:Rubik, sans-serif;font-size:12px;line-height:18px;text-align:center;color:#888888;'>
-                                    Copyright © 2022 999Game. All rights reserved.</div>
-                                </td>
-                                </tr>
+                                </tbody>
                             </table>
                             </div>
                         </td>
@@ -771,7 +792,8 @@ function send_verification_email($data)
                 </div>
                 </div>
             </body>
-        </html>";
+
+            </html>";
 
         if ($mail->send()) {
             return json_encode(['status' => 1, 'info' => "Verification email has been sent"], JSON_UNESCAPED_UNICODE);

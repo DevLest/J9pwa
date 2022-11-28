@@ -42,6 +42,7 @@ $currency = [
     "GAMEART" => ["USD"],
     "EVO" => ["USD"],
     "BETBY" => ["USD"],
+    "GAMEART" => ["USD"],
 ];
 
 $platformNames = [
@@ -77,6 +78,7 @@ $platformNames = [
     "REDTIGER" => "RedTiger",
     "NETENT" => "Netent",
     "RT" => "RedTiger",
+    "GAMEART" => "GameArt",
     "NT" => "Netent",
 ];
 
