@@ -56,7 +56,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	
 	$data['referrer'] = $_SERVER['HTTP_HOST'];
 	$data['regTime'] = date("Y-m-d H:i:s");
-	$data['email'] = $_POST['username_email'];
+	$data['email'] = (filter_var($account, FILTER_VALIDATE_EMAIL)) ? $_POST['username_email'] : "";
 	$data['uid'] = hexdec( substr(sha1(time()), 0, 6) );
 	$data['nickName'] = "User".mt_rand(2648963, 9895639);
 
