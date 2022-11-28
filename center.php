@@ -1495,14 +1495,6 @@ function sendWelcomeEmail()
 										</table>
 									</td>
 									</tr>
-									<tr>
-									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
-										<div
-										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-										You can deposit online in less time in a safe, simple and fast way with your debit, credit or
-										cash card at Oxxo, Seven Eleven, BBVA and many more</div>
-									</td>
-									</tr>
 								</table>
 								</div>
 							</td>
