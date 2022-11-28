@@ -910,7 +910,7 @@ function get_transaction($data, $type = 1)
     }
 
     if ($type == 1) {
-        $bets = $core->uniterecord($data->username_email, $start_date, $end_date);
+        $bets = $core->uniterecord(cleanString($data->username_email), $start_date, $end_date);
 
         if (is_array($bets)) {
             foreach ($bets['list'] as $bet) {
@@ -1282,7 +1282,7 @@ function get_account_summary($data)
             break;
     }
 
-    $bet_records = $core->uniterecord_sum($data->username_email, $start_date, $end_date);
+    $bet_records = $core->uniterecord_sum(cleanString($data->username_email), $start_date, $end_date);
     $withdraw = $core->record_list_summary($data->username_email, "debit", $start_date, $end_date);
     $total_deposit = $core->record_list_summary($data->username_email, "deposit", $start_date, $end_date);
     $commission = $core->agent_commission($data->username_email, $start_date, $end_date);
@@ -1720,38 +1720,8 @@ function free_spin_amount($data)
 
 }
 
-// function oauthRegister($params) {
-    
-// 	$account = strtolower(trim($params->username_email));
-// 	$password = $params->password;
+function cleanString($string) {
+   $string = str_replace(' ', '-', $string);
 
-// 	if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
-// 		echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
-// 		exit();
-// 	}
-	
-// 	$data['referrer'] = $_SERVER['HTTP_HOST'];
-// 	$data['regTime'] = date("Y-m-d H:i:s");
-// 	$data['email'] = $_POST['username_email'];
-// 	$data['uid'] = date('d').mt_rand(52348169, 99871581);
-// 	$data['nickName'] = "User".mt_rand(2648963, 9895639);
-
-//     $core = new core();
-// 	$info = $core->member_regist($account, $password, $data);
-
-// 	if(is_array($info)) {
-//         sendWelcomeEmail();
-// 		return loginMember($account, $password);
-// 	} elseif($info == 1006) {
-// 		return json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
-// 	} elseif($info == 1007) {
-// 		return json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
-// 	} elseif($info == 1008) {
-// 		return json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
-// 	} elseif($info == 1009) {
-// 		return json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
-// 	} else {
-//         sendWelcomeEmail();
-// 		return loginMember($_POST['username_email'], $_POST['password']);
-// 	}
-// }
+   return preg_replace('/[^A-Za-z0-9\-\_]/', '', $string);
+}
