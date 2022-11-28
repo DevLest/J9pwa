@@ -234,7 +234,7 @@ function getJackpot($id, $platform)
 {
     include_once WEB_PATH . "/common/cache_file.class.php";
     $cachFile = new cache_file();
-    $data_list = $cachFile->get("mx_jackpot", '', 'data', strtolower($platform), substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
+    $data_list = $cachFile->get("jackpot", '', 'data', strtolower($platform), substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
 
     return (isset($data_list[$id])) ? $data_list[$id] : 0;
 }
