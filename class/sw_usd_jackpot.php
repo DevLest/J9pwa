@@ -7,9 +7,9 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
 
-    include_once ("../common/cache_file.class.php");
+    include_once (__DIR__ . "/common/cache_file.class.php");
     
-    $filedata = json_decode(removeBomUtf8(file_get_contents("../data/games.json")), JSON_UNESCAPED_UNICODE );
+    $filedata = json_decode(removeBomUtf8(file_get_contents(__DIR__."/data/games.json")), JSON_UNESCAPED_UNICODE );
     $game = [];
     $skip = [
         'sw_2pd'
