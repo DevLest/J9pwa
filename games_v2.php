@@ -1,22 +1,42 @@
 <?php
 
+ini_set('memory_limit', '-1');
+
 ini_set('display_errors', '1');
 
 ini_set('display_startup_errors', '1');
 
 error_reporting(E_ALL);
 
+
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers");
+
+
+include_once("client/phprpc_client.php");
+
+define("WEB_PATH", __DIR__);
+
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS");
 header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 header("Access-Control-Expose-Headers: Content-Length");
+header('Content-Type: application/json');
 
-include_once("client/phprpc_client.php");
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    die();
+}
 
-
-define("WEB_PATH", __DIR__);
+// dt_server_side_processing
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $d = $_GET;
+    if(isset($_GET['dt_server_side_processing']) && $_GET['dt_server_side_processing'] == 1 ) {
+        // header('Content-Type: text/html; charset=UTF-8');
+        dt_server_side_processing($d);
+    }
+    exit();
+}
 
 
 $api_key = 'fghrtrvdfger';
@@ -40,7 +60,7 @@ if ($auth_check != $auth) {
 
 
 if (isset($d->type) && $d->type == "get_all_games_data") {
-    get_all_games_data();
+    get_all_games_data($d);
 }
 
 if (isset($d->type) && $d->type == "get_single_games_data") {
@@ -73,14 +93,32 @@ if (isset($d->type) && $d->type == "apply_changes_to_frontend") {
     apply_changes_to_frontend();
 }
 
+if (isset($d->type) && $d->type == "games_total_count") {
+    games_total_count();
+}
 
-function get_all_games_data()
+// if (isset($d->type) && $d->type == "dt_server_side_processing") {
+//     dt_server_side_processing();
+// }
+
+
+
+
+
+function dt_server_side_processing()
 {
 
-    ini_set('memory_limit', '-1');
+    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $response = $client->dt_server_side_processing();
+
+    echo json_encode($response);
+}
+
+function get_all_games_data($d)
+{
 
     $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
-    $response = $client->get_all_games_data();
+    $response = $client->get_all_games_data($d);
 
     // echo count($response);
     // die();
@@ -129,6 +167,10 @@ function get_all_games_data()
 
         $status = ($games['enabled'] == 1) ? 'Enabled' : 'Disabled';
 
+        $newJson["platform"]  = $games['platform'] . '('.$games['seller_name'].')';
+        
+
+        $response[$key]['platform'] = $games['platform'] . ' ('.$games['seller_name'].')';
 
         $response[$key]['actions'] = $action;
         $response[$key]['status'] = $status;
@@ -203,11 +245,19 @@ function get_all_category()
 }
 
 
+function games_total_count()
+{
+    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $response = $client->games_total_count();
+    echo json_encode($response);
+}
+
+
 function apply_changes_to_frontend()
 {
 
     $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
-    $response = $client->get_all_games_data();
+    $response = $client->get_all_games_data_v2();
 
     // GET ALL CATEGORIES
     // $category_list = [];
@@ -278,6 +328,7 @@ function apply_changes_to_frontend()
         $newJson["tag"]  = $tag;
         $newJson["sourceImge"]  = $games['source_img'];
         $newJson["platform"]  = $games['platform'];
+        $newJson["seller_name"]  = $games['seller_name'];
         $newJson["alias_code"]  = $games['alias_code'];
 
 
@@ -310,43 +361,4 @@ function apply_changes_to_frontend()
     file_put_contents($filename, $games);
 
     echo json_encode(['success',]);
-}
-
-
-function make_comparer() {
-    // Normalize criteria up front so that the comparer finds everything tidy
-    $criteria = func_get_args();
-    foreach ($criteria as $index => $criterion) {
-        $criteria[$index] = is_array($criterion)
-            ? array_pad($criterion, 3, null)
-            : array($criterion, SORT_ASC, null);
-    }
-
-    return function($first, $second) use (&$criteria) {
-        foreach ($criteria as $criterion) {
-            // How will we compare this round?
-            list($column, $sortOrder, $projection) = $criterion;
-            $sortOrder = $sortOrder === SORT_DESC ? -1 : 1;
-
-            // If a projection was defined project the values now
-            if ($projection) {
-                $lhs = call_user_func($projection, $first[$column]);
-                $rhs = call_user_func($projection, $second[$column]);
-            }
-            else {
-                $lhs = $first[$column];
-                $rhs = $second[$column];
-            }
-
-            // Do the actual comparison; do not return if equal
-            if ($lhs < $rhs) {
-                return -1 * $sortOrder;
-            }
-            else if ($lhs > $rhs) {
-                return 1 * $sortOrder;
-            }
-        }
-
-        return 0; // tiebreakers exhausted, so $first == $second
-    };
 }

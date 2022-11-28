@@ -148,9 +148,11 @@ $ch = curl_init();
 					$ipdb = new \IP2Location\Database('./common/databases/IP2LOCATION-LITE-DB1.BIN', \IP2Location\Database::FILE_IO);
 					$records = $ipdb->lookup($ip, \IP2Location\Database::ALL);
 					//print_r($records); exit;
-					if($records['countryCode'] == "PH"||$records['countryCode'] == "MX"||$records['countryCode'] == "NO"||$records['countryCode'] == "Invalid IP address."||$isip== 1)
+                                        
+                                        $countrylist=array("AW","BQ","CW","FR","NL","AU","UK","ES","BQ","MF","AS");
+					if(in_array($ip,$countrylist))
 					{
-						$arr = array('status'=>1,'info'=>$ip);
+						$arr = array('status'=>0,'info'=>$ip);
 					}else{
 						$arr = array('status'=>1,'info'=>$ip);
 					}
