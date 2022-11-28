@@ -730,19 +730,7 @@ function send_verification_email($data)
                                                     src='https://img.999.game/email/tron.png' width='120px'> </a><a
                                                 href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
                                                 rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/binance.png' width='120px'> </a><a
-                                                href='https://exchange.biswap.org/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
-                                                target='_blank' rel='noopener noreferrer nofollow'
-                                                style='text-decoration: none'><img src='https://img.999.game/email/biswap.png'
-                                                    width='120px'> </a><a
-                                                href='https://exchange.babyswap.finance/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
-                                                target='_blank' rel='noopener noreferrer nofollow'
-                                                style='text-decoration: none'><img src='https://img.999.game/email/babyswap.png'
-                                                    width='120px'> </a><a
-                                                href='https://app.bogged.finance/bsc/swap?tokenIn=BNB&amp;tokenOut'
-                                                target='_blank' rel='noopener noreferrer nofollow'
-                                                style='text-decoration: none'><img src='https://img.999.game/email/bogged.png'
-                                                    width='120px'></a></div>
+                                                    src='https://img.999.game/email/binance.png' width='120px'> </a></div>
                                             </td>
                                         </tr>
                                         </table>
@@ -766,8 +754,8 @@ function send_verification_email($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                             <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                                This service email contains essential information relating to your 999 Game account.
-                                                999 Game's policy is to respect and protect individuals' privacy. Read our Privacy
+                                                This service email contains essential information relating to your 999Game account.
+                                                999Game's policy is to respect and protect individuals' privacy. Read our Privacy
                                                 Policy.</div>
                                             </td>
                                         </tr>

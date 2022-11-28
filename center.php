@@ -1528,16 +1528,7 @@ function sendWelcomeEmail()
 											src='https://img.999.game/email/tron.png' width='140px' style='padding: 16px'> </a><a
 											href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/binance.png' width='140px' style='padding: 16px'> </a><a
-											href='https://exchange.biswap.org/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
-											target='_blank' rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/biswap.png' width='140px' style='padding: 16px'> </a><a
-											href='https://exchange.babyswap.finance/#/swap?outputCurrency=0xbb46693ebbea1ac2070e59b4d043b47e2e095f86'
-											target='_blank' rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/babyswap.png' width='140px' style='padding: 16px'> </a><a
-											href='https://app.bogged.finance/bsc/swap?tokenIn=BNB&amp;tokenOut' target='_blank'
-											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/bogged.png' width='140px' style='padding: 16px'></a></div>
+											src='https://img.999.game/email/binance.png' width='140px' style='padding: 16px'> </a></div>
 									</td>
 									</tr>
 								</table>
