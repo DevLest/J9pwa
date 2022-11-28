@@ -32,7 +32,7 @@
 
         $tg_data = json_decode($_GET['tg_data'], true);
 
-        $account = $tg_data['id']."@gmail.com";
+        $account = $tg_data['id'];
         $password = substr($tg_data['id'],0,-5). "telegram";
         
         $re = json_decode(loginMember($account,$password));
