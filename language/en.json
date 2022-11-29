@@ -2,46 +2,46 @@
     "request": {
         "auth_check": "Verification failed",
         "play_game": {
-            "invalid": "Invalid Parameters",
+            "invalid": "Invalid Parameters"
         },
         "change_account_info": {
-            "success_message_1": "Information modified successfully",
+            "success_message_1": "Information modified successfully"
         },
         "send_reset_password": {
             "mail_success": "The message has been sent",
             "mail_error": "Error in sending reset code",
             "code_error": "Error in sending reset code | Password code Ivanlid",
             "smtp_catch": "Error in sending reset code. Error: ",
-            "check_email": "Email not registered in any guest account",
+            "check_email": "Email not registered in any guest account"
         },
         "verify_reset_password": {
-            "code_expired": "Verification code expired! Please request a new code.",
+            "code_expired": "Verification code expired! Please request a new code."
         },
         "reset_password": {
             "verification_code_incorrect": "The verification code is incorrect, please try again",
-            "verification_code_error": "Error in code verification. Please contact customer support.",
+            "verification_code_error": "Error in code verification. Please contact customer support."
         },
         "get_transaction": {
             "empty_date_range": "Please enter the date range",
-            "empty_username": "Please enter username",
+            "empty_username": "Please enter username"
         },
         "get_fin_transaction": {
             "empty_date_range": "Please enter the date range",
-            "empty_username": "Please enter username",
+            "empty_username": "Please enter username"
         },
         "search_game": {
 
         },
         "game_balance_summary": {
-            "no_account_data": "No account data!",
+            "no_account_data": "No account data!"
         },
         "get_account_summary": {
             "empty_date_range": "Please enter the date range",
-            "empty_username": "Please enter username",
+            "empty_username": "Please enter username"
         },
         "verify_agent": {
             "empty_agent_name": "Agent name cannot be empty",
-            "agent_not_found": "Agent not found! Enter the correct agent name if applicable, leave blank if you don't have it.",
+            "agent_not_found": "Agent not found! Enter the correct agent name if applicable, leave blank if you don't have it."
         },
         "app_version": {
 
@@ -50,7 +50,7 @@
 
         },
         "agent_friends_list": {
-            "empty_friends": "No friends found!",
+            "empty_friends": "No friends found!"
         },
         "get_images": {
 
@@ -58,11 +58,11 @@
         "send_verification_email": {
             "empty_email": "Please enter Email",
             "success_email_sent": "Verification email has been sent",
-            "error_sending_code": "Error in sending reset code",
+            "error_sending_code": "Error in sending reset code"
         },
         "verify_email_code": {
             "email_verified": "Email Verified",
-            "error_email_verify": "Error in Verifying email",
+            "error_email_verify": "Error in Verifying email"
         },
         "convert_currency": {
 
@@ -70,13 +70,13 @@
         "sports_token": {
             "error_parsing_url_data": "Error in parsing URL Data",
             "error_parsing_url": "Error in parsing URL",
-            "no_redirection_url": "Error! No redirection URL",
+            "no_redirection_url": "Error! No redirection URL"
         },
         "free_spin_amount": {
-            "no_bonus_available": "No bonus avaibale for the meantime",
+            "no_bonus_available": "No bonus avaibale for the meantime"
         },
         "oauth_register": {
 
-        },
+        }
     }
 }]

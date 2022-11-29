@@ -2,46 +2,46 @@
     "request": {
         "auth_check": "Fallo en la verificación",
         "play_game": {
-            "invalid": "Parámetros inválidos",
+            "invalid": "Parámetros inválidos"
         },
         "change_account_info": {
-            "success_message_1": "Información modificada con éxito",
+            "success_message_1": "Información modificada con éxito"
         },
         "send_reset_password": {
             "mail_success": "El mensaje ha sido enviado",
             "mail_error": "Error al enviar el código de reinicio",
             "code_error": "Error al enviar el código de reinicio | Código de contraseña no válido",
             "smtp_catch": "Error al enviar el código de reinicio. Error: ",
-            "check_email": "Correo electrónico no registrado en ninguna cuenta de invitado",
+            "check_email": "Correo electrónico no registrado en ninguna cuenta de invitado"
         },
         "verify_reset_password": {
-            "code_expired": "¡Código de verificación expirado! Solicite un nuevo código.",
+            "code_expired": "¡Código de verificación expirado! Solicite un nuevo código."
         },
         "reset_password": {
             "verification_code_incorrect": "El código de verificación es incorrecto, intente nuevamente",
-            "verification_code_error": "Error en la verificación del código. Póngase en contacto con el servicio de atención al cliente.",
+            "verification_code_error": "Error en la verificación del código. Póngase en contacto con el servicio de atención al cliente."
         },
         "get_transaction": {
             "empty_date_range": "Por favor ingrese el rango de fechas",
-            "empty_username": "Por favor ingrese nombre de usuario",
+            "empty_username": "Por favor ingrese nombre de usuario"
         },
         "get_fin_transaction": {
             "empty_date_range": "Por favor ingrese el rango de fechas",
-            "empty_username": "Por favor ingrese nombre de usuario",
+            "empty_username": "Por favor ingrese nombre de usuario"
         },
         "search_game": {
 
         },
         "game_balance_summary": {
-            "no_account_data": "Sin datos de cuenta!",
+            "no_account_data": "Sin datos de cuenta!"
         },
         "get_account_summary": {
             "empty_date_range": "Por favor ingrese el rango de fechas",
-            "empty_username": "Por favor ingrese nombre de usuario",
+            "empty_username": "Por favor ingrese nombre de usuario"
         },
         "verify_agent": {
             "empty_agent_name": "El nombre del agente no puede estar vacío",
-            "agent_not_found": "¡Agente no encontrado! Ingrese el nombre del agente correcto si corresponde, déjelo en blanco si no lo tiene.",
+            "agent_not_found": "¡Agente no encontrado! Ingrese el nombre del agente correcto si corresponde, déjelo en blanco si no lo tiene."
         },
         "app_version": {
 
@@ -50,7 +50,7 @@
 
         },
         "agent_friends_list": {
-            "empty_friends": "¡No se encontraron amigos!",
+            "empty_friends": "¡No se encontraron amigos!"
         },
         "get_images": {
 
@@ -58,11 +58,11 @@
         "send_verification_email": {
             "empty_email": "Por favor ingrese correo electrónico",
             "success_email_sent": "Se ha enviado el correo electrónico de verificación",
-            "error_sending_code": "Error al enviar el código de reinicio",
+            "error_sending_code": "Error al enviar el código de reinicio"
         },
         "verify_email_code": {
             "email_verified": "Correo Electrónico Verificado",
-            "error_email_verify": "Error al verificar el correo electrónico",
+            "error_email_verify": "Error al verificar el correo electrónico"
         },
         "convert_currency": {
 
@@ -70,13 +70,13 @@
         "sports_token": {
             "error_parsing_url_data": "Error al analizar los datos de la URL",
             "error_parsing_url": "Error al analizar la URL",
-            "no_redirection_url": "¡Error! Sin URL de redirección",
+            "no_redirection_url": "¡Error! Sin URL de redirección"
         },
         "free_spin_amount": {
-            "no_bonus_available": "No hay bonificación disponible mientras tanto",
+            "no_bonus_available": "No hay bonificación disponible mientras tanto"
         },
         "oauth_register": {
 
-        },
+        }
     }
 }]
