@@ -45,7 +45,7 @@
         "EVO" => "Evolution",
         "BETBY" => "Betby",
         "GAMEART" => "GameArt",
-        "SM" => "Slotmil",
+        "SM" => "Slotmill",
     ];
 
     $output = [];
