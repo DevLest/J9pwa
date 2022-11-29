@@ -897,7 +897,7 @@ function get_transaction($data, $type = 1)
             break;
         default: // 24h
             $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
-            $end_date = date('Y-m-d H:i:s', time());
+            $end_date = date('Y-m-d 23:59:59', time());
             break;
     }
 
@@ -1270,7 +1270,7 @@ function get_account_summary($data)
             break;
         default: // 24h
             $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
-            $end_date = date('Y-m-d H:i:s', time());
+            $end_date = date('Y-m-d 23:59:59', time());
             break;
     }
 
