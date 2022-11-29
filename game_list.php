@@ -81,7 +81,7 @@ $platformNames = [
     "RT" => "RedTiger",
     "GAMEART" => "GameArt",
     "NT" => "Netent",
-    "SM" => "Slotmil",
+    "SM" => "Slotmill",
 ];
 
 $pin_games = [
