@@ -97,9 +97,6 @@ switch ($data->type) {
     case "free_spin_amount":
         echo free_spin_amount($data);
         break;
-    case "oauth_register":
-        // echo oauthRegister($data);
-        break;
 }
 
 function getGameData($category = "", $format = 0, $seach_string = "", $game_code = "")
@@ -899,7 +896,7 @@ function get_transaction($data, $type = 1)
             break;
         default: // 24h
             $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
-            $end_date = date('Y-m-d H:i:s', time());
+            $end_date = date('Y-m-d 23:59:59', time());
             break;
     }
 
@@ -1272,7 +1269,7 @@ function get_account_summary($data)
             break;
         default: // 24h
             $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
-            $end_date = date('Y-m-d H:i:s', time());
+            $end_date = date('Y-m-d 23:59:59', time());
             break;
     }
 
@@ -1687,7 +1684,6 @@ function free_spin_amount($data)
 
     $url = "https://api.vsr888.com/bonus/player/activated";
     $result = https_submit($url, $params);
-//return   $result;
     $bonus = $result->data;
     $free_spin = [];
     $total = 0;
