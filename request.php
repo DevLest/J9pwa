@@ -2,6 +2,7 @@
 header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials:true");
+date_default_timezone_set('UTC');
 
 define("WEB_PATH", __DIR__);
 include_once "core.class.php";
@@ -18,7 +19,7 @@ if (isset($data->debug)) {
     error_reporting(E_ALL);
 }
 
-$lang = json_decode(file_get_contents("./languange/".$data->lang.".json"));
+$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
 $lang = $lang->request;
 
 //check auth

@@ -1,4 +1,4 @@
-[{
+{
     "request": {
         "auth_check": "Fallo en la verificación",
         "play_game": {
@@ -79,4 +79,4 @@
 
         }
     }
-}]
+}
