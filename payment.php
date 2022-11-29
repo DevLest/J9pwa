@@ -403,7 +403,7 @@ function submit_autopromotion($data)
     }
         $core = new core();
     $info = $core->submit_autopromotion($data->username_email,$data->promotion_id);
-  // print_r($info);exit;
+  //print_r($info);exit;
     if($info==1){
          return json_encode(["status" => 1, "info" => "application has been successful"], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } elseif($info==1011) {
@@ -412,6 +412,8 @@ function submit_autopromotion($data)
         return json_encode(["status" => 0, "info" => 'You entered the game again after depositing, please do not enter the game before applying for promotions,'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }elseif($info== 1013) {
         return json_encode(["status" => 0, "info" => 'You have already applied for this promotion'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    }elseif($info== 1015) {
+        return json_encode(["status" => 0, "info" => 'This deposit has already applied for a discount, please deposit again'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
     
 }

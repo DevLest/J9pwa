@@ -43,7 +43,7 @@ $currency = [
     "EVO" => ["USD"],
     "BETBY" => ["USD"],
     "GAMEART" => ["USD"],
-    "SM" => ["USD"],
+    "SLOTMILL" => ["USD"],
 ];
 
 $platformNames = [
@@ -81,7 +81,7 @@ $platformNames = [
     "RT" => "RedTiger",
     "GAMEART" => "GameArt",
     "NT" => "Netent",
-    "SM" => "Slotmill",
+    "SLOTMILL" => "Slotmill",
 ];
 
 $pin_games = [
