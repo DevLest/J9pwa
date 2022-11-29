@@ -18,6 +18,8 @@ if (isset($data->debug)) {
     error_reporting(E_ALL);
 }
 
+$lang = json_decode(file_get_contents("languange/".$data->lang.".json"));
+
 //check auth
 $api_key = 'fghrtrvdfger';
 $time = substr(time(), 0, -3);
@@ -26,7 +28,7 @@ $auth_check = md5($time . $api_key);
 $auth = $data->auth;
 
 if ($auth_check != $auth) {
-    echo json_encode(['status' => 0, 'info' => "Verification failed"], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['status' => 0, 'info' => $lang->auth_check], JSON_UNESCAPED_UNICODE);
     exit();
 }
 
@@ -250,6 +252,8 @@ function removeBomUtf8($s)
 
 function play_game($data)
 {
+    global $lang;
+    
     if ($data->currency != "") {
         $currency = [
             "USDT" => 1232,
@@ -276,7 +280,7 @@ function play_game($data)
         return json_encode(['status' => 1, 'info' => $game_link]);
     }
 
-    return json_encode(['status' => 0, 'info' => "Invalid parameters"]);
+    return json_encode(['status' => 0, 'info' => $lang->play_game->invalid]);
 }
 
 function search_game($data)
