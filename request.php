@@ -18,7 +18,8 @@ if (isset($data->debug)) {
     error_reporting(E_ALL);
 }
 
-$lang = json_decode(file_get_contents("languange/".$data->lang.".json"));
+$lang = json_decode(file_get_contents("./languange/".$data->lang.".json"));
+$lang = $lang->request;
 
 //check auth
 $api_key = 'fghrtrvdfger';
@@ -897,7 +898,7 @@ function get_transaction($data, $type = 1)
             break;
         default: // 24h
             $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
-            $end_date = date('Y-m-d 23:59:59', time());
+            $end_date = date('Y-m-d H:i:s', time());
             break;
     }
 
@@ -1270,7 +1271,7 @@ function get_account_summary($data)
             break;
         default: // 24h
             $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
-            $end_date = date('Y-m-d 23:59:59', time());
+            $end_date = date('Y-m-d H:i:s', time());
             break;
     }
 
