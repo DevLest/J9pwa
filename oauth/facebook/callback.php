@@ -105,6 +105,9 @@
             ]
         ]));
 
+    } elseif($re == 1001){
+        $reset = $core->resetpwd($account, $password);
+        return loginMember($account, $password);
     } else {
         $time = substr(time(),0,-3);
         $auth = md5($time.$api_key);

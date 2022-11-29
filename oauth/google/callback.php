@@ -146,6 +146,11 @@
                 ],
             ]);
         }
+        elseif($re == 1001)
+        {
+            $reset = $core->resetpwd($account, $password);
+            return loginMember($account, $password);
+        }
         return json_encode(['status' => 0, "info" => "account not found"]);
     }
 
