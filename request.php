@@ -1350,7 +1350,7 @@ function loginMember($username, $password)
 	$reset = $core->check_password_reset($account,$password);
 	if(is_array($reset))
 	{
-		$add_time = date("Y-m-d H:i:s",(time()-120));
+		$add_time = date("Y-m-d H:i:s",(time()-1800));
 
 		if ( $reset['add_time'] < $add_time )
 		{
