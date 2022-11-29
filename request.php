@@ -968,8 +968,8 @@ function get_transaction($data, $type = 1)
                             "amount" => $unprocessed['amount'],
                             "process_time" => date('Y-m-d H:i:s', strtotime($unprocessed['requestTime'])),
                             "status" => "unprocessed",
-                            "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
-                            "verifyStatus" => $pending['depStatus'],
+                            "bill_no" => substr($unprocessed['billno'], 0, 5) . "xxxx" . substr($unprocessed['billno'], -4),
+                            "verifyStatus" => $unprocessed['depStatus'],
                             "reydata" => $unprocessed,
 
                         ]);
@@ -990,8 +990,8 @@ function get_transaction($data, $type = 1)
                             "amount" => $cancelled['amount'],
                             "process_time" => date('Y-m-d H:i:s', strtotime($cancelled['requestTime'])),
                             "status" => "Cancelled",
-                            "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
-                            "verifyStatus" => $pending['depStatus'],
+                            "bill_no" => substr($cancelled['billno'], 0, 5) . "xxxx" . substr($cancelled['billno'], -4),
+                            "verifyStatus" => $cancelled['depStatus'],
 
                             "reydata" => $cancelled,
 
@@ -1013,8 +1013,8 @@ function get_transaction($data, $type = 1)
                             "amount" => $success['amount'],
                             "process_time" => date('Y-m-d H:i:s', strtotime($success['requestTime'])),
                             "status" => "Success",
-                            "bill_no" => substr($pending['billno'], 0, 5) . "xxxx" . substr($pending['billno'], -4),
-                            "verifyStatus" => $pending['depStatus'],
+                            "bill_no" => substr($success['billno'], 0, 5) . "xxxx" . substr($success['billno'], -4),
+                            "verifyStatus" => $success['depStatus'],
 
                             "reydata" => $success,
 
