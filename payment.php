@@ -687,14 +687,6 @@ function networkList($data)
         "mETH"
     ];
     
-    $network = [];
-    $pin_network = [];
-    
-    include_once WEB_PATH . "/common/cache_file.class.php";
-    $cachFile = new cache_file();
-    $data_list = $cachFile->get("s6_api", '', 'data', 'currency');
-    $response = json_decode($data_list);
-
     $skipCoin = [
         "heco"
     ];
@@ -711,6 +703,16 @@ function networkList($data)
         "BCH",
         "DOGE"
     ];
+    
+    $network = [];
+    $pin_network = [];
+    
+    include_once WEB_PATH . "/common/cache_file.class.php";
+    $cachFile = new cache_file();
+    $data_list = $cachFile->get("s6_api", '', 'data', 'currency'); //enable for S6 coins
+    // $data_list = $cachFile->get("999_api", '', 'data', 'currency');
+    $response = json_decode($data_list);
+
     
     if (is_array($response->data)) {
         foreach ($response->data as $wallet) {
@@ -766,98 +768,6 @@ function networkList($data)
         return json_encode(['status' => 1, 'info' => $network]);
     }
     return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
-
-    // $coins = [
-    //     "USDT" => 825,
-    //     "ETH" => 1027,
-    //     "BTC" => 1,
-    //     "AAVE" => 7278,
-    //     "ADA" => 2010,
-    //     "AIRT" => 10905,
-    //     "ALU" => 9637,
-    //     "AVAX" => 5805,
-    //     "BABY" => 10334,
-    //     "BCH" => 1831,
-    //     "BFG" => 11038,
-    //     "BNB" => 1839,
-    //     "BSW" => 10746,
-    //     "BTT(OLD)" => 3718,
-    //     "BTT(NEW)" => 16086,
-    //     "C98" => 10903,
-    //     "CAKE" => 7186,
-    //     "CHZ" => 4066,
-    //     "COMP" => 5692,
-    //     "DAI" => 4943,
-    //     "DASH" => 131,
-    //     "DOGE" => 74,
-    //     "ENJ" => 2130,
-    //     "ETC" => 1321,
-    //     "FTM" => 3513,
-    //     "GLM" => 1455,
-    //     "HOT" => 2682,
-    //     "LAZIO" => 12687,
-    //     "LINK" => 1975,
-    //     "LTC" => 2,
-    //     "MATIC" => 3890,
-    //     "MKR" => 1518,
-    //     "OMG" => 1808,
-    //     "ONT" => 2566,
-    //     "PORTO" => 14052,
-    //     "REEF" => 6951,
-    //     "SHIB" => 5994,
-    //     "SNX" => 2586,
-    //     "STORJ" => 1772,
-    //     "SUSHI" => 6758,
-    //     "TRX" => 1958,
-    //     "UMA" => 5617,
-    //     "UNI" => 7083,
-    //     "USDC" => 3408,
-    //     "XLM" => 512,
-    //     "YFI" => 5864,
-    //     "ZIL" => 2469,
-    //     "ZRX" => 1896,
-    // ];
-
-    // $curl = curl_init();
-    // curl_setopt_array($curl, array(
-    //     CURLOPT_URL => "152.32.214.196:8917/account/getAddress",
-    //     CURLOPT_FOLLOWLOCATION => 0,
-    //     CURLOPT_RETURNTRANSFER => true,
-    //     CURLOPT_TIMEOUT => 3,
-    //     CURLOPT_POST => 1,
-    //     CURLOPT_CUSTOMREQUEST => "POST",
-    //     CURLOPT_TIMEOUT => 100,
-    //     CURLOPT_POSTFIELDS => json_encode([
-    //         "merchant" => "j9",
-    //         "outmemid" => $data->username_email,
-    //         "notifyurl" => "https://999.game",
-    //     ]),
-    //     CURLOPT_HTTPHEADER => [
-    //         'Content-Type: application/json; charset=utf-8',
-    //     ],
-    // ));
-
-    // $response = curl_exec($curl);
-
-    // if (curl_errno($curl)) {
-    //     return curl_error($curl);
-    // }
-    // curl_close($curl);
-
-    // $response = json_decode($response);
-
-    // if (isset($response->data)) {
-    //     foreach ($response->data as $wallet) {
-    //         array_push($network, [
-    //             "address" => $wallet->address,
-    //             "network" => $wallet->currency,
-    //             "name" => strtoupper($wallet->currencytype),
-    //         ]);
-    //     }
-
-    //     return json_encode(['status' => 1, 'info' => $network]);
-    // }
-    // return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
 }
 
 function s6getAddress($email, $password, $network, $currencyId){
@@ -894,4 +804,51 @@ function s6getAddress($email, $password, $network, $currencyId){
     curl_close($curl);
 
     return json_decode($response);
+}
+
+function get999Address($email, $network){
+    $account = [];
+    
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "http://152.32.214.196:8917/account/getAccount",
+        CURLOPT_FOLLOWLOCATION => 0,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 3,
+        CURLOPT_POST => 1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_TIMEOUT => 100,
+        CURLOPT_POSTFIELDS => json_encode([
+            "currency" => $network,
+            "merchant" => "j9",
+            "outmemid" => $email,
+            "notifyurl" => "https://999.game",
+        ]),
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json; charset=utf-8',
+        ],
+    ));
+
+    $response = curl_exec($curl);
+
+    if (curl_errno($curl)) {
+        return curl_error($curl);
+    }
+    curl_close($curl);
+
+    $response = json_decode($response);
+
+    print_r($response);
+    if (isset($response->data)) {
+        array_push($account, [
+            "address" => $response->data->address,
+            "merchant" => $response->data->merchant,
+            "username" => $response->data->outmemid,
+            "currency" => $response->data->currency
+        ]);
+
+        return json_encode(['status' => 1, 'info' => $account]);
+    }
+
+    return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
 }

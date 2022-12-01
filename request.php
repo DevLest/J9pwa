@@ -359,53 +359,309 @@ function send_reset_password($data)
 
             $mail->Subject = 'Account Password Reset';
             $mail->Body =
-            "<div
-                    style='
+            "<!doctype html>
+            <html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'
+              xmlns:o='urn:schemas-microsoft-com:office:office'>
+            
+              <head>
+                <title></title>
+                <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+                <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+                <meta name='viewport' content='width=device-width,initial-scale=1'>
+                <style type='text/css'>
+                  #outlook a {
+                    padding: 0;
+                  }
+            
+                  .ReadMsgBody {
                     width: 100%;
-                    background-image: url(https://999j9azx.999game.online/j9pwa/images/%C2%A6%C2%A6+%C2%A6+%C2%AC-+.png);
-                    background-size: 100%;
-                    background-position: top center;
-                    '
-                >
-                    <div>
-                    <div style='padding: 0.75rem 1.25rem; margin-bottom: 10px; text-align: center'>
-                        <img src='https://999j9azx.999game.online/j9pwa/images/logo.png' style='width: 15%' />
-                    </div>
-                    <div style='width: 100%; height: 3px; display: flex'>
-                        <div style='width: 50%; height: 3px; background-color: black'></div>
-                        <div style='width: 50%; height: 3px; background-color: #0bafe6'></div>
-                    </div>
-                    <div style='padding: 1.25rem'>
-                        <p style='margin-top: 0'>Hello " . strtoupper($re['firstName']) . ",</p>
-                        <p style='margin-top: 0; margin-bottom: 30px'>
-                        Forgot your 999Game password? For security reasons we have generated a temporary password for you.
-                        </p>
-                        <div style='width: 100%'>
-                        <div style='background-color: #0bafe6; border-radius: 10px; padding: 0.5em 1.5em; margin: 0 auto; width: max-content'>
-                            <p style='color: white'>Username: " . $re['account'] . "</p>
-                            <p style='color: white'>Temporary password: $verif_code</p>
-                        </div>
-                        </div>
-                        <p style='margin-top: 30px'>Remember to change your temporary password the next time you enter 999Game</p>
-                        <p style='margin-top: 0'>
-                        If you have not attempted to change your password, please contact customer service immediately at - or
-                        <a href='mailto:support@999.game' target='_blank'>support@999.game</a>.
-                        </p>
-                        <a
-                        href='https://999.game/?reset_password=$base_key'
-                        style='
-                            background-color: #0bafe6;
-                            padding: 0.7rem 1.5rem;
-                            border-radius: 21px;
-                            color: white;
-                            display: inline-block;
-                            margin-top: 10px;
-                        '
-                        >Click here</a
-                        >
-                    </div>
-                    </div>
-                </div>";
+                  }
+            
+                  .ExternalClass {
+                    width: 100%;
+                  }
+            
+                  .ExternalClass * {
+                    line-height: 100%;
+                  }
+            
+                  body {
+                    margin: 0;
+                    padding: 0;
+                    -webkit-text-size-adjust: 100%;
+                    -ms-text-size-adjust: 100%;
+                  }
+            
+                  table,
+                  td {
+                    border-collapse: collapse;
+                    mso-table-lspace: 0pt;
+                    mso-table-rspace: 0pt;
+                  }
+            
+                  img {
+                    border: 0;
+                    height: auto;
+                    line-height: 100%;
+                    outline: none;
+                    text-decoration: none;
+                    -ms-interpolation-mode: bicubic;
+                  }
+            
+                  p {
+                    display: block;
+                    margin: 13px 0;
+                  }
+                </style>
+                <style type='text/css'>
+                  @media only screen and (max-width:480px) {
+                    @-ms-viewport {
+                      width: 320px;
+                    }
+            
+                    @viewport{ width:320px; }
+                  }
+                </style>
+                <link href='https://fonts.googleapis.com/css2?family=Rubik' rel='stylesheet' type='text/css'>
+                <style type='text/css'>
+                  @import url(https://fonts.googleapis.com/css2?family=Rubik);
+                </style>
+                <style type='text/css'>
+                  @media only screen and (min-width:480px) {
+                    .mj-column-per-100 {
+                      width: 100% !important;
+                      max-width: 100%;
+                    }
+            
+                    .mj-column-px-550 {
+                      width: 550px !important;
+                      max-width: 550px;
+                    }
+                  }
+                </style>
+                <style type='text/css'></style>
+              </head>
+            
+              <body>
+                <div>
+                  <div style='background:#1c1e22;background-color:#1c1e22;Margin:0px auto;border-radius:24px;max-width:640px;'>
+                    <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                      style='background:#1c1e22;background-color:#1c1e22;width:100%;border-radius:24px;'>
+                      <tbody>
+                        <tr>
+                          <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                              <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
+                                  <tr>
+                                    <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
+                                      <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                          style='vertical-align:top;' width='100%'>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                Hello " . strtoupper($re['firstName']) . ",</div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                Forgot your 999 Game password? For security reasons we have generated a temporary
+                                                password for you.</div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                              <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
+                                  <tr>
+                                    <td style='direction:ltr;font-size:0px;padding:24px;text-align:center;vertical-align:top;'>
+                                      <div class='mj-column-px-550 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%'>
+                                          <tbody>
+                                            <tr>
+                                              <td
+                                                style='background-color:white;border-radius:20px;vertical-align:top;padding-top:24px;padding-bottom:24px;'>
+                                                <table border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%'>
+                                                  <tr>
+                                                    <td align='center'
+                                                      style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                                      <div
+                                                        style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                        Username:  " . $re['account'] . "</div>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td align='center'
+                                                      style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                                      <div
+                                                        style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                        Temporary Password: $verif_code</div>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                              <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
+                                  <tr>
+                                    <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
+                                      <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                          style='vertical-align:top;' width='100%'>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                Remember to change your temporary password the next time you enter 999 Game.</div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align='center' vertical-align='middle'
+                                              style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                                style='border-collapse:separate;width:194px;line-height:100%;'>
+                                                <tr>
+                                                  <td align='center' bgcolor='#2283F6' role='presentation'
+                                                    style='border:none;border-radius:10px;cursor:auto;height:35px;padding:10px 25px;background:#2283F6;'
+                                                    valign='middle'><a
+                                                      href='https://999.game/?reset_password=$base_key'
+                                                      style='background:#2283F6;color:white;font-family:Rubik, sans-serif;font-size:15px;font-weight:500;line-height:120%;Margin:0;text-decoration:none;text-transform:none;'
+                                                      target='_blank'>Change password</a></td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                If you did not attempt to change your password, please contact customer service
+                                                immediately at <span
+                                                  style='text-decoration: underline'>999game@mycasinos.online.</span></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                              <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;'>
+                                      <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                          style='border-bottom:2px solid #24262b;border-top:2px solid #24262b;vertical-align:top;'
+                                          width='100%'>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                <a href='https://bitcoin.org/en/' target='_blank' rel='noopener noreferrer nofollow'
+                                                  style='text-decoration: none'><img src='https://img.999.game/email/bitcoin.png'
+                                                    width='120px' style='margin: 0 auto'> </a><a href='https://www.ethereum.org/'
+                                                  target='_blank' rel='noopener noreferrer nofollow'
+                                                  style='text-decoration: none'><img src='https://img.999.game/email/ethereum.png'
+                                                    width='120px' style='margin: 0 auto'> </a><a href='https://tether.to/en/'
+                                                  target='_blank' rel='noopener noreferrer nofollow'
+                                                  style='text-decoration: none'><img src='https://img.999.game/email/tether.png'
+                                                    width='120px' style='margin: 0 auto'> </a><a href='https://tron.network/'
+                                                  target='_blank' rel='noopener noreferrer nofollow'
+                                                  style='text-decoration: none'><img src='https://img.999.game/email/tron.png'
+                                                    width='120px' style='margin: 0 auto'> </a><a
+                                                  href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
+                                                  rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+                                                    src='https://img.999.game/email/binance.png' width='120px'> </a><a
+                                                  href='https://dogecoin.com/' target='_blank' rel='noopener noreferrer nofollow'
+                                                  style='text-decoration: none'><img src='https://img.999.game/email/dogecoin.png'
+                                                    width='120px'> </a><a href='https://cardano.org/' target='_blank'
+                                                  rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+                                                    src='https://img.999.game/email/cardano.png' width='120px'> </a><a
+                                                  href='https://ripple.com/xrp/' target='_blank' rel='noopener noreferrer nofollow'
+                                                  style='text-decoration: none; width: 120px'><img
+                                                    src='https://img.999.game/email/xrp.png' width='120px'></a></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div style='Margin:0px auto;max-width:640px;'>
+                              <table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                style='width:100%;'>
+                                <tbody>
+                                  <tr>
+                                    <td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'>
+                                      <div class='mj-column-per-100 outlook-group-fix'
+                                        style='font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;'>
+                                        <table border='0' cellpadding='0' cellspacing='0' role='presentation'
+                                          style='vertical-align:top;' width='100%'>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
+                                                This service email contains essential information relating to your 999 Game account.
+                                                999 Game's policy is to respect and protect individuals' privacy. Read our Privacy
+                                                Policy.</div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
+                                              <div
+                                                style='font-family:Rubik, sans-serif;font-size:12px;line-height:1;text-align:center;color:#888888;'>
+                                                Copyright © 2022 999Game. All rights reserved.</div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </body>
+            
+            </html>";
 
             $info = [
                 'member_id' => $re['id'],
