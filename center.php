@@ -1280,10 +1280,12 @@ function sendWelcomeEmail()
         $mail->Password = 'download15895';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
+		$mail->CharSet = 'UTF-8';
 		$mail->AddAttachment( "data/Bonus terms and conditions.pdf" , 'Bonus terms and conditions.pdf' );
 		$mail->AddAttachment( "data/Terms and Conditions.pdf" , 'Terms and Conditions.pdf' );
 
-        $mail->setFrom('support@999.game', '999Game');
+		$mail->setFrom('support@999.game', '999Game');
+		$mail->addReplyTo('support@999.game', '999Game');
 		$mail->addAddress($_SESSION['email'], $_SESSION['member_name']);
 		$mail->isHTML(true);
 
@@ -1610,8 +1612,10 @@ function send_verification_email($email)
         $mail->Password = 'download15895';
 		$mail->SMTPSecure = "ssl";
 		$mail->Port       = 465;
+		$mail->CharSet = 'UTF-8';
 
-        $mail->setFrom('support@999.game', '999Game');
+		$mail->setFrom('support@999.game', '999Game');
+		$mail->addReplyTo('support@999.game', '999Game');
 		$mail->addAddress($email, $name);
 		$mail->isHTML(true);
 
