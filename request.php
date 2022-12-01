@@ -1683,7 +1683,7 @@ function sports_token($data)
 function free_spin_amount($data)
 {
     $params = [
-        "playerId" => "usd_" . $data->username_email,
+        "playerId" => "usd_" . cleanString($data->username_email),
     ];
 
     $url = "https://api.vsr888.com/bonus/player/activated";
