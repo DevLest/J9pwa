@@ -191,7 +191,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 			echo json_encode(array('status'=>0,'info'=>'The password does not meet the requirements, please re-enter'));
 			exit();
 		} 
-		$re = $core->change_password($_POST['username'],$password,$password_new);
+		$re = $core->change_password($_POST['username_emaiil'],$password,$password_new);
 		if($re == 1)
 		{
 			echo json_encode(array('status'=>1,'info'=>'Password reset completed!!'));
