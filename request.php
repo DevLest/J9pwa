@@ -309,6 +309,8 @@ function search_game($data)
 
 function change_account_info($data)
 {
+    global $lang;
+
     $core = new core();
 
     $realName = (isset($data->realName)) ? $data->realName : "";
@@ -323,11 +325,13 @@ function change_account_info($data)
 
     $change = $core->change_informationV2($data->username_email, ['state' => $state, 'city' => $city, 'postal' => $postal, 'country' => $country, 'landline' => $landline, "realName" => $realName, "birthday" => $birthday, "telephone" => $telephone, "nickName" => $nickName]);
 
-    return json_encode(['status' => 1, 'info' => "Information modified successfully"], JSON_UNESCAPED_UNICODE);
+    return json_encode(['status' => 1, 'info' => $lang->change_account_info->success_message_1], JSON_UNESCAPED_UNICODE);
 }
 
 function send_reset_password($data)
 {
+    global $lang;
+
     include_once WEB_PATH . "/email/PHPMailer.class.php";
     include_once WEB_PATH . "/email/smtp.class.php";
 
@@ -674,26 +678,28 @@ function send_reset_password($data)
 
             if ($pwd) {
                 if ($mail->send()) {
-                    return json_encode(['status' => 1, 'info' => "The message has been sent"], JSON_UNESCAPED_UNICODE);
+                    return json_encode(['status' => 1, 'info' => $lang->send_reset_password->mail_success], JSON_UNESCAPED_UNICODE);
                 } else {
-                    return json_encode(['status' => 0, 'info' => "Error in sending reset code"]);
+                    return json_encode(['status' => 0, 'info' => $lang->send_reset_password->mail_error]);
                 }
 
             } else {
-                return json_encode(['status' => 0, 'info' => "Error in sending reset code | Password code Ivanlid"]);
+                return json_encode(['status' => 0, 'info' => $lang->send_reset_password->code_error]);
             }
 
         } catch (Exception $e) {
-            return json_encode(['status' => 0, 'info' => "Error in sending reset code. Error: $mail->ErrorInfo"]);
+            return json_encode(['status' => 0, 'info' => $lang->send_reset_password->smtp_catch . "" .$mail->ErrorInfo]);
         }
     } else {
-        return json_encode(['status' => 0, 'info' => "Email not registered in any guest account"], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->send_reset_password->check_email], JSON_UNESCAPED_UNICODE);
     }
 
 }
 
 function verify_reset_password($data)
 {
+    global $lang;
+
     include_once WEB_PATH . "/common/cache_file.class.php";
     $core = new core();
     $re = $core->get_password_reset($data->hash);
@@ -705,15 +711,17 @@ function verify_reset_password($data)
 
         return json_encode(['status' => 1, 'info' => ['code' => $re['verification_code'], 'email' => $re['email']]]);
     } else {
-        return json_encode(['status' => 0, 'info' => 'Verification code expired! Please request a new code.'], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->verify_reset_password->code_expired], JSON_UNESCAPED_UNICODE);
     }
 
 }
 
 function send_verification_email($data)
 {
+    global $lang;
+    
     if (!isset($data->email) && $data->email != "") {
-        return json_encode(['status' => 0, "info" => "Please enter Email"], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, "info" => $lang->send_verification_email->empty_email], JSON_UNESCAPED_UNICODE);
     }
 
     include_once WEB_PATH . "/email/PHPMailer.class.php";
@@ -993,7 +1001,16 @@ function send_verification_email($data)
                                                     src='https://img.999.game/email/tron.png' width='120px'> </a><a
                                                 href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
                                                 rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/binance.png' width='120px'> </a></div>
+                                                    src='https://img.999.game/email/binance.png' width='120px'> </a>
+                                                    <a href='https://dogecoin.com/' target='_blank'
+											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+											src='https://img.999.game/email/dogecoin.png' width='120px'> </a>
+											<a href='https://cardano.org/' target='_blank'
+											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+											src='https://img.999.game/email/cardano.png' width='120px'> </a>
+											<a href='https://ripple.com/xrp/' target='_blank'
+											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+											src='https://img.999.game/email/xrp.png' width='120px'> </a></div>
                                             </td>
                                         </tr>
                                         </table>
@@ -1047,19 +1064,21 @@ function send_verification_email($data)
             </html>";
 
         if ($mail->send()) {
-            return json_encode(['status' => 1, 'info' => "Verification email has been sent"], JSON_UNESCAPED_UNICODE);
+            return json_encode(['status' => 1, 'info' => $lang->send_verification_email->success_email_sent], JSON_UNESCAPED_UNICODE);
         } else {
-            return json_encode(['status' => 0, 'info' => "Error in sending reset code"]);
+            return json_encode(['status' => 0, 'info' => $lang->send_verification_email->error_sending_code]);
         }
 
     } catch (Exception $e) {
-        return json_encode(['status' => 0, 'info' => "Error in sending reset code. Error: $mail->ErrorInfo"]);
+        return json_encode(['status' => 0, 'info' => $lang->send_verification_email->error_sending_code . " Error: $mail->ErrorInfo"]);
     }
 
 }
 
 function verify_email_code($data)
 {
+    global $lang;
+    
     include_once WEB_PATH . "/common/cache_file.class.php";
     $cachFile = new cache_file();
     $core = new core();
@@ -1072,20 +1091,22 @@ function verify_email_code($data)
             $request = $core->set_memberEmailVerified($re['account']);
 
             if ($request) {
-                return json_encode(['status' => 1, 'info' => "Email Verified"], JSON_UNESCAPED_UNICODE);
+                return json_encode(['status' => 1, 'info' => $lang->verify_email_code->email_verified ], JSON_UNESCAPED_UNICODE);
             } else {
-                return json_encode(['status' => 0, 'info' => 'Error in Verifying email'], JSON_UNESCAPED_UNICODE);
+                return json_encode(['status' => 0, 'info' => $lang->verify_email_code->error_email_verify], JSON_UNESCAPED_UNICODE);
             }
 
         }
     } else {
-        return json_encode(['status' => 0, 'info' => 'Error in Verifying email'], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->verify_email_code->error_email_verify], JSON_UNESCAPED_UNICODE);
     }
 
 }
 
 function reset_password($data)
 {
+    global $lang;
+
     $core = new core();
     $re = $core->get_memberinfoByEmail($data->email);
 
@@ -1100,11 +1121,11 @@ function reset_password($data)
 
                 return json_encode(['status' => 1, 'info' => loginMember($re['account'], $data->password)], JSON_UNESCAPED_UNICODE);
             } else {
-                return json_encode(['status' => 0, 'info' => 'The verification code is incorrect, please try again'], JSON_UNESCAPED_UNICODE);
+                return json_encode(['status' => 0, 'info' => $lang->reset_password->verification_code_incorrect], JSON_UNESCAPED_UNICODE);
             }
 
         } else {
-            return json_encode(['status' => 0, 'info' => 'Error in code verification. Please contact customer support.'], JSON_UNESCAPED_UNICODE);
+            return json_encode(['status' => 0, 'info' => $lang->reset_password->verification_code_error], JSON_UNESCAPED_UNICODE);
         }
 
     }
@@ -1112,17 +1133,19 @@ function reset_password($data)
 
 function get_transaction($data, $type = 1)
 {
+    global $lang;
+
     $output = [];
     $core = new core();
     $start_date = "";
     $end_date = "";
 
     if (!isset($data->range)) {
-        return json_encode(['status' => 0, 'info' => 'Please enter the date range'], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->get_transaction->empty_date_range], JSON_UNESCAPED_UNICODE);
     }
 
     if (!isset($data->username_email)) {
-        return json_encode(['status' => 0, 'info' => 'Please enter username'], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->get_transaction->empty_username], JSON_UNESCAPED_UNICODE);
     }
 
     include_once WEB_PATH . "/common/cache_file.class.php";
@@ -1489,17 +1512,19 @@ function get_transaction($data, $type = 1)
 
 function get_account_summary($data)
 {
+    global $lang;
+    
     $output = [];
     $core = new core();
     $start_date = "";
     $end_date = "";
 
     if (!isset($data->range)) {
-        return json_encode(['status' => 0, 'info' => 'Please enter the date range'], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->get_account_summary->empty_date_range], JSON_UNESCAPED_UNICODE);
     }
 
     if (!isset($data->username_email)) {
-        return json_encode(['status' => 0, 'info' => 'Please enter username'], JSON_UNESCAPED_UNICODE);
+        return json_encode(['status' => 0, 'info' => $lang->get_account_summary->empty_username], JSON_UNESCAPED_UNICODE);
     }
 
     switch ($data->range) {
@@ -1600,6 +1625,8 @@ function create_md5content($id, $account, $email, $time)
 
 function loginMember($username, $password)
 {
+    global $lang;
+
 	$account = strtolower(trim($username));
 	$password = trim($password);
 	
@@ -1613,7 +1640,7 @@ function loginMember($username, $password)
 
 		if ( $reset['add_time'] < $add_time )
 		{
-			return json_encode(['status'=>0,'info'=>'Temporary password expired'], JSON_UNESCAPED_UNICODE);
+			return json_encode(['status'=>0,'info'=>$lang->loginMember->expire_temporary_password], JSON_UNESCAPED_UNICODE);
 		}
 
 		return json_encode([ 'status' => 2, 'info' => "?reset_password=".$reset['md5content']]);
@@ -1667,27 +1694,29 @@ function loginMember($username, $password)
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'The game account or password is wrong!'
+			'info'=>$lang->loginMember->invalid_account
 		], JSON_UNESCAPED_UNICODE);
 	}
 	elseif($re == 1002)
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'The account is locked, please contact online customer service!'
+			'info'=>$lang->loginMember->account_locked
 		], JSON_UNESCAPED_UNICODE);
 	}
 	else
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'System error. Try again later!'
+			'info'=>$lang->loginMember->system_error
 		], JSON_UNESCAPED_UNICODE);
 	}
 }
 
 function game_summary($data)
 {
+    global $lang;
+
     $core = new core();
     $balance = $core->get_balance($data->username_email, 1232);
 
@@ -1714,14 +1743,16 @@ function game_summary($data)
             'total_bonus_balance' => 0,
         ]]);
     } else {
-        return json_encode(['status' => 0, 'info' => "No account data!"]);
+        return json_encode(['status' => 0, 'info' => $lang->game_summary->no_account_data]);
     }
 }
 
 function verify_agent($data)
 {
+    global $lang;
+    
     if (!isset($data->agent) && $data->agent == "") {
-        return json_encode(['status' => 0, 'info' => "Agent name cannot be empty"]);
+        return json_encode(['status' => 0, 'info' => $lang->verify_agent->empty_agent_name]);
     }
 
     $string = str_replace(' ', '-', $data->agent);
@@ -1734,7 +1765,7 @@ function verify_agent($data)
         return json_encode(['status' => 1, 'info' => $agent_info['agent_name']]);
     }
 
-    return json_encode(['status' => 0, 'info' => "Agent not found! Enter the correct agent name if applicable, leave blank if you don't have it."]);
+    return json_encode(['status' => 0, 'info' => $lang->verify_agent->agent_not_found]);
 }
 
 function app_version()
@@ -1825,6 +1856,8 @@ function randomName()
 
 function agent_friends_list($data)
 {
+    global $lang;
+    
     $core = new core();
     $friends = $core->agent_friends_list($data->username_email);
 
@@ -1841,7 +1874,7 @@ function agent_friends_list($data)
         return json_encode(['status' => 1, 'info' => $output]);
     }
 
-    return json_encode(['status' => 0, 'info' => "No friends found!"]);
+    return json_encode(['status' => 0, 'info' => $lang->agent_friends_list->empty_friends]);
 }
 
 function get_images($data)
@@ -1875,6 +1908,8 @@ function convert_currency($data)
 
 function sports_token($data)
 {
+    global $lang;
+    
     $game_url = json_decode(play_game($data));
 
     $x = 0;
@@ -1923,21 +1958,23 @@ function sports_token($data)
                     // 'themeName' => "mexplay",
                 ]]);
             } else {
-                return json_encode(['status' => 0, 'info' => "Error in parsing URL Data"]);
+                return json_encode(['status' => 0, 'info' => $lang->sports_token->error_parsing_url_data]);
             }
 
         } else {
-            return json_encode(['status' => 0, 'info' => "Error in parsing URL"]);
+            return json_encode(['status' => 0, 'info' => $lang->sports_token->error_parsing_url]);
         }
 
     } else {
-        return json_encode(['status' => 0, 'info' => "Error! No redirection URL"]);
+        return json_encode(['status' => 0, 'info' => $lang->sports_token->no_redirection_url]);
     }
 
 }
 
 function free_spin_amount($data)
 {
+    global $lang;
+    
     $params = [
         "playerId" => "usd_" . cleanString($data->username_email),
     ];
@@ -1965,7 +2002,7 @@ function free_spin_amount($data)
     if (count($free_spin) > 0) {
         return json_encode(['status' => 1, 'info' => $free_spin]);
     } else {
-        return json_encode(['status' => 0, 'info' => "No bonus avaibale for the meantime"]);
+        return json_encode(['status' => 0, 'info' => $lang->free_spin_amount->no_bonus_available]);
     }
 
 }

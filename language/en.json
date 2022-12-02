@@ -25,14 +25,10 @@
             "empty_date_range": "Please enter the date range",
             "empty_username": "Please enter username"
         },
-        "get_fin_transaction": {
-            "empty_date_range": "Please enter the date range",
-            "empty_username": "Please enter username"
-        },
         "search_game": {
 
         },
-        "game_balance_summary": {
+        "game_summary": {
             "no_account_data": "No account data!"
         },
         "get_account_summary": {
@@ -76,6 +72,665 @@
             "no_bonus_available": "No bonus avaibale for the meantime"
         },
         "oauth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "Temporary password expired",
+            "invalid_account": "The game account or password is wrong!",
+            "account_locked": "The account is locked, please contact online customer service!",
+            "system_error": "System error. Try again later!"
+        }
+    },
+    "center": {
+        "auth_check": "Verification failed",
+        "invalid_email": "Please input a valid email address",
+        "empty_verification_code": "Please input verification code",
+        "agent_not_found": "Agent not found! Enter the correct agent name if applicable, leave blank if you don't have it.",
+        "taken_member_account": "Registration failed, member account has been registered",
+        "registration_failed": "Registration failed, Please contact Admin",
+        "taken_phone_number": "Registration failed, the phone number has been registered",
+        "taken_email": "Registration failed, the email has been registered",
+        "invalid_account": "The game account or password is wrong!",
+        "account_locked": "The account is locked, please contact online customer service!",
+        "system_error": "System error. Try again later!",
+        "inconsistent_password": "Inconsistent password entered twice",
+        "re_enter_password": "The password does not meet the requirements, please re-enter",
+        "success_reset_password": "Password reset completed!!",
+        "withdrawal_password_exists": "Withdrawal password exists",
+        "withdrawal_password_not_exists": "The withdrawal password does not exist",
+        "success_set_withdrawal_password": "Withdrawal password set successfully",
+        "success_change_withdrawal_password": "Withdrawal password set successfully",
+        "invalid_old_withdrawal": "The old withdrawal password was entered incorrectly",
+        "sending_failed_10_sec": "Failed to send, please re-send after 10 seconds",
+        "operation_failed": "Operation failed, please wait a few seconds and try again",
+        "error_select_transfer_type": "Error sending, select the type of transfer",
+        "transfer_amount_small": "Transfer amount must be an integer greater than 1",
+        "success_transfer": "The transfer was successful!",
+        "insufficient_main_account": "Insufficient balance in the main account",
+        "insufficient_game_account": "Insufficient balance in the game account",
+        "failed_transfer_contact_cs": "The transfer failed, please contact online customer service",
+        "success_transfer_one_click": "Successful transfer with one click!",
+        "empty_opened_province_city": "The province and city where the account is opened cannot be empty",
+        "success_bank_information_link": "New linking of bank information successfully",
+        "many_bound_bank_information": "Bound bank information cannot exceed 5 pieces",
+        "failed_information_link_contact_cs": "Information link failed, please contact online customer service",
+        "sending_failed_3_min": "Failed to send, please re-send after 3 minutes",
+        "existing_unreviewed_withdrawal": "An unreviewed withdrawal record already exists, please do not resubmit it",
+        "withdawal_anomaly": "There is an anomaly in your withdrawal, please contact online customer service to verify and process",
+        "failed_withdrawal_request_min_withdrawal": "Withdrawal request failed, Minimun withdraw amount invalid",
+        "failed_withdrawal_request_max_withdrawal": "Withdrawal request failed, Maximun withdraw amount invalid",
+        "success_withdrawal_request": "Successful withdrawal request",
+        "insufficient_main_account_fill":"Insufficient balance in the main account，Please fill in",
+        "wrong_background_password":"Wrong background password",
+        "failed_withdrawal_request_contact":"Withdrawal request failed, please contact online customer service",
+        "game_maintenance": "Idle or game maintenance",
+        "incorrect_deposit_account": "The deposit amount is incorrect, please enter the correct deposit amount",
+        "success_deposit_review": "The deposit was sent successfully and is under review",
+        "duplicate_deposit_request": "You have already requested this promotion, please review the promotion rules",
+        "failed_submit_deposit_update": "Failed to submit deposit, please update and resubmit",
+        "sending_failed_30_sec": "Failed to send, please re-send after 30 seconds",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "An unreviewed deposit record already exists, please do not resubmit it",
+        "expired_verification_reenter": "Verification expired, please go back and refresh to re-enter",
+        "success_point_redeem": "Points were successfully redeemed, please check balance",
+        "point_not_reach_monthly_redemption_limit": "Points have not reached the specified value or the monthly redemption limit has been reached",
+        "insufficient_points": "Insufficient points, or less than the minimum value",
+        "incorrect_deposit_bank_reenter": "The deposit bank is incorrect, please re-enter it.",
+        "jumping_for_you": "Jumping for you, please wait",
+        "deposit_channel_maintenance": "Deposit channel maintenance, choose another deposit method",
+        "mobile_payment_maintenance": "Mobile payment system maintenance, use other methods to deposit.",
+        "wechat_payment_maintenance": "Wechat payment system maintenance, use other methods to deposit.",
+        "login_auth": {
+            "invalid_account": "The game account or password is wrong!",
+            "account_locked": "The account is locked, please contact online customer service!",
+            "system_error": "System error. Try again later!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "Temporary password expired",
+            "invalid_account": "The game account or password is wrong!",
+            "account_locked": "The account is locked, please contact online customer service!",
+            "system_error": "System error. Try again later!"
+        },
+        "send_verification_email": {
+            "enter_email": "Please enter Email",
+            "success_email_sent": "Verification email has been sent",
+            "mail_error": "Error in sending reset code",
+            "smtp_catch": "Error in sending reset code. Error: "
+        },
+        "verify_email_code": {
+            "email_verified": "Email Verified",
+            "error_email_verify": "Error in Verifying email | Code not matched"
+        }
+    },
+    "ajax_data": {
+        "invalid_game_account": "The game account or password is incorrect!",
+        "account_locked": "The account is locked, please contact online customer service!",
+        "system_error": "System error. Try again later!",
+        "get_transferlist": {
+            "maintenance": "Gaming platform maintenance"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "Query failed"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "Could not get bank card information"
+        },
+        "bank_unbind": {
+            "fail_unlink": "Failed to unlink the information, please try again or contact customer service online"
+        },
+        "deposit_bank": {
+
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "No related data found",
+            "no_records": "No records"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "Cancel withdrawal successfully",
+            "fail_cancel_under_review": "Cancel withdrawal with fail，Customer service is already under review.。",
+            "fail_cancel_contact": "Cancel withdrawal with fail，Contact online customer service"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "Click Apply again after 3 minutes.",
+            "fail_terms_and_condition": "You bet on sports or live games that makes you unable to meet the terms and conditions of the offer.",
+            "success_rescue_bonus": "Rescue Bonus redemption is successful, please check",
+            "invalid_application_date": "The redemption application failed, the application date is invalid",
+            "fail_pending_withdrawal": "The rescue bonus request has been rejected due to a pending withdrawal request",
+            "fail_not_meet_terms_and_condition": "The rescue bonus request failed. Unable to meet the terms and conditions of the offer",
+            "fail_max_balance": "The rescue bonus request failed because your total account balance is greater than 15MXN",
+            "fail_min_loss_profit": "The rescue bonus request failed. The minimum loss profit must be greater than 900MXN",
+            "bonus_claimed_yesterday": "The rescue bonus has been claimed yesterday, please check the record",
+            "fail_refer_terms_and_condition": "The rescue bonus request failed. Please refer to the terms and conditions of the offer",
+            "system_error": "System error, please log in again"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "Delete data successfully",
+            "faile_delete": "Failed to delete data, please refresh and try again"
+        },
+        "syn_password": {
+            "unactivated_function": "The function has not been activated."
+        },
+        "get_number": {
+            "query_fail": "Query failed",
+            "water_running": " Water running"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "Discount request is successful",
+            "condition_not_met": "Conditions not met or applied",
+            "check_official_website": "Before the time of application, please check the official website for more details.",
+            "system_error": "System error. Try again later"
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "Congratulations, the game has been successfully unlocked!",
+            "maintenance": "Sorry, the game platform is under maintenance....",
+            "fail_unlock_contact": "Game unlock failed, please contact customer service",
+            "unknown_error": "Unknown error, please contact customer service",
+            "system_error": "System error, please log in again"
+        },
+        "gameapi_active": {
+            "success_activated": "Congratulations, the game has been activated successfully!",
+            "maintenance": "Sorry, the game platform is under maintenance....",
+            "account_activated": "The account has been activated",
+            "unknown_error": "Unknown error, please contact customer service",
+            "system_error": "System error, please log in again"
+        },
+        "gameapi_password": {
+            "success_sync": "Congratulations, you have successfully synced the passwords!",
+            "maintenance": "Sorry, the game platform is under maintenance....",
+            "fail_sync_contact": "Failed to sync password, please contact customer service",
+            "unknown_error": "Unknown error, please contact customer service",
+            "system_error": "System error, please log in again"
+        },
+        "gameapi_logout": {
+            "success_offline": "Congratulations, the game was successfully forced offline!",
+            "maintenance": "Sorry, the game platform is under maintenance....",
+            "fail_disconnect_contact": "Could not force disconnection, please contact customer service",
+            "unknown_error": "Unknown error, please contact customer service",
+            "system_error": "System error, please log in again"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "Receive complete! Please check the balance",
+            "fail_claim_retry": "Could not claim, please try again later",
+            "fail_claim_no_amount": "The amount is 0 and cannot be claimed",
+            "fail_claim_status_incorrect": "The status is incorrect, please update and click to receive",
+            "succes_receive": "Congratulations, you have received it successfully!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "Click Apply after 2 minutes",
+            "success_request": "Congratulations, the request was successful, the discount has been automatically transferred to the game platform.",
+            "fail_request_not_meet_condition": "The total amount of the deposit does not meet the conditions of the request",
+            "duplicate_request": "You have already requested this offer, come back tomorrow",
+            "system_error": "System error. Please try again later",
+            "event_not_started": "The event has not started or has finished"
+        },
+        "promotion_history": {
+
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+
+        },
+        "apply_qt_promotion": {
+            "limit_check": "Click Apply after 2 minutes",
+            "success_request": "Congratulations, the request was successful, the discount has been automatically transferred to the game platform.",
+            "fail_request_not_meet_condition": "当日Total amount wagered QT does not meet the requirements of the application",
+            "duplicate_request": "You have already requested this offer, come back tomorrow",
+            "system_error": "System error. Please try again later",
+            "event_not_started": "The event has not started or has finished"
+        },
+        "get_prize_new": {
+            "ate_dumpling": "You ate this dumpling",
+            "not_enough_deposit": "Your deposit is not enough",
+            "system_error": "System error. Try again later",
+            "event_not_started": "The event has not started yet."
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "august_gift_list": {
+            "no_record": "Recent no records"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "Sorry, you are now a temporary member and cannot participate in this event.",
+            "received_gift": "You have received the gift of luck from the APP",
+            "success_receive": "Received successfully! Please check the balance",
+            "received_lucky_gift": "You received a lucky gift from the invalid app",
+            "system_busy": "The system is busy, please try again later",
+            "unknown_error": "An unknown error occurred, please try again later",
+            "event_not_started": "The event has not started yet.",
+            "event_ended": "The event has ended"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "Application deposit received today, lucky gift",
+            "success_receive": "Received successfully! Please check the balance",
+            "received_lucky_gift": "You have deposited lucky gifts through the app today.",
+            "system_busy": "The system is busy, please try again later",
+            "app_failed_did_not_use_app": "The application failed, you did not use the APP to deposit today",
+            "unknown_error": "An unknown error occurred, please try again later",
+            "event_not_started": "The event has not started yet.",
+            "event_ended": "The event has ended"
+        },
+        "checkdeposit": {
+
+        },
+        "canceldeposit": {
+            "success_cancel": "The deposit request has been successfully cancelled!",
+            "fail_undo": "Undo failed, please refresh and try again"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "Gift moneyThe amount is 0 and cannot be claimed",
+            "incorrect_status": "Status is incorrect, please update and click to receive",
+            "success_transfer": "The transfer was successful!",
+            "could_not_receive": "Could not receive, please update and click to receive",
+            "login_info_expired": "Your login information has expired, please login again"
+        },
+        "get_bet": {
+            "calculating_water_flow": "Start calculating the water flow",
+            "event_ended": "This event has ended",
+            "enter_first": "Please enter first"
+        },
+        "change_information": {
+            "incorrect_verification": "The verification code is incorrect, please try again",
+            "success_verification": "Successful Verification",
+            "failed_verification": "Verification failed"
+        },
+        "change_phone_verify": {
+            "success_verification": "Successful Verification",
+            "failed_verification": "Verification failed"
+        },
+        "verification_code": {
+            "number_busy": "This number is already busy, please replace it with a new number",
+            "unable_open": "Unable to open file!",
+            "success_submit": "Submitted successfully"
+        },
+        "get_vip_level": {
+            "failed_query": "Query failed"
+        },
+        "upload_pictures": {
+            "illegal_file": "Illegal file format"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "success"
+        },
+        "auto_transfer_in": {
+            "success": "success"
+        },
+        "agent_member_deposit": {
+            "no_data": "No related data found"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "No related data found"
+        },
+        "agent_member_fanshui": {
+            "no_data": "No related data found"
+        },
+        "agent_member_promotions": {
+            "no_data": "No related data found"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "success"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "Repeated, please change"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "success"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "Verification failed",
+        "invalid_game_account": "The game account or password is wrong!",
+        "account_locked": "The account is locked, please contact online customer service!",
+        "system_error": "System error. Try again later!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "Unsuccessful offer"
+        },
+        "logout": {
+            "account_closed": "Your account has been closed",
+            "no_account": "No logged in account detected"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "Unsuccessful offer"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "Unsuccessful offer"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "Without discount"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "Verification failed",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType not defined",
+            "ensure_bank_support": "Please ensure that the bank card you will use supports this payment method.",
+            "paypal_deposit": "You are about to deposit via Paypal. You will be directed to Paypal to use this service.",
+            "usdt_deposit": "You are about to deposit via USDT transfer. Please choose the correct network and chain to use."
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "invalid_game_account": "The game account or password is wrong!",
+            "account_locked": "The account is locked, please contact online customer service!",
+            "system_error": "System error. Try again later!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "Dear U Sports members: Due to the further strengthening of the bank's intelligent data system and Alipay's official risk control, our company constantly updates the recharge method and does its best to avoid risk control. If your payment is subject to risk control, use mobile banking to transfer the payment or choose virtual currency deposit"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "Without discount"
+        },
+        "submit_autopromotion": {
+            "success_application": "application has been successful",
+            "not_made_deposit": "You have not made a deposit within 3 minutes",
+            "entered_game_again": "You entered the game again after depositing, please do not enter the game before applying for promotions,",
+            "already_applied": "You have already applied for this promotion"
+        },
+        "checkdeposit": {
+            "no_data": "No data found"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "The deposit amount is incorrect, please enter the correct deposit amount",
+            "channel_maintenance": "Deposit channel maintenance, choose another deposit method",
+            "verification_expired": "Verification expired, please go back and refresh to re-enter",
+            "already_requested_promotion": "You have already requested this promotion, please review the promotion rules",
+            "fail_submit_deposit": "Failed to submit deposit, please update and resubmit"
+        },
+        "banktransfer": {
+            "error_sending": "Error sending, please re-send after 30 seconds",
+            "incorrect_amount": "The deposit amount is incorrect, please enter the correct deposit amount",
+            "unreviewed_deposit": "An unreviewed deposit record already exists, please do not resubmit it",
+            "verification_expired": "Verification expired, please go back and refresh to re-enter",
+            "already_requested_promotion": "You have already requested this promotion, please review the promotion rules",
+            "no_card": "No cards available at this time, please try again later"
+        },
+        "canceldeposit": {
+            "success_cancel": "The deposit request has been canceled successfully!",
+            "failed_undo": "Undo failed, please refresh and try again"
+        },
+        "IPThrottling": {
+            "throttle_message": "Hello, to provide you with a better user experience, to ensure the security of your account and to prevent IP monitoring. Your last request was %i minutes %s seconds ago, please wait 5 minutes before making a recharge request or contact customer service online for assistance. Happy gaming!"
+        },
+        "networkList": {
+            "error": "Error on API"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "Verification failed",
+        "invalid_game_account": "The game account or password is incorrect!",
+        "account_locked": "The account is locked, please contact online customer service!",
+        "system_error": "System error. Try again later!",
+        "set_agent_remark": {
+            "success": "success"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "Verification failed",
+        "verification_code": {
+            
+        },
+        "get_phone_account": {
+            "no_account": "Error, there is no such account"
+        }
+    },
+    "record": {
+        "verification_failed": "Verification failed",
+        "agrecord": {
+            "no_data": "No data"
+        },
+        "uniterecord": {
+            "no_data": "No data"
+        },
+        "btirecord": {
+            "no_data": "No data"
+        },
+        "imrecord": {
+            "no_data": "No data"
+        },
+        "imnativerecord": {
+            "no_data": "No data"
+        },
+        "ibcrecord": {
+            "no_data": "No data"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "No data"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "No data"
+        },
+        "imdjrecord": {
+            "no_data": "No data"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "No data"
+        },
+        "gdrecord": {
+            "no_data": "No data"
+        },
+        "abrecord": {
+            "no_data": "No data"
+        },
+        "ptrecord": {
+            "no_data": "No data"
+        },
+        "mgrecord": {
+            "no_data": "No data"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "No data"
+        },
+        "vrrecord": {
+            "no_data": "No data"
+        },
+        "cmdrecord": {
+            "no_data": "No data"
+        },
+        "tcg_sbo_record": {
+            "error": "error",
+            "no_data": "No data"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "Verification failed",
+        "unsuccessful_offer": "Unsuccessful offer"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
 
         }
     }

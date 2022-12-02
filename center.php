@@ -13,6 +13,9 @@ if(!isset($_SESSION))
 $core = new core();
 $des = new DES3();
 
+$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = $lang->request;
+
  	$api_key='fghrtrvdfger';
     $time = substr(time(),0,-3);
 	//echo $time.$api_key;
@@ -24,7 +27,7 @@ $des = new DES3();
     if($auth_check != $auth)
 	{
 		//echo 1;
-		echo json_encode(array('status'=>0,'info'=>"Verification failed"));
+		echo json_encode(array('status'=>0,'info'=>$lang->auth_check));
 		exit();
 	}
         
@@ -43,12 +46,12 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	if (!isset($_POST['oauth'])) {
 
 		if (!filter_var($account, FILTER_VALIDATE_EMAIL)) {
-			echo json_encode(['status' => 0, 'info' => "Please input a valid email address"]);
+			echo json_encode(['status' => 0, 'info' => $lang->invalid_email]);
 			exit();
 		}
 		
 		if ( !isset($_POST['verification_code']) ) {
-			echo json_encode(['status' => 0, 'info' => "Please input verification code"]);
+			echo json_encode(['status' => 0, 'info' => $lang->empty_verification_code]);
 			exit();
 		}
 		$verification_code = $_POST['verification_code'];
@@ -71,7 +74,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 				$data['agentName'] = $agent['account'];
 				$data['upper_level_agent_percentage'] = $agent['agent_percentage'];
 			} else {
-				echo json_encode(['status' => 0, 'info' => "Agent not found! Enter the correct agent name if applicable, leave blank if you don't have it."]);
+				echo json_encode(['status' => 0, 'info' => $lang->agent_not_found]);
 				exit();
 			}
 		}
@@ -91,16 +94,16 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	if(is_array($info)) {
 		echo loginMember($_POST['username_email'], $_POST['password']);
 	} elseif($info == 1006) {
-		echo json_encode(array('status'=>0,'info'=>"Registration failed, member account has been registered"), JSON_UNESCAPED_UNICODE);
+		echo json_encode(array('status'=>0,'info'=>$lang->taken_member_account), JSON_UNESCAPED_UNICODE);
 		exit();
 	} elseif($info == 1007) {
-		echo json_encode(array('status'=>-1,'info'=>"Registration failed, Please contact Admin"), JSON_UNESCAPED_UNICODE);
+		echo json_encode(array('status'=>-1,'info'=>$lang->registration_failed), JSON_UNESCAPED_UNICODE);
 		exit();
 	} elseif($info == 1008) {
-		echo json_encode(array('status'=>-1,'info'=>"Registration failed, the phone number has been registered"), JSON_UNESCAPED_UNICODE);
+		echo json_encode(array('status'=>-1,'info'=>$lang->taken_phone_number), JSON_UNESCAPED_UNICODE);
 		exit();
 	} elseif($info == 1009) {
-		echo json_encode(array('status'=>-1,'info'=>"Registration failed, the email has been registered"), JSON_UNESCAPED_UNICODE);
+		echo json_encode(array('status'=>-1,'info'=>$lang->taken_email), JSON_UNESCAPED_UNICODE);
 		exit();
 	} else {
 		echo loginMember($_POST['username_email'], $_POST['password']);
@@ -128,13 +131,13 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		$url = "http://www.vazagaming.com/lobby/bsmobile/lobby.html?token=".$re."&operatorID=30334&room=150601&logoSetup=VIVO_LOGO&language=EN&homeUrl=https://www.vivogaming.com&serverID=3649143";
 		echo "<script>window.location.href='".$url."'</script>";
 	}elseif($re == 1001){
-		echo "<script>alert('The game account or password is wrong！');window.location.href='betslot_mobile.php'</script>";
+		echo "<script>alert('".$lang->invalid_account."');window.location.href='betslot_mobile.php'</script>";
 		exit();
 	}elseif($re == 1002){
-		echo "<script>alert('The account is locked, please contact online customer service！');window.location.href='betslot_mobile.php'</script>";
+		echo "<script>alert('".$lang->account_locked."');window.location.href='betslot_mobile.php'</script>";
 		exit();
 	}else{
-		echo "<script>alert('System error. Try again later！');window.location.href='betslot_mobile.php'</script>";
+		echo "<script>alert('".$lang->system_error."');window.location.href='betslot_mobile.php'</script>";
 		exit();
 	}
 }else
@@ -159,19 +162,19 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}elseif($re == 1001){
 			echo json_encode(array(
 					 'status'=>-2,
-					 'info'=>'The game account or password is wrong!'
+					 'info'=>$lang->invalid_account
 							), JSON_UNESCAPED_UNICODE);
 			exit();
 		}elseif($re == 1002){
 			echo json_encode(array(
 					 'status'=>-2,
-					 'info'=>'The account is locked, please contact online customer service!'
+					 'info'=>$lang->account_locked
 							));
 			exit();
 		}else{
 			echo json_encode(array(
 					 'status'=>-2,
-					 'info'=>'System error. Try again later!'
+					 'info'=>$lang->system_error
 			));
 			exit();
 		}
@@ -183,21 +186,21 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		$password_new = $_POST['password_new'];
                 $password_ok= $_POST['password_newok'];
                 if($password_new!=$password_ok){
-                        echo json_encode(array('status'=>0,'info'=>'Inconsistent password entered twice'));
+                        echo json_encode(array('status'=>0,'info'=>$lang->inconsistent_password));
 			exit();
                     
                 }
 		if (!preg_match("/[a-zA-Z0-9]{6,12}/", $password_new)){ 
-			echo json_encode(array('status'=>0,'info'=>'The password does not meet the requirements, please re-enter'));
+			echo json_encode(array('status'=>0,'info'=>$lang->re_enter_password));
 			exit();
 		} 
 		$re = $core->change_password($_POST['username'],$password,$password_new);
 		if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'Password reset completed!!'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_reset_password));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'Password reset completed!!'));
+			echo json_encode(array('status'=>0,'info'=>$lang->success_reset_password));
 			exit();
 		}
         } elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "check_moneypwd"){
@@ -206,15 +209,15 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
             
             if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'Withdrawal password exists'));
+			echo json_encode(array('status'=>1,'info'=>$lang->withdrawal_password_exists));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'The withdrawal password does not exist'));
+			echo json_encode(array('status'=>0,'info'=>$lang->withdrawal_password_not_exists));
 			exit();
 		}
         }elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "set_moneypwd"){
             if($_POST['money_pwd']!=$_POST['money_pwdok']){
-                        echo json_encode(array('status'=>0,'info'=>'Inconsistent password entered twice'));
+                        echo json_encode(array('status'=>0,'info'=>$lang->inconsistent_password));
 			exit();
                     
                 }
@@ -223,15 +226,15 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
             
             if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'Withdrawal password set successfully'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_set_withdrawal_password));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'Withdrawal password set successfully'));
+			echo json_encode(array('status'=>0,'info'=>$lang->success_set_withdrawal_password));
 			exit();
 		}
         }elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "change_moneypwd"){
             if($_POST['money_newpwd']!=$_POST['money_newpwdok']){
-                        echo json_encode(array('status'=>0,'info'=>'Inconsistent password entered twice'));
+                        echo json_encode(array('status'=>0,'info'=>$lang->inconsistent_password));
 			exit();
                     
                 }
@@ -240,10 +243,10 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
             
             if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'The withdrawal password was changed successfully'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_change_withdrawal_password));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'The old withdrawal password was entered incorrectly'));
+			echo json_encode(array('status'=>0,'info'=>$lang->invalid_old_withdrawal));
 			exit();
 		}
         }
@@ -271,14 +274,14 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	    }
 	    if($limit_check == 0)
 	    {
-			echo json_encode(array('status'=>0,'info'=>'Failed to send, please re-send after 10 seconds'));
+			echo json_encode(array('status'=>0,'info'=>$lang->sending_failed_10_sec));
 	        exit();
 	    }
             
             $debittime = $cachFile->get($account,'','data','debit_limit');
             if($debittime){
                if( (time() - $debittime['limit_time'])<5 ){ 
-                echo json_encode(array('status'=>0,'info'=>'Operation failed, please wait a few seconds and try again'));
+                echo json_encode(array('status'=>0,'info'=>$lang->operation_failed));
 			exit();
                 
             }
@@ -286,28 +289,28 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		$transfer_type = $_POST['transfer_type'];
 	    if($transfer_type =="")
 	    {
-			echo json_encode(array('status'=>0,'info'=>'Error sending, select the type of transfer'));
+			echo json_encode(array('status'=>0,'info'=>$lang->error_select_transfer_type));
 			exit();
 	    }
 		
 		$amount = $_POST['amount'];
 		if($_POST['amount'] < 1 || floor($amount) != $amount){
-			echo json_encode(array('status'=>0,'info'=>'Transfer amount must be an integer greater than 1'));
+			echo json_encode(array('status'=>0,'info'=>$lang->transfer_amount_small));
 			exit();
 		}
 		$re = $core->transfer($_SESSION['account'],$_POST['amount'],$transfer_type);
 		if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'The transfer was successful!'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_transfer));
 			exit();
 		}elseif($re == 1011){
-			echo json_encode(array('status'=>0,'info'=>'Insufficient balance in the main account'));
+			echo json_encode(array('status'=>0,'info'=>$lang->insufficient_main_account));
 			exit();
 		}elseif($re == 1012){
-			echo json_encode(array('status'=>0,'info'=>'Insufficient balance in the game account'));
+			echo json_encode(array('status'=>0,'info'=>$lang->insufficient_game_account));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'The transfer failed, please contact online customer service'));
+			echo json_encode(array('status'=>0,'info'=>$lang->failed_transfer_contact_cs));
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "all_transfer_out")
@@ -333,7 +336,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 	    }
 	    if($limit_check == 0)
 	    {
-			echo json_encode(array('status'=>0,'info'=>'Failed to send, please re-send after 10 seconds'));
+			echo json_encode(array('status'=>0,'info'=>$lang->sending_failed_10_sec));
 	        exit();
 	    }
 		$transfer_type = $_POST['transfer_type'];
@@ -345,13 +348,13 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
                 
 		if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'Successful transfer with one click!'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_transfer_one_click));
 			exit();
 		}elseif($re == 1012){
-			echo json_encode(array('status'=>0,'info'=>'Insufficient balance in the game account'));
+			echo json_encode(array('status'=>0,'info'=>$lang->insufficient_game_account));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'The transfer failed, please contact online customer service'));
+			echo json_encode(array('status'=>0,'info'=>$lang->failed_transfer_contact_cs));
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "bindcard")
@@ -359,20 +362,20 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
             
                 login_auth();  // 这个方法是成功运行的
 		if($_POST['bank_city']=='Por favor elige la ciudad'){
-			echo json_encode(array('status'=>0,'info'=>'The province and city where the account is opened cannot be empty'));
+			echo json_encode(array('status'=>0,'info'=>$lang->empty_opened_province_city));
 			exit();
 		}
                // print_r($_POST['bank_city']);exit;
 		$re = $core->bind_bank($_SESSION['account'],$_POST['bank_type'],$_POST['realname'],$_POST['bank_no'],$_POST['bank_addr'],$_POST['bank_province'],$_POST['bank_city']);
 		if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'New linking of bank information successfully'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_bank_information_link));
 			exit();
 		}elseif($re == 1005){
-			echo json_encode(array('status'=>0,'info'=>'Bound bank information cannot exceed 5 pieces'));
+			echo json_encode(array('status'=>0,'info'=>$lang->many_bound_bank_information));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'Information link failed, please contact online customer service'));
+			echo json_encode(array('status'=>0,'info'=>$lang->failed_information_link_contact_cs));
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "debit")
@@ -406,17 +409,17 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 		if($limit_check == 0)
 		{
-			echo json_encode(array('status'=>0,'info'=>'Failed to send, please re-send after 3 minutes'));
+			echo json_encode(array('status'=>0,'info'=>$lang->sending_failed_3_min));
 			exit();
 		}
 		$res = $core->record_status($account,"debit",0);
 		if($res > 0){
-			echo json_encode(array('status'=>0,'info'=>'An unreviewed withdrawal record already exists, please do not resubmit it'));
+			echo json_encode(array('status'=>0,'info'=>$lang->existing_unreviewed_withdrawal));
 			exit();
 		}
 		$rest = $core->record_status($account,"debit",4);
 		if($rest > 0){
-			echo json_encode(array('status'=>0,'info'=>'There is an anomaly in your withdrawal, please contact online customer service to verify and process'));
+			echo json_encode(array('status'=>0,'info'=>$lang->withdawal_anomaly));
 			exit();
 		}
                 
@@ -424,7 +427,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		$transfertime = $cachFile->get($account,'','data','transfer_limit');
 		if($transfertime){
 			if( (time() - $transfertime['limit_time'])<5 ){ 
-				echo json_encode(array('status'=>0,'info'=>'Operation failed, please wait a few seconds and try again'));
+				echo json_encode(array('status'=>0,'info'=>$lang->operation_failed));
 				exit();
 				
 			}
@@ -456,12 +459,12 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 			}
 
 			if ($_POST['amount'] < $min ) {
-				echo json_encode(array('status'=>0,'info'=>'Withdrawal request failed, Minimun withdraw amount invalid'));
+				echo json_encode(array('status'=>0,'info'=>$lang->failed_withdrawal_request_min_withdrawal));
 				exit();
 			}
 			
 			if ($_POST['amount'] > $max ) {
-				echo json_encode(array('status'=>0,'info'=>'Withdrawal request failed, Maximun withdraw amount invalid'));
+				echo json_encode(array('status'=>0,'info'=>$lang->failed_withdrawal_request_max_withdrawal));
 				exit();
 			}
 		}
@@ -470,16 +473,16 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		//print_r($re);exit;
                 if($re == 1)
 		{
-			echo json_encode(array('status'=>1,'info'=>'Successful withdrawal request'));
+			echo json_encode(array('status'=>1,'info'=>$lang->success_withdrawal_request));
 			exit();
 		}elseif($re == 1011){
-			echo json_encode(array('status'=>0,'info'=>'Insufficient balance in the main account，Please fill in'));
+			echo json_encode(array('status'=>0,'info'=>$lang->insufficient_main_account_fill));
 			exit();
 		}elseif($re == 1012){
-			echo json_encode(array('status'=>0,'info'=>'Wrong background password'));
+			echo json_encode(array('status'=>0,'info'=>$lang->wrong_background_password));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'Withdrawal request failed, please contact online customer service'));
+			echo json_encode(array('status'=>0,'info'=>$lang->failed_withdrawal_request_contact));
 			exit();
 		}
         }elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "game_mobile_login"){
@@ -532,7 +535,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
                 
             }else{
                 
-               echo json_encode(array('status'=>0,'info'=>'Idle or game maintenance'));
+               echo json_encode(array('status'=>0,'info'=>$lang->game_maintenance));
 			exit(); 
                 
             }
@@ -586,7 +589,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
                 
             }else{
                 
-               echo json_encode(array('status'=>0,'info'=>'Idle or game maintenance'));
+               echo json_encode(array('status'=>0,'info'=>$lang->game_maintenance));
 			exit(); 
                 
             }
@@ -615,24 +618,24 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 		if($limit_check == 0)
 		{
-			echo "Failed to send, please re-send after 3 minutes";
+			echo $lang->sending_failed_3_min;
 			exit();
 		}
 		if($amount < 10)
 		{
-			echo "The deposit amount is incorrect, please enter the correct deposit amount";
+			echo $lang->incorrect_deposit_account;
 			exit();
 		}
 		$re = $core->zfbdeposit($_SESSION['account'],$_POST['amount'],$_POST['zfb_billno'],$_POST['autopromo'],$_POST['bankid']);
 		if($re == 1)
 		{
-			echo "The deposit was sent successfully and is under review";
+			echo $lang->success_deposit_review;
 			exit();
 		}elseif($re == -1){
-			echo "You have already requested this promotion, please review the promotion rules";
+			echo $lang->duplicate_deposit_request;
 			exit();
 		}else{
-			echo "Failed to submit deposit, please update and resubmit";
+			echo $lang->failed_submit_deposit_update;
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "deposit")
@@ -666,12 +669,12 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 		if($limit_check == 0)
 		{
-			echo json_encode(array('status'=>0,'info'=>'Failed to send, please re-send after 30 seconds'));
+			echo json_encode(array('status'=>0,'info'=>$lang->sending_failed_30_sec));
 			exit();
 		}
 		if($amount < 10)
 		{
-			echo json_encode(array('status'=>0,'info'=>'The deposit amount is incorrect, please enter the correct deposit amount'));
+			echo json_encode(array('status'=>0,'info'=>$lang->incorrect_deposit_account));
 			exit();
 		}
 		    /*if($_POST['autopromo']==3 ){
@@ -683,7 +686,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
                 }*/
 		$rs = $core->record_status($account,"deposit",2);
 		if($rs > 0){
-			echo json_encode(array('status'=>0,'info'=>'An unreviewed deposit record already exists, please do not resubmit it'));
+			echo json_encode(array('status'=>0,'info'=>$lang->existing_unreviewed_withdrawal_do_not_resubmit));
 			exit();
 		}
 		$bank_info_arr = $core->deposit_bank(0,$_SESSION['member_type']);
@@ -692,7 +695,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
                 	//print_r($_SESSION['account']);exit;
                 if($_SESSION['account']==''){
                     
-                      echo "Verification expired, please go back and refresh to re-enter";
+                      echo $lang->expired_verification_reenter;
 			exit(); 
                 }
 		$re = $core->backdeposit($_SESSION['account'],$_POST['amount'],$bank_info['id'],$_POST['username'],$_POST['autopromo'],$zf_type);
@@ -721,11 +724,11 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 				exit();
 			}
 		}elseif($re == -1){
-			echo json_encode(array('status'=>0,'info'=>'You have already requested this promotion, please review the promotion rules'));
+			echo json_encode(array('status'=>0,'info'=>$lang->duplicate_deposit_request));
 			exit();
 		}else{
 			error_log(date('YmdHis')."##".$_SESSION['account']."##".$_POST['amount']."##".$bank_info['id']."##".$_POST['username']."##".$_POST['autopromo']."\r\n", 3, 'common/log/depositerror.log');
-			echo json_encode(array('status'=>0,'info'=>'Failed to submit deposit, please update and resubmit'));
+			echo json_encode(array('status'=>0,'info'=>$lang->failed_submit_deposit_update));
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "yunsfdeposit")
@@ -752,12 +755,12 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 		if($limit_check == 0)
 		{
-			echo json_encode(array('status'=>0,'info'=>'Failed to send, please re-send after 30 seconds'));
+			echo json_encode(array('status'=>0,'info'=>$lang->sending_failed_30_sec));
 			exit();
 		}
 		if($amount < 10)
 		{
-			echo json_encode(array('status'=>0,'info'=>'The deposit amount is incorrect, please enter the correct deposit amount'));
+			echo json_encode(array('status'=>0,'info'=>$lang->incorrect_deposit_account));
 			exit();
 		}
 		    /*if($_POST['autopromo']==3 ){
@@ -769,7 +772,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
                 }*/
 		$rs = $core->record_status($account,"deposit",2);
 		if($rs > 0){
-			echo json_encode(array('status'=>0,'info'=>'An unreviewed deposit record already exists, please do not resubmit it'));
+			echo json_encode(array('status'=>0,'info'=>$lang->existing_unreviewed_withdrawal_do_not_resubmit));
 			exit();
 		}
 		$bank_info_arr = $core->deposit_bank(0,$_SESSION['member_type']);
@@ -802,11 +805,11 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 				exit();
 			}
 		}elseif($re == -1){
-			echo json_encode(array('status'=>0,'info'=>'You have already requested this promotion, please review the promotion rules'));
+			echo json_encode(array('status'=>0,'info'=>$lang->duplicate_deposit_request));
 			exit();
 		}else{
 			error_log(date('YmdHis')."##".$_SESSION['account']."##".$_POST['amount']."##".$bank_info['id']."##".$_POST['username']."##".$_POST['autopromo']."\r\n", 3, 'common/log/depositerror.log');
-			echo json_encode(array('status'=>0,'info'=>'Failed to submit deposit, please update and resubmit'));
+			echo json_encode(array('status'=>0,'info'=>$lang->failed_submit_deposit_update));
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "point")
@@ -832,7 +835,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		}
 		if($limit_check == 0)
 		{
-			echo json_encode(array('status'=>0,'info'=>'Failed to send, please re-send after 3 minutes'));
+			echo json_encode(array('status'=>0,'info'=>$lang->sending_failed_3_min));
 			exit();
 		}
 		$re = $core->apply_point($_SESSION['account'],intval($_POST['credits']));
@@ -842,15 +845,15 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 			$point_str = array(
 				'all' => $point_info['credits'],
 				'use' => $point_info['credits_use'],
-				'msg' => 'Points were successfully redeemed, please check balance'
+				'msg' => $lang->success_point_redeem
 			);
 			echo json_encode(array('status'=>1,'info'=>$point_str));
 			exit();
 		}elseif($re == 1031){
-			echo json_encode(array('status'=>0,'info'=>'Points have not reached the specified value or the monthly redemption limit has been reached'));
+			echo json_encode(array('status'=>0,'info'=>$lang->point_not_reach_monthly_redemption_limit));
 			exit();
 		}else{
-			echo json_encode(array('status'=>0,'info'=>'Insufficient points, or less than the minimum value'));
+			echo json_encode(array('status'=>0,'info'=>$lang->insufficient_points));
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "monlinepay")
@@ -871,7 +874,7 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 		$amount=$_POST['amount'];
 		if($amount < 10)
 		{
-			echo "The deposit amount is incorrect, please enter the correct deposit amount";
+			echo $lang->incorrect_deposit_account;
 			exit();
 		}
 		/*     if($_POST['autopromo']==3 ){
@@ -899,19 +902,19 @@ elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "regist")
 				}
 			}
 			if($zf_flag == 0){
-				echo "The deposit bank is incorrect, please re-enter it.";
+				echo $lang->incorrect_deposit_bank_reenter;
 				exit();
 			}
 		}
 		if($monlinepay_info['pay_status'] !=1 && $account != "feng12345")
 		{
-		    echo "Deposit channel maintenance, choose another deposit method";
+		    echo $lang->deposit_channel_maintenance;
 			exit();
 		}
             //   print_r($_SESSION['account']);exit;
                 if($_SESSION['account']==''){
                     
-                      echo "Verification expired, please go back and refresh to re-enter";
+                      echo $lang->expired_verification_reenter;
 			exit(); 
                 }
         if($monlinepay_info['pay_type']==17){
@@ -937,13 +940,13 @@ $amount= number_format($amount,'2',".","");
                            
                        
                         
-			echo 'Saltando por ti, por favor espera';
+			echo $lang->jumping_for_you;
 			echo $str = $core->build_form($data, $monlinepay_info['submit_url'],$method);
 		}elseif($re == -1){
-			echo "<script>alert('You have already requested this promotion, please review the promotion rules');window.close();</script>";
+			echo "<script>alert('$lang->duplicate_deposit_request');window.close();</script>";
 			exit();
 		}else{
-			echo "<script>alert('Failed to submit deposit, please update and resubmit');window.close();</script>";
+			echo "<script>alert('$lang->failed_submit_deposit_update');window.close();</script>";
 			exit();
 		}
 		
@@ -956,7 +959,7 @@ $amount= number_format($amount,'2',".","");
 		$amount=$_POST['amount'];
 		if($amount < 10)
 		{
-			echo "The deposit amount is incorrect, please enter the correct deposit amount";
+			echo $lang->incorrect_deposit_account;
 			exit();
 		}
 		$bankco=$_POST['bank_type'];
@@ -964,7 +967,7 @@ $amount= number_format($amount,'2',".","");
 		$monlinepay_info = $core->monlinpay_detail($pay_id);
 		if($monlinepay_info['pay_status'] != 1)
 		{
-			echo "<script>alert('Mobile payment system maintenance, use other methods to deposit.');window.location.href='depositinfo.php?type=mobiledeposit';</script>";
+			echo "<script>alert('$lang->mobile_payment_maintenance');window.location.href='depositinfo.php?type=mobiledeposit';</script>";
 			exit();
 		}
 		$re = $core->onlinepay($_SESSION['account'],$amount,$billno,"Pago movil",$_POST['autopromo']);
@@ -1035,10 +1038,10 @@ $amount= number_format($amount,'2',".","");
 			// echo "<script>top.location.href='".$url."'</script>";
 			//echo $url;
 		}elseif($re == -1){
-			echo "<script>alert('You have already requested this promotion, please review the promotion rules');window.close();</script>";
+			echo "<script>alert('$lang->duplicate_deposit_request');window.close();</script>";
 			exit();
 		}else{
-			echo "<script>alert('Failed to submit deposit, please update and resubmit');window.close();</script>";
+			echo "<script>alert('$lang->failed_submit_deposit_update');window.close();</script>";
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "weixindeposit")
@@ -1050,14 +1053,14 @@ $amount= number_format($amount,'2',".","");
 		$amount=$_POST['amount'];
 		if($amount < 10)
 		{
-			echo "The deposit amount is incorrect, please enter the correct deposit amount";
+			echo "$lang->incorrect_deposit_account";
 			exit();
 		}
 		$pay_id = 16;
 		$monlinepay_info = $core->monlinpay_detail($pay_id);
 		if($monlinepay_info['pay_status'] != 1)
 		{
-			echo "<script>alert('Wechat payment system maintenance, use other methods to deposit.');window.close();</script>";
+			echo "<script>alert('$lang->wechat_payment_maintenance');window.close();</script>";
 			exit();
 		}
 		$re = $core->onlinepay($_SESSION['account'],$amount,$billno,"Pago de WeChat",$_POST['autopromo']);
@@ -1068,10 +1071,10 @@ $amount= number_format($amount,'2',".","");
 			$data['billno'] = $billno;
 			echo $str = $core->build_form($data, $monlinepay_info['submit_url'],"POST");
 		}elseif($re == -1){
-			echo "<script>alert('You have already requested this promotion, please review the promotion rules');window.close();</script>";
+			echo "<script>alert('$lang->duplicate_deposit_request');window.close();</script>";
 			exit();
 		}else{
-			echo "<script>alert('Failed to submit deposit, please update and resubmit');window.close();</script>";
+			echo "<script>alert('$lang->failed_submit_deposit_update');window.close();</script>";
 			exit();
 		}
 	}elseif(isset($_POST['submit_type']) && $_POST['submit_type'] == "cftdeposit")
@@ -1099,28 +1102,28 @@ $amount= number_format($amount,'2',".","");
 		if($limit_check == 0)
 		{
 			//echo "<script>alert('Failed to send, please re-send after 3 minutes');window.location.href='deposit/tenpay.php'</script>";
-			echo "Failed to send, please re-send after 3 minutes";
+			echo $lang->sending_failed_3_min;
 			exit();
 		}
 		if($amount < 10)
 		{
 			//echo "<script>alert('The deposit amount is incorrect, please enter the correct deposit amount');window.location.href='deposit/tenpay.php'</script>";
-			echo "The deposit amount is incorrect, please enter the correct deposit amount";
+			echo $lang->incorrect_deposit_account;
 			exit();
 		}
 		$re = $core->cftdeposit($_SESSION['account'],$_POST['amount'],$_POST['cft_billno'],$_POST['autopromo'],$_POST['bankid']);
 		if($re == 1)
 		{
 			//echo "<script>alert('The deposit was sent successfully and is under review');window.location.href='deposit/tenpay.php'</script>";
-			echo "The deposit was sent successfully and is under review";
+			echo $lang->success_deposit_review;
 			exit();
 		}elseif($re == -1){
 			//echo "<script>alert('You have already requested this promotion, please review the promotion rules');window.location.href='deposit/tenpay.php'</script>";
-			echo "You have already requested this promotion, please review the promotion rules";
+			echo $lang->duplicate_deposit_request;
 			exit();
 		}else{
 			//echo "<script>alert('Failed to submit deposit, please update and resubmit');window.location.href='deposit/tenpay.php'</script>";
-			echo "Failed to submit deposit, please update and resubmit";
+			echo $lang->failed_submit_deposit_update;
 			exit();
 		}
 	}
@@ -1146,19 +1149,19 @@ function login_auth(){
 	}elseif($re == 1001){
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'The game account or password is wrong!'
+				 'info'=>$lang->login_auth->invalid_account
 						));
 		exit();
 	}elseif($re == 1002){
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'The account is locked, please contact online customer service!'
+				 'info'=>$lang->login_auth->account_locked
 						));
 		exit();
 	}else{
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'System error. Try again later!'
+				 'info'=>$lang->login_auth->system_error
 		));
 		exit();
 	}
@@ -1192,7 +1195,7 @@ function loginMember($username, $password)
 
 		if ( $reset['add_time'] < $add_time )
 		{
-			return json_encode(['status'=>0,'info'=>'Temporary password expired'], JSON_UNESCAPED_UNICODE);
+			return json_encode(['status'=>0,'info'=>$lang->loginMember->expire_temporary_password], JSON_UNESCAPED_UNICODE);
 		}
 
 		return json_encode([ 'status' => 2, 'info' => "?reset_password=".$reset['md5content']]);
@@ -1246,21 +1249,21 @@ function loginMember($username, $password)
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'The game account or password is wrong!'
+			'info'=>$lang->loginMember->invalid_account
 		], JSON_UNESCAPED_UNICODE);
 	}
 	elseif($re == 1002)
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'The account is locked, please contact online customer service!'
+			'info'=>$lang->loginMember->account_locked
 		], JSON_UNESCAPED_UNICODE);
 	}
 	else
 	{
 		return json_encode([
 			'status'=>0,
-			'info'=>'System error. Try again later!'
+			'info'=>$lang->loginMember->system_error
 		], JSON_UNESCAPED_UNICODE);
 	}
 }
@@ -1531,7 +1534,16 @@ function sendWelcomeEmail()
 											src='https://img.999.game/email/tron.png' width='140px' style='padding: 16px'> </a><a
 											href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/binance.png' width='140px' style='padding: 16px'> </a></div>
+											src='https://img.999.game/email/binance.png' width='140px' style='padding: 16px'> </a>
+											<a href='https://dogecoin.com/' target='_blank'
+											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+											src='https://img.999.game/email/dogecoin.png' width='140px' style='padding: 16px'> </a>
+											<a href='https://cardano.org/' target='_blank'
+											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+											src='https://img.999.game/email/cardano.png' width='140px' style='padding: 16px'> </a>
+											<a href='https://ripple.com/xrp/' target='_blank'
+											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
+											src='https://img.999.game/email/xrp.png' width='140px' style='padding: 16px'> </a></div>
 									</td>
 									</tr>
 								</table>
@@ -1591,7 +1603,7 @@ function sendWelcomeEmail()
 
 function send_verification_email($email)
 {
-	if (!isset($email) && $email != "") return json_encode(['status' => 0, "info" => "Please enter Email"], JSON_UNESCAPED_UNICODE );
+	if (!isset($email) && $email != "") return json_encode(['status' => 0, "info" => $lang->send_verification_email->enter_email], JSON_UNESCAPED_UNICODE );
 	
 	include_once(WEB_PATH."/email/PHPMailer.class.php");
 	include_once(WEB_PATH."/email/smtp.class.php");
@@ -1656,13 +1668,13 @@ function send_verification_email($email)
 		
 		if ($mail->send())
 		{
-			return json_encode(['status'=>1,'info'=>"Verification email has been sent"], JSON_UNESCAPED_UNICODE );
+			return json_encode(['status'=>1,'info'=>$lang->send_verification_email->success_email_sent], JSON_UNESCAPED_UNICODE );
 		}
-		else return json_encode(['status'=>0,'info'=>"Error in sending reset code"]);
+		else return json_encode(['status'=>0,'info'=>$lang->send_verification_email->mail_error]);
 	} 
 	catch (Exception $e) 
 	{
-		return json_encode(['status'=>0,'info'=>"Error in sending reset code. Error: $mail->ErrorInfo"]);
+		return json_encode(['status'=>0,'info'=>$lang->send_verification_email->smtp_catch . "" . $mail->ErrorInfo]);
 	}
 
 }
@@ -1675,9 +1687,9 @@ function verify_email_code($email, $code)
     $data_list = $cachFile->get($email, '', 'data', 'email_verification_code');
 
     if ($code == $data_list) {
-		return ['status' => 1, 'info' => "Email Verified"];
+		return ['status' => 1, 'info' => $lang->verify_email_code->email_verified];
     } else {
-        return ['status' => 0, 'info' => 'Error in Verifying email | Code not matched'];
+        return ['status' => 0, 'info' => $lang->verify_email_code->error_email_verify];
     }
 
 }
