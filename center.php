@@ -14,7 +14,7 @@ $core = new core();
 $des = new DES3();
 
 $lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
-$lang = $lang->request;
+$lang = $lang->center;
 
  	$api_key='fghrtrvdfger';
     $time = substr(time(),0,-3);

@@ -9,10 +9,15 @@ header("Access-Control-Allow-Credentials:true");
 //header (" Access- Control-Allow -Headers : *") ;
 define("WEB_PATH", __DIR__);
 include_once ("core.class.php");
+
 if(!isset($_SESSION))
 {
     session_start();
 }
+
+$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = $lang->ajax_check;
+
 if(isset($_GET['type']) && $_GET['type'] == "get_promotion_content")
 {
 	echo get_promotion_content($_GET['pro_id']); exit;
@@ -31,6 +36,7 @@ if(isset($_GET['type']) && $_GET['type'] == "get_promotion_content")
 	echo get_footer_list($account);exit();
 }
 function get_promotion_content($id){
+	global $lang;
 	//加载缓存
 	//return 45;
 		$client = new PHPRPC_Client(SERVER_URL);
@@ -40,7 +46,7 @@ function get_promotion_content($id){
 	if($result){
 		return json_encode(array("status"=>1,"info"=>$result[0]['content']));
 	} else{
-		return json_encode(array("status"=>0,"info"=>"Unsuccessful offer"));
+		return json_encode(array("status"=>0,"info"=>$lang->get_promotion_content->unsuccessful_offer));
 	}
 }
 
@@ -54,7 +60,7 @@ function get_promotion_content($id){
     if($auth_check != $auth)
 	{
 	
-		echo json_encode(array('status'=>0,'info'=>"Verification failed"));
+		echo json_encode(array('status'=>0,'info'=> $lang->verification_failed));
 		exit();
 	}
 if(!isset($_SESSION['account'])||(isset($_SESSION['account'])&&$_SESSION['account']!=$_POST['username_email'])){
@@ -73,19 +79,19 @@ if(!isset($_SESSION['account'])||(isset($_SESSION['account'])&&$_SESSION['accoun
 	}elseif($re == 1001){
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'The game account or password is wrong!'
+				 'info'=>$lang->invalid_game_account
 						));
 		exit();
 	}elseif($re == 1002){
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'The account is locked, please contact online customer service!'
+				 'info'=>$lang->account_locked
 						));
 		exit();
 	}else{
 		echo json_encode(array(
 				 'status'=>-2,
-				 'info'=>'System error. Try again later!'
+				 'info'=>$lang->system_error
 		));
 		exit();
 	}
@@ -170,15 +176,16 @@ function check_member_info($data,$field)
  */
 function clear_cache()
 {
+	global $lang;
     include_once (WEB_PATH."/common/cache_file.class.php");
     //获取缓存数据
     $cachFile = new cache_file();
     $status = $cachFile->delete("active_list",'','data','active_list');
     if($status)
     {
-        return "Update completed";
+        return $lang->clear_cache->complete;
     }else{
-        return "Failed update";
+        return $lang->clear_cache->fail;
     }
 }
 /*
@@ -200,15 +207,16 @@ function check_login()
  */
 function logout()
 {
+	global $lang;
     if(isset($_SESSION['account']) && $_SESSION['account'] != "")
     {
 		unset($_SESSION['account']);
 		unset($_SESSION['balance']);
 		unset($_SESSION['member_name']);
 		unset($_SESSION['member_type']);
-		return json_encode(array("status"=>1,"info"=>"Your account has been closed"));
+		return json_encode(array("status"=>1,"info"=>$lang->logout->account_closed));
     }else{
-		return json_encode(array("status"=>0,"info"=>"No logged in account detected"));
+		return json_encode(array("status"=>0,"info"=>$lang->logout->no_account));
 	}	
 }
 /*
@@ -216,6 +224,7 @@ function logout()
  * return array 
  */
 function get_promotion_list($account, $language = "en"){
+	global $lang;
 	//加载缓存
 	/*include_once (WEB_PATH."/common/cache_file.class.php");
 	//获取缓存数据
@@ -263,13 +272,13 @@ function get_promotion_list($account, $language = "en"){
                 
 		return json_encode(array("status"=>1,"info"=>$result1));
 	}else{
-		return json_encode(array("status"=>0,"info"=>"Unsuccessful offer"));
+		return json_encode(array("status"=>0,"info"=>$lang->get_promotion_list->unsuccessful_offer));
 	}
 }
 
 
 function get_footer_list($account){
-	
+	global $lang;
       
         $client = new PHPRPC_Client(SERVER_URL);
 	$result = unserialize($client->get_footer_english_list($account));
@@ -280,11 +289,11 @@ function get_footer_list($account){
                 
 		return json_encode(array("status"=>1,"info"=>$result));
 	}else{
-		return json_encode(array("status"=>0,"info"=>"Unsuccessful offer"));
+		return json_encode(array("status"=>0,"info"=>$lang->get_footer_list->unsuccessful_offer));
 	}
 }
 function get_autopromotion_list($account,$amount){
-    
+    global $lang;
      $client = new PHPRPC_Client(SERVER_URL);
 	$result = unserialize($client->web_autopromotion_active($account,$amount));
    //return  $result;
@@ -308,7 +317,7 @@ function get_autopromotion_list($account,$amount){
                 
 		return json_encode(array("status"=>1,"info"=>$result1));
 	}else{
-		return json_encode(array("status"=>0,"info"=>'Without discount'));
+		return json_encode(array("status"=>0,"info"=>$lang->get_autopromotion_list->without_discount));
 	}
     
     

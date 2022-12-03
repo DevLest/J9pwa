@@ -162,6 +162,7 @@
         }
     },
     "ajax_data": {
+        "auth_check": "Verification failed",
         "invalid_game_account": "The game account or password is incorrect!",
         "account_locked": "The account is locked, please contact online customer service!",
         "system_error": "System error. Try again later!",
@@ -187,7 +188,8 @@
             "fail_unlink": "Failed to unlink the information, please try again or contact customer service online"
         },
         "deposit_bank": {
-
+            "header_1": "<tr><td>Type of Bank</td><td>Name</td><td>Card number information</td></tr>",
+            "header_2": "<tr><td>Payment Methods</td><td>AliPay Name</td><td>Alipay Account</td></tr>"
         },
         "onlinepay_bank": {
 
@@ -311,7 +313,7 @@
             "event_not_started": "The event has not started or has finished"
         },
         "promotion_history": {
-
+            "header_1": "<tr><td colspan='4'>Today's discount record</td></tr><tr><td>Frequency</td><td>Discount</td><td>Total deposit</td><td>Application time</td ></tr>"
         },
         "get_total_deposit": {
 
@@ -320,7 +322,7 @@
 
         },
         "special_promotion_record": {
-
+            "header_1": "<tr><td colspan='4'>Registro de descuentos de hoy</td></tr><td>Frecuencia</td><td>Importe total apostado</td><td>Tiempo de aplicación< /td></tr>"
         },
         "apply_qt_promotion": {
             "limit_check": "Click Apply after 2 minutes",
@@ -331,6 +333,9 @@
             "event_not_started": "The event has not started or has finished"
         },
         "get_prize_new": {
+            "go_back": "Please $left_time Go back to eating meatballs in seconds.",
+            "today_deposit": "Today's deposit is more than $money_arr[$name] To eat this plate of meatballs",
+            "incorrect_operation": "Your operation is incorrect, please refresh the page.",
             "ate_dumpling": "You ate this dumpling",
             "not_enough_deposit": "Your deposit is not enough",
             "system_error": "System error. Try again later",
@@ -357,7 +362,11 @@
         "getRand_zongzi": {
 
         },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>Recent release records</th></tr><tr><th>Gift money type</th><th>Gift money Amount</th><th>Release time</th></th></tr>"
+        },
         "august_gift_list": {
+            "header_1": "<tr><td>Issued amount(USDT)</td><td>Release time</td></tr>",
             "no_record": "Recent no records"
         },
         "get_address": {
@@ -384,7 +393,7 @@
             "event_ended": "The event has ended"
         },
         "checkdeposit": {
-
+            "select_card": "<p>Hello, first select a bank card</p>"
         },
         "canceldeposit": {
             "success_cancel": "The deposit request has been successfully cancelled!",
@@ -423,6 +432,7 @@
             "failed_query": "Query failed"
         },
         "upload_pictures": {
+            "success": "success",
             "illegal_file": "Illegal file format"
         },
         "get_imgurl": {
@@ -482,6 +492,10 @@
         "get_promotion_content": {
             "unsuccessful_offer": "Unsuccessful offer"
         },
+        "clear_cache": {
+            "complete": "Update completed",
+            "fail": "Failed update"
+        },
         "logout": {
             "account_closed": "Your account has been closed",
             "no_account": "No logged in account detected"
@@ -517,6 +531,7 @@
 
         },
         "memberLogin": {
+            "success": "success!",
             "invalid_game_account": "The game account or password is wrong!",
             "account_locked": "The account is locked, please contact online customer service!",
             "system_error": "System error. Try again later!"
@@ -543,13 +558,15 @@
             "success_application": "application has been successful",
             "not_made_deposit": "You have not made a deposit within 3 minutes",
             "entered_game_again": "You entered the game again after depositing, please do not enter the game before applying for promotions,",
-            "already_applied": "You have already applied for this promotion"
+            "already_applied": "You have already applied for this promotion",
+            "already_applied_discount": "This deposit has already applied for a discount, please deposit again"
         },
         "checkdeposit": {
             "no_data": "No data found"
         },
         "onlinepayment": {
             "deposit_amount_incorrect": "The deposit amount is incorrect, please enter the correct deposit amount",
+            "deposit_bank_incorrect":"The deposit bank is incorrect, please re-enter it.",
             "channel_maintenance": "Deposit channel maintenance, choose another deposit method",
             "verification_expired": "Verification expired, please go back and refresh to re-enter",
             "already_requested_promotion": "You have already requested this promotion, please review the promotion rules",

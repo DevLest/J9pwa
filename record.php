@@ -4,7 +4,9 @@ header("Access-Control-Allow-Origin: *");
 include_once("client/phprpc_client.php");
  //echo 526;exit;
 
-
+ $lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+ $lang = $lang->record;
+ 
 	$api_key='fghrtrvdfger';
     $time = substr(time(),0,-3);
 	
@@ -14,7 +16,7 @@ include_once("client/phprpc_client.php");
     if($auth_check != $auth)
 	{
 	
-	echo json_encode(array('status'=>0,'info'=>"Verification failed"));
+	echo json_encode(array('status'=>0,'info'=>$lang->verification_failed));
 		exit();
 	}
         
@@ -121,7 +123,7 @@ if(isset($_POST['type']) && $_POST['type'] == "ag")
 	}  
         
 function agrecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
  //   echo 526;exit;
 		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
@@ -148,7 +150,7 @@ $list= $client->agrecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->agrecord->no_data));    
                     
                 }
                 
@@ -163,7 +165,7 @@ $list= $client->agrecord($account,$page,$starttime,$endtime);
 }
 
 function uniterecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
  //   echo 526;exit;
 		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
@@ -190,7 +192,7 @@ $list= $client->uniterecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->uniterecord->no_data));    
                     
                 }
                 
@@ -204,7 +206,7 @@ $list= $client->uniterecord($account,$page,$starttime,$endtime);
     
 }
 function btirecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
@@ -235,7 +237,7 @@ $list= $client->btirecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->btirecord->no_data));    
                     
                 }
                 
@@ -246,7 +248,7 @@ $list= $client->btirecord($account,$page,$starttime,$endtime);
 
 
 function imrecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
@@ -279,7 +281,7 @@ $list= $client->imtyrecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->imrecord->no_data));    
                     
                 }
                 
@@ -289,7 +291,7 @@ $list= $client->imtyrecord($account,$page,$starttime,$endtime);
 }
 
 function imnativerecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
@@ -322,7 +324,7 @@ $list= $client->imnativerecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->imnativerecord->no_data));    
                     
                 }
                 
@@ -331,7 +333,7 @@ $list= $client->imnativerecord($account,$page,$starttime,$endtime);
     
 }
 function ibcrecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
@@ -357,7 +359,7 @@ $list= $client->ibcrecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->ibcrecord->no_data));    
                     
                 }
                 
@@ -604,7 +606,7 @@ $pages=500;
 
 
 function imchessrecord($account,$page,$starttime,$endtime){
-    
+    global $lang;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
@@ -631,7 +633,7 @@ $list= $client->imchessrecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->imchessrecord->no_data));    
                     
                 }
                 
@@ -683,7 +685,7 @@ $list= $client->imchessrecord($account,$page,$starttime,$endtime);
     
     
     function kychessrecord($account,$page,$starttime,$endtime){
-    
+        global $lang;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
                 
@@ -710,7 +712,7 @@ $list= $client->kyqprechord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->kychessrecord->no_data));    
                     
                 }
                 
@@ -721,6 +723,7 @@ $list= $client->kyqprechord($account,$page,$starttime,$endtime);
 
 
 function imdjrecord($account,$page,$starttime,$endtime){
+    global $lang;
     $account='u2da'.$account;
     		$client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
                 
@@ -749,7 +752,7 @@ $list= $client->imdjrecord($account,$page,$starttime,$endtime);
                     
                 }else{
                     
-                 echo    json_encode(array('status'=>'0','info'=>'No data'));    
+                 echo    json_encode(array('status'=>'0','info'=>$lang->imdjrecord->no_data));    
                     
                 }
                 
@@ -882,7 +885,7 @@ $params = [
  * @return mixed
  */
 function bgrecord($account,$page,$starttime,$endtime) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/bg.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -910,12 +913,12 @@ function bgrecord($account,$page,$starttime,$endtime) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->bgrecord->no_data));    
     }
 } // End of bgrecord Function
 
 function gdrecord($account, $page = 1) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/bg.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -943,12 +946,12 @@ function gdrecord($account, $page = 1) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->gdrecord->no_data));    
     }
 } // End of gdrecord Function
 
 function abrecord($account, $page = 1) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/bg.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -972,12 +975,12 @@ function abrecord($account, $page = 1) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->abrecord->no_data));    
     }
 } // End of abrecord Function
 
 function ptrecord($account, $page = 1, $perpage = 200) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/bg.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     // $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -1046,7 +1049,7 @@ function ptrecord($account, $page = 1, $perpage = 200) {
             // $info['total']=$count;
             echo json_encode(array('status'=>'1','info'=>$info));
         } else {
-            echo json_encode(array('status'=>'0','info'=>'No data'));    
+            echo json_encode(array('status'=>'0','info'=>$lang->ptrecord->no_data));    
         }
     }
     
@@ -1064,7 +1067,7 @@ function ptrecord($account, $page = 1, $perpage = 200) {
 
 function mgrecord($account, $page = 1, $page_size = 50) {
 
-
+    global $lang;
     $prefix = 'u2d';
     $account = $prefix.$account;
 
@@ -1134,7 +1137,7 @@ function mgrecord($account, $page = 1, $page_size = 50) {
 
     } else {
         
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->mgrecord->no_data));    
     }
     
 } // End of mgrecord Function
@@ -1289,7 +1292,7 @@ function mgAuthenticate() {   // 认证
 
 
 function cqrecord($account, $page = 1) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/cq.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -1313,13 +1316,13 @@ function cqrecord($account, $page = 1) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->cqrecord->no_data));    
     }
 } // End of cqrecord Function
 
 
 function vrrecord($account, $page = 1) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/bg.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -1343,13 +1346,13 @@ function vrrecord($account, $page = 1) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->vrrecord->no_data));    
     }
 } // End of vrrecord Function
 
 
 function cmdrecord($account, $page = 1) {
-
+    global $lang;
     // http://newrecordliushui.ybet102.com/bg.start.php
     // $client = new PHPRPC_Client("http://j9newrecordchaliushuiasd.32sun.com/phprpc/qprecord.php");
     $client = new PHPRPC_Client("http://newrecordliushui.ybet102.com/phprpc/qprecord.php");
@@ -1373,13 +1376,13 @@ function cmdrecord($account, $page = 1) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->cmdrecord->no_data));    
     }
 } // End of vrrecord Function
 
 // --- TCG SBO START ---
 function tcg_sbo_record($account, $page = 1) {
-
+    global $lang;
     // YYYY-MM-DD HH24:MI:SS
     $format = 'Y-m-d H:i:s';
 
@@ -1421,7 +1424,7 @@ function tcg_sbo_record($account, $page = 1) {
     
     if (curl_errno($curl))
     {
-        return "error";
+        return $lang->tcg_sbo_record->error;
     }
     curl_close($curl);
 
@@ -1451,7 +1454,7 @@ function tcg_sbo_record($account, $page = 1) {
         // $info['total']=$count;
         echo json_encode(array('status'=>'1','info'=>$info));
     } else {
-        echo json_encode(array('status'=>'0','info'=>'No data'));    
+        echo json_encode(array('status'=>'0','info'=>$lang->tcg_sbo_record->no_data));    
     }
 }
 

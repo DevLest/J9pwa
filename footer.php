@@ -15,6 +15,9 @@
 		session_start();
 	}
 	
+    $lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+    $lang = $lang->footer;
+
     $data = (object) $_POST;
 
 	//check auth
@@ -26,7 +29,7 @@
  
     if($auth_check != $auth)
 	{
-		echo json_encode(['status'=>0,'info'=>"Fallo en la verificación"], JSON_UNESCAPED_UNICODE );
+		echo json_encode(['status'=>0,'info'=>$lang->verification_failed], JSON_UNESCAPED_UNICODE );
 		exit();
 	}
 
@@ -46,6 +49,6 @@
         exit();
 	}
     else{
-		echo json_encode(array("status"=>0,"info"=>"Unsuccessful offer"));
+		echo json_encode(array("status"=>0,"info"=>$lang->unsuccessful_offer));
         exit();
 	}

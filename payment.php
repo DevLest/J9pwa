@@ -14,6 +14,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = $lang->payment;
+
 //Throttling | 5  mins per IP payment request
 IPThrottling();
 
@@ -27,7 +30,7 @@ $auth_check = md5($time . $api_key);
 $auth = $data->auth;
 
 if ($auth_check != $auth) {
-    echo json_encode(array('status' => 0, 'info' => "Verification failed"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    echo json_encode(array('status' => 0, 'info' => $lang->verification_failed), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit();
 }
 
@@ -69,12 +72,13 @@ switch ($data->type) {
 
 function onlinepay_list_v1($data)
 {
+    global $lang;
     if (checkLogin($data) != true) {
         exit();
     }
 
     if (!isset($data->payType) || $data->payType == null) {
-        echo json_encode(['status' => 0, 'info' => "payType not defined"], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        echo json_encode(['status' => 0, 'info' => $lang->onlinepay_list_v1->paytype_not_defined], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
@@ -91,15 +95,15 @@ function onlinepay_list_v1($data)
         switch ($v['id']) {
             case 1:
                 $v['img'] = "https://u2daszapp.u2d8899.com/images/bank_icon.webp";
-                $v['reminder'] = "Please ensure that the bank card you will use supports this payment method.";
+                $v['reminder'] = $lang->onlinepay_list_v1->ensure_bank_support;
                 break;
             case 2:
                 $v['img'] = "https://u2daszapp.u2d8899.com/images/paypal_icon.webp";
-                $v['reminder'] = "You are about to deposit via Paypal. You will be directed to Paypal to use this service.";
+                $v['reminder'] = $lang->onlinepay_list_v1->paypal_deposit;
                 break;
             default:
                 $v['img'] = "https://u2daszapp.u2d8899.com/images/usdt.webp";
-                $v['reminder'] = "You are about to deposit via USDT transfer. Please choose the correct network and chain to use.";
+                $v['reminder'] = $lang->onlinepay_list_v1->usdt_deposit;
                 break;
         }
 
@@ -232,6 +236,7 @@ function pay_limit($data)
 
 function memberLogin($data)
 {
+    global $lang;
     $login = new core();
     $re = $login->member_login($data->username_email, $data->password);
 
@@ -240,15 +245,15 @@ function memberLogin($data)
         $_SESSION['balance'] = $re['balance'];
         $_SESSION['member_name'] = $re['realName'];
         $_SESSION['member_type'] = $re['memberType'];
-        return json_encode(array('status' => 1, 'info' => '¡éxito!'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 1, 'info' => $lang->memberLogin->success), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } elseif ($re == 1001) {
-        return json_encode(array('status' => 0, 'info' => 'The game account or password is wrong!'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->memberLogin->invalid_game_account), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     } elseif ($re == 1002) {
-        return json_encode(array('status' => 0, 'info' => 'The account is locked, please contact online customer service!'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->memberLogin->account_locked), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     } else {
-        return json_encode(array('status' => 0, 'info' => 'System error. Try again later!'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->memberLogin->system_error), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 }
@@ -346,15 +351,17 @@ function monlinepay_bank($data)
 
 function announcements($data)
 {
+    global $lang;
     if (checkLogin($data) != true) {
         exit();
     }
 
-    return json_encode(array('status' => 1, 'info' => "Dear U Sports members: Due to the further strengthening of the bank's intelligent data system and Alipay's official risk control, our company constantly updates the recharge method and does its best to avoid risk control. If your payment is subject to risk control, use mobile banking to transfer the payment or choose virtual currency deposit"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    return json_encode(array('status' => 1, 'info' => $lang->announcements->dear_sports_member), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 function autopromotion_list($data)
 {
+    global $lang;
     if (checkLogin($data) != true) {
         exit();
     }
@@ -370,12 +377,13 @@ function autopromotion_list($data)
         }
         return json_encode(["status" => 1, "info" => $output], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } else {
-        return json_encode(["status" => 0, "info" => 'Without discount'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(["status" => 0, "info" =>  $lang->j9_autopromotion_list->without_discount], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
 
 function j9_autopromotion_list($data)
 {
+    global $lang;
     if (checkLogin($data) != true) {
         exit();
     }
@@ -391,12 +399,13 @@ function j9_autopromotion_list($data)
         }
         return json_encode(["status" => 1, "info" => $output], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } else {
-        return json_encode(["status" => 0, "info" => 'Without discount'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(["status" => 0, "info" => $lang->j9_autopromotion_list->without_discount], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
 
 function submit_autopromotion($data)
 {
+    global $lang;
    // echo 5665;exit;
      if (checkLogin($data) != true) {
         exit();
@@ -405,20 +414,21 @@ function submit_autopromotion($data)
     $info = $core->submit_autopromotion($data->username_email,$data->promotion_id);
   //print_r($info);exit;
     if($info==1){
-         return json_encode(["status" => 1, "info" => "application has been successful"], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+         return json_encode(["status" => 1, "info" => $lang->submit_autopromotion->success_application], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } elseif($info==1011) {
-        return json_encode(["status" => 0, "info" => 'You have not made a deposit within 3 minutes'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(["status" => 0, "info" => $lang->submit_autopromotion->not_made_deposit], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }elseif($info==1012) {
-        return json_encode(["status" => 0, "info" => 'You entered the game again after depositing, please do not enter the game before applying for promotions,'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(["status" => 0, "info" => $lang->submit_autopromotion->entered_game_again], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }elseif($info== 1013) {
-        return json_encode(["status" => 0, "info" => 'You have already applied for this promotion'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(["status" => 0, "info" => $lang->submit_autopromotion->already_applied], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }elseif($info== 1015) {
-        return json_encode(["status" => 0, "info" => 'This deposit has already applied for a discount, please deposit again'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(["status" => 0, "info" => $lang->submit_autopromotion->already_applied_discount], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
     
 }
 function checkdeposit($data)
 {
+    global $lang;
     if (checkLogin($data) != true) {
         exit();
     }
@@ -447,12 +457,13 @@ function checkdeposit($data)
             exit();
         }
     } else {
-        return json_encode(['status' => 0, 'info' => "No data found"]);
+        return json_encode(['status' => 0, 'info' => $lang->checkdeposit->no_data]);
     }
 }
 
 function onlinepayment($data)
 {
+    global $lang;
     $core = new core();
 
     $account = $data->username_email;
@@ -462,7 +473,7 @@ function onlinepayment($data)
     $amount = $data->amount;
 
     if ($amount < 10) {
-        return json_encode(array('status' => 0, 'info' => 'The deposit amount is incorrect, please enter the correct deposit amount'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->onlinepayment->deposit_amount_incorrect), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
@@ -483,18 +494,18 @@ function onlinepayment($data)
             }
         }
         if ($zf_flag == 0) {
-            return json_encode(array('status' => 0, 'info' => "The deposit bank is incorrect, please re-enter it."), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            return json_encode(array('status' => 0, 'info' => $lang->onlinepayment->deposit_bank_incorrect), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
             exit();
         }
     }
 
     if ($monlinepay_info['pay_status'] != 1 && $account != "feng12345") {
-        return json_encode(array('status' => 0, 'info' => "Deposit channel maintenance, choose another deposit method"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->onlinepayment->channel_maintenance), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
     if ($_SESSION['account'] == '') {
-        return json_encode(array('status' => 0, 'info' => "Verification expired, please go back and refresh to re-enter"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->onlinepayment->verification_expired), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
@@ -529,16 +540,17 @@ function onlinepayment($data)
 
         return json_encode(array('status' => 1, 'info' => ['form' => $formoutput, 'data' => $params]));
     } elseif ($re == -1) {
-        return json_encode(array('status' => 0, 'info' => "You have already requested this promotion, please review the promotion rules"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->onlinepayment->already_requested_promotion), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     } else {
-        return json_encode(array('status' => 0, 'info' => "Failed to submit deposit, please update and resubmit"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->onlinepayment->fail_submit_deposit), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 }
 
 function banktransfer($data)
 {
+    global $lang;
     include_once WEB_PATH . "/common/cache_file.class.php";
 
     $account = $data->username_email;
@@ -561,12 +573,12 @@ function banktransfer($data)
     }
 
     if ($limit_check == 0) {
-        return json_encode(array('status' => 0, 'info' => 'Error sending, please re-send after 30 seconds'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->banktransfer->error_sending), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
     if ($amount < 10) {
-        return json_encode(array('status' => 0, 'info' => 'The deposit amount is incorrect, please enter the correct deposit amount'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->banktransfer->incorrect_amount), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
@@ -580,7 +592,7 @@ function banktransfer($data)
         $deposit = json_decode(checkdeposit($data));
 
         if ($deposit->status == 1) {
-            return json_encode(array('status' => 0, 'info' => ['message' => 'An unreviewed deposit record already exists, please do not resubmit it', 'data' => $deposit->info]), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            return json_encode(array('status' => 0, 'info' => ['message' => $lang->banktransfer->unreviewed_deposit, 'data' => $deposit->info]), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
             exit();
         } else {
             return json_encode($deposit, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -592,7 +604,7 @@ function banktransfer($data)
     $bank_info = $bank_info_arr[0];
 
     if ($_SESSION['account'] == '') {
-        return json_encode(array('status' => 0, 'info' => 'Verification expired, please go back and refresh to re-enter'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->banktransfer->verification_expired), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 
@@ -617,29 +629,31 @@ function banktransfer($data)
             exit();
         }
     } elseif ($re == -1) {
-        return json_encode(array('status' => 0, 'info' => 'You have already requested this promotion, please review the promotion rules'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->banktransfer->already_requested_promotion), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     } else {
         error_log(date('YmdHis') . "##" . $_SESSION['account'] . "##" . $data->amount . "##" . $bank_info['id'] . "##" . json_encode($re) . "##" . $_SESSION['member_type'] . "\r\n", 3, 'common/log/depositerror.log');
-        return json_encode(array('status' => 0, 'info' => 'No cards available at this time, please try again later'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->banktransfer->no_card), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         exit();
     }
 }
 
 function canceldeposit($data)
 {
+    global $lang;
     $core = new core();
     $info = $core->canceldeposit($data->username_email);
 
     if ($info == 1) {
-        return json_encode(array('status' => 1, 'info' => "The deposit request has been canceled successfully!"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 1, 'info' => $lang->canceldeposit->success_cancel), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } else {
-        return json_encode(array('status' => 0, 'info' => "Undo failed, please refresh and try again"), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return json_encode(array('status' => 0, 'info' => $lang->canceldeposit->failed_undo), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
 
 function IPThrottling()
 {
+    global $lang;
     $core = new core();
     $ips = $core->ip_information();
 
@@ -651,7 +665,7 @@ function IPThrottling()
             $diff = $now->diff($then);
 
             if ($diff->format('%i') <= 5) {
-                echo json_encode(['status' => 0, 'info' => $diff->format('Hello, to provide you with a better user experience, to ensure the security of your account and to prevent IP monitoring. Your last request was %i minutes %s seconds ago, please wait 5 minutes before making a recharge request or contact customer service online for assistance. Happy gaming!')], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+                echo json_encode(['status' => 0, 'info' => $diff->format($lang->IPThrottling->throttle_message)], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
                 die;
             } else {
                 $_SESSION['throttle_date'] = date('Y-m-d H:i:s');
@@ -668,6 +682,7 @@ function IPThrottling()
 
 function networkList($data)
 {
+    global $lang;
     // $coins = ["USDT", "ETH", "BTC", "AAVE", "ADA", "AIRT", "ALU", "AVAX", "BABY", "BCH", "BFG", "BNB", "BSW", "BTT", "C98", "CAKE", "CHZ", "COMP", "DAI", "DASH", "DOGE", "ENJ", "ETC", "FTM", "GLM", "HOT", "LAZIO", "LINK", "LTC", "MATIC", "MKR", "OMG", "ONT", "PORTO", "REEF", "SHIB", "SNX", "STORJ", "SUSHI", "TRX","UMA","UNI","USDC","XLM","YFI","ZIL","ZRX"];
 
     $coins = [
@@ -767,7 +782,7 @@ function networkList($data)
 
         return json_encode(['status' => 1, 'info' => $network]);
     }
-    return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
+    return json_encode(['status' => 0, 'info' => $lang->networkList->error, "msg" => print_r($response)]);
 }
 
 function s6getAddress($email, $password, $network, $currencyId){

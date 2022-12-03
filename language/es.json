@@ -162,6 +162,7 @@
         }
     },
     "ajax_data": {
+        "auth_check": "Fallo en la verificación",
         "invalid_game_account": "¡La cuenta o contraseña del juego es incorrecta!",
         "account_locked": "¡La cuenta está bloqueada, por favor contacta con el servicio de atención al cliente online!",
         "system_error": "Error del sistema. Inténtelo de nuevo más tarde!",
@@ -187,7 +188,8 @@
             "fail_unlink": "Ha fallado la desvinculación de la información, por favor, inténtelo de nuevo o contacte con el servicio de atención al cliente online"
         },
         "deposit_bank": {
-
+            "header_1": "<tr><td>Tipo de banco</td><td>Información del número de tarjeta</td></tr>",
+            "header_2": "<tr><td>Métodos de pago</td><td>Nombre de Alipay</td><td>Cuenta de Alipay</td></tr>"
         },
         "onlinepay_bank": {
 
@@ -311,7 +313,7 @@
             "event_not_started": "El evento no ha comenzado o ha terminado"
         },
         "promotion_history": {
-
+            "header_1": "<tr><td colspan='4'>Registro de descuentos de hoy</td></tr><td>Frecuencia</td><td>Descuento</td><td>Tiempo de aplicación</td><td>"
         },
         "get_total_deposit": {
 
@@ -320,7 +322,7 @@
 
         },
         "special_promotion_record": {
-
+            "header_1": "<tr><td colspan='4'>Registro de descuentos de hoy</td></tr><td>Frecuencia</td><td>Importe total apostado</td><td>Tiempo de aplicación< /td></tr>"
         },
         "apply_qt_promotion": {
             "limit_check": "Haga clic en Aplicar después de 2 minutos",
@@ -331,6 +333,9 @@
             "event_not_started": "El evento no ha comenzado o ha terminado"
         },
         "get_prize_new": {
+            "go_back": "Por favor, $left_time Vuelve a comer albóndigas en segundos",
+            "today_deposit": "El depósito de hoy es más que $money_arr[$name] Para comer este plato de albóndigas",
+            "incorrect_operation": "Su operación es incorrecta, por favor actualice la página",
             "ate_dumpling": "Te has comido esta bola de masa",
             "not_enough_deposit": "Tu depósito no es suficiente",
             "system_error": "Error del sistema. Inténtelo de nuevo más tarde",
@@ -357,7 +362,11 @@
         "getRand_zongzi": {
 
         },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>Registros de liberación recientes</th></tr><tr>Tipo de dinero de regalo</th><th>Importe de dinero de regalo</th><th>Hora de liberación</th></tr>"
+        },
         "august_gift_list": {
+            "header_1": "<tr><td>Importe emitido(USDT)</td><td>Hora de liberación</td></tr>",
             "no_record": "No hay registros recientes"
         },
         "get_address": {
@@ -384,7 +393,7 @@
             "event_ended": "El evento ha finalizado"
         },
         "checkdeposit": {
-
+            "select_card": "<p>Hola, primero selecciona una tarjeta bancaria</p>"
         },
         "canceldeposit": {
             "success_cancel": "¡La solicitud de depósito ha sido cancelada con éxito!",
@@ -423,6 +432,7 @@
             "failed_query": "Consulta fallida"
         },
         "upload_pictures": {
+            "success": "éxito",
             "illegal_file": "Formato de archivo ilegal"
         },
         "get_imgurl": {
@@ -482,6 +492,10 @@
         "get_promotion_content": {
             "unsuccessful_offer": "Oferta fallida"
         },
+        "clear_cache": {
+            "complete": "Actualización completada",
+            "fail": "Actualización fallida"
+        },
         "logout": {
             "account_closed": "Su cuenta ha sido cerrada",
             "no_account": "No se ha detectado ninguna cuenta conectada"
@@ -517,6 +531,7 @@
 
         },
         "memberLogin": {
+            "success": "¡éxito!",
             "invalid_game_account": "¡La cuenta de juego o la contraseña son incorrectas!",
             "account_locked": "¡La cuenta está bloqueada, por favor contacta con el servicio de atención al cliente online!",
             "system_error": "Error del sistema. Inténtelo de nuevo más tarde!"
@@ -543,13 +558,15 @@
             "success_application": "la solicitud se ha realizado con éxito",
             "not_made_deposit": "No has hecho un depósito en 3 minutos",
             "entered_game_again": "Has entrado de nuevo en el juego después de depositar, por favor no entres en el juego antes de solicitar las promociones,",
-            "already_applied": "Ya has solicitado esta promoción"
+            "already_applied": "Ya has solicitado esta promoción",
+            "already_applied_discount": "Este depósito ya ha aplicado un descuento, por favor deposite de nuevo"
         },
         "checkdeposit": {
             "no_data": "No se han encontrado datos"
         },
         "onlinepayment": {
             "deposit_amount_incorrect": "El importe del depósito es incorrecto, introduzca el importe correcto del depósito",
+            "deposit_bank_incorrect": "El banco de depósito es incorrecto, por favor, vuelva a introducirlo",
             "channel_maintenance": "Mantenimiento del canal de depósito, elija otro método de depósito",
             "verification_expired": "La verificación ha caducado, por favor, retroceda y actualice para volver a entrar",
             "already_requested_promotion": "Ya has solicitado esta promoción, por favor revisa las reglas de la promoción",

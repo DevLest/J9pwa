@@ -8,11 +8,14 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials:true");
 define("WEB_PATH", __DIR__);
 include_once ("core.class.php");
+
 if(!isset($_SESSION))
 {
 	session_start();
 }
 
+$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = $lang->ajax_datav2;
 
 //print_r($_SESSION['account']);exit;
     	$api_key='fghrtrvdfger';
@@ -24,7 +27,7 @@ if(!isset($_SESSION))
     if($auth_check != $auth)
 	{
 	
-		echo json_encode(array('status'=>0,'info'=>"Fallo en la verificación"));
+		echo json_encode(array('status'=>0,'info'=>$lang->verification_failed));
 		exit();
 	}
 if(isset($_POST['type']) && $_POST['type'] == "verification_code")
@@ -119,7 +122,7 @@ $ch = curl_init();
           return json_encode(array('status'=>1,'info'=>$result));
                                                 }else{
                                                     
-                                  return json_encode(array('status'=>0,'info'=>"Error, no hay tal cuenta"));                     
+                                  return json_encode(array('status'=>0,'info'=>$lang->get_phone_account->no_account));                     
                                                 }
     
 }

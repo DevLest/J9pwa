@@ -18,6 +18,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = $lang->ajax_data;
+
 if (isset($_GET['type']) && $_GET['type'] == "onlinepay_list_v1") {
     echo onlinepay_list_v1($_GET['payType']);exit;
 } elseif (isset($_GET['type']) && $_GET['type'] == "washcodeself_list") {
@@ -120,7 +123,7 @@ print_r($auth_check);exit;*/
 // print_r($_POST['auth']);exit;
 if ($auth_check != $auth) {
 
-    echo json_encode(array('status' => 0, 'info' => "Verification failed"));
+    echo json_encode(array('status' => 0, 'info' => $lang->auth_check));
     exit();
 }
 if (!isset($_SESSION['account']) || (isset($_SESSION['account']) && $_SESSION['account'] != $_POST['username_email'])) {
@@ -138,19 +141,19 @@ if (!isset($_SESSION['account']) || (isset($_SESSION['account']) && $_SESSION['a
     } elseif ($re == 1001) {
         echo json_encode(array(
             'status' => -2,
-            'info' => 'The game account or password is incorrect!',
+            'info' => $lang->invalid_game_account,
         ));
         exit();
     } elseif ($re == 1002) {
         echo json_encode(array(
             'status' => -2,
-            'info' => 'The account is locked, please contact online customer service!',
+            'info' => $lang->account_locked,
         ));
         exit();
     } else {
         echo json_encode(array(
             'status' => -2,
-            'info' => 'System error. Try again later!',
+            'info' => $lang->system_error,
         ));
         exit();
     }
@@ -251,6 +254,7 @@ if (isset($_POST['type']) && $_POST['type'] == "get_memberinfo") {
 //获取游戏转账列表
 function get_transferlist()
 {
+    global $lang;
     $core = new core();
     $result = $core->get_transferlist();
     $str = "";
@@ -267,13 +271,14 @@ function get_transferlist()
             $str .= "<option value='" . $v['id'] . "'>" . $v['platName'] . "</option>";
         }
     } else {
-        $str .= "<option value=''>Gaming platform maintenance</option>";
+        $str .= "<option value=''>".$lang->get_transferlist->maintenance."</option>";
     }
     return $str;
 }
 //获取游戏转账列表 v1
 function get_transferlist_v1()
 {
+    global $lang;
     $core = new core();
     $result = $core->get_transferlist_v1();
     $str = array();
@@ -296,6 +301,7 @@ function get_transferlist_v1()
 //获取用户基本资料
 function get_memberinfo()
 {
+    global $lang;
     $core = new core();
     $info = $core->get_memberinfo($_SESSION['account']);
     return json_encode(array('status' => '1', 'info' => $info));
@@ -303,11 +309,12 @@ function get_memberinfo()
 //获取Cuenta principal或游戏帐号余额
 function get_balance($account, $gameid)
 {
+    global $lang;
     //echo 21232;exit;
     $core = new core();
     $result = $core->get_balance($account, $gameid);
     if (!$result) {
-        return json_encode(array('status' => 0, 'info' => 'Query failed'));
+        return json_encode(array('status' => 0, 'info' => $lang->get_balance->query_failed));
     } else {
         $path = 'images/currency';
         $files = array_diff(scandir($path), array('.', '..'));
@@ -434,6 +441,7 @@ function get_balance($account, $gameid)
 //获取可绑定的银行卡类型
 function get_bindCardBankType()
 {
+    global $lang;
     $str = array(
         "ICBC",
         "Agricultural Bank of China",
@@ -455,6 +463,7 @@ function get_bindCardBankType()
 //获取用户银行信息
 function bank_list($account)
 {
+    global $lang;
     $core = new core();
     $result = $core->bank_list($account);
     $bank_list = array();
@@ -479,12 +488,13 @@ function bank_list($account)
         }
         return json_encode(array('status' => 1, 'info' => $bank_list));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'Could not get bank card information'));
+        return json_encode(array('status' => 0, 'info' => $lang->bank_list->fail_get_bank_info));
     }
 }
 //解绑银行信息
 function bank_unbind($id)
 {
+    global $lang;
     $core = new core();
     $result = $core->bank_unbind($id);
     if ($result == 1) {
@@ -511,20 +521,21 @@ function bank_unbind($id)
         }
         return json_encode(array('status' => 1, 'info' => $bank_list));
     } else {
-        json_encode(array('status' => 0, 'info' => 'Failed to unlink the information, please try again or contact customer service online'));
+        json_encode(array('status' => 0, 'info' => $lang->bank_unbind->fail_unlink));
     }
 }
 //获取存款银行信息
 function deposit_bank($type)
 {
+    global $lang;
     $core = new core();
     $member_type = $_SESSION['member_type'];
     $result = $core->deposit_bank($type, $member_type);
     $bank_list = "";
     if ($type == 0) {
-        $bank_info = "<tr><td>Type of Bank</td><td>Name</td><td>Card number information</td></tr>";
+        $bank_info = $lang->deposit_bank->header_1;
     } else if ($type == 1) {
-        $bank_info = "<tr><td>Payment Methods</td><td>AliPay Name</td><td>Alipay Account</td></tr>";
+        $bank_info = $lang->deposit_bank->header_2;
     }
     $erweima_name = "";
     if (is_array($result)) {
@@ -556,6 +567,7 @@ function onlinepay_bank()
 //获取记录信息
 function record_list($record_type, $page = 1, $pages = 20)
 {
+    global $lang;
     $core = new core();
     if ($record_type == 'agent' || $record_type == 'promotions') {
         $pages = 5;
@@ -600,7 +612,7 @@ function record_list($record_type, $page = 1, $pages = 20)
             }
             return json_encode(array('status' => 1, 'info' => $str));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "deposit_fail") {
         if (is_array($result)) {
@@ -627,7 +639,7 @@ function record_list($record_type, $page = 1, $pages = 20)
             }
             return json_encode(array('status' => 1, 'info' => $str));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "debit") {
         // return $result;
@@ -665,7 +677,7 @@ function record_list($record_type, $page = 1, $pages = 20)
             ;
             return json_encode(array('status' => 1, 'info' => array_slice($str, 0, 5)));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "transfer") {
         if (is_array($result)) {
@@ -750,19 +762,19 @@ function record_list($record_type, $page = 1, $pages = 20)
             }
             return json_encode(array('status' => 1, 'info' => $str));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "promotion") {
         if (is_array($result)) {
             return json_encode(array('status' => 1, 'info' => $result));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "point") {
         if (is_array($result)) {
             return json_encode(array('status' => 1, 'info' => $result));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "rescue") {
         if (is_array($result)) {
@@ -780,7 +792,7 @@ function record_list($record_type, $page = 1, $pages = 20)
             }
             return json_encode(array('status' => 1, 'info' => $str));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "autopromo") {
         if (is_array($result)) {
@@ -809,7 +821,7 @@ function record_list($record_type, $page = 1, $pages = 20)
             }
             return json_encode(array('status' => 1, 'info' => $str));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "washcode") {
         if (is_array($result)) {
@@ -834,20 +846,20 @@ function record_list($record_type, $page = 1, $pages = 20)
             }
             return json_encode(array('status' => 1, 'info' => $str));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "message") {
         if (is_array($result)) {
             return json_encode(array('status' => 1, 'info' => $result));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } elseif ($record_type == "batchpromo") {
 
         if (is_array($result)) {
             return json_encode(array('status' => 1, 'info' => $result));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'No related data found'));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_data));
         }
     } else if ($record_type == "agent") {
         $result = $core->record_list($_SESSION['account'], 'agent', $page, 5);
@@ -878,10 +890,10 @@ function record_list($record_type, $page = 1, $pages = 20)
                 }
                 return json_encode(array('status' => 1, 'info' => $str));
             } else {
-                return json_encode(array('status' => 0, 'info' => "No records"));
+                return json_encode(array('status' => 0, 'info' => $lang->record_list->no_records));
             }
         } else {
-            return json_encode(array('status' => 0, 'info' => "No records"));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_records));
         }
         return $str;
     } else if ($record_type == "promotions") {
@@ -924,10 +936,10 @@ function record_list($record_type, $page = 1, $pages = 20)
                 }
                 return json_encode(array('status' => 1, 'info' => $str));
             } else {
-                return json_encode(array('status' => 0, 'info' => "No records"));
+                return json_encode(array('status' => 0, 'info' => $lang->record_list->no_records));
             }
         } else {
-            return json_encode(array('status' => 0, 'info' => "No records"));
+            return json_encode(array('status' => 0, 'info' => $lang->record_list->no_records));
         }
         //return $str;
     }
@@ -949,15 +961,16 @@ function count_record($account, $record_type, $pages = 10)
 //用户自助Cancelar retiro con fallar
 function cancel_debit($id)
 {
+    global $lang;
     $core = new core();
     $status = $core->cancel_debit($_SESSION['account'], $id);
    // print_r($status);exit;
     if ($status == 1) {
-        return json_encode(array('status' => 1, 'info' => 'Cancel withdrawal successfully'));
+        return json_encode(array('status' => 1, 'info' => $lang->cancel_debit->success_cancel));
     } elseif ($status == 1201) {
-        return json_encode(array('status' => 0, 'info' => 'Cancel withdrawal with fail，Customer service is already under review.。'));
+        return json_encode(array('status' => 0, 'info' => $lang->cancel_debit->fail_cancel_under_review));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'Cancel withdrawal with fail，Contact online customer service' . $status));
+        return json_encode(array('status' => 0, 'info' => $lang->cancel_debit->fail_cancel_contact . " " . $status));
     }
 }
 //获取用户的积分信息
@@ -974,6 +987,7 @@ function get_point()
 //用户自助申请老虎机救援
 function apply_rescue($rescue_type)
 {
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         $account = $_SESSION['account'];
         $limit_check = 0;
@@ -994,7 +1008,7 @@ function apply_rescue($rescue_type)
             }
         }
         if ($limit_check == 0) {
-            return json_encode(array('status' => 0, 'info' => 'Click Apply again after 3 minutes.'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->apply_three_min));
         }
         $core = new core();
 
@@ -1013,7 +1027,7 @@ function apply_rescue($rescue_type)
         if (is_array($bets)) {
             foreach ($bets['list'] as $bet) {
                 if ($cacheData[$bet['gamecode']]['gameType'] == 'live' || $cacheData[$bet['gamecode']]['gameType'] == 'sports') {
-                    return json_encode(array('status' => 0, 'info' => 'You bet on sports or live games that makes you unable to meet the terms and conditions of the offer.'));
+                    return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_terms_and_condition));
 
                 }
 
@@ -1021,24 +1035,24 @@ function apply_rescue($rescue_type)
         }
         $status = $core->apply_rescue($account, $rescue_type);
         if ($status === 1) {
-            return json_encode(array('status' => 1, 'info' => 'Rescue Bonus redemption is successful, please check'));
+            return json_encode(array('status' => 1, 'info' => $lang->apply_rescue->success_rescue_bonus));
         } elseif ($status == 1041) {
-            return json_encode(array('status' => 0, 'info' => 'The redemption application failed, the application date is invalid'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->invalid_application_date));
         } elseif ($status == 1042) {
-            return json_encode(array('status' => 0, 'info' => 'The rescue bonus request has been rejected due to a pending withdrawal request'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_pending_withdrawal));
         } elseif ($status == 1043) {
-            return json_encode(array('status' => 0, 'info' => 'The rescue bonus request failed. Unable to meet the terms and conditions of the offer'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_not_meet_terms_and_condition));
         } elseif ($status == 1044) {
-            return json_encode(array('status' => 0, 'info' => 'The rescue bonus request failed because your total account balance is greater than 15MXN'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_max_balance));
         } elseif ($status == 1045) {
-            return json_encode(array('status' => 0, 'info' => 'The rescue bonus request failed. The minimum loss profit must be greater than 900MXN'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_min_loss_profit));
         } elseif ($status == 1046) {
-            return json_encode(array('status' => 0, 'info' => 'The rescue bonus has been claimed yesterday, please check the record'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->bonus_claimed_yesterday));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'The rescue bonus request failed. Please refer to the terms and conditions of the offer'));
+            return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_refer_terms_and_condition));
         }
     } else {
-        return json_encode(array('status' => 0, 'info' => 'System error, please log in again'));
+        return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->system_error);
     }
 }
 //获取站内信的详细内容
@@ -1074,12 +1088,13 @@ function get_notice($num)
 //根据传递的ID序列 进行删除站内信
 function delete_message($ids)
 {
+    global $lang;
     $core = new core();
     $status = $core->delete_data($ids, "ks_message_data");
     if ($status == 1) {
-        return "Delete data successfully";
+        return $lang->delete_message->success_delete;
     } else {
-        return "Failed to delete data, please refresh and try again";
+        return $lang->delete_message->faile_delete;
     }
 }
 
@@ -1152,24 +1167,26 @@ function monlinepay_bank($id)
 //同步用户密码到游戏平台
 function syn_password()
 {
+    global $lang;
     $core = new core();
     $name = "syn_password";
     $data = array(
         "account" => $_SESSION['account'],
     );
     $info = $core->asyn_execute($name, $data);
-    return "The function has not been activated.";
+    return $lang->syn_password->unactivated_function;
     //return "密码同步完成，请5分钟后登录游戏。如无法登录，Póngase en contacto con el servicio de atención al cliente en línea";
 }
 //获取会员的当天 agua corriendo情况
 function get_number($account, $gameid)
 {
+    global $lang;
     $core = new core();
     $result = $core->get_number($account, $gameid);
     if ($result < 0) {
-        return "Query failed";
+        return $lang->get_number->query_fail;
     } else {
-        return $result . " Water running";
+        return $result . " " . $lang->get_number->water_running;
     }
 }
 
@@ -1183,17 +1200,18 @@ function get_lastweek_deposit($account)
 //会员申请 春季赞歌优惠活动
 function apply_special_spring($account)
 {
+    global $lang;
     exit();
     $core = new core();
     $status = $core->apply_special_spring($account);
     if ($status == 1) {
-        return "Discount request is successful";
+        return $lang->aapply_special_spring->success_discount_request;
     } elseif ($status == 1051) {
-        return "Conditions not met or applied";
+        return $lang->aapply_special_spring->condition_not_met;
     } elseif ($status == 1052) {
-        return "Before the time of application, please check the official website for more details.";
+        return $lang->aapply_special_spring->check_official_website;
     } else {
-        return "System error. Try again later";
+        return $lang->aapply_special_spring->system_error;
     }
 }
 //获取优惠活动列表（id=0）或者信息（id=..）
@@ -1266,84 +1284,88 @@ function get_platform()
 //游戏解锁
 function gameapi_unlock($gameid)
 {
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         $account = $_SESSION['account'];
         $core = new core();
         $info = $core->gameapi_unlock($account, $gameid);
         if ($info == 1) {
-            return json_encode(array('status' => 1, 'info' => 'Congratulations, the game has been successfully unlocked!'));
+            return json_encode(array('status' => 1, 'info' => $lang->gameapi_unlock->success_unlock));
         } elseif ($info == 1101) {
-            return json_encode(array('status' => 0, 'info' => 'Sorry, the game platform is under maintenance....'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_unlock->maintenance));
         } elseif ($info == 1102) {
-            return json_encode(array('status' => 0, 'info' => 'Game unlock failed, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_unlock->fail_unlock_contact));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'Unknown error, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_unlock->unknown_error));
         }
     } else {
-        return json_encode(array('status' => 1, 'info' => 'System error, please log in again'));
+        return json_encode(array('status' => 1, 'info' => $lang->gameapi_unlock->system_error));
     }
 }
 //游戏激活
 function gameapi_active($gameid)
 {
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         $account = $_SESSION['account'];
         $core = new core();
         $info = $core->gameapi_active($account, $gameid);
 
         if ($info == 1) {
-            return json_encode(array('status' => 1, 'info' => 'Congratulations, the game has been activated successfully!'));
+            return json_encode(array('status' => 1, 'info' => $lang->gameapi_active->success_activated));
         } elseif ($info == 1101) {
-            return json_encode(array('status' => 0, 'info' => 'Sorry, the game platform is under maintenance....'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_active->maintenance));
         } elseif ($info == 1102) {
-            return json_encode(array('status' => 0, 'info' => 'The account has been activated'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_active->account_activated));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'Unknown error, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_active->unknown_error));
         }
     } else {
-        return json_encode(array('status' => 0, 'info' => 'System error, please log in again'));
+        return json_encode(array('status' => 0, 'info' => $lang->gameapi_active->system_error));
     }
 }
 //游戏同步密码
 function gameapi_password($gameid)
 {
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         $account = $_SESSION['account'];
         $core = new core();
         $info = $core->gameapi_password($account, $gameid);
 
         if ($info == 1) {
-            return json_encode(array('status' => 1, 'info' => 'Congratulations, you have successfully synced the passwords!'));
+            return json_encode(array('status' => 1, 'info' => $lang->gameapi_password->success_sync));
         } elseif ($info == 1101) {
-            return json_encode(array('status' => 0, 'info' => 'Sorry, the game platform is under maintenance....'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_password->maintenance));
         } elseif ($info == 1102) {
-            return json_encode(array('status' => 0, 'info' => 'Failed to sync password, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_password->fail_sync_contact));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'Unknown error, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_password->unknown_error));
         }
     } else {
-        return json_encode(array('status' => 0, 'info' => 'System error, please log in again'));
+        return json_encode(array('status' => 0, 'info' => $lang->gameapi_password->system_error));
     }
 }
 //游戏强制离线
 function gameapi_logout($gameid)
 {
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         $account = $_SESSION['account'];
         $core = new core();
         $info = $core->gameapi_logout($account, $gameid);
 
         if ($info == 1) {
-            return json_encode(array('status' => 1, 'info' => 'Congratulations, the game was successfully forced offline!'));
+            return json_encode(array('status' => 1, 'info' => $lang->gameapi_logout->success_offline));
         } elseif ($info == 1101) {
-            return json_encode(array('status' => 0, 'info' => 'Sorry, the game is under maintenance....'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_logout->maintenance));
         } elseif ($info == 1102) {
-            return json_encode(array('status' => 0, 'info' => 'Could not force disconnection, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_logout->fail_disconnect_contact));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'Unknown error, please contact customer service'));
+            return json_encode(array('status' => 0, 'info' => $lang->gameapi_logout->unknown_error));
         }
     } else {
-        return json_encode(array('status' => 0, 'info' => 'System error, please log in again'));
+        return json_encode(array('status' => 0, 'info' => $lang->gameapi_logout->system_error));
     }
 }
 //自助领取返水列表
@@ -1379,7 +1401,7 @@ function washcodeself_list()
 //自助领取返水
 function washcodeself_receive($gid)
 {
-
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         if ($gid == 'account' || $gid == 'id') {
             exit();
@@ -1423,18 +1445,18 @@ function washcodeself_receive($gid)
                         }
                     }
                 }
-                $msg = array('status' => 1, 'info' => 'Receive complete! Please check the balance');
+                $msg = array('status' => 1, 'info' => $lang->washcodeself_receive->success_receive_complete);
             } else {
-                $msg = array('status' => 0, 'info' => 'Could not claim, please try again later');
+                $msg = array('status' => 0, 'info' => $lang->washcodeself_receive->fail_claim_retry);
             }
         } else {
             $result = $core->washcodeself_receive($account, $gid, $ips);
             if ($result == 1902) {
-                $msg = array('status' => 0, 'info' => 'The amount is 0 and cannot be claimed');
+                $msg = array('status' => 0, 'info' => $lang->washcodeself_receive->fail_claim_no_amount);
             } else if ($result == 2001) {
-                $msg = array('status' => 0, 'info' => 'The status is incorrect, please update and click to receive');
+                $msg = array('status' => 0, 'info' => $lang->washcodeself_receive->fail_claim_status_incorrect);
             } else if ($result == 1) {
-                $msg = array('status' => 1, 'info' => 'Congratulations, you have received it successfully!');
+                $msg = array('status' => 1, 'info' => $lang->washcodeself_receive->succes_receive);
             }
         }
         return json_encode($msg);
@@ -1482,6 +1504,7 @@ function onlinepay_list_v1($payType)
 //会员申请 NT新纪USDT优惠活动
 function apply_nt_promotion($account)
 {
+    global $lang;
     exit();
     $limit_check = 0;
     //加载缓存
@@ -1501,7 +1524,7 @@ function apply_nt_promotion($account)
         }
     }
     if ($limit_check == 0) {
-        return "Haga clic en Aplicar después de 2 minutos";
+        return $lang->apply_nt_promotion->limit_check;
     }
     //1.查询当日Deposito total，2.查询当前为第几次领取，3.判断是否达到当前领取优惠的条件(Deposito total是否满足)，4.插入数据，Descuento转入主帐号，再自动转入NT
     $starttime = strtotime("2016-10-13");
@@ -1514,27 +1537,28 @@ function apply_nt_promotion($account)
         $address = iconv('GB2312', 'UTF-8', $ips['address']);
         $status = $core->apply_nt_promotion($account, $ip, $address);
         if ($status == 1) {
-            return "Congratulations, the request was successful, the discount has been automatically transferred to the game platform.";
+            return $lang->apply_nt_promotion->success_request;
         } elseif ($status == 1051) {
-            return "The total amount of the deposit does not meet the conditions of the request";
+            return  $lang->apply_nt_promotion->fail_request_not_meet_condition;
         } elseif ($status == 1053) {
-            return "You have already requested this offer, come back tomorrow";
+            return $lang->apply_nt_promotion->duplicate_request;
         } elseif ($status == 2001) {
-            return "System error. Please try again later";
+            return $lang->apply_nt_promotion->system_error;
         }
     } else {
-        return "The event has not started or has finished";
+        return $lang->apply_nt_promotion->event_not_started;
     }
 }
 //会员查询 当日优惠记录
 function promotion_history($account, $promotion_name, $starttime = "", $endtime = "")
 {
+    global $lang;
     $core = new core();
     $result = $core->promotion_history($account, $promotion_name, $starttime, $endtime);
     $list = "";
     //echo json_encode($result);
     if (is_array($result)) {
-        $list .= "<tr><td colspan='4'>Today's discount record</td></tr><tr><td>Frequency</td><td>Discount</td><td>Total deposit</td><td>Application time</td ></tr>";
+        $list .= $lang->promotion_history->header_1;
         foreach ($result as $v) {
             $list .= "<tr><td>" . $v['promotion_level'] . "</td><td>" . $v['amount'] . "</td><td>" . $v['total_deposit'] . "</td><td>" . $v['add_time'] . "</td></tr>";
         }
@@ -1574,12 +1598,13 @@ function get_qt_bet($account)
 //获取QT优惠领取记录
 function special_promotion_record($account, $promotion_name)
 {
+    global $lang;
     $core = new core();
     $result = $core->special_promotion_record($account, $promotion_name);
     $list = "";
     //echo json_encode($result);
     if (is_array($result)) {
-        $list .= "<tr><td colspan='4'>Today's discount record</td></tr><tr><td>Frequency</td><td>Discount</td><td>Total amount wagered QT</td><td>Application time< /td></tr>";
+        $list .= $lang->special_promotion_record->header_1;
         foreach ($result as $v) {
             $list .= "<tr><td>" . $v['promotion_level'] . "</td><td>" . $v['amount'] . "</td><td>" . $v['total_bet'] . "</td><td>" . $v['add_time'] . "</td></tr>";
         }
@@ -1591,6 +1616,7 @@ function special_promotion_record($account, $promotion_name)
 //申请USDT旦送礼，QT至上活动
 function apply_qt_promotion($account, $promotion_level, $arr = "")
 {
+    global $lang;
     exit();
     $limit_check = 0;
     //加载缓存
@@ -1610,7 +1636,7 @@ function apply_qt_promotion($account, $promotion_level, $arr = "")
         }
     }
     if ($limit_check == 0) {
-        return "Haga clic en Aplicar después de 2 minutos";
+        return $lang->apply_qt_promotion->limit_check;
     }
     //申请QT的特殊优惠 1.查询是否已申请 2.查询投注量是否满足 3.写入记录和金额 4.转账到游戏平台
     $starttime = strtotime("2016-12-31");
@@ -1622,16 +1648,16 @@ function apply_qt_promotion($account, $promotion_level, $arr = "")
         $info['ip'] = $ips['ip'];
         $info['address'] = iconv('GB2312', 'UTF-8', $ips['address']);
         $status = $core->apply_qt_promotion($account, $promotion_level, $info);if ($status == 1) {
-            return "Congratulations, the request was successful, the discount has been automatically transferred to the game platform.";
+            return $lang->apply_qt_promotion->success_request;
         } elseif ($status == 1051) {
-            return "当日Total amount wagered QT does not meet the requirements of the application";
+            return $lang->apply_qt_promotion->fail_request_not_meet_condition;
         } elseif ($status == 1053) {
-            return "You have already requested this offer, come back tomorrow";
+            return $lang->apply_qt_promotion->duplicate_request;
         } elseif ($status == 2001) {
-            return "System error. Please try again later";
+            return $lang->apply_qt_promotion->system_error;
         }
     } else {
-        return "The event has not started or has finished";
+        return $lang->apply_qt_promotion->event_not_started;
     }
 
 }
@@ -1643,6 +1669,7 @@ function apply_qt_promotion($account, $promotion_level, $arr = "")
  */
 function get_prize_new($account, $name, $Is_up)
 {
+    global $lang;
     //1.活动时间是否正确，2.查询存款情况，3.存款金额是否满足吃汤圆要求，4.获取吃汤圆记录，5.满足且没有砸过则随机获取奖金并发放到账户余额
     $starttime = strtotime("2018-02-23");
     $endtime = strtotime("2018-03-06 23:59:59");
@@ -1670,7 +1697,7 @@ function get_prize_new($account, $name, $Is_up)
             }
             if ($limit_check == 0) {
                 $left_time = 30 - (time() - $data_list['limit_time']);
-                $arr = array("msg" => 0, "prize" => "Please " . $left_time . " Go back to eating meatballs in seconds.");
+                $arr = array("msg" => 0, "prize" => str_replace('$left_time', $left_time, $lang->get_prize_new->go_back));
                 return json_encode($arr);
             }
         }
@@ -1725,7 +1752,7 @@ function get_prize_new($account, $name, $Is_up)
                 $_SESSION['eggState'] = ($name + 1) * 100 + 1;
                 $id = getRand_new(mt_rand(1, 100), $name);
             } else {
-                $arr = array("msg" => 0, "prize" => "Today's deposit is more than " . $money_arr[$name] . " To eat this plate of meatballs");
+                $arr = array("msg" => 0, "prize" => str_replace('$money_arr[$name]', $money_arr[$name], $lang->get_prize_new->today_deposit));
                 return json_encode($arr);
             }
         } else {
@@ -1737,7 +1764,7 @@ function get_prize_new($account, $name, $Is_up)
                 }
                 $_SESSION['eggState'] = $_SESSION['eggState'] + 1;
             } else {
-                $arr = array("msg" => 0, "prize" => "Your operation is incorrect, please refresh the page.");
+                $arr = array("msg" => 0, "prize" => $lang->get_prize_new->incorrect_operation);
                 unset($_SESSION['eggState']);
                 return json_encode($arr);
             }
@@ -1771,16 +1798,16 @@ function get_prize_new($account, $name, $Is_up)
             if ($status == 1) {
                 $arr = array("msg" => 1, "prize" => $prize_amount);
             } elseif ($status == 1063) {
-                $arr = array("msg" => 0, "prize" => "You ate this dumpling");
+                $arr = array("msg" => 0, "prize" => $lang->get_prize_new->ate_dumpling);
             } elseif ($status == 1064) {
-                $arr = array("msg" => 0, "prize" => "Your deposit is not enough");
+                $arr = array("msg" => 0, "prize" => $lang->get_prize_new->not_enough_deposit);
             } elseif ($status == 2001) {
-                $arr = array("msg" => 0, "prize" => "System error. Try again later");
+                $arr = array("msg" => 0, "prize" => $lang->get_prize_new->system_error);
             }
         }
         return json_encode($arr);
     } else {
-        $arr = array("msg" => 0, "prize" => "The event has not started yet.");
+        $arr = array("msg" => 0, "prize" => $lang->get_prize_new->event_not_started);
         return json_encode($arr);
     }
 }
@@ -2097,9 +2124,10 @@ function getRand_zongzi($rand)
  */
 function week_gift_list($account)
 {
+    global $lang;
     $core = new core();
     $result = $core->week_gift_list($account);
-    $str = "<tr><th colspan='5'>Recent release records</th></tr><tr><th>Gift money type</th><th>Gift money Amount</th><th>Release time</th></th></tr>";
+    $str = $lang->week_gift_list->header_1;
     $re_code = 0;
     $arr = array();
     if (is_array($result) && count($result)) {
@@ -2116,10 +2144,11 @@ function week_gift_list($account)
  */
 function august_gift_list($account)
 {
+    global $lang;
     $core = new core();
     $starttime = '2018-05-04';
     $result = $core->week_gift_list($account, "gid1902", $starttime);
-    $str = "<tr><td>Issued amount(USDT)</td><td>Release time</td></tr>";
+    $str = $lang->august_gift_list->header_1;
     $re_code = 0;
     $arr = array();
     if (is_array($result) && count($result)) {
@@ -2128,7 +2157,7 @@ function august_gift_list($account)
             $str .= "<tr><td>" . $v['money'] . "</td><td>" . $v['add_date'] . "</td></tr>";
         }
     } else {
-        $str .= '<tr><td colspan="2">Recent no records</td></tr>';
+        $str .= $lang->august_gift_list->no_record;
     }
     return json_encode($arr = array('re_code' => $re_code, 'str' => $str));
 }
@@ -2181,11 +2210,12 @@ function get_address()
  */
 function app_first_login($account, $device_id)
 {
+    global $lang;
     $starttime = strtotime("2017-9-8");
     $endtime = strtotime("2018-12-31 23:59:59");
     $now_time = time();
     if ($_SESSION['member_type'] == 0) {
-        $arr = array("status" => 0, "info" => "Sorry, you are now a temporary member and cannot participate in this event.");
+        $arr = array("status" => 0, "info" => $lang->app_first_login->cannot_participate);
         return json_encode($arr);
     }
     if ($now_time > $starttime && $now_time < $endtime) {
@@ -2195,7 +2225,7 @@ function app_first_login($account, $device_id)
         $cachFile = new cache_file();
         $data_list = $cachFile->get($account, '', 'data', 'appFirstLogin_limit');
         if ($data_list != 'false') {
-            $arr = array("status" => 0, "info" => "You have received the gift of luck from the APP");
+            $arr = array("status" => 0, "info" => $lang->app_first_login->received_gift);
             return json_encode($arr);
         }
 
@@ -2205,19 +2235,19 @@ function app_first_login($account, $device_id)
         if ($re == 1) {
             $limit_time = array("limit_time" => time());
             $cachFile->set($account, $limit_time, '', 'data', 'appFirstLogin_limit');
-            return json_encode(array('status' => 1, 'info' => 'Received successfully! Please check the balance'));
+            return json_encode(array('status' => 1, 'info' => $lang->app_first_login->success_receive));
 
         } elseif ($re == 1001) {
-            return json_encode(array('status' => 0, 'info' => 'You received a lucky gift from the invalid app'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_first_login->received_lucky_gift));
         } elseif ($re == 1002) {
-            return json_encode(array('status' => 0, 'info' => 'The system is busy, please try again later'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_first_login->system_busy));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'An unknown error occurred, please try again later'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_first_login->unknown_error));
         }
     } elseif ($now_time < $starttime) {
-        return json_encode(array('status' => 0, 'info' => 'The event has not started yet.'));
+        return json_encode(array('status' => 0, 'info' => $lang->app_first_login->event_not_started));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'The event has ended'));
+        return json_encode(array('status' => 0, 'info' => $lang->app_first_login->event_ended));
     }
 
 }
@@ -2230,6 +2260,7 @@ function app_first_login($account, $device_id)
  */
 function app_pay_give($account)
 {
+    global $lang;
     $starttime = strtotime("2017-9-8");
     $endtime = strtotime("2018-08-03 23:59:59");
     $now_time = time();
@@ -2240,7 +2271,7 @@ function app_pay_give($account)
         $data_list = $cachFile->get($account, '', 'data', 'appPayGive_limit');
         if ($data_list != 'false') {
             if ($data_list['limit_day'] == date('d', time()) && $data_list['limit_month'] == date('m', time())) {
-                $arr = array("status" => 0, "info" => "Application deposit received today, lucky gift");
+                $arr = array("status" => 0, "info" => $lang->app_pay_give->application_deposit_received);
                 return json_encode($arr);
             }
         }
@@ -2252,21 +2283,21 @@ function app_pay_give($account)
             //写入缓存
             $limit_time = array("limit_day" => date('d', time()), "limit_month" => date('m', time()));
             $cachFile->set($account, $limit_time, '', 'data', 'appPayGive_limit');
-            return json_encode(array('status' => 1, 'info' => 'Received successfully! Please check the balance'));
+            return json_encode(array('status' => 1, 'info' => $lang->app_pay_give->success_receive));
 
         } elseif ($re == 1001) {
-            return json_encode(array('status' => 0, 'info' => 'You have deposited lucky gifts through the app today.'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_pay_give->received_lucky_gift));
         } elseif ($re == 1002) {
-            return json_encode(array('status' => 0, 'info' => 'The system is busy, please try again later'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_pay_give->system_busy));
         } elseif ($re == 1003) {
-            return json_encode(array('status' => 0, 'info' => 'The application failed, you did not use the APP to deposit today'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_pay_give->app_failed_did_not_use_app));
         } else {
-            return json_encode(array('status' => 0, 'info' => 'An unknown error occurred, please try again later'));
+            return json_encode(array('status' => 0, 'info' => $lang->app_pay_give->unknown_error));
         }
     } elseif ($now_time < $starttime) {
-        return json_encode(array('status' => 0, 'info' => 'The event has not started yet.'));
+        return json_encode(array('status' => 0, 'info' => $lang->app_pay_give->event_not_started));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'The event has ended'));
+        return json_encode(array('status' => 0, 'info' => $lang->app_pay_give->event_ended));
     }
 
 }
@@ -2274,6 +2305,7 @@ function app_pay_give($account)
 //会员返现存款检查是否有存款
 function checkdeposit($account)
 {
+    global $lang;
     $core = new core();
     $info = $core->checkdeposit($account);
 
@@ -2281,7 +2313,7 @@ function checkdeposit($account)
         $bank_info_arr = $core->deposit_bank(0, $_SESSION['member_type']);
         $bank_info = $bank_info_arr[0];
 
-        $str = '<p>Hello, first select a bank card</p>';
+        $str = $lang->checkdeposit->select_card;
         if (count($bank_info_arr) < 2) {
             $arrs = array(
                 "id" => $bank_info['id'],
@@ -2308,12 +2340,13 @@ function checkdeposit($account)
 //会员取消自己的返现存款
 function canceldeposit($account)
 {
+    global $lang;
     $core = new core();
     $info = $core->canceldeposit($account);
     if ($info == 1) {
-        return 'The deposit request has been successfully cancelled!';
+        return $lang->canceldeposit->success_cancel;
     } else {
-        return 'Undo failed, please refresh and try again';
+        return $lang->canceldeposit->fail_undo;
     }
 }
 
@@ -2343,6 +2376,7 @@ function getDepositBankByBankid($id)
 //1.查询1903Dinero de regalo 2.领取1903Dinero de regalo到Cuenta principal，3.转账到对应平台
 function apply_bet_bonus($id)
 {
+    global $lang;
     if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
         $account = $_SESSION['account'];
 
@@ -2355,9 +2389,9 @@ function apply_bet_bonus($id)
             $result = $core->washcodeself_receive($account, 'gid1902', $ips);
 
             if ($result == 1902) {
-                $msg = array('status' => 0, 'info' => 'Gift moneyThe amount is 0 and cannot be claimed');
+                $msg = array('status' => 0, 'info' => $lang->apply_bet_bonus->empty_amount);
             } else if ($result == 2001) {
-                $msg = array('status' => 0, 'info' => 'Status is incorrect, please update and click to receive');
+                $msg = array('status' => 0, 'info' => $lang->apply_bet_bonus->incorrect_status);
             } else if ($result == 1) {
                 //平台
                 $gameid = $id . '01';
@@ -2367,35 +2401,36 @@ function apply_bet_bonus($id)
                 $client = new PHPRPC_Client(PHPRPC_CASHIER);
                 $re = $client->transfer($account, $amount, $gameid, $ip, $address);
                 if ($re == 1) {
-                    $msg = array('status' => 1, 'info' => 'The transfer was successful!');
+                    $msg = array('status' => 1, 'info' => $lang->apply_bet_bonus->success_transfer);
                 } elseif ($re == 1011) {
-                    $msg = array('status' => 0, 'info' => 'The status is incorrect, please update and click to receive');
+                    $msg = array('status' => 0, 'info' => $lang->apply_bet_bonus->incorrect_status);
                 } else {
-                    $msg = array('status' => 0, 'info' => 'Could not receive, please update and click to receive');
+                    $msg = array('status' => 0, 'info' => $lang->apply_bet_bonus->could_not_receive);
                 }
             }
         } else {
-            $msg = array('status' => 0, 'info' => 'Gift moneyThe amount is 0 and cannot be claimed');
+            $msg = array('status' => 0, 'info' => $lang->apply_bet_bonus->empty_amount);
         }
         return json_encode($msg);
     } else {
-        return json_encode(array('status' => 0, 'info' => 'Your login information has expired, please login again'));
+        return json_encode(array('status' => 0, 'info' => $lang->apply_bet_bonus->login_info_expired));
     }
 }
 
 //获取游戏 agua corriendo
 function get_bet($gametype)
 {
+    global $lang;
     $starttime = strtotime("2017-12-26");
     $endtime = strtotime("2018-01-28 23:59:59");
     $now_time = time();
     $arr = array();
     if ($now_time < $starttime) {
         //活动未开始
-        $arr = array('status' => 0, 'info' => 'Start calculating the water flow');
+        $arr = array('status' => 0, 'info' => $lang->get_bet->calculating_water_flow);
     } elseif ($now_time > $endtime) {
         //活动已结束
-        $arr = array('status' => 0, 'info' => 'This event has ended');
+        $arr = array('status' => 0, 'info' => $lang->get_bet->event_ended);
     } else {
         if (isset($_SESSION['account']) && $_SESSION['account'] != '') {
             $starttime1 = strtotime(date("Y-m-d"));
@@ -2415,7 +2450,7 @@ function get_bet($gametype)
             $arr = array('status' => 1, 'info' => $total_bet);
         } else {
             //未登录
-            $arr = array('status' => 0, 'info' => 'Please enter first');
+            $arr = array('status' => 0, 'info' => $lang->get_bet->enter_first);
         }
     }
     return json_encode($arr);
@@ -2423,7 +2458,7 @@ function get_bet($gametype)
 
 function change_information($email, $realname, $birthday, $qq, $wechat, $phone)
 {
-
+    global $lang;
     /*  $myfile = fopen("xiugai.txt", "w") or die("Unable to open file!");
     $txt = $_POST['verification_code'];
     fwrite($myfile, $txt);
@@ -2438,7 +2473,7 @@ function change_information($email, $realname, $birthday, $qq, $wechat, $phone)
         $data_list = $cachFile->get($account, '', 'data', 'verification_code');
 
         if ($_POST['verification_code'] != $data_list['code']) {
-            return json_encode(array('status' => 0, 'info' => 'The verification code is incorrect, please try again'));
+            return json_encode(array('status' => 0, 'info' => $lang->change_information->incorrect_verification));
 
         }
         $phoneverification = 1;
@@ -2452,34 +2487,35 @@ function change_information($email, $realname, $birthday, $qq, $wechat, $phone)
     $re = $core->change_information($_SESSION['account'], $email, $realname, $birthday, $qq, $wechat, $phone, $phoneverification);
     if ($re == 1) {
 
-        return json_encode(array('status' => 1, 'info' => 'Successful Verification'));
+        return json_encode(array('status' => 1, 'info' => $lang->change_information->success_verification));
 
     } else {
-        return json_encode(array('status' => 0, 'info' => 'Verification failed'));
+        return json_encode(array('status' => 0, 'info' => $lang->change_information->failed_verification));
     }
 
 }
 function change_phone_verify()
 {
+    global $lang;
     $core = new core();
     $re = $core->change_phone_verify($_SESSION['account']);
     if ($re == 1) {
 
-        return json_encode(array('status' => 1, 'info' => 'Successful Verification'));
+        return json_encode(array('status' => 1, 'info' => $lang->change_phone_verify->success_verification));
 
     } else {
-        return json_encode(array('status' => 0, 'info' => 'Verification failed'));
+        return json_encode(array('status' => 0, 'info' => $lang->change_phone_verify->failed_verification));
 
     }
 }
 function verification_code($phone)
 {
-
+    global $lang;
     $core = new core();
     $re = $core->check_verification($phone);
     if ($re == 1) {
 
-        return json_encode(array('status' => 0, 'info' => 'This number is already busy, please replace it with a new number'));
+        return json_encode(array('status' => 0, 'info' => $lang->verification_code->number_busy));
 
     }
 
@@ -2508,7 +2544,7 @@ function verification_code($phone)
     $code1 = array("code" => $code);
     $cachFile->set($account, $code1, '', 'data', 'verification_code');
 
-    $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+    $myfile = fopen("newfile.txt", "w") or die($lang->verification_code->unable_open);
     $txt = $code;
     fwrite($myfile, $txt);
 //$txt = "Steve Jobs\n";
@@ -2527,18 +2563,18 @@ function verification_code($phone)
     curl_close($ch);
     //print_r(trim($response));exit;
     return json_encode(array('status' => 1, 'info' => $code));
-    return json_encode(array('status' => 1, 'info' => 'Submitted successfully'));
+    return json_encode(array('status' => 1, 'info' => $lang->verification_code->success_submit));
 
 }
 
 function get_vip_level($account)
 {
-
+    global $lang;
     //echo 21232;exit;
     $core = new core();
     $result = $core->get_vip_level($account);
     if ($result < 0) {
-        return json_encode(array('status' => 0, 'info' => 'Query failed'));
+        return json_encode(array('status' => 0, 'info' => $lang->get_vip_level->failed_query));
     } else {
 
         return json_encode(array('status' => 1, 'info' => $result));
@@ -2547,6 +2583,7 @@ function get_vip_level($account)
 
 function upload_pictures($account)
 {
+    global $lang;
     $allowedExts = array("gif", "jpeg", "jpg", "png");
     $temp = explode(".", $_FILES["file"]["name"]);
     $extension = end($temp); // 获取文件后缀名
@@ -2571,13 +2608,13 @@ function upload_pictures($account)
                 move_uploaded_file($_FILES["file"]["tmp_name"], $url);
                 $newURL = "../" . $url;
                 rename($url, $newURL);
-                return json_encode(array('status' => 1, 'info' => "éxito"));
+                return json_encode(array('status' => 1, 'info' => $lang->upload_pictures->success));
             } catch (Exception $e) {
                 return json_encode(array('status' => 0, 'info' => 'System Error'));
             }
         }
     } else {
-        return json_encode(array('status' => 0, 'info' => 'Illegal file format'));
+        return json_encode(array('status' => 0, 'info' => $lang->upload_pictures->illegal_file));
     }
 }
 
@@ -2603,27 +2640,27 @@ function get_transfer_status($account)
 
 function change_transfer_status($account, $transfer_status)
 {
-
+    global $lang;
     $core = new core();
     $result = $core->change_transfer_status($account, $transfer_status);
 
-    return json_encode(array('status' => 1, 'info' => 'success'));
+    return json_encode(array('status' => 1, 'info' => $lang->change_transfer_status->success));
 
 }
 
 function auto_transfer_in($account, $gameid, $currency = '')
 {
-
+    global $lang;
     $core = new core();
     $result = $core->auto_transfer_in($account, $gameid, $currency);
     //print_r(  $result);exit;
-    return json_encode(array('status' => 1, 'info' => 'success'));
+    return json_encode(array('status' => 1, 'info' => $lang->auto_transfer_in->success));
 
 }
 
 function agent_member_deposit($agent_member)
 {
-
+    global $lang;
     $core = new core();
 
     $result = $core->record_list($agent_member, 'deposit', 1, 50);
@@ -2666,7 +2703,7 @@ function agent_member_deposit($agent_member)
         }
         return json_encode(array('status' => 1, 'info' => $str));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'No related data found'));
+        return json_encode(array('status' => 0, 'info' => $lang->agent_member_deposit->no_data));
     }
 
 }
@@ -2710,13 +2747,13 @@ function agent_member_withdrawal($agent_member)
         }
         return json_encode(array('status' => 1, 'info' => $str));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'No related data found'));
+        return json_encode(array('status' => 0, 'info' => $lang->agent_member_withdrawal->no_data));
     }
 
 }
 function agent_member_fanshui($agent_member)
 {
-
+    global $lang;
     $core = new core();
 
     $startDate = date("Y-m-d H:i:s", (time() - 30 * 24 * 3600)); //30天前的时刻
@@ -2730,7 +2767,7 @@ function agent_member_fanshui($agent_member)
         }
         return json_encode(array('status' => 1, 'info' => $result));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'No se encontraron datos relacionados'));
+        return json_encode(array('status' => 0, 'info' => $lang->agent_member_fanshui->no_data));
 
     }
 
@@ -2738,7 +2775,7 @@ function agent_member_fanshui($agent_member)
 
 function agent_member_promotions($agent_member)
 {
-
+    global $lang;
     $core = new core();
 
     //$result = $core->record_list($agent_member,'promotion',1,50);
@@ -2764,7 +2801,7 @@ function agent_member_promotions($agent_member)
         }
         return json_encode(array('status' => 1, 'info' => $result));
     } else {
-        return json_encode(array('status' => 0, 'info' => 'No se encontraron datos relacionados'));
+        return json_encode(array('status' => 0, 'info' => $lang->agent_member_promotions->no_data));
 
     }
 
@@ -2780,6 +2817,7 @@ function agent_member_total($agent_member, $total_type)
 
 function add_game_collect($account, $gameid, $gamecode)
 {
+    global $lang;
     $core = new core();
 
     if (strtoupper($platform) == "POPULAR") {
@@ -2805,7 +2843,7 @@ function add_game_collect($account, $gameid, $gamecode)
     }
 
     $result = $core->add_game_collect($account, $gameid, str_replace(" ", "", trim($gamecode)));
-    return json_encode(array('status' => 1, 'info' => 'success'));
+    return json_encode(array('status' => 1, 'info' => $lang->add_game_collect->success));
 }
 
 function get_collect_game($account)
@@ -2886,6 +2924,7 @@ function removeBomUtf8($s)
 
 function agent_percentage_set($account, $agent_percentage_set, $is_default, $remark)
 {
+    global $lang;
     $core = new core();
 
     $result = $core->agent_percentage_set($account, $agent_percentage_set, $is_default, $remark);
@@ -2893,7 +2932,7 @@ function agent_percentage_set($account, $agent_percentage_set, $is_default, $rem
         return json_encode(array('status' => 1, 'info' => $result));
     } else {
 
-        return json_encode(array('status' => 0, 'info' => "Repeated, please change"));
+        return json_encode(array('status' => 0, 'info' => $lang->agent_percentage_set->repeated));
     }
 }
 function agent_percentage_list($account)
@@ -2906,11 +2945,12 @@ function agent_percentage_list($account)
 
 function set_agent_percentage_default($account, $id)
 {
+    global $lang;
     $core = new core();
 
     $result = $core->set_agent_percentage_default($account, $id);
     // return  $result ;
-    return json_encode(array('status' => 1, 'info' => "success"));
+    return json_encode(array('status' => 1, 'info' => $lang->agent_percentage_set->success));
 }
 
 function str_contains($haystack, $needle)
