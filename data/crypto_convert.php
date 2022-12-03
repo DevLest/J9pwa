@@ -74,22 +74,24 @@ foreach ($coins as $index => $coin) {
     ]);
 }
 
-//// inverted conversion
-// foreach ($coins as $index => $coin) {
-//     $data = json_decode(file_get_contents("https://api.coinmarketcap.com/data-api/v3/tools/price-conversion?amount=1&convert_id=2781&id=$coin"));
-//     $qoute = $data->data->quote;
+// inverted conversion
+$inverted = [];
+foreach ($coins as $index => $coin) {
+    $data = json_decode(file_get_contents("https://api.coinmarketcap.com/data-api/v3/tools/price-conversion?amount=1&convert_id=2781&id=$coin"));
+    $qoute = $data->data->quote;
 
-//     $price = sprintf('%.8f', floatval($qoute[0]->price));
+    $price = sprintf('%.8f', floatval($qoute[0]->price));
 
-//     if ($index == 'mETH' || $index == 'mBTC') {
-//         $price = $price * 1000;
-//     }
+    if ($index == 'mETH' || $index == 'mBTC') {
+        $price = $price / 1000;
+    }
 
-//     array_push($currency, [
-//         "vs" => $index,
-//         "symbol" => "USD",
-//         "amount" => $price,
-//     ]);
-// }
+    array_push($inverted, [
+        "vs" => "USD",
+        "symbol" => $index,
+        "amount" => $price,
+    ]);
+}
 
+file_put_contents("/data/999j9azx.u2d8899.com/j9pwa/data/coinstousd.json", json_encode($inverted));
 file_put_contents("/data/999j9azx.u2d8899.com/j9pwa/data/coins.json", json_encode($currency));
