@@ -18,6 +18,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+if (isset($data->debug)) {
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
+}
+
 $lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
 $lang = $lang->ajax_data;
 
