@@ -543,7 +543,7 @@ function send_reset_password($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-                                                " . $lang_email->send_reset_password->body_3 . "/div>
+                                                " . $lang_email->send_reset_password->body_3 . "</div>
                                             </td>
                                           </tr>
                                           <tr>
