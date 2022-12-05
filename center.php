@@ -1133,7 +1133,7 @@ $amount= number_format($amount,'2',".","");
 }
 function login_auth(){
     
-    
+    global $lang;
     
     if(!isset($_SESSION['account'])||(isset($_SESSION['account'])&&$_SESSION['account']!=$_POST['username_email'])){
 	
@@ -1185,6 +1185,8 @@ function getClientIP()
 
 function loginMember($username, $password)
 {
+	global $lang;
+
 	$account = strtolower(trim($username));
 	$password = trim($password);
 	
@@ -1606,6 +1608,8 @@ function sendWelcomeEmail()
 
 function send_verification_email($email)
 {
+	global $lang;
+	
 	if (!isset($email) && $email != "") return json_encode(['status' => 0, "info" => $lang->send_verification_email->enter_email], JSON_UNESCAPED_UNICODE );
 	
 	include_once(WEB_PATH."/email/PHPMailer.class.php");

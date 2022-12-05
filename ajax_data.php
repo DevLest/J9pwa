@@ -11,7 +11,8 @@ header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 //header("Access-Control-Allow-Origin: https://999j9azx.999game.online");
 header("Access-Control-Allow-Credentials:true");
-define("WEB_PATH", __DIR__);
+define("WEB_
+PATH", __DIR__);
 //error_reporting(E_ALL);
 include_once "core.class.php";
 if (!isset($_SESSION)) {
@@ -1058,7 +1059,7 @@ function apply_rescue($rescue_type)
             return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->fail_refer_terms_and_condition));
         }
     } else {
-        return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->system_error);
+        return json_encode(array('status' => 0, 'info' => $lang->apply_rescue->system_error));
     }
 }
 //获取站内信的详细内容
@@ -2716,7 +2717,7 @@ function agent_member_deposit($agent_member)
 
 function agent_member_withdrawal($agent_member)
 {
-
+    global $lang;
     $core = new core();
 
     $result = $core->record_list($agent_member, 'debit', 1, 50);

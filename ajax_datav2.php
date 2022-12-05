@@ -115,7 +115,7 @@ $ch = curl_init();
          }
 	                 	function get_phone_account($phone)
 	{
-      
+		global $lang;
                 $core = new core();
 		$result = $core->get_phone_account($phone);
                                                 if(!empty($result)){
