@@ -1191,7 +1191,7 @@ function get_transaction($data, $type = 1)
                         "amount" => " +" . $bet['win'],
                         "currency" => $bet['currency'],
                         "process_time" => date('Y-m-d H:i:s', strtotime($bet['createtime'])),
-                        "game_name" => (isset($cacheData[$bet['gamecode']])) ? $cacheData[$bet['gamecode']]['gameName'] : "Unknown Game",
+                        "game_name" => (isset($cacheData[$bet['gamecode']])) ? $cacheData[$bet['gamecode']]['gameName'] : $bet['gamecode'],
                         "status" => $bet['id'],
                     ]);
                 }
@@ -1203,7 +1203,7 @@ function get_transaction($data, $type = 1)
                         "amount" => " -" . $bet['bet'],
                         "currency" => $bet['currency'],
                         "process_time" => date('Y-m-d H:i:s', strtotime($bet['createtime'])),
-                        "game_name" => (isset($cacheData[$bet['gamecode']])) ? $cacheData[$bet['gamecode']]['gameName'] : "Unknown Game",
+                        "game_name" => (isset($cacheData[$bet['gamecode']])) ? $cacheData[$bet['gamecode']]['gameName'] : $bet['gamecode'],
                         "status" => "processed",
                     ]);
                 }
