@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 include_once("client/phprpc_client.php");
  //echo 526;exit;
 
- $lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+ $lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
  $lang = $lang->record;
  
 	$api_key='fghrtrvdfger';

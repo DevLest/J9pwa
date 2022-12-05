@@ -13,10 +13,10 @@ if(!isset($_SESSION))
 $core = new core();
 $des = new DES3();
 
-$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
 $lang = $lang->center;
 
-$lang_email = json_decode(file_get_contents("./language/email/".$data->lang.".json"));
+$lang_email = json_decode(file_get_contents("./language/email/".($data->lang ?? 'en').".json"));
 $lang_email = $lang_email->center;
 
  	$api_key='fghrtrvdfger';

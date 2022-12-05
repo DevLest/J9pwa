@@ -19,7 +19,7 @@ if(!isset($_SESSION))
 	session_start();
 }
 
-$lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
+$lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
 $lang = $lang->conduct;
 
     	$api_key='fghrtrvdfger';
