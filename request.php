@@ -22,6 +22,9 @@ if (isset($data->debug)) {
 $lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
 $lang = $lang->request;
 
+$lang_email = json_decode(file_get_contents("./language/email/".$data->lang.".json"));
+$lang_email = $lang_email->request;
+
 //check auth
 $api_key = 'fghrtrvdfger';
 $time = substr(time(), 0, -3);
@@ -330,7 +333,7 @@ function change_account_info($data)
 
 function send_reset_password($data)
 {
-    global $lang;
+    global $lang, $lang_email;
 
     include_once WEB_PATH . "/email/PHPMailer.class.php";
     include_once WEB_PATH . "/email/smtp.class.php";
@@ -361,7 +364,7 @@ function send_reset_password($data)
             $mail->addAddress($re['email'], $re['realName']);
             $mail->isHTML(true);
 
-            $mail->Subject = 'Account Password Reset';
+            $mail->Subject = $lang_email->send_reset_password->subject;
             $mail->Body =
             "<!doctype html>
             <html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'
@@ -468,15 +471,14 @@ function send_reset_password($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-                                                Hello " . strtoupper($re['firstName']) . ",</div>
+                                                " . $lang_email->send_reset_password->body_1 . " " . strtoupper($re['firstName']) . ",</div>
                                             </td>
                                           </tr>
                                           <tr>
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-                                                Forgot your 999 Game password? For security reasons we have generated a temporary
-                                                password for you.</div>
+                                                " . $lang_email->send_reset_password->body_2 . "</div>
                                             </td>
                                           </tr>
                                         </table>
@@ -541,7 +543,7 @@ function send_reset_password($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-                                                Remember to change your temporary password the next time you enter 999 Game.</div>
+                                                " . $lang_email->send_reset_password->body_3 . "/div>
                                             </td>
                                           </tr>
                                           <tr>
@@ -555,7 +557,7 @@ function send_reset_password($data)
                                                     valign='middle'><a
                                                       href='https://999.game/?reset_password=$base_key'
                                                       style='background:#2283F6;color:white;font-family:Rubik, sans-serif;font-size:15px;font-weight:500;line-height:120%;Margin:0;text-decoration:none;text-transform:none;'
-                                                      target='_blank'>Change password</a></td>
+                                                      target='_blank'>" . $lang_email->send_reset_password->body_4 . "</a></td>
                                                 </tr>
                                               </table>
                                             </td>
@@ -564,8 +566,7 @@ function send_reset_password($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-                                                If you did not attempt to change your password, please contact customer service
-                                                immediately at <span
+                                                " . $lang_email->send_reset_password->body_4 . "<span
                                                   style='text-decoration: underline'>999game@mycasinos.online.</span></div>
                                             </td>
                                           </tr>
@@ -638,16 +639,14 @@ function send_reset_password($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-                                                This service email contains essential information relating to your 999 Game account.
-                                                999 Game's policy is to respect and protect individuals' privacy. Read our Privacy
-                                                Policy.</div>
+                                                " . $lang_email->send_reset_password->body_6 . "</div>
                                             </td>
                                           </tr>
                                           <tr>
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:12px;line-height:1;text-align:center;color:#888888;'>
-                                                Copyright © 2022 999Game. All rights reserved.</div>
+                                                Copyright © 2022 999Game. " . $lang_email->send_reset_password->body_7 . "</div>
                                             </td>
                                           </tr>
                                         </table>
@@ -718,7 +717,7 @@ function verify_reset_password($data)
 
 function send_verification_email($data)
 {
-    global $lang;
+    global $lang, $lang_email;
     
     if (!isset($data->email) && $data->email != "") {
         return json_encode(['status' => 0, "info" => $lang->send_verification_email->empty_email], JSON_UNESCAPED_UNICODE);
@@ -750,7 +749,7 @@ function send_verification_email($data)
         $mail->addAddress($data->email, $name);
         $mail->isHTML(true);
 
-        $mail->Subject = 'Email Verification';
+        $mail->Subject = $lang_email->send_verification_email->subject;
         $mail->Body = "
         <!doctype html>
             <html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'
@@ -910,7 +909,7 @@ function send_verification_email($data)
                                                                 style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                                                 <div
                                                                     style='font-family:Rubik, sans-serif;font-size:20px;font-weight:600;line-height:18px;text-align:center;color:#888888;'>
-                                                                    Verification Code</div>
+                                                                    " . $lang_email->send_verification_email->body_1 . "</div>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -926,7 +925,7 @@ function send_verification_email($data)
                                                                 style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                                                 <div
                                                                     style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                                                    This verification code is intended for<br>validation of user.
+                                                                    " . $lang_email->send_verification_email->body_2 . "
                                                                 </div>
                                                                 </td>
                                                             </tr>
@@ -962,8 +961,7 @@ function send_verification_email($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                             <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                                If you did not make this request,<br>please contact customer service immediately at
-                                                support@999.game.</div>
+                                                " . $lang_email->send_verification_email->body_3 . "</div>
                                             </td>
                                         </tr>
                                         </table>
@@ -1034,16 +1032,14 @@ function send_verification_email($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                             <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
-                                                This service email contains essential information relating to your 999Game account.
-                                                999Game's policy is to respect and protect individuals' privacy. Read our Privacy
-                                                Policy.</div>
+                                                " . $lang_email->send_verification_email->body_4 . "</div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                             <div
                                                 style='font-family:Rubik, sans-serif;font-size:12px;line-height:18px;text-align:center;color:#888888;'>
-                                                Copyright © 2022 999Game. All rights reserved.</div>
+                                                Copyright © 2022 999Game. " . $lang_email->send_verification_email->body_5 . "</div>
                                             </td>
                                         </tr>
                                         </table>

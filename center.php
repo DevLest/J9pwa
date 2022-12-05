@@ -16,6 +16,9 @@ $des = new DES3();
 $lang = json_decode(file_get_contents("./language/".$data->lang.".json"));
 $lang = $lang->center;
 
+$lang_email = json_decode(file_get_contents("./language/email/".$data->lang.".json"));
+$lang_email = $lang_email->center;
+
  	$api_key='fghrtrvdfger';
     $time = substr(time(),0,-3);
 	//echo $time.$api_key;
@@ -1270,6 +1273,7 @@ function loginMember($username, $password)
 
 function sendWelcomeEmail()
 {
+	global $lang_email;
 	include_once(WEB_PATH."/email/PHPMailer.class.php");
 	include_once(WEB_PATH."/email/smtp.class.php");
 
@@ -1292,7 +1296,7 @@ function sendWelcomeEmail()
 		$mail->addAddress($_SESSION['email'], $_SESSION['member_name']);
 		$mail->isHTML(true);
 
-		$mail->Subject = 'Hurry! There is a special unlimited 180% bonus for you today!';
+		$mail->Subject = $lang_email->sendWelcomeEmail->subject;
 		$mail->Body    =
 			"<!doctype html>
 			<html xmlns='http://www.w3.org/1999/xhtml' xmlns:v='urn:schemas-microsoft-com:vml'
@@ -1459,14 +1463,14 @@ function sendWelcomeEmail()
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;font-weight:800;line-height:1;text-align:center;color:#888888;'>
-										Enjoy the new and uncomplicated 999Game</div>
+										" . $lang_email->sendWelcomeEmail->body_1 . "</div>
 									</td>
 									</tr>
 									<tr>
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-										This 2022 we improve for you and our main objective is that you enjoy yourself to the fullest.
+										" . $lang_email->sendWelcomeEmail->body_2 . "
 										</div>
 									</td>
 									</tr>
@@ -1474,7 +1478,7 @@ function sendWelcomeEmail()
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-										Remember, your username in 999Game is: ".$_SESSION['account']."</div>
+										" . $lang_email->sendWelcomeEmail->body_3 . " ".$_SESSION['account']."</div>
 									</td>
 									</tr>
 									<tr>
@@ -1482,8 +1486,7 @@ function sendWelcomeEmail()
 										style='font-size:0px;padding:10px 25px;padding-bottom:24px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-										We want you to start in the best possible way for this, make your first deposit of at least
-										10USDT and we will give you 180% back up to 600USDT.</div>
+										" . $lang_email->sendWelcomeEmail->body_4 . "</div>
 									</td>
 									</tr>
 									<tr>
@@ -1567,14 +1570,14 @@ function sendWelcomeEmail()
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
-										This service email contains essential information relating to your 999Game account. 999Game's policy is to respect and protect individuals' privacy. Read our Privacy Policy.</div>
+										" . $lang_email->sendWelcomeEmail->body_5 . "</div>
 									</td>
 									</tr>
 									<tr>
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:12px;line-height:1;text-align:center;color:#888888;'>
-										Copyright © 2022 999Game. All rights reserved.</div>
+										Copyright © 2022 999Game. " . $lang_email->sendWelcomeEmail->body_6 . "</div>
 									</td>
 									</tr>
 								</table>
