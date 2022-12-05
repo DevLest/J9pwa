@@ -19,10 +19,10 @@ if (isset($data->debug)) {
     error_reporting(E_ALL);
 }
 
-$lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
+$lang = json_decode(file_get_contents("./language/".(isset($data->lang) ? $data->lang : "en").".json"));
 $lang = $lang->request;
 
-$lang_email = json_decode(file_get_contents("./language/email/".($data->lang ?? 'en').".json"));
+$lang_email = json_decode(file_get_contents("./language/email/".(isset($data->lang) ? $data->lang : "en").".json"));
 $lang_email = $lang_email->request;
 
 //check auth

@@ -24,7 +24,7 @@ if (!isset($_SESSION)) {
     error_reporting(E_ALL);
 // }
 
-$lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
+$lang = json_decode(file_get_contents("./language/".(isset($data->lang) ? $data->lang : "en").".json"));
 $lang = $lang->ajax_data;
 
 if (isset($_GET['type']) && $_GET['type'] == "onlinepay_list_v1") {

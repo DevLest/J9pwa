@@ -15,7 +15,7 @@ if(!isset($_SESSION))
     session_start();
 }
 
-$lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
+$lang = json_decode(file_get_contents("./language/".(isset($data->lang) ? $data->lang : "en").".json"));
 $lang = $lang->ajax_check;
 
 if(isset($_GET['type']) && $_GET['type'] == "get_promotion_content")

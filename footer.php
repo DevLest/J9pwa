@@ -15,7 +15,7 @@
 		session_start();
 	}
 	
-    $lang = json_decode(file_get_contents("./language/".($data->lang ?? 'en').".json"));
+    $lang = json_decode(file_get_contents("./language/".(isset($data->lang) ? $data->lang : "en").".json"));
     $lang = $lang->footer;
 
     $data = (object) $_POST;
