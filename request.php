@@ -279,6 +279,8 @@ function play_game($data)
         $core = new core();
         $game_link = $core->game_mobile_login($username, $gameId, ['game_code' => $gameCode, 'table_alias' => $gameAlias, 'mobile' => $platform, 'mode' => $mode]);
 
+        played_games($username, $gameCode);
+
         return json_encode(['status' => 1, 'info' => $game_link]);
     }
 
@@ -1902,7 +1904,6 @@ function get_images($data)
 
 function convert_currency($data)
 {
-
     include_once WEB_PATH . "/common/cache_file.class.php";
     $cachFile = new cache_file();
     $data = $cachFile->get("mxn_to_usdt", '', 'data', "mx", substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
@@ -2015,4 +2016,27 @@ function cleanString($string) {
    $string = str_replace(' ', '-', $string);
 
    return preg_replace('/[^A-Za-z0-9\-\_]/', '', $string);
+}
+
+function played_games($account, $game_code) {
+    include_once WEB_PATH . "/common/cache_file.class.php";
+    $core = new core();
+    $cachFile = new cache_file();
+
+    $data_list = json_decode($cachFile->get($account, '', 'data', 'played_games'));
+
+    if (is_array($data_list)) {
+        if (isset($data_list[$game_code])) {
+            $data_list[$game_code] += 1;
+        } else {
+            $data_list[$game_code] = 1;
+        }
+
+    } else {
+        $data_list = [
+            $game_code => 1
+        ];
+    }
+    
+    $cachFile->set($account, json_encode($data_list), '', 'data', 'played_games');
 }
