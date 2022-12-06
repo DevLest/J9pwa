@@ -1,0 +1,33 @@
+{
+    "request": {
+        "send_reset_password": {
+            "subject": "Konto-Passwort zurücksetzen",
+            "body_1": "Hallo",
+            "body_2": "Sie haben Ihr 999 Game-Passwort vergessen? Aus Sicherheitsgründen haben wir ein temporäres Passwort für Sie generiert.",
+            "body_3": "Denken Sie daran, Ihr temporäres Passwort zu ändern, wenn Sie 999 Game das nächste Mal betreten.",
+            "body_4": "Passwort ändern",
+            "body_5": "Wenn Sie nicht versucht haben, Ihr Passwort zu ändern, wenden Sie sich bitte umgehend an den Kundendienst unter",
+            "body_6": "Diese Service-E-Mail enthält wichtige Informationen in Bezug auf Ihr 999Game-Konto. 999Game respektiert und schützt die Privatsphäre des Einzelnen. Lesen Sie unsere Datenschutzrichtlinie.",
+            "body_7": "Alle Rechte vorbehalten."
+        },
+        "send_verification_email": {
+            "subject": "E-Mail-Bestätigung",
+            "body_1": "Überprüfungscode",
+            "body_2": "Dieser Verifizierungscode ist für die<br>Validierung des Benutzers bestimmt.",
+            "body_3": "Wenn Sie diesen Antrag nicht gestellt haben,<br>bitte wenden Sie sich umgehend an den Kundendienst unter support@999.game.",
+            "body_4": "Diese Service-E-Mail enthält wichtige Informationen in Bezug auf Ihr 999Game-Konto. 999Game respektiert und schützt die Privatsphäre des Einzelnen. Lesen Sie unsere Datenschutzrichtlinie.",
+            "body_5": "Alle Rechte vorbehalten."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Beeilen Sie sich! Heute gibt es einen speziellen unbegrenzten 180%-Bonus für Sie!",
+            "body_1": "Genießen Sie das neue und unkomplizierte 999Game",
+            "body_2": "Dieses 2022 verbessern wir für Sie und unser Hauptziel ist, dass Sie sich in vollen Zügen amüsieren.",
+            "body_3": "Denken Sie daran, dass Ihr Benutzername bei 999Game lautet:",
+            "body_4": "Wir möchten, dass Sie auf die bestmögliche Art und Weise damit beginnen, machen Sie Ihre erste Einzahlung von mindestens 10USDT und wir geben Ihnen 180% zurück bis zu 600USDT.",
+            "body_5": "Diese Service-E-Mail enthält wichtige Informationen in Bezug auf Ihr 999Game-Konto. 999Game respektiert und schützt die Privatsphäre des Einzelnen. Lesen Sie unsere Datenschutzrichtlinie.",
+            "body_6": "Alle Rechte vorbehalten."
+        }
+    }
+}

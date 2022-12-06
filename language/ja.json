@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "検証に失敗しました",
+        "play_game": {
+            "invalid": "無効なパラメーター"
+        },
+        "change_account_info": {
+            "success_message_1": "情報が正常に変更されました"
+        },
+        "send_reset_password": {
+            "mail_success": "メッセージは送信されました",
+            "mail_error": "リセットコードの送信エラー",
+            "code_error": "リセット コードの送信エラー | パスワード コードが無効です",
+            "smtp_catch": "リセット コードの送信中にエラーが発生しました。エラー: ",
+            "check_email": "どのゲスト アカウントにも登録されていないメール"
+        },
+        "verify_reset_password": {
+            "code_expired": "検証コードの有効期限が切れました! 新しいコードをリクエストしてください."
+        },
+        "reset_password": {
+            "verification_code_incorrect": "確認コードが正しくありません。もう一度お試しください",
+            "verification_code_error": "コード検証でエラーが発生しました。カスタマー サポートにお問い合わせください。"
+        },
+        "get_transaction": {
+            "empty_date_range": "日付範囲を入力してください",
+            "empty_username": "ユーザー名を入力してください"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "アカウント データがありません!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "日付範囲を入力してください",
+            "empty_username": "ユーザー名を入力してください"
+        },
+        "verify_agent": {
+            "empty_agent_name": "エージェント名を空にすることはできません",
+            "agent_not_found": "エージェントが見つかりません!該当する場合は正しいエージェント名を入力してください。ない場合は空白のままにしてください."
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "友達が見つかりません!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "メールアドレスを入力してください",
+            "success_email_sent": "確認メールを送信しました",
+            "error_sending_code": "リセット コードの送信エラー"
+        },
+        "verify_email_code": {
+            "email_verified": "メール認証済み",
+            "error_email_verify": "メールの確認中にエラーが発生しました"
+        },
+        "convert_currency": {
+            
+        },
+        "sports_token": {
+            "error_parsing_url_data": "URL データの解析中にエラーが発生しました",
+            "error_parsing_url": "URL の解析中にエラーが発生しました",
+            "no_redirection_url": "エラー! リダイレクト URL がありません"
+        },
+        "free_spin_mount": {
+            "no_bonus_available": "当面ボーナスはありません"
+        },
+        "oauth_register": {
+
+        },
+        "ログインメンバー": {
+            "expire_temporary_password": "一時パスワードの有効期限が切れています",
+            "invalid_account": "ゲーム アカウントまたはパスワードが間違っています!",
+            "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+            "system_error": "システム エラーです。後でもう一度試してください!"
+        }
+    },
+    "center": {
+        "auth_check": "検証に失敗しました",
+        "invalid_email": "有効なメールアドレスを入力してください",
+        "empty_verification_code": "認証コードを入力してください",
+        "agent_not_found": "エージェントが見つかりません!該当する場合は正しいエージェント名を入力してください。ない場合は空白のままにしてください.",
+        "taken_member_account": "登録に失敗しました。メンバー アカウントが登録されました",
+        "registration_failed": "登録に失敗しました。管理者に連絡してください",
+        "taken_phone_number": "登録に失敗しました。電話番号は登録されています",
+        "taken_email": "登録に失敗しました。メールは登録されました",
+        "invalid_account": "ゲーム アカウントまたはパスワードが間違っています!",
+        "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+        "system_error": "システム エラーです。後でもう一度試してください!",
+        "inconsistent_password": "矛盾したパスワードが 2 回入力されました",
+        "re_enter_password": "パスワードが要件を満たしていません。再入力してください",
+        "success_reset_password": "パスワードのリセットが完了しました!!",
+        "withdrawal_password_exists": "出金パスワードが存在します",
+        "withdrawal_password_not_exists": "出金パスワードが存在しません",
+        "success_set_withdrawal_password": "出金パスワードが正常に設定されました",
+        "success_change_withdrawal_password": "出金パスワードが正常に設定されました",
+        "invalid_old_withdrawal": "古い引き出しパスワードが正しく入力されていません",
+        "sending_failed_10_sec": "送信に失敗しました。10 秒後に再送信してください",
+        "operation_failed": "操作に失敗しました。数秒待ってからもう一度お試しください",
+        "error_select_transfer_type": "送信エラーです。転送の種類を選択してください",
+        "transfer_amount_small": "送金金額は 1 より大きい整数でなければなりません",
+        "success_transfer": "転送は成功しました!",
+        "insufficient_main_account": "メインアカウントの残高が不足しています",
+        "insufficient_game_account": "ゲーム アカウントの残高が不足しています",
+        "failed_transfer_contact_cs": "転送に失敗しました。オンライン カスタマー サービスにお問い合わせください",
+        "success_transfer_one_click": "ワンクリックで転送成功!",
+        "empty_opened_province_city": "アカウントが開設された都道府県と都市を空にすることはできません",
+        "success_bank_information_link": "銀行情報の新規リンクに成功",
+        "many_bound_bank_information": "バインドされた銀行情報は 5 個を超えることはできません",
+        "failed_information_link_contact_cs": "情報リンクに失敗しました。オンライン カスタマー サービスにお問い合わせください",
+        "sending_failed_3_min": "送信に失敗しました。3 分後に再送信してください",
+        "existing_unreviewed_withdrawal": "未確認の出金記録が既に存在します。再提出しないでください",
+        "withdawal_anomaly": "出金に異常があります。確認と処理のためにオンライン カスタマー サービスに連絡してください",
+        "failed_withdrawal_request_min_withdrawal": "出金リクエストが失敗しました。最低出金額が無効です",
+        "failed_withdrawal_request_max_withdrawal": "出金リクエストが失敗しました。最大出金額が無効です",
+        "success_withdrawal_request": "出金リクエストが成功しました",
+        "insufficient_main_account_fill":"メインアカウントの残高が不足しています，記入してください",
+        "wrong_background_password":"間違ったバックグラウンド パスワード",
+        "failed_withdrawal_request_contact":"出金リクエストに失敗しました。オンラインカスタマーサービスに連絡してください",
+        "game_maintenance": "アイドルまたはゲームのメンテナンス",
+        "incorrect_deposit_account": "入金額が正しくありません。正しい入金額を入力してください",
+        "success_deposit_review": "デポジットは正常に送信され、審査中です",
+        "duplicate_deposit_request": "このプロモーションは既にリクエストされています。プロモーション ルールを確認してください",
+        "failed_submit_deposit_update": "入金の送信に失敗しました。更新して再送信してください",
+        "sending_failed_30_sec": "送信に失敗しました。30 秒後に再送信してください",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "未確認の入金記録が既に存在します。再提出しないでください",
+        "expired_verification_reenter": "検証の有効期限が切れました。戻って更新して再入力してください",
+        "success_point_redeem": "ポイントは正常に引き換えられました。残高を確認してください",
+        "point_not_reach_monthly_redemption_limit": "ポイントが指定された値に達していないか、毎月の交換制限に達しています",
+        "insufficient_points": "ポイントが不足しているか、最小値を下回っています",
+        "incorrect_deposit_bank_reenter": "預金銀行が正しくありません。再入力してください。",
+        "jumping_for_you": "ジャンプします。お待ちください",
+        "deposit_channel_maintenance": "入金チャネルのメンテナンス、別の入金方法を選択",
+        "mobile_payment_maintenance": "モバイル決済システムのメンテナンス、他の方法で入金してください。",
+        "wechat_payment_maintenance": "Wechat 支払いシステムのメンテナンス。他の方法で入金してください。",
+        "login_auth": {
+            "invalid_account": "ゲーム アカウントまたはパスワードが間違っています!",
+            "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+            "system_error": "システム エラーです。後でもう一度試してください!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "一時パスワードの有効期限が切れています",
+            "invalid_account": "ゲーム アカウントまたはパスワードが間違っています!",
+            "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+            "system_error": "システム エラーです。後でもう一度試してください!"
+        },
+        "send_verification_email": {
+            "enter_email": "メールアドレスを入力してください",
+            "success_email_sent": "確認メールを送信しました",
+            "mail_error": "リセットコードの送信エラー",
+            "smtp_catch": "リセット コードの送信中にエラーが発生しました。エラー: "
+        },
+        "verify_email_code": {
+            "email_verified": "メール認証済み",
+            "error_email_verify": "メール認証エラー | コードが一致しません"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "検証に失敗しました",
+        "invalid_game_account": "ゲーム アカウントまたはパスワードが正しくありません!",
+        "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+        "system_error": "システム エラーです。後でもう一度試してください!",
+        "get_transferlist": {
+            "maintenance": "ゲームプラットフォームのメンテナンス"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "クエリに失敗しました"
+        },
+        "get_bindCardBankType": {
+            
+        },
+        "bank_list": {
+            "fail_get_bank_info": "銀行カード情報を取得できませんでした"
+        },
+        "bank_unbind": {
+            "fail_unlink": "情報のリンクを解除できませんでした。もう一度お試しいただくか、オンラインでカスタマー サービスにお問い合わせください"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>銀行の種類</td><td>名前</td><td>カード番号情報</td></tr>",
+            "header_2": "<tr><td>支払い方法</td><td>AliPay名</td><td>Alipayアカウント</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "関連するデータが見つかりません",
+            "no_records": "記録なし"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "出金をキャンセルしました",
+            "fail_cancel_under_review": "失敗で出金をキャンセル，カスタマー サービスは既に審査中です。",
+            "fail_cancel_contact": "失敗した出金をキャンセルします，オンライン カスタマー サービスに連絡してください"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "3 分後にもう一度 [適用] をクリックします。",
+            "fail_terms_and_condition": "オファーの利用規約を満たすことができないスポーツまたはライブゲームに賭けた.",
+            "success_rescue_bonus": "レスキュー ボーナスの引き換えが成功しました。確認してください",
+            "invalid_application_date": "引き換え申請に失敗しました。申請日が無効です",
+            "fail_pending_withdrawal": "出金リクエストが保留中のため、レスキュー ボーナス リクエストは拒否されました",
+            "fail_not_meet_terms_and_condition": "レスキュー ボーナスのリクエストに失敗しました。オファーの利用規約を満たすことができません",
+            "fail_max_balance": "アカウントの合計残高が 15MXN を超えているため、レスキュー ボーナスのリクエストは失敗しました",
+            "fail_min_loss_profit": "レスキュー ボーナスのリクエストに失敗しました。最小損失利益は 900MXN より大きくなければなりません",
+            "bonus_claimed_yesterday": "レスキュー ボーナスは昨日請求されました。記録を確認してください",
+            "fail_refer_terms_and_condition": "レスキュー ボーナスのリクエストに失敗しました。オファーの利用規約を参照してください",
+            "system_error": "システム エラーです。もう一度ログインしてください"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "データの削除に成功",
+            "faile_delete": "データの削除に失敗しました。更新してからもう一度お試しください"
+        },
+        "syn_password": {
+            "unactivated_function": "機能は有効化されていません。"
+        },
+        "get_number": {
+            "query_fail": "クエリに失敗しました",
+            "water_running": "水が流れる"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "割引リクエストが成功しました",
+            "condition_not_met": "条件が満たされていない、または適用されていません",
+            "check_official_website": "お申し込み前に、公式サイトで詳細をご確認ください。",
+            "system_error": "システム エラーです。後で再試行してください"
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "おめでとうございます。ゲームのロックが解除されました!",
+            "maintenance": "申し訳ありませんが、ゲーム プラットフォームはメンテナンス中です....",
+            "fail_unlock_contact": "ゲームのロック解除に失敗しました。カスタマー サービスにお問い合わせください",
+            "unknown_error": "不明なエラーです。カスタマー サービスにお問い合わせください",
+            "system_error": "システム エラーです。もう一度ログインしてください"
+        },
+        "gameapi_active": {
+            "success_activated": "おめでとうございます。ゲームは正常にアクティベートされました!",
+            "maintenance": "申し訳ありませんが、ゲーム プラットフォームはメンテナンス中です....",
+            "account_activated": "アカウントは有効化されました",
+            "unknown_error": "不明なエラーです。カスタマー サービスにお問い合わせください",
+            "system_error": "システム エラーです。もう一度ログインしてください"
+        },
+        "gameapi_password": {
+            "success_sync": "おめでとうございます。パスワードの同期に成功しました!",
+            "maintenance": "申し訳ありませんが、ゲーム プラットフォームはメンテナンス中です....",
+            "fail_sync_contact": "パスワードの同期に失敗しました。カスタマー サービスにお問い合わせください",
+            "unknown_error": "不明なエラーです。カスタマー サービスにお問い合わせください",
+            "system_error": "システム エラーです。もう一度ログインしてください"
+        },
+        "gameapi_logout": {
+            "success_offline": "おめでとうございます。ゲームは正常にオフラインになりました!",
+            "maintenance": "申し訳ありませんが、ゲーム プラットフォームはメンテナンス中です....",
+            "fail_disconnect_contact": "切断を強制できませんでした。カスタマー サービスにお問い合わせください",
+            "unknown_error": "不明なエラーです。カスタマー サービスにお問い合わせください",
+            "system_error": "システム エラーです。もう一度ログインしてください"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "受け取り完了! 残高を確認してください",
+            "fail_claim_retry": "請求できませんでした。後でもう一度お試しください",
+            "fail_claim_no_amount": "金額は 0 で、請求できません",
+            "fail_claim_status_incorrect": "ステータスが正しくありません。更新してクリックして受信してください",
+            "succes_receive": "おめでとう、無事に受け取りました!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "2分後に適用をクリック",
+            "success_request": "おめでとうございます。リクエストは成功しました。割引は自動的にゲーム プラットフォームに転送されました。",
+            "fail_request_not_meet_condition": "デポジットの合計金額がリクエストの条件を満たしていません",
+            "duplicate_request": "あなたはすでにこのオファーをリクエストしています。明日戻ってきてください",
+            "system_error": "システム エラーです。後でもう一度お試しください",
+            "event_not_started": "イベントは開始されていないか終了しています"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>今日の割引記録</td></tr><tr><td>頻度</td><td>割引</td><td>合計 デポジット</td><td>申請時間</td ></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>今日の割引記録</td></tr><td>頻度</td><td>賭けた合計額</td><td>適用時間 </td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "2分後に適用をクリック",
+            "success_request": "おめでとうございます。リクエストは成功しました。割引は自動的にゲーム プラットフォームに転送されました。",
+            "fail_request_not_meet_condition": "当日の賭け金の合計 QT がアプリケーションの要件を満たしていません",
+            "duplicate_request": "あなたはすでにこのオファーをリクエストしています。明日戻ってきてください",
+            "system_error": "システム エラーです。後でもう一度お試しください",
+            "event_not_started": "イベントは開始されていないか終了しています"
+        },
+        "get_prize_new": {
+            "go_back": "$left_time 数秒でミートボールを食べに戻ってください。",
+            "today_deposit": "今日の入金は $money_arr[$name] 以上です",
+            "incorrect_operation": "あなたの操作は正しくありません。ページを更新してください。",
+            "ate_dumpling": "あなたはこの餃子を食べました",
+            "not_enough_deposit": "あなたの預金は十分ではありません",
+            "system_error": "システム エラーです。後で再試行してください",
+            "event_not_started": "イベントはまだ開始されていません。"
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+            
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>最近のリリース記録</th></tr><tr><th>ギフトの種類</th><th>ギフトの金額</th> <th>リリース時間</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>発行額(USDT)</td><td>リリース時間</td></tr>",
+            "no_record": "最近の記録なし"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "申し訳ありませんが、あなたは一時的なメンバーであり、このイベントには参加できません.",
+            "received_gift": "アプリから幸運の贈り物を受け取りました",
+            "success_receive": "正常に受け取りました!残高を確認してください",
+            "received_lucky_gift": "無効なアプリからラッキー ギフトを受け取りました",
+            "system_busy": "システムがビジー状態です。後でもう一度お試しください",
+            "unknown_error": "不明なエラーが発生しました。後でもう一度お試しください",
+            "event_not_started": "イベントはまだ開始されていません。",
+            "event_ended": "イベントは終了しました"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "今日アプリケーション デポジットを受け取りました。ラッキー ギフト",
+            "success_receive": "正常に受け取りました!残高を確認してください",
+            "received_lucky_gift": "今日、アプリからラッキー ギフトを入金しました。",
+            "system_busy": "システムがビジー状態です。後でもう一度お試しください",
+            "app_failed_did_not_use_app": "アプリケーションが失敗しました。今日、APP を使用して入金しませんでした",
+            "unknown_error": "不明なエラーが発生しました。後でもう一度お試しください",
+            "event_not_started": "イベントはまだ開始されていません。",
+            "event_ended": "イベントは終了しました"
+        },
+        "checkdeposit": {
+            "select_card": "<p>こんにちは、まず銀行カードを選択してください</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "入金リクエストは正常にキャンセルされました!",
+            "fail_undo": "元に戻すことができませんでした。更新してからやり直してください"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "ギフトの金額は 0 であり、受け取ることはできません",
+            "incorrect_status": "ステータスが正しくありません。更新してクリックして受信してください",
+            "success_transfer": "転送は成功しました!",
+            "could_not_receive": "受信できませんでした。更新してクリックして受信してください",
+            "login_info_expired": "ログイン情報の有効期限が切れています。もう一度ログインしてください"
+        },
+        "get_bet": {
+            "calculating_water_flow": "水流の計算を開始",
+            "event_ended": "このイベントは終了しました",
+            "enter_first": "最初に入ってください"
+        },
+        "change_information": {
+            "incorrect_verification": "確認コードが正しくありません。もう一度お試しください",
+            "success_verification": "検証の成功",
+            "failed_verification": "検証に失敗しました"
+        },
+        "change_phone_verify": {
+            "success_verification": "検証の成功",
+            "failed_verification": "検証に失敗しました"
+        },
+        "verification_code": {
+            "number_busy": "この番号は既に通話中です。新しい番号に置き換えてください",
+            "unable_open": "ファイルを開けません!",
+            "success_submit": "送信に成功しました"
+        },
+        "get_vip_level": {
+            "failed_query": "クエリに失敗しました"
+        },
+        "upload_pictures": {
+            "success": "成功",
+            "illegal_file": "不正なファイル形式です"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "成功"
+        },
+        "auto_transfer_in": {
+            "success": "成功"
+        },
+        "agent_member_deposit": {
+            "no_data": "関連データが見つかりません"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "関連データが見つかりません"
+        },
+        "agent_member_fanshui": {
+            "no_data": "関連データが見つかりません"
+        },
+        "agent_member_promotions": {
+            "no_data": "関連データが見つかりません"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "成功"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "繰り返します、変更してください"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "成功"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "検証に失敗しました",
+        "invalid_game_account": "ゲーム アカウントまたはパスワードが間違っています!",
+        "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+        "system_error": "システム エラーです。後でもう一度試してください!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "失敗したオファー"
+        },
+        "clear_cache": {
+            "complete": "更新が完了しました",
+            "fail": "更新に失敗しました"
+        },
+        "logout": {
+            "account_closed": "あなたのアカウントは閉鎖されました",
+            "no_account": "ログインしているアカウントが検出されませんでした"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "失敗したオファー"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "失敗したオファー"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "割引なし"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "検証に失敗しました",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType が定義されていません",
+            "ensure_bank_support": "使用する銀行カードがこの支払い方法をサポートしていることを確認してください。",
+            "paypal_deposit": "Paypal 経由で入金しようとしています。このサービスを利用するには、Paypal に誘導されます。",
+            "usdt_deposit": "USDT 送金で入金しようとしています。使用する正しいネットワークとチェーンを選択してください。"
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "成功!",
+            "invalid_game_account": "ゲーム アカウントまたはパスワードが間違っています!",
+            "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+            "system_error": "システム エラーです。後でもう一度試してください!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "U Sports メンバーの皆様へ: 銀行のインテリジェント データ システムと Alipay の公式のリスク管理がさらに強化されているため、当社は常にリチャージ方法を更新し、リスク管理を回避するために最善を尽くしています。お支払いがリスクにさらされている場合 制御、モバイルバンキングを使用して支払いを転送するか、仮想通貨の預金を選択してください」"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "割引なし"
+        },
+        "submit_autopromotion": {
+            "success_application": "申請は成功しました",
+            "not_made_deposit": "3 分以内に入金していません",
+            "entered_game_again": "入金後に再度ゲームに参加しました。プロモーションを申請する前にゲームに参加しないでください。",
+            "already_applied": "あなたはすでにこのプロモーションに応募しています",
+            "already_applied_discount": "このデポジットは既に割引が適用されています。もう一度デポジットしてください"
+        },
+        "checkdeposit": {
+            "no_data": "データが見つかりません"
+        },
+        "onlinepayment": {
+            "deposit_mount_incorrect": "入金額が正しくありません。正しい入金額を入力してください",
+            "deposit_bank_incorrect":"預金銀行が正しくありません。再入力してください。",
+            "channel_maintenance": "入金チャネルのメンテナンス、別の入金方法を選択",
+            "verification_expired": "検証の有効期限が切れました。戻って更新して再入力してください",
+            "already_requested_promotion": "このプロモーションは既にリクエストされています。プロモーション ルールを確認してください",
+            "fail_submit_deposit": "入金の送信に失敗しました。更新して再送信してください"
+        },
+        "banktransfer": {
+            "error_sending": "送信エラーです。30 秒後に再送信してください",
+            "incorrect_amount": "入金額が正しくありません。正しい入金額を入力してください",
+            "unreviewed_deposit": "未確認の入金レコードが既に存在します。再送信しないでください",
+            "verification_expired": "検証の有効期限が切れました。戻って更新して再入力してください",
+            "already_requested_promotion": "このプロモーションは既にリクエストされています。プロモーション ルールを確認してください",
+            "no_card": "現時点では利用できるカードがありません。後でもう一度試してください"
+        },
+        "canceldeposit": {
+            "success_cancel": "入金リクエストは正常にキャンセルされました!",
+            "failed_undo": "元に戻すことができませんでした。更新してからやり直してください"
+        },
+        "IPThrottling": {
+            "throttle_message": "こんにちは。より良いユーザー エクスペリエンスを提供し、アカウントのセキュリティを確保し、IP 監視を防止するためです。最後のリクエストは %i 分 %s 秒前でした。5 分待ってからリチャージ リクエストを行ってください。 または、カスタマー サービスにオンラインでお問い合わせください。ゲームをお楽しみください!"
+        },
+        "networkList": {
+            "error": "API のエラー"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "検証に失敗しました",
+        "invalid_game_account": "ゲーム アカウントまたはパスワードが正しくありません!",
+        "account_locked": "アカウントはロックされています。オンライン カスタマー サービスに連絡してください!",
+        "system_error": "システム エラーです。後でもう一度試してください!",
+        "set_agent_remark": {
+            "success": "成功"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "検証に失敗しました",
+        "verification_code": {
+           
+        },
+        "get_phone_account": {
+            "no_account": "エラー、そのようなアカウントはありません"
+        }
+    },
+    "record": {
+        "verification_failed": "検証に失敗しました",
+        "agrecord": {
+            "no_data": "データなし"
+        },
+        "uniterecord": {
+            "no_data": "データなし"
+        },
+        "btirecord": {
+            "no_data": "データなし"
+        },
+        "imrecord": {
+            "no_data": "データなし"
+        },
+        "imnativerecord": {
+            "no_data": "データなし"
+        },
+        "ibcrecord": {
+            "no_data": "データなし"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "データなし"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "データなし"
+        },
+        "imdjrecord": {
+            "no_data": "データなし"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "データなし"
+        },
+        "gdrecord": {
+            "no_data": "データなし"
+        },
+        "abrecord": {
+            "no_data": "データなし"
+        },
+        "ptrecord": {
+            "no_data": "データなし"
+        },
+        "mgrecord": {
+            "no_data": "データなし"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "データなし"
+        },
+        "vrrecord": {
+            "no_data": "データなし"
+        },
+        "cmdrecord": {
+            "no_data": "データなし"
+        },
+        "tcg_sbo_record": {
+            "error": "エラー",
+            "no_data": "データなし"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "検証に失敗しました",
+        "unsuccessful_offer": "失敗したオファー"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}

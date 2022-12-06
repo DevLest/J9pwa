@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "सत्यापन विफल",
+        "play_game": {
+            "invalid": "अमान्य पैरामीटर"
+        },
+        "change_account_info": {
+            "success_message_1": "जानकारी सफलतापूर्वक संशोधित"
+        },
+        "send_reset_password": {
+            "mail_success": "संदेश भेजा जा चुका है",
+            "mail_error": "रीसेट कोड भेजने में त्रुटि",
+            "code_error": "रीसेट कोड भेजने में त्रुटि | पासवर्ड कोड Ivanlid",
+            "smtp_catch": "रीसेट कोड भेजने में त्रुटि। त्रुटि: ",
+            "check_email": "ईमेल किसी अतिथि खाते में पंजीकृत नहीं है"
+        },
+        "verify_reset_password": {
+            "code_expired": "सत्यापन कोड समाप्त हो गया है! कृपया एक नए कोड का अनुरोध करें।"
+        },
+        "reset_password": {
+            "verification_code_incorrect": "सत्यापन कोड गलत है, कृपया पुनः प्रयास करें",
+            "verification_code_error": "कोड सत्यापन में त्रुटि। कृपया ग्राहक सहायता से संपर्क करें।"
+        },
+        "get_transaction": {
+            "empty_date_range": "कृपया तिथि सीमा दर्ज करें",
+            "empty_username": "कृपया उपयोगकर्ता नाम दर्ज करें"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "कोई खाता डेटा नहीं!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "कृपया तिथि सीमा दर्ज करें",
+            "empty_username": "कृपया उपयोगकर्ता नाम दर्ज करें"
+        },
+        "verify_agent": {
+            "empty_agent_name": "एजेंट का नाम खाली नहीं हो सकता",
+            "agent_not_found": "एजेंट नहीं मिला! यदि लागू हो तो एजेंट का सही नाम दर्ज करें, यदि आपके पास नहीं है तो खाली छोड़ दें।"
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "कोई मित्र नहीं मिला!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "कृपया ई-मेल दर्ज करें",
+            "success_email_sent": "सत्यापन ईमेल भेज दी गई है",
+            "error_sending_code": "रीसेट कोड भेजने में त्रुटि"
+        },
+        "verify_email_code": {
+            "email_verified": "ईमेल सत्यापित",
+            "error_email_verify": "ईमेल सत्यापित करने में त्रुटि"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "यूआरएल डेटा पार्स करने में त्रुटि",
+            "error_parsing_url": "यूआरएल पार्स करने में त्रुटि",
+            "no_redirection_url": "त्रुटि! कोई पुनर्निर्देशन URL नहीं"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "इस दौरान कोई बोनस उपलब्ध नहीं है"
+        },
+        "OAuth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "अस्थायी पासवर्ड समाप्त हो गया",
+            "invalid_account": "गेम खाता या पासवर्ड गलत है!",
+            "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+            "system_error": "सिस्टम में गड़बड़ी। बाद में पुन: प्रयास!"
+        }
+    },
+    "center": {
+        "auth_check": "सत्यापन विफल",
+        "invalid_email": "कृपया वैध ईमेल पता डालें",
+        "empty_verification_code": "कृपया सत्यापन कोड डालें",
+        "agent_not_found": "एजेंट नहीं मिला! यदि लागू हो तो एजेंट का सही नाम दर्ज करें, यदि आपके पास नहीं है तो खाली छोड़ दें।",
+        "take_member_account": "पंजीकरण विफल, सदस्य का खाता पंजीकृत किया जा चुका है",
+        "registration_failed": "पंजीकरण विफल, कृपया व्यवस्थापक से संपर्क करें",
+        "take_phone_number": "पंजीकरण विफल, फ़ोन नंबर पंजीकृत किया गया है",
+        "take_email": "पंजीकरण विफल, ई-मेल पंजीकृत किया जा चुका है",
+        "invalid_account": "गेम खाता या पासवर्ड गलत है!",
+        "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+        "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!",
+        "inconsistent_password": "असंगत पासवर्ड दो बार डाला गया",
+        "re_enter_password": "पासवर्ड आवश्यकताओं को पूरा नहीं करता, कृपया पुनः दर्ज करें",
+        "success_reset_password": "पासवर्ड रीसेट पूरा हुआ!!",
+        "withdrawal_password_exists": "निकासी का पासवर्ड मौजूद है",
+        "withdrawal_password_not_exists": "निकासी का पासवर्ड मौजूद नहीं है",
+        "success_set_withdrawal_password": "निकासी पासवर्ड सफलतापूर्वक सेट किया गया",
+        "success_change_withdrawal_password": "निकासी पासवर्ड सफलतापूर्वक सेट किया गया",
+        "invalid_old_withdrawal": "पुराना निकासी पासवर्ड गलत डाला गया था",
+        "sending_failed_10_sec": "भेजने में विफल, कृपया 10 सेकंड के बाद फिर से भेजें",
+        "operation_failed": "कार्रवाई विफल रही, कृपया कुछ सेकंड प्रतीक्षा करें और फिर से प्रयास करें",
+        "error_select_transfer_type": "भेजने में त्रुटि, स्थानान्तरण का प्रकार चुनें",
+        "transfer_amount_small": "हस्तांतरण राशि 1 से बड़ी पूर्णांक होनी चाहिए",
+        "success_transfer": "स्थानांतरण सफल रहा!",
+        "incomplete_main_account": "मुख्य खाते में अपर्याप्त शेष राशि",
+        "insufficient_game_account": "खेल खाते में अपर्याप्त शेष राशि",
+        "failed_transfer_contact_cs": "हस्तांतरण विफल रहा, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें",
+        "success_transfer_one_click": "एक क्लिक में सफल स्थानांतरण!",
+        "empty_opened_province_city": "जिस प्रांत और शहर में खाता खोला गया है वह खाली नहीं हो सकता",
+        "success_bank_information_link": "नई बैंक जानकारी सफलतापूर्वक लिंक की गई",
+        "many_bound_bank_information": "बाध्य बैंक जानकारी 5 टुकड़ों से अधिक नहीं हो सकती",
+        "failed_information_link_contact_cs": "सूचना लिंक विफल, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें",
+        "sending_failed_3_min": "भेजने में विफल, कृपया 3 मिनट बाद फिर से भेजें",
+        "existing_unreviewed_withdrawal": "एक असंशोधित निकासी रिकॉर्ड पहले से ही मौजूद है, कृपया इसे पुनः सबमिट न करें",
+        "withdawal_anomaly": "आपके आहरण में एक विसंगति है, सत्यापित करने और संसाधित करने के लिए कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें",
+        "failed_withdrawal_request_min_withdrawal": "निकासी अनुरोध विफल, निकासी की न्यूनतम राशि अवैध",
+        "failed_withdrawal_request_max_withdrawal": "निकासी अनुरोध विफल, अधिकतम निकासी राशि अवैध",
+        "success_withdrawal_request": "सफल निकासी अनुरोध",
+        "insufficient_main_account_fill": "मुख्य खाते में अपर्याप्त शेष राशि, कृपया भरें",
+        "wrong_background_password": "गलत बैकग्राउंड पासवर्ड",
+        "failed_withdrawal_request_contact": "निकासी अनुरोध विफल, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें",
+        "game_maintenance": "निष्क्रिय या गेम रखरखाव",
+        "incorrect_deposit_account": "जमा राशि गलत है, कृपया सही जमा राशि दर्ज करें",
+        "success_deposit_review": "जमा सफलतापूर्वक भेजा गया और समीक्षाधीन है",
+        "duplicate_deposit_request": "आप पहले ही इस प्रचार का अनुरोध कर चुके हैं, कृपया प्रचार नियमों की समीक्षा करें",
+        "failed_submit_deposit_update": "जमा जमा करने में विफल, कृपया अद्यतन करें और फिर से जमा करें",
+        "sending_failed_30_sec": "भेजने में विफल, कृपया 30 सेकंड के बाद फिर से भेजें",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "एक बिना समीक्षा वाला जमा रिकॉर्ड पहले से मौजूद है, कृपया इसे फिर से सबमिट न करें",
+        "expired_verification_reenter": "सत्यापन समाप्त हो गया है, कृपया वापस जाएँ और पुनः दर्ज करने के लिए ताज़ा करें",
+        "success_point_redeem": "अंक सफलतापूर्वक भुनाए जा चुके हैं, कृपया शेष राशि की जाँच करें",
+        "point_not_reach_monthly_redemption_limit": "अंक निर्दिष्ट मान तक नहीं पहुँचे हैं या मासिक मोचन सीमा तक पहुँच चुके हैं",
+        "inperformance_points": "अपर्याप्त अंक, या न्यूनतम मान से कम",
+        "incorrect_deposit_bank_reenter": "जमा बैंक गलत है, कृपया इसे पुनः दर्ज करें।",
+        "jumping_for_you": "आपके लिए कूद रहा हूँ, कृपया प्रतीक्षा करें",
+        "deposit_channel_maintenance": "जमा चैनल रखरखाव, अन्य जमा विधि चुनें",
+        "mobile_payment_maintenance": "मोबाइल भुगतान प्रणाली का रखरखाव, जमा करने के लिए अन्य विधियों का उपयोग करें।",
+        "wechat_payment_maintenance": "Wechat भुगतान प्रणाली का रखरखाव, जमा करने के लिए अन्य विधियों का उपयोग करें।",
+        "login_auth": {
+            "invalid_account": "गेम खाता या पासवर्ड गलत है!",
+            "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+            "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "अस्थायी पासवर्ड समाप्त हो गया",
+            "invalid_account": "गेम खाता या पासवर्ड गलत है!",
+            "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+            "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!"
+        },
+        "send_verification_email": {
+            "enter_email": "कृपया ईमेल दर्ज करें",
+            "success_email_sent": "सत्यापन ईमेल भेज दी गई है",
+            "mail_error": "रीसेट कोड भेजने में त्रुटि",
+            "smtp_catch": "रीसेट कोड भेजने में त्रुटि। त्रुटि: "
+        },
+        "verify_email_code": {
+            "email_verified": "ईमेल सत्यापित",
+            "error_email_verify": "ईमेल सत्यापित करने में त्रुटि | कोड मेल नहीं खाता"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "सत्यापन विफल",
+        "invalid_game_account": "गेम खाता या पासवर्ड गलत है!",
+        "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+        "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!",
+        "get_transferlist": {
+            "maintenance": "गेमिंग प्लेटफ़ॉर्म रखरखाव"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "क्वेरी विफल"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "बैंक कार्ड की जानकारी नहीं मिल सकी"
+        },
+        "bank_unbind": {
+            "fail_unlink": "जानकारी को अलग करने में विफल, कृपया पुनः प्रयास करें या ऑनलाइन ग्राहक सेवा से संपर्क करें"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>बैंक का प्रकार</td><td>नाम</td><td>कार्ड नंबर की जानकारी</td></tr>",
+            "header_2": "<tr><td>भुगतान के तरीके</td><td>AliPay नाम</td><td>Alipay खाता</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "कोई संबंधित डेटा नहीं मिला",
+            "no_records": "कोई रिकॉर्ड नहीं"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "निकासी सफलतापूर्वक रद्द करें",
+            "fail_cancel_under_review": "विफलता के साथ निकासी रद्द करें, ग्राहक सेवा पहले से ही समीक्षाधीन है।",
+            "fail_cancel_contact": "असफल के साथ निकासी रद्द करें,ऑनलाइन ग्राहक सेवा से संपर्क करें"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "3 मिनट बाद फिर से लागू करें पर क्लिक करें।",
+            "fail_terms_and_condition": "आप खेल या लाइव गेम पर दांव लगाते हैं जिसके कारण आप ऑफ़र के नियमों और शर्तों को पूरा करने में असमर्थ हैं।",
+            "success_rescue_bonus": "बचाव बोनस भुनाना सफल रहा, कृपया जांचें",
+            "invalid_application_date": "मोचन आवेदन विफल, आवेदन दिनांक अमान्य है",
+            "fail_pending_withdrawal": "बचाव बोनस अनुरोध लंबित निकासी अनुरोध के कारण अस्वीकार कर दिया गया है",
+            "fail_not_meet_terms_and_condition": "बचाव बोनस अनुरोध विफल रहा। ऑफ़र के नियमों और शर्तों को पूरा करने में असमर्थ",
+            "fail_max_balance": "बचाव बोनस अनुरोध विफल हुआ क्योंकि आपके खाते की कुल शेष राशि 15MXN से अधिक है",
+            "fail_min_loss_profit": "बचाव बोनस अनुरोध विफल रहा। न्यूनतम हानि लाभ 900MXN से अधिक होना चाहिए",
+            "bonus_claimed_yesterday": "बचाव बोनस का कल दावा किया गया है, कृपया रिकॉर्ड देखें",
+            "fail_refer_terms_and_condition": "बचाव बोनस अनुरोध विफल रहा। कृपया ऑफ़र के नियम और शर्तें देखें",
+            "system_error": "सिस्टम त्रुटि, कृपया फिर से लॉग इन करें"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "सफलतापूर्वक डेटा मिटाएँ",
+            "faile_delete": "डेटा हटाने में विफल, कृपया रीफ़्रेश करें और पुनः प्रयास करें"
+        },
+        "syn_password": {
+            "unactive_function": "फ़ंक्शन सक्रिय नहीं किया गया है।"
+        },
+        "get_number": {
+            "query_fail": "प्रश्न विफल",
+            "water_running": "जल चल रहा है"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "छूट का अनुरोध सफल हुआ",
+            "condition_not_met": "शर्तें पूरी नहीं हुई या लागू नहीं हुई",
+            "check_official_website": "आवेदन के समय से पहले, कृपया अधिक जानकारी के लिए आधिकारिक वेबसाइट देखें।",
+            "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें"
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "बधाई हो, गेम सफलतापूर्वक अनलॉक हो गया है!",
+            "maintenance": "क्षमा करें, खेल मंच रखरखाव के अधीन है ...",
+            "fail_unlock_contact": "गेम अनलॉक विफल रहा, कृपया ग्राहक सेवा से संपर्क करें",
+            "unknown_error": "अज्ञात त्रुटि, कृपया ग्राहक सेवा से संपर्क करें",
+            "system_error": "सिस्टम त्रुटि, कृपया फिर से लॉग इन करें"
+        },
+        "gameapi_active": {
+            "success_active": "बधाई हो, गेम सफलतापूर्वक सक्रिय हो गया है!",
+            "maintenance": "क्षमा करें, खेल मंच रखरखाव के अधीन है ...",
+            "account_active": "खाता सक्रिय कर दिया गया है",
+            "unknown_error": "अज्ञात त्रुटि, कृपया ग्राहक सेवा से संपर्क करें",
+            "system_error": "सिस्टम त्रुटि, कृपया फिर से लॉग इन करें"
+        },
+        "gameapi_password": {
+            "success_sync": "बधाई हो, आपने पासवर्ड सफलतापूर्वक सिंक कर लिए हैं!",
+            "maintenance": "क्षमा करें, खेल मंच रखरखाव के अधीन है ...",
+            "fail_sync_contact": "पासवर्ड सिंक करने में विफल, कृपया ग्राहक सेवा से संपर्क करें",
+            "unknown_error": "अज्ञात त्रुटि, कृपया ग्राहक सेवा से संपर्क करें",
+            "system_error": "सिस्टम त्रुटि, कृपया फिर से लॉग इन करें"
+        },
+        "gameapi_logout": {
+            "success_offline": "बधाई हो, खेल सफलतापूर्वक ऑफ़लाइन हो गया!",
+            "maintenance": "क्षमा करें, खेल मंच रखरखाव के अधीन है ...",
+            "fail_disconnect_contact": "बाध्यकारी वियोग नहीं हो सका, कृपया ग्राहक सेवा से संपर्क करें",
+            "unknown_error": "अज्ञात त्रुटि, कृपया ग्राहक सेवा से संपर्क करें",
+            "system_error": "सिस्टम त्रुटि, कृपया फिर से लॉग इन करें"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "पूर्ण प्राप्त करें! कृपया शेष राशि की जाँच करें",
+            "fail_claim_retry": "दावा नहीं किया जा सका, कृपया बाद में पुनः प्रयास करें",
+            "fail_claim_no_amount": "राशि 0 है और दावा नहीं किया जा सकता",
+            "fail_claim_status_incorrect": "स्थिति गलत है, कृपया अद्यतन करें और प्राप्त करने के लिए क्लिक करें",
+            "succe_receive": "बधाई हो, आपने इसे सफलतापूर्वक प्राप्त कर लिया है!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "2 मिनट बाद लागू करें पर क्लिक करें",
+            "success_request": "बधाई हो, अनुरोध सफल रहा, छूट स्वचालित रूप से गेम प्लेटफॉर्म पर स्थानांतरित कर दी गई है।",
+            "fail_request_not_meet_condition": "जमा की कुल राशि अनुरोध की शर्तों को पूरा नहीं करती",
+            "duplicate_request": "आप पहले ही इस प्रस्ताव के लिए अनुरोध कर चुके हैं, कल वापस आएँ",
+            "system_error": "सिस्टम त्रुटि। कृपया बाद में पुनः प्रयास करें",
+            "event_not_started": "ईवेंट शुरू नहीं हुआ है या समाप्त हो गया है"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>आज का छूट रिकॉर्ड</td></tr><tr><td>आवृत्ति</td><td>छूट</td><td>कुल जमा करें</td><td>आवेदन का समय</td></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>रजिस्ट्रो डे डेस्क्यूएंटोस डे हॉय</td></tr><td>Frecuencia</td><td>कुल एपोस्टैडो आयात करें</td><td> आवेदन का समय< /td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "2 मिनट बाद लागू करें पर क्लिक करें",
+            "success_request": "बधाई हो, अनुरोध सफल रहा, छूट स्वचालित रूप से गेम प्लेटफॉर्म पर स्थानांतरित कर दी गई है।",
+            "fail_request_not_meet_condition": "当日 दांव की कुल राशि क्यूटी आवेदन की आवश्यकताओं को पूरा नहीं करती है",
+            "duplicate_request": "आप पहले ही इस प्रस्ताव के लिए अनुरोध कर चुके हैं, कल वापस आएँ",
+            "system_error": "सिस्टम त्रुटि। कृपया बाद में पुनः प्रयास करें",
+            "event_not_started": "ईवेंट शुरू नहीं हुआ है या समाप्त हो गया है"
+        },
+        "get_prize_new": {
+            "go_back": "कृपया $left_time सेकंड में मीटबॉल खाने के लिए वापस जाएं।",
+            "today_deposit": "आज की जमा राशि $money_arr[$name] से अधिक है मीटबॉल की इस थाली को खाने के लिए",
+            "incorrect_operation": "आपका संचालन गलत है, कृपया पृष्ठ को ताज़ा करें।",
+            "ate_dumpling": "आपने यह गुलगुला खाया",
+            "not_enough_deposit": "आपकी जमा राशि पर्याप्त नहीं है",
+            "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें",
+            "event_not_started": "घटना अभी शुरू नहीं हुई है।"
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>हाल ही में रिलीज़ रिकॉर्ड</th></tr><tr><th>उपहार के पैसे का प्रकार</th><th>उपहार की रकम की रकम</th> <th>रिलीज़ का समय</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>जारी राशि (यूएसडीटी)</td><td>रिलीज का समय</td></tr>",
+            "no_record": "हाल के कोई रिकॉर्ड नहीं"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "क्षमा करें, अब आप एक अस्थायी सदस्य हैं और इस कार्यक्रम में भाग नहीं ले सकते।",
+            "received_gift": "आपको एपीपी से भाग्य का उपहार मिला है",
+            "success_receive": "सफलतापूर्वक प्राप्त हुआ! कृपया शेष राशि की जाँच करें",
+            "received_lucky_gift": "आपको अमान्य ऐप से भाग्यशाली उपहार मिला है",
+            "system_busy": "सिस्टम व्यस्त है, कृपया बाद में पुनः प्रयास करें",
+            "unknown_error": "एक अज्ञात त्रुटि आई, कृपया बाद में पुनः प्रयास करें",
+            "event_not_started": "घटना अभी शुरू नहीं हुई है।",
+            "event_ended": "घटना समाप्त हो चुकी है"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "आवेदन जमा आज प्राप्त हुआ, भाग्यशाली उपहार",
+            "success_receive": "सफलतापूर्वक प्राप्त हुआ! कृपया शेष राशि की जाँच करें",
+            "received_lucky_gift": "आपने आज ऐप के माध्यम से भाग्यशाली उपहार जमा किए हैं।",
+            "system_busy": "सिस्टम व्यस्त है, कृपया बाद में पुनः प्रयास करें",
+            "app_failed_did_not_use_app": "आवेदन विफल रहा, आपने आज जमा करने के लिए APP का उपयोग नहीं किया",
+            "unknown_error": "एक अज्ञात त्रुटि आई, कृपया बाद में पुनः प्रयास करें",
+            "event_not_started": "घटना अभी शुरू नहीं हुई है।",
+            "event_ended": "घटना समाप्त हो चुकी है"
+        },
+        "checkdeposit": {
+            "select_card": "<p>नमस्कार, पहले एक बैंक कार्ड चुनें</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "जमा करने का अनुरोध सफलतापूर्वक रद्द कर दिया गया है!",
+            "fail_undo": "पूर्ववत करना विफल रहा, कृपया रीफ़्रेश करें और पुनः प्रयास करें"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "उपहार राशि 0 है और दावा नहीं किया जा सकता",
+            "incorrect_status": "स्थिति गलत है, कृपया अद्यतन करें और प्राप्त करने के लिए क्लिक करें",
+            "success_transfer": "स्थानांतरण सफल रहा!",
+            "could_not_receive": "प्राप्त नहीं हो सका, कृपया अद्यतन करें और प्राप्त करने के लिए क्लिक करें",
+            "login_info_expired": "आपकी लॉगिन जानकारी समाप्त हो चुकी है, कृपया फिर से लॉगिन करें"
+        },
+        "get_bet": {
+            "calculating_water_flow": "जल प्रवाह की गणना करना प्रारंभ करें",
+            "event_ended": "यह घटना समाप्त हो चुकी है",
+            "enter_first": "कृपया पहले प्रवेश करें"
+        },
+        "change_information": {
+            "incorrect_verification": "सत्यापन कोड गलत है, कृपया पुनः प्रयास करें",
+            "success_verification": "सफल सत्यापन",
+            "failed_verification": "सत्यापन विफल"
+        },
+        "change_phone_verify": {
+            "success_verification": "सफल सत्यापन",
+            "failed_verification": "सत्यापन विफल"
+        },
+        "verification_code": {
+            "number_busy": "यह नंबर पहले से ही व्यस्त है, कृपया इसे नए नंबर से बदलें",
+            "unable_open": "फ़ाइल खोलने में असमर्थ!",
+            "success_submit": "सफलतापूर्वक सबमिट किया गया"
+        },
+        "get_vip_level": {
+            "fail_query": "प्रश्न विफल"
+        },
+        "upload_pictures": {
+            "success": "सफलता",
+            "illegal_file": "अवैध फ़ाइल स्वरूप"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "सफलता"
+        },
+        "auto_transfer_in": {
+            "success": "सफलता"
+        },
+        "agent_member_deposit": {
+            "no_data": "कोई संबंधित डेटा नहीं मिला"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "कोई संबंधित डेटा नहीं मिला"
+        },
+        "agent_member_fanshui": {
+            "no_data": "कोई संबंधित डेटा नहीं मिला"
+        },
+        "agent_member_promotions": {
+            "no_data": "कोई संबंधित डेटा नहीं मिला"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "सफलता"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "दोहराया गया, कृपया बदल दें"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "सफलता"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "सत्यापन विफल",
+        "invalid_game_account": "गेम खाता या पासवर्ड गलत है!",
+        "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+        "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "असफल ऑफर"
+        },
+        "clear_cache": {
+            "complete": "अद्यतन पूर्ण",
+            "fail": "असफल अद्यतन"
+        },
+        "logout": {
+            "account_ Closed": "आपका खाता बंद कर दिया गया है",
+            "no_account": "कोई लॉग इन खाता नहीं मिला"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "असफल ऑफर"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "असफल ऑफर"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "छूट के बिना"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "सत्यापन विफल",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "पेटाइप परिभाषित नहीं",
+            "ensure_bank_support": "कृपया सुनिश्चित करें कि आप जिस बैंक कार्ड का उपयोग करेंगे वह इस भुगतान विधि का समर्थन करता है।",
+            "paypal_deposit": "आप पेपैल के माध्यम से जमा करने वाले हैं। आपको इस सेवा का उपयोग करने के लिए पेपैल को निर्देशित किया जाएगा।",
+            "usdt_deposit": "आप USDT हस्तांतरण के माध्यम से जमा करने वाले हैं। कृपया उपयोग करने के लिए सही नेटवर्क और श्रृंखला चुनें।"
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "सफलता!",
+            "invalid_game_account": "गेम खाता या पासवर्ड गलत है!",
+            "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+            "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "प्रिय यू स्पोर्ट्स सदस्य: बैंक के बुद्धिमान डेटा सिस्टम और Alipay के आधिकारिक जोखिम नियंत्रण को और मजबूत करने के कारण, हमारी कंपनी लगातार रिचार्ज विधि को अपडेट करती है और जोखिम नियंत्रण से बचने की पूरी कोशिश करती है। यदि आपका भुगतान जोखिम के अधीन है नियंत्रण, भुगतान स्थानांतरित करने के लिए मोबाइल बैंकिंग का उपयोग करें या आभासी मुद्रा जमा चुनें"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "छूट के बिना"
+        },
+        "submit_autopromotion": {
+            "success_application": "अनुप्रयोग सफल रहा",
+            "not_made_deposit": "आपने 3 मिनट के भीतर जमा नहीं किया",
+            "entered_game_again": "आप जमा करने के बाद फिर से खेल में प्रवेश कर गए, कृपया पदोन्नति के लिए आवेदन करने से पहले खेल में प्रवेश न करें,",
+            "already_applied": "आप इस प्रचार के लिए पहले ही आवेदन कर चुके हैं",
+            "already_applied_discount": "यह जमा पहले ही छूट के लिए आवेदन कर चुका है, कृपया फिर से जमा करें"
+        },
+        "checkdeposit": {
+            "no_data": "कोई डेटा नहीं मिला"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "जमा राशि गलत है, कृपया सही जमा राशि दर्ज करें",
+            "deposit_bank_incorrect": "जमा बैंक गलत है, कृपया इसे फिर से दर्ज करें।",
+            "channel_maintenance": "जमा चैनल रखरखाव, अन्य जमा विधि चुनें",
+            "verification_expired": "सत्यापन समाप्त हो गया है, कृपया वापस जाएँ और पुनः दर्ज करने के लिए ताज़ा करें",
+            "already_requested_promotion": "आप पहले ही इस प्रचार का अनुरोध कर चुके हैं, कृपया प्रचार नियमों की समीक्षा करें",
+            "fail_submit_deposit": "जमा जमा करने में विफल, कृपया अद्यतन करें और पुनः जमा करें"
+        },
+        "banktransfer": {
+            "error_sending": "भेजने में त्रुटि, कृपया 30 सेकंड के बाद पुनः भेजें",
+            "incorrect_amount": "जमा राशि गलत है, कृपया सही जमा राशि दर्ज करें",
+            "unreviewed_deposit": "एक असंशोधित जमा रिकॉर्ड पहले से ही मौजूद है, कृपया इसे पुनः सबमिट न करें",
+            "verification_expired": "सत्यापन समाप्त हो गया है, कृपया वापस जाएँ और पुनः दर्ज करने के लिए ताज़ा करें",
+            "already_requested_promotion": "आप पहले ही इस प्रचार का अनुरोध कर चुके हैं, कृपया प्रचार नियमों की समीक्षा करें",
+            "no_card": "इस समय कोई कार्ड उपलब्ध नहीं है, कृपया बाद में पुनः प्रयास करें"
+        },
+        "canceldeposit": {
+            "success_cancel": "जमा करने का अनुरोध सफलतापूर्वक रद्द कर दिया गया है!",
+            "failed_undo": "पूर्ववत करना विफल रहा, कृपया रीफ़्रेश करें और पुनः प्रयास करें"
+        },
+        "IPThrottling": {
+            "throttle_message": "नमस्कार, आपको एक बेहतर उपयोगकर्ता अनुभव प्रदान करने के लिए, आपके खाते की सुरक्षा सुनिश्चित करने के लिए और आईपी निगरानी को रोकने के लिए। आपका अंतिम अनुरोध %i मिनट %s सेकंड पहले था, कृपया रिचार्ज अनुरोध करने से पहले 5 मिनट प्रतीक्षा करें या सहायता के लिए ऑनलाइन ग्राहक सेवा से संपर्क करें। हैप्पी गेमिंग!"
+        },
+        "networkList": {
+            "error": "एपीआई पर त्रुटि"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "सत्यापन विफल",
+        "invalid_game_account": "गेम खाता या पासवर्ड गलत है!",
+        "account_locked": "खाता बंद है, कृपया ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+        "system_error": "सिस्टम त्रुटि। बाद में पुनः प्रयास करें!",
+        "set_agent_remark": {
+            "success": "सफलता"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "सत्यापन विफल",
+        "verification_code": {
+           
+        },
+        "get_phone_account": {
+            "no_account": "त्रुटि, ऐसा कोई खाता नहीं है"
+        }
+    },
+    "record": {
+        "verification_failed": "सत्यापन विफल",
+        "agrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "uniterecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "btirecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "imrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "imnativerecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "ibcrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "imdjrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "gdrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "abrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "ptrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "mgrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "vrrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "cmdrecord": {
+            "no_data": "कोई डेटा नहीं"
+        },
+        "tcg_sbo_record": {
+            "error": "error",
+            "no_data": "कोई डेटा नहीं"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "सत्यापन विफल",
+        "unsuccessful_offer": "असफल ऑफर"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}

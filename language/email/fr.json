@@ -1,0 +1,33 @@
+{
+    "demande" : {
+        "send_reset_password" : {
+            "subject" : "Réinitialisation du mot de passe du compte",
+            "body_1" : "Bonjour",
+            "body_2" : "Vous avez oublié votre mot de passe du jeu 999 ? Pour des raisons de sécurité, nous avons généré un mot de passe temporaire pour vous.",
+            "body_3" : "N'oubliez pas de changer votre mot de passe temporaire la prochaine fois que vous entrerez dans le jeu 999.",
+            "body_4" : "Changez le mot de passe",
+            "body_5" : "Si vous n'avez pas essayé de changer votre mot de passe, veuillez contacter immédiatement le service clientèle au",
+            "body_6" : "Cet e-mail de service contient des informations essentielles relatives à votre compte 999Game. La politique de 999Game est de respecter et de protéger la vie privée des individus. Lisez notre politique de confidentialité.",
+            "body_7" : "Tous droits réservés."
+        },
+        "send_verification_email" : {
+            "subject" : "Vérification de l'e-mail",
+            "body_1" : "Code de vérification",
+            "body_2": "Ce code de vérification est destiné à<br>valider l'utilisateur.",
+            "body_3": "Si vous n'avez pas fait cette demande,<br>vous devez contacter immédiatement le service clientèle à l'adresse support@999.game.",
+            "body_4": "Cet e-mail de service contient des informations essentielles relatives à votre compte 999Game. La politique de 999Game est de respecter et de protéger la vie privée des individus. Lisez notre politique de confidentialité.",
+            "body_5": "Tous droits réservés."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Dépêchez-vous ! Il y a un bonus spécial illimité de 180% pour vous aujourd'hui !",
+            "body_1": "Profitez du nouveau et simple 999Game.",
+            "body_2": "Cette 2022, nous l'améliorons pour vous et notre principal objectif est que vous en profitiez au maximum.",
+            "body_3": "Rappelez-vous, votre nom d'utilisateur dans 999Game est :",
+            "body_4": "Nous voulons que vous démarriez de la meilleure façon possible pour cela, faites votre premier dépôt d'au moins 10USDT et nous vous redonnerons 180% jusqu'à 600USDT.",
+            "body_5" : "Cet e-mail de service contient des informations essentielles relatives à votre compte 999Game. La politique de 999Game est de respecter et de protéger la vie privée des individus. Lisez notre politique de confidentialité.",
+            "body_6" : "Tous droits réservés."
+        }
+    }
+}

@@ -203,7 +203,7 @@
         },
         "cancel_debit": {
             "success_cancel": "Cancel withdrawal successfully",
-            "fail_cancel_under_review": "Cancel withdrawal with fail，Customer service is already under review.。",
+            "fail_cancel_under_review": "Cancel withdrawal with fail，Customer service is already under review.",
             "fail_cancel_contact": "Cancel withdrawal with fail，Contact online customer service"
         },
         "get_point": {
@@ -322,7 +322,7 @@
 
         },
         "special_promotion_record": {
-            "header_1": "<tr><td colspan='4'>Registro de descuentos de hoy</td></tr><td>Frecuencia</td><td>Importe total apostado</td><td>Tiempo de aplicación< /td></tr>"
+            "header_1": "<tr><td colspan='4'>Today's discount record</td></tr><td>Frequency</td><td>Total amount wagered</td><td> Application time</td></tr>"
         },
         "apply_qt_promotion": {
             "limit_check": "Click Apply after 2 minutes",

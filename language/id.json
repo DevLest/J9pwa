@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "Verifikasi gagal",
+        "play_game": {
+            "invalid": "Parameter Tidak Valid"
+        },
+        "change_account_info": {
+            "success_message_1": "Informasi berhasil dimodifikasi"
+        },
+        "send_reset_password": {
+            "mail_success": "Pesan telah terkirim",
+            "mail_error": "Kesalahan dalam mengirim kode reset",
+            "code_error": "Kesalahan dalam pengiriman kode reset | Kode password Ivanlid",
+            "smtp_catch": "Kesalahan dalam mengirim kode reset. Kesalahan: ",
+            "check_email": "Email tidak terdaftar di akun tamu mana pun"
+        },
+        "verify_reset_password": {
+            "code_expired": "Kode verifikasi kedaluwarsa! Silakan minta kode baru."
+        },
+        "reset_password": {
+            "verification_code_incorrect": "Kode verifikasi salah, silakan coba lagi",
+            "verification_code_error": "Kesalahan dalam verifikasi kode. Silakan hubungi dukungan pelanggan."
+        },
+        "get_transaction": {
+            "empty_date_range": "Silakan masukkan rentang tanggal",
+            "empty_username": "Silakan masukkan nama pengguna"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "Tidak ada data akun!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "Silakan masukkan rentang tanggal",
+            "empty_username": "Silakan masukkan nama pengguna"
+        },
+        "verify_agent": {
+            "empty_agent_name": "Nama agen tidak boleh kosong",
+            "agent_not_found": "Agen tidak ditemukan! Masukkan nama agen yang benar jika ada, biarkan kosong jika Anda tidak memilikinya."
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "Tidak ada teman yang ditemukan!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "Silakan masukkan Email",
+            "success_email_sent": "Email verifikasi telah terkirim",
+            "error_sending_code": "Kesalahan dalam mengirim kode reset"
+        },
+        "verify_email_code": {
+            "email_verified": "Email Terverifikasi",
+            "error_email_verify": "Kesalahan dalam Memverifikasi email"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "Kesalahan dalam mengurai Data URL",
+            "error_parsing_url": "Kesalahan dalam mengurai URL",
+            "no_redirection_url": "Kesalahan! Tidak ada URL pengalihan"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "Tidak ada bonus yang tersedia untuk sementara waktu"
+        },
+        "oauth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "Kata sandi sementara kedaluwarsa",
+            "invalid_account": "Akun atau kata sandi game salah!",
+            "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+            "system_error": "Kesalahan sistem. Coba lagi nanti!"
+        }
+    },
+    "center": {
+        "auth_check": "Verifikasi gagal",
+        "invalid_email": "Harap masukkan alamat email yang valid",
+        "empty_verification_code": "Harap masukkan kode verifikasi",
+        "agent_not_found": "Agen tidak ditemukan! Masukkan nama agen yang benar jika ada, biarkan kosong jika Anda tidak memilikinya.",
+        "taken_member_account": "Pendaftaran gagal, akun anggota telah terdaftar",
+        "registration_failed": "Pendaftaran gagal, Silakan hubungi Admin",
+        "taken_phone_number": "Registrasi gagal, nomor telepon telah terdaftar",
+        "taken_email": "Pendaftaran gagal, email telah terdaftar",
+        "invalid_account": "Akun atau kata sandi game salah!",
+        "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+        "system_error": "Kesalahan sistem. Coba lagi nanti!",
+        "inconsistent_password": "Kata sandi yang tidak konsisten dimasukkan dua kali",
+        "re_enter_password": "Kata sandi tidak memenuhi persyaratan, silakan masukkan kembali",
+        "success_reset_password": "Reset kata sandi selesai!!!",
+        "withdrawal_password_exists": "Kata sandi penarikan ada",
+        "withdrawal_password_not_exists": "Kata sandi penarikan tidak ada",
+        "success_set_withdrawal_password": "Kata sandi penarikan berhasil ditetapkan",
+        "success_change_withdrawal_password": "Kata sandi penarikan berhasil disetel",
+        "invalid_old_withdrawal": "Kata sandi penarikan lama salah dimasukkan",
+        "sending_failed_10_sec": "Gagal mengirim, silakan kirim ulang setelah 10 detik",
+        "operation_failed": "Operasi gagal, harap tunggu beberapa detik dan coba lagi",
+        "error_select_transfer_type": "Kesalahan pengiriman, pilih jenis transfer",
+        "transfer_amount_small": "Jumlah transfer harus berupa bilangan bulat lebih besar dari 1",
+        "success_transfer": "Transfer berhasil!",
+        "insufficient_main_account": "Saldo di akun utama tidak mencukupi",
+        "insufficient_game_account": "Saldo di akun game tidak mencukupi",
+        "failed_transfer_contact_cs": "Transfer gagal, silakan hubungi layanan pelanggan online",
+        "success_transfer_one_click": "Transfer berhasil dengan satu klik!",
+        "empty_opened_province_city": "Provinsi dan kota tempat rekening dibuka tidak boleh kosong",
+        "success_bank_information_link": "Berhasil menautkan informasi bank baru",
+        "many_bound_bank_information": "Informasi bank terikat tidak boleh lebih dari 5 buah",
+        "failed_information_link_contact_cs": "Tautan informasi gagal, silakan hubungi layanan pelanggan online",
+        "sending_failed_3_min": "Gagal kirim, silakan kirim ulang setelah 3 menit",
+        "existing_unreviewed_withdrawal": "Catatan penarikan yang belum ditinjau sudah ada, jangan kirim ulang",
+        "withdawal_anomaly": "Ada anomali dalam penarikan Anda, silakan hubungi layanan pelanggan online untuk memverifikasi dan memproses",
+        "failed_withdrawal_request_min_withdrawal": "Permintaan penarikan gagal, jumlah penarikan minimum tidak valid",
+        "failed_withdrawal_request_max_withdrawal": "Permintaan penarikan gagal, jumlah penarikan maksimal tidak valid",
+        "success_withdrawal_request": "Permintaan penarikan berhasil",
+        "insufficient_main_account_fill": "Saldo di akun utama tidak mencukupi，Silakan isi",
+        "wrong_background_password": "Kata sandi latar belakang salah",
+        "failed_withdrawal_request_contact": "Permintaan penarikan gagal, silakan hubungi layanan pelanggan online",
+        "game_maintenance": "Idle atau pemeliharaan game",
+        "incorrect_deposit_account": "Jumlah deposit salah, harap masukkan jumlah deposit yang benar",
+        "success_deposit_review": "Deposit berhasil dikirim dan sedang ditinjau",
+        "duplicate_deposit_request": "Anda telah meminta promosi ini, harap tinjau aturan promosi",
+        "failed_submit_deposit_update": "Gagal mengirimkan deposit, harap perbarui dan kirim ulang",
+        "sending_failed_30_sec": "Gagal mengirim, silakan kirim ulang setelah 30 detik",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "Catatan deposit yang belum ditinjau sudah ada, mohon jangan kirim ulang",
+        "expired_verification_reenter": "Verifikasi kedaluwarsa, silakan kembali dan refresh untuk masuk kembali",
+        "success_point_redeem": "Poin berhasil ditukarkan, silakan periksa saldo",
+        "point_not_reach_monthly_redemption_limit": "Poin belum mencapai nilai yang ditentukan atau batas penukaran bulanan telah tercapai",
+        "insufficient_points": "Poin tidak mencukupi, atau kurang dari nilai minimum",
+        "incorrect_deposit_bank_reenter": "Bank deposit salah, silakan masukkan kembali.",
+        "jumping_for_you": "Melompat untuk Anda, harap tunggu",
+        "pemeliharaan saluran_deposit": "Pemeliharaan saluran deposit, pilih metode deposit lain",
+        "pemeliharaan_pembayaran_seluler": "Pemeliharaan sistem pembayaran seluler, gunakan metode lain untuk menyetor.",
+        "pemeliharaan_pembayaran_wechat": "Pemeliharaan sistem pembayaran WeChat, gunakan metode lain untuk menyetor.",
+        "login_auth": {
+            "invalid_account": "Akun atau kata sandi game salah!",
+            "akun_terkunci": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+            "system_error": "Kesalahan sistem. Coba lagi nanti!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "Kata sandi sementara kedaluwarsa",
+            "invalid_account": "Akun atau kata sandi game salah!",
+            "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+            "system_error": "Kesalahan sistem. Coba lagi nanti!"
+        },
+        "kirim_verifikasi_email": {
+            "masukkan_email": "Silakan masukkan Email",
+            "success_email_sent": "Email verifikasi telah terkirim",
+            "mail_error": "Kesalahan dalam mengirim kode reset",
+            "smtp_catch": "Kesalahan dalam mengirim kode reset. Kesalahan: "
+        },
+        "verify_email_code": {
+            "email_verified": "Email Terverifikasi",
+            "error_email_verify": "Kesalahan dalam Memverifikasi email | Kode tidak cocok"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "Verifikasi gagal",
+        "invalid_game_account": "Akun game atau kata sandi salah!",
+        "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+        "system_error": "Kesalahan sistem. Coba lagi nanti!",
+        "get_transferlist": {
+            "maintenance": "Pemeliharaan platform game"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "Kueri gagal"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "Tidak bisa mendapatkan informasi kartu bank"
+        },
+        "bank_unbind": {
+            "fail_unlink": "Gagal untuk membatalkan tautan informasi, silakan coba lagi atau hubungi layanan pelanggan online"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>Jenis Bank</td><td>Nama</td><td>Informasi nomor kartu</td></tr>",
+            "header_2": "<tr><td>Metode Pembayaran</td><td>Nama AliPay</td><td>Rekening Alipay</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "Tidak ditemukan data terkait",
+            "no_records": "Tidak ada catatan"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "Batalkan penarikan dengan sukses",
+            "fail_cancel_under_review": "Batalkan penarikan dengan gagal, layanan pelanggan sudah dalam peninjauan.",
+            "fail_cancel_contact": "Batalkan penarikan dengan gagal，Hubungi layanan pelanggan online"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "Klik Terapkan lagi setelah 3 menit.",
+            "fail_terms_and_condition": "Anda bertaruh pada olahraga atau permainan langsung yang membuat Anda tidak dapat memenuhi syarat dan ketentuan penawaran.",
+            "success_rescue_bonus": "Penukaran Bonus Penyelamatan berhasil, silakan periksa",
+            "invalid_application_date": "Aplikasi penukaran gagal, tanggal aplikasi tidak valid",
+            "fail_pending_withdrawal": "Permintaan bonus penyelamatan telah ditolak karena permintaan penarikan yang tertunda",
+            "fail_not_meet_terms_and_condition": "Permintaan bonus penyelamatan gagal. Tidak dapat memenuhi syarat dan ketentuan penawaran",
+            "fail_max_balance": "Permintaan bonus penyelamatan gagal karena total saldo akun Anda lebih besar dari 15MXN",
+            "fail_min_loss_profit": "Permintaan bonus penyelamatan gagal. Keuntungan kerugian minimum harus lebih besar dari 900MXN",
+            "bonus_claimed_yesterday": "Bonus penyelamatan telah diklaim kemarin, silakan periksa catatannya",
+            "fail_refer_terms_and_condition": "Permintaan bonus penyelamatan gagal. Silakan lihat syarat dan ketentuan penawaran",
+            "system_error": "Kesalahan sistem, silakan masuk lagi"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "Berhasil menghapus data",
+            "faile_delete": "Gagal menghapus data, silahkan refresh dan coba lagi"
+        },
+        "syn_password": {
+            "unactivated_function": "Fungsi belum diaktifkan."
+        },
+        "get_number": {
+            "query_fail": "Kueri gagal",
+            "water_running": "Air berjalan"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request sukses": "Permintaan diskon berhasil",
+            "condition_not_met": "Kondisi tidak terpenuhi atau diterapkan",
+            "check_official_website": "Sebelum waktu pengajuan, silakan periksa situs web resmi untuk detail lebih lanjut.",
+            "system_error": "Kesalahan sistem. Coba lagi nanti"
+        },
+        "get_promosi": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "Selamat, game telah berhasil dibuka kuncinya!",
+            "maintenance": "Maaf, platform game sedang dalam pemeliharaan....",
+            "fail_unlock_contact": "Buka kunci game gagal, silakan hubungi layanan pelanggan",
+            "unknown_error": "Kesalahan yang tidak diketahui, silakan hubungi layanan pelanggan",
+            "system_error": "Kesalahan sistem, silakan masuk lagi"
+        },
+        "gameapi_active": {
+            "success_activated": "Selamat, game telah berhasil diaktifkan!",
+            "maintenance": "Maaf, platform game sedang dalam pemeliharaan....",
+            "account_activated": "Akun telah diaktifkan",
+            "unknown_error": "Kesalahan yang tidak diketahui, silakan hubungi layanan pelanggan",
+            "system_error": "Kesalahan sistem, silakan masuk lagi"
+        },
+        "gameapi_password": {
+            "success_sync": "Selamat, Anda telah berhasil menyinkronkan kata sandi!",
+            "maintenance": "Maaf, platform game sedang dalam pemeliharaan....",
+            "fail_sync_contact": "Gagal menyinkronkan kata sandi, silakan hubungi layanan pelanggan",
+            "unknown_error": "Kesalahan yang tidak diketahui, silakan hubungi layanan pelanggan",
+            "system_error": "Kesalahan sistem, silakan masuk lagi"
+        },
+        "gameapi_logout": {
+            "success_offline": "Selamat, game berhasil dipaksa offline!",
+            "maintenance": "Maaf, platform game sedang dalam pemeliharaan....",
+            "fail_disconnect_contact": "Tidak dapat memaksa pemutusan, silakan hubungi layanan pelanggan",
+            "unknown_error": "Kesalahan yang tidak diketahui, silakan hubungi layanan pelanggan",
+            "system_error": "Kesalahan sistem, silakan masuk lagi"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "Terima selesai! Silakan periksa saldo",
+            "fail_claim_retry": "Tidak bisa mengklaim, silakan coba lagi nanti",
+            "fail_claim_no_amount": "Jumlahnya 0 dan tidak dapat diklaim",
+            "fail_claim_status_incorrect": "Status salah, harap perbarui dan klik untuk menerima",
+            "succes_receive": "Selamat, Anda telah berhasil menerimanya!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "Klik Terapkan setelah 2 menit",
+            "success_request": "Selamat, permintaan berhasil, diskon telah ditransfer secara otomatis ke platform game.",
+            "fail_request_not_meet_condition": "Jumlah total deposit tidak memenuhi ketentuan permintaan",
+            "duplicate_request": "Anda sudah pernah meminta penawaran ini, kembalilah besok",
+            "system_error": "Kesalahan sistem. Silakan coba lagi nanti",
+            "event_not_started": "Acara belum dimulai atau sudah selesai"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>Rekaman diskon hari ini</td></tr><tr><tr><td>Frekuensi</td><td> Diskon</td><td>Diskon</td><td>Total deposit</td><td>Waktu aplikasi</td ></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>Rekaman diskon hari ini</td></tr><td>Frekuensi</td><td>Jumlah total yang dipertaruhkan</td><td> Waktu aplikasi</td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "Klik Terapkan setelah 2 menit",
+            "success_request": "Selamat, permintaan berhasil, diskon telah ditransfer secara otomatis ke platform game.",
+            "fail_request_not_meet_condition": "当日Jumlah total QT yang dipertaruhkan tidak memenuhi persyaratan aplikasi",
+            "duplicate_request": "Anda telah meminta penawaran ini, kembali lagi besok",
+            "system_error": "Kesalahan sistem. Silakan coba lagi nanti",
+            "event_not_started": "Acara belum dimulai atau sudah selesai"
+        },
+        "get_prize_new": {
+            "go_back": "Silakan $left_time Kembali makan bakso dalam hitungan detik.",
+            "today_deposit": "Setoran hari ini lebih dari $money_arr[$name] Untuk makan sepiring bakso ini",
+            "incorrect_operation": "Operasi Anda salah, silakan refresh halaman.",
+            "ate_dumpling": "Anda makan pangsit ini",
+            "not_enough_deposit": "Deposit Anda tidak cukup",
+            "system_error": "Kesalahan sistem. Coba lagi nanti",
+            "event_not_started": "Acara belum dimulai."
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_baru": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promosi": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>Catatan rilis terbaru</th></tr><tr><tr><th>Jenis uang hadiah</th><th>Jumlah uang hadiah</th><th>Waktu rilis</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>Jumlah uang hadiah(USDT)</td><td>Waktu pelepasan</td></tr>",
+            "no_record": "Tidak ada catatan terbaru"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "Maaf, Anda sekarang adalah anggota sementara dan tidak dapat berpartisipasi dalam acara ini.",
+            "received_gift": "Anda telah menerima hadiah keberuntungan dari APP",
+            "success_receive": "Berhasil diterima! Silakan periksa saldo",
+            "received_lucky_gift": "Anda menerima hadiah keberuntungan dari aplikasi yang tidak valid",
+            "system_busy": "Sistem sedang sibuk, silakan coba lagi nanti",
+            "unknown_error": "Terjadi kesalahan yang tidak diketahui, silakan coba lagi nanti",
+            "event_not_started": "Acara belum dimulai.",
+            "event_ended": "Acara telah berakhir"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "Setoran aplikasi diterima hari ini, hadiah keberuntungan",
+            "success_receive": "Berhasil diterima! Silakan periksa saldo",
+            "received_lucky_gift": "Anda telah menyetor hadiah keberuntungan melalui aplikasi hari ini.",
+            "system_busy": "Sistem sedang sibuk, silakan coba lagi nanti",
+            "app_failed_did_not_use_app": "Aplikasi gagal, Anda tidak menggunakan APP untuk menyetor hari ini",
+            "unknown_error": "Terjadi kesalahan yang tidak diketahui, silakan coba lagi nanti",
+            "event_not_started": "Acara belum dimulai.",
+            "event_ended": "Acara telah berakhir"
+        },
+        "checkdeposit": {
+            "select_card": "<p>Halo, pertama pilih kartu bank</p> <p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "Permintaan deposit telah berhasil dibatalkan!",
+            "fail_undo": "Undo gagal, silakan refresh dan coba lagi"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "Hadiah uang Jumlahnya 0 dan tidak dapat diklaim",
+            "incorrect_status": "Status salah, harap perbarui dan klik untuk menerima",
+            "success_transfer": "Transfer berhasil!",
+            "could_not_receive": "Tidak dapat menerima, harap perbarui dan klik untuk menerima",
+            "login_info_expired": "Informasi login Anda telah kedaluwarsa, silakan login lagi"
+        },
+        "get_bet": {
+            "calculating_water_flow": "Mulai menghitung aliran air",
+            "event_ended": "Event ini telah berakhir",
+            "enter_first": "Silakan masuk terlebih dahulu"
+        },
+        "change_information": {
+            "incorrect_verification": "Kode verifikasi salah, silakan coba lagi",
+            "success_verification": "Verifikasi berhasil",
+            "failed_verification": "Verifikasi gagal"
+        },
+        "change_phone_verify": {
+            "success_verification": "Verifikasi berhasil",
+            "failed_verification": "Verifikasi gagal"
+        },
+        "verification_code": {
+            "number_busy": "Nomor ini sudah sibuk, silakan ganti dengan nomor baru",
+            "unable_open": "Tidak dapat membuka file!",
+            "success_submit": "Berhasil dikirimkan"
+        },
+        "get_vip_level": {
+            "failed_query": "Kueri gagal"
+        },
+        "upload_pictures": {
+            "success": "sukses",
+            "illegal_file": "Format file ilegal"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "sukses"
+        },
+        "auto_transfer_in": {
+            "success": "sukses"
+        },
+        "agent_member_deposit": {
+            "no_data": "Tidak ditemukan data terkait"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "Tidak ditemukan data terkait"
+        },
+        "agent_member_fanshui": {
+            "no_data": "Tidak ditemukan data terkait"
+        },
+        "agent_member_promotions": {
+            "no_data": "Tidak ditemukan data terkait"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "sukses"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "Diulang, harap diubah"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "sukses"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "Verifikasi gagal",
+        "invalid_game_account": "Akun game atau kata sandi salah!",
+        "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+        "system_error": "Kesalahan sistem. Coba lagi nanti!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "Penawaran tidak berhasil"
+        },
+        "clear_cache": {
+            "complete": "Pembaruan selesai",
+            "fail": "Pembaruan gagal"
+        },
+        "logout": {
+            "account_closed": "Akun Anda telah ditutup",
+            "no_account": "Tidak ada akun yang terdeteksi masuk"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "Penawaran tidak berhasil"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "Penawaran tidak berhasil"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "Tanpa diskon"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "Verifikasi gagal",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType tidak didefinisikan",
+            "ensure_bank_support": "Harap pastikan bahwa kartu bank yang akan Anda gunakan mendukung metode pembayaran ini.",
+            "paypal_deposit": "Anda akan melakukan deposit melalui Paypal. Anda akan diarahkan ke Paypal untuk menggunakan layanan ini.",
+            "usdt_deposit": "Anda akan melakukan deposit melalui transfer USDT. Silakan pilih jaringan dan rantai yang benar untuk digunakan."
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "sukses!",
+            "invalid_game_account": "Akun game atau kata sandi salah!",
+            "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+            "system_error": "Kesalahan sistem. Coba lagi nanti!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "Anggota U Sports yang terhormat: Karena penguatan lebih lanjut dari sistem data cerdas bank dan kontrol risiko resmi Alipay, perusahaan kami terus memperbarui metode isi ulang dan melakukan yang terbaik untuk menghindari kontrol risiko. Jika pembayaran Anda tunduk pada pengendalian risiko, gunakan mobile banking untuk mentransfer pembayaran atau pilih deposit mata uang virtual"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "Tanpa diskon"
+        },
+        "submit_autopromotion": {
+            "success_application": "aplikasi telah berhasil",
+            "not_made_deposit": "Anda belum melakukan deposit dalam waktu 3 menit",
+            "entered_game_again": "Anda memasuki permainan lagi setelah melakukan deposit, mohon jangan memasuki permainan sebelum mengajukan promosi,",
+            "already_applied": "Anda telah mengajukan permohonan untuk promosi ini",
+            "already_applied_discount": "Deposit ini sudah mengajukan diskon, silakan deposit lagi"
+        },
+        "checkdeposit": {
+            "no_data": "Tidak ada data yang ditemukan"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "Jumlah deposit salah, harap masukkan jumlah deposit yang benar",
+            "deposit_bank_incorrect": "Bank deposit salah, harap masukkan kembali.",
+            "channel_maintenance": "Pemeliharaan saluran deposit, pilih metode deposit lain",
+            "verification_expired": "Verifikasi kedaluwarsa, silakan kembali dan refresh untuk memasukkan kembali",
+            "already_requested_promotion": "Anda telah meminta promosi ini, silakan tinjau aturan promosi",
+            "fail_submit_deposit": "Gagal mengirimkan deposit, harap perbarui dan kirim ulang"
+        },
+        "banktransfer": {
+            "error_sending": "Kesalahan pengiriman, silakan kirim ulang setelah 30 detik",
+            "incorrect_amount": "Jumlah deposit salah, harap masukkan jumlah deposit yang benar",
+            "unreviewed_deposit": "Catatan deposit yang belum ditinjau sudah ada, mohon jangan kirim ulang",
+            "verification_expired": "Verifikasi kedaluwarsa, silakan kembali dan refresh untuk memasukkan kembali",
+            "already_requested_promotion": "Anda telah meminta promosi ini, silakan tinjau aturan promosi",
+            "no_card": "Tidak ada kartu yang tersedia saat ini, silakan coba lagi nanti"
+        },
+        "canceldeposit": {
+            "success_cancel": "Permintaan deposit telah berhasil dibatalkan!",
+            "failed_undo": "Undo gagal, silakan refresh dan coba lagi"
+        },
+        "IPThrottling": {
+            "throttle_message": "Halo, untuk memberikan Anda pengalaman pengguna yang lebih baik, untuk memastikan keamanan akun Anda dan untuk mencegah pemantauan IP. Permintaan terakhir Anda adalah %i menit %s detik yang lalu, harap tunggu 5 menit sebelum membuat permintaan isi ulang atau hubungi layanan pelanggan online untuk mendapatkan bantuan. Selamat bermain game!"
+        },
+        "networkList": {
+            "error": "Kesalahan pada API"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "Verifikasi gagal",
+        "invalid_game_account": "Akun game atau kata sandi salah!",
+        "account_locked": "Akun terkunci, silakan hubungi layanan pelanggan online!",
+        "system_error": "Kesalahan sistem. Coba lagi nanti!",
+        "set_agent_remark": {
+            "success": "sukses"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "Verifikasi gagal",
+        "kode_verifikasi": {
+            
+        },
+        "get_phone_account": {
+            "no_account": "Error, tidak ada akun tersebut"
+        }
+    },
+    "record": {
+        "verification_failed": "Verifikasi gagal",
+        "agrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "uniterecord": {
+            "no_data": "Tidak ada data"
+        },
+        "btirecord": {
+            "no_data": "Tidak ada data"
+        },
+        "imrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "imnativerecord": {
+            "no_data": "Tidak ada data"
+        },
+        "ibcrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "imdjrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "gdrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "abrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "ptrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "mgrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "vrrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "cmdrecord": {
+            "no_data": "Tidak ada data"
+        },
+        "tcg_sbo_record": {
+            "error": "kesalahan",
+            "no_data": "Tidak ada data"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "Verifikasi gagal",
+        "unsuccessful_offer": "Penawaran tidak berhasil"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}

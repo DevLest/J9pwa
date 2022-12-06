@@ -1,0 +1,33 @@
+{
+    "request": {
+        "send_reset_password": {
+            "subject": "Reset Kata Sandi Akun",
+            "body_1": "Halo",
+            "body_2": "Lupa kata sandi 999 Game Anda? Untuk alasan keamanan, kami telah membuatkan kata sandi sementara untuk Anda.",
+            "body_3": "Ingatlah untuk mengubah kata sandi sementara Anda saat berikutnya Anda memasuki 999 Game.",
+            "body_4": "Ubah kata sandi",
+            "body_5": "Jika Anda tidak mencoba mengubah kata sandi Anda, segera hubungi layanan pelanggan di",
+            "body_6": "Email layanan ini berisi informasi penting yang berkaitan dengan akun 999Game Anda. Kebijakan 999Game adalah untuk menghormati dan melindungi privasi individu. Baca Kebijakan Privasi kami.",
+            "body_7": "Semua hak cipta dilindungi undang-undang."
+        },
+        "send_verification_email": {
+            "subject": "Verifikasi Email",
+            "body_1": "Kode Verifikasi",
+            "body_2": "Kode verifikasi ini dimaksudkan untuk<br>validasi pengguna.",
+            "body_3": "Jika Anda tidak membuat permintaan ini, silakan hubungi layanan pelanggan segera di support@999.game.",
+            "body_4": "Email layanan ini berisi informasi penting yang berkaitan dengan akun 999Game Anda. Kebijakan 999Game adalah untuk menghormati dan melindungi privasi individu. Baca Kebijakan Privasi kami.",
+            "body_5": "All rights reserved."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Cepat! Ada bonus 180% tak terbatas khusus untuk Anda hari ini!",
+            "body_1": "Nikmati 999Game yang baru dan tidak rumit",
+            "body_2": "2022 ini kami tingkatkan untuk Anda dan tujuan utama kami adalah agar Anda menikmati diri Anda sepenuhnya.",
+            "body_3": "Ingat, nama pengguna Anda di 999Game adalah:",
+            "body_4": "Kami ingin Anda memulai dengan cara terbaik untuk ini, lakukan setoran pertama Anda setidaknya 10USDT dan kami akan memberi Anda 180% kembali hingga 600USDT.",
+            "body_5": "Email layanan ini berisi informasi penting yang berkaitan dengan akun 999Game Anda. Kebijakan 999Game adalah untuk menghormati dan melindungi privasi individu. Baca Kebijakan Privasi kami.",
+            "body_6": "Semua hak cipta dilindungi undang-undang."
+        }
+    }
+}

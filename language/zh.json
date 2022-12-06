@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "验证失败",
+        "play_game": {
+            "invalid": "无效的参数"
+        },
+        "change_account_info": {
+            "success_message_1": "信息修改成功"
+        },
+        "send_reset_password": {
+            "mail_success": "信息已经发送",
+            "mail_error": "发送重置密码时出错",
+            "code_error": "发送重置代码时出错 | 密码代码 Ivanlid",
+            "smtp_catch": "发送重置代码时出错。错误。",
+            "check_email": "电子邮件未在任何访客账户中注册"
+        },
+        "verify_reset_password": {
+            "code_expired": "验证码已过期! 请申请一个新的代码。"
+        },
+        "reset_password": {
+            "Verification_code_incorrect": "验证码不正确，请重试",
+            "verification_code_error": "代码验证错误。请联系客户支持。"
+        },
+        "get_transaction": {
+            "empty_date_range": "请输入日期范围",
+            "empty_username": "请输入用户名"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "没有账户数据！"
+        },
+        "get_account_summary": {
+            "empty_date_range": "请输入日期范围",
+            "empty_username": "请输入用户名"
+        },
+        "verify_agent": {
+            "empty_agent_name": "代理名称不能为空",
+            "agent_not_found": "没有找到代理! 如果适用，请输入正确的代理名称，如果没有则留空。"
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "没有找到朋友！"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "请输入电子邮件",
+            "success_email_sent": "验证邮件已发送",
+            "error_sending_code": "发送重置代码时出错"
+        },
+        "verify_email_code": {
+            "email_verified": "电子邮件已验证",
+            "error_email_verify": "验证电子邮件时出现错误"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "解析URL数据时出错",
+            "error_parsing_url": "解析URL时出错",
+            "no_redirection_url": "错误! 没有重定向的URL"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "暂时没有奖金"
+        },
+        "oauth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "临时密码已过期",
+            "invalid_account": "游戏账号或密码是错误的！",
+            "account_locked": "账户被锁定，请联系在线客服！",
+            "system_error": "系统错误。稍后再试！"
+        }
+    },
+    "center": {
+        "auth_check": "验证失败",
+        "invalid_email": "请输入一个有效的电子邮件地址",
+        "empty_verification_code": "请输入验证码",
+        "agent_not_found": "没有找到代理! 如果适用，请输入正确的代理名称，如果没有则留空。",
+        "taken_member_account": "注册失败，会员账户已被注册",
+        "registration_failed": "注册失败，请联系管理员",
+        "taken_phone_number": "注册失败，电话号码已被注册",
+        "taken_email": "注册失败，该邮件已被注册",
+        "invalid_account": "游戏账号或密码是错误的！",
+        "account_locked": "账户被锁定，请联系在线客服！",
+        "system_error": "系统错误。稍后再试！",
+        "inconsistent_password": "两次输入不一致的密码",
+        "re_enter_password": "该密码不符合要求，请重新输入",
+        "success_reset_password": "密码重置完成！！",
+        "withdraw_password_exists": "提款密码存在",
+        "withdraw_password_not_exists": "取款密码不存在",
+        "success_set_withdrawal_password": "提款密码设置成功",
+        "success_change_withdrawal_password": "取款密码设置成功",
+        "invalid_old_withdrawal": "旧提款密码输入错误",
+        "sending_failed_10_sec": "发送失败，请在10秒后重新发送",
+        "operation_failed": "操作失败，请等待几秒钟后再试",
+        "error_select_transfer_type": "发送错误，请选择传输类型",
+        "transfer_amount_small": "转账金额必须是大于1的整数",
+        "success_transfer": "转账成功了！",
+        "insufficient_main_account": "主账户余额不足",
+        "insufficient_game_account": "游戏账户中的余额不足",
+        "failed_transfer_contact_cs": "转账失败，请联系在线客服",
+        "success_transfer_one_click": "一键转帐成功！",
+        "empty_opened_province_city": "开户的省份和城市不能为空",
+        "success_bank_information_link": "新链接的银行信息成功",
+        "many_bound_bank_information": "绑定的银行信息不能超过5条",
+        "failed_information_link_contact_cs": "信息链接失败，请联系在线客服",
+        "sending_failed_3_min": "发送失败，请在3分钟后重新发送",
+        "existing_unreviewed_withdrawal": "已经存在一条未经审查的提款记录，请不要重新提交",
+        "withdawal_anomaly": "您的提款有异常情况，请联系在线客服核实并处理",
+        "failed_withdrawal_request_min_withdrawal": "取款请求失败，最小取款金额无效",
+        "failed_withdrawal_request_max_withdrawal": "取款请求失败，最大取款金额无效",
+        "success_withdrawal_request": "取款请求成功",
+        "insufficient_main_account_fill": "主账户余额不足，请填写",
+        "wrong_background_password": "背景密码错误",
+        "failed_withdrawal_request_contact": "提现请求失败，请联系在线客服",
+        "game_maintenance": "闲置或游戏维护",
+        "incorrect_deposit_account": "存款金额不正确，请输入正确的存款金额",
+        "success_deposit_review": "存款已成功发送，正在审查中",
+        "duplicate_deposit_request": "您已经申请了这个促销，请审查促销规则",
+        "failed_submit_deposit_update": "提交存款失败，请更新并重新提交",
+        "sending_failed_30_sec": "发送失败，请在30秒后重新发送",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "已经存在一条未审核的存款记录，请不要重新提交",
+        "expired_verification_reenter": "验证过期，请回去刷新后重新输入",
+        "success_point_redeem": "积分已成功兑换，请检查余额",
+        "point_not_reach_monthly_redemption_limit": "积分未达到指定值或已达到每月兑换限额",
+        "insufficient_points": "分数不足，或低于最低值",
+        "incorrect_deposit_bank_reenter": "存款银行不正确，请重新输入",
+        "jumping_for_you": "正在为你跳槽，请等待",
+        "deposit_channel_maintenance": "存款渠道维护，选择其他存款方式",
+        "mobile_payment_maintenance": "移动支付系统维护，使用其他方式存款。",
+        "wechat_payment_maintenance": "微信支付系统维护，使用其他方式入金。",
+        "login_auth": {
+            "invalid_account": "游戏账号或密码是错误的！",
+            "account_locked": "账户被锁定，请联系在线客服！",
+            "system_error": "系统错误。稍后再试！"
+        },
+        "loginMember": {
+            "expire_temporary_password": "临时密码已过期",
+            "invalid_account": "游戏账号或密码是错误的！",
+            "account_locked": "账户被锁定，请联系在线客服！",
+            "system_error": "系统错误。稍后再试！"
+        },
+        "send_verification_email": {
+            "enter_email": "请输入电子邮件",
+            "success_email_sent": "验证邮件已发送",
+            "mail_error": "发送重置代码时出错",
+            "smtp_catch": "发送重置代码时出错。错误。"
+        },
+        "verify_email_code": {
+            "email_verified": "电子邮件验证",
+            "error_email_verify": "验证电子邮件时出错|代码不匹配"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "验证失败",
+        "invalid_game_account": "游戏账号或密码不正确！",
+        "account_locked": "账户被锁定，请联系在线客服！",
+        "system_error": "系统错误。稍后再试！",
+        "get_transferlist": {
+            "maintenance": "游戏平台维护"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "查询失败"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "无法获得银行卡信息"
+        },
+        "bank_unbind": {
+            "fail_unlink": "解绑信息失败，请重试或在线联系客服"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>银行类型</td><td>名称</td><td>卡号信息</td></tr>" ,
+            "header_2": "<tr><td>支付方式</td><td>支付宝名称</td><td>支付宝账户</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "没有找到相关数据",
+            "no_records": "没有记录"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "成功取消提款",
+            "fail_cancel_under_review": "取消提款失败，客户服务已在审查中。",
+            "fail_cancel_contact": "取消提款失败，请联系在线客服"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "3分钟后再点击应用。",
+            "fail_terms_and_condition": "你在体育或现场比赛中投注，使你无法满足优惠的条款和条件。",
+            "success_rescue_bonus": "救援奖金兑换成功，请检查",
+            "invalid_application_date": "赎回申请失败，申请日期无效",
+            "fail_pending_withdrawal": "救援奖金申请被拒绝，因为有一个待定的提款申请",
+            "fail_not_meet_terms_and_condition": "救援奖金请求失败。无法满足报价的条款和条件",
+            "fail_max_balance": "救援奖金请求失败，因为您的账户总余额大于15MXN",
+            "fail_min_loss_profit": "救援奖金请求失败。最小损失利润必须大于900MXN",
+            "bonus_claimed_yesterday": "救援奖金已经在昨天被领取，请检查记录",
+            "fail_refer_terms_and_condition": "救援奖金请求失败。请参考该优惠的条款和条件",
+            "system_error": "系统错误，请重新登录"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "删除数据成功",
+            "faile_delete": "删除数据失败，请刷新并重试"
+        },
+        "syn_password": {
+            "unactivated_function": "该功能没有被激活。"
+        },
+        "get_number": {
+            "query_fail": "查询失败",
+            "water_running": "水在运行"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "折扣请求成功",
+            "condition_not_met": "条件未满足或未应用",
+            "check_official_website": "在申请的时候，请查看官方网站以了解更多的细节",
+            "system_error": "系统错误。稍后再试"
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "恭喜你，游戏已经成功解锁了！",
+            "maintenance": "对不起，游戏平台正在维护中....",
+            "fail_unlock_contact": "游戏解锁失败，请联系客服",
+            "unknown_error": "未知错误，请联系客服",
+            "system_error": "系统错误，请重新登录"
+        },
+        "gameapi_active": {
+            "success_activated": "恭喜你，游戏已经成功激活了！",
+            "maintenance": "对不起，游戏平台正在维护中....",
+            "account_activated": "账户已被激活",
+            "unknown_error": "未知错误，请联系客服",
+            "system_error": "系统错误，请重新登录"
+        },
+        "gameapi_password": {
+            "success_sync": "恭喜你，你已经成功同步了密码！",
+            "maintenance": "对不起，游戏平台正在维护中....",
+            "fail_sync_contact": "同步密码失败，请联系客服",
+            "unknown_error": "未知错误，请联系客服",
+            "system_error": "系统错误，请重新登录"
+        },
+        "gameapi_logout": {
+            "success_offline": "恭喜你，游戏被成功强制下线！",
+            "maintenance": "对不起，游戏平台正在维护中....",
+            "fail_disconnect_contact": "无法强制断线，请联系客服",
+            "unknown_error": "未知错误，请联系客服",
+            "system_error": "系统错误，请重新登录"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "接收完毕! 请检查余额",
+            "fail_claim_retry": "无法索赔，请稍后再试",
+            "fail_claim_no_amount": "金额为0，无法索赔",
+            "fail_claim_status_incorrect": "状态不正确，请更新并点击接收",
+            "succes_receive": "恭喜你，你已经成功收到了！"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "2分钟后点击应用",
+            "success_request": "恭喜你，请求成功，折扣已经自动转移到游戏平台上了。",
+            "fail_request_not_meet_condition": "存款总额不符合请求的条件",
+            "duplicate_request": "您已经申请了这个优惠，明天再来吧",
+            "system_error": "系统错误。请稍后再试",
+            "event_not_started": "该事件尚未开始或已经结束"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>今天的折扣记录</td></tr><tr><td>频率</td><td>折扣</td><td>总存款</td><td>申请时间</tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>今天的优惠登记</td></tr><td>优惠</td><td>优惠总额</td><td>申请时间</td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "2分钟后点击应用",
+            "success_request": "恭喜你，请求成功，折扣已经自动转移到游戏平台。",
+            "fail_request_not_meet_condition": "当日下注总金额QT不符合申请条件",
+            "duplicate_request": "您已经申请了这个优惠，明天再来吧",
+            "system_error": "系统错误。请稍后再试",
+            "event_not_started": "该事件尚未开始或已经结束"
+        },
+        "get_prize_new": {
+            "go_back": "请$left_time以秒为单位回去吃肉丸子",
+            "today_deposit": "今天的存款比$money_arr[$name]多 要吃这盘肉丸子" ,
+            "incorrect_operation": "您的操作不正确，请刷新页面",
+            "atte_dumpling": "你吃了这个饺子",
+            "not_enough_deposit": "你的存款不够",
+            "system_error": "系统错误。稍后再试",
+            "event_not_started": "该事件尚未开始。"
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>最近的发布记录</th></tr><tr><th>礼金类型</th><th>礼金金额</th><th>发布时间</th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>发行金额(USDT)</td><td>发行时间</td></tr>",
+            "no_record": "最近没有记录"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "对不起，你现在是临时会员，不能参加这个活动。",
+            "received_gift": "你已经收到了来自APP的幸运礼物",
+            "success_receive": "成功收到! 请检查余额",
+            "received_lucky_gift": "您从无效的APP中收到了幸运礼物",
+            "system_busy": "系统繁忙，请稍后再试",
+            "unknown_error": "发生了一个未知的错误，请稍后再试",
+            "event_not_started": "事件还没有开始。",
+            "event_ended": "该事件已经结束"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "今天收到的申请存款，幸运礼物",
+            "success_receive": "成功收到! 请检查余额",
+            "received_lucky_gift": "您今天通过应用程序存入了幸运礼物",
+            "system_busy": "系统繁忙，请稍后再试",
+            "app_failed_did_not_use_app": "申请失败，您今天没有使用APP存款",
+            "unknown_error": "发生了一个未知的错误，请稍后再试",
+            "event_not_started": "该事件尚未开始。",
+            "event_ended": "该事件已经结束"
+        },
+        "checkdeposit": {
+            "select_card": "<p>你好，首先选择一张银行卡</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "存款请求已被成功取消！",
+            "fail_undo": "撤销失败，请刷新并重试"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "礼金金额为0，无法申请",
+            "incorrect_status": "状态不正确，请更新并点击接收",
+            "success_transfer": "转账成功！",
+            "could_not_receive": "无法接收，请更新并点击接收",
+            "login_info_expired": "您的登录信息已经过期，请重新登录"
+        },
+        "get_bet": {
+            "calculating_water_flow": "开始计算水流量",
+            "event_ended": "这个事件已经结束",
+            "enter_first": "请先输入"
+        },
+        "change_information": {
+            "incorrect_verification": "验证码不正确，请重试",
+            "success_verification": "验证成功",
+            " failed_verification": "验证失败"
+        },
+        "change_phone_verify": {
+            "success_verification": "成功验证",
+            " failed_verification": "验证失败"
+        },
+        "verification_code": {
+            "number_busy": "这个号码已经很忙了，请用一个新的号码代替它",
+            "unable_open": "无法打开文件！",
+            "success_submit": "提交成功"
+        },
+        "get_vip_level": {
+            " failed_query": "查询失败"
+        },
+        "upload_pictures": {
+            "success": "成功",
+            "illegal_file": "不合法的文件格式"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "成功"
+        },
+        "auto_transfer_in": {
+            "success": "成功"
+        },
+        "agent_member_deposit": {
+            "no_data": "没有找到相关数据"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "没有找到相关数据"
+        },
+        "agent_member_fanshui": {
+            "no_data": "没有找到相关数据"
+        },
+        "agent_member_promotions": {
+            "no_data": "没有找到相关数据"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "成功"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "重复的，请更改"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "成功"
+        }
+    },
+    "ajax_check": {
+        "verify_failed": "验证失败",
+        "invalid_game_account": "游戏账号或密码是错误的！",
+        "account_locked": "账户被锁定，请联系在线客服！",
+        "system_error": "系统错误。稍后再试！",
+        "get_promotion_content": {
+            "unsuccessful_offer": "不成功的报价"
+        },
+        "clear_cache": {
+            "complete": "更新完成",
+            "fail": "更新失败"
+        },
+        "logout": {
+            "account_closed": "您的账户已被关闭",
+            "no_account": "没有检测到登录的账户"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "不成功的优惠"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "不成功的报价"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "没有折扣"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verify_failed": "验证失败",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType未定义",
+            "ensure_bank_support": "请确保您将使用的银行卡支持这种支付方式",
+            "paypal_deposit": "您即将通过Paypal进行存款。您将被引导到Paypal以使用这项服务。",
+            "usdt_deposit": "你即将通过USDT转账入金。请选择正确的网络和链来使用。"
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "成功！",
+            "invalid_game_account": "游戏账号或密码是错误的！",
+            "account_locked": "账户被锁定，请联系在线客服！",
+            "system_error": "系统错误。稍后再试！"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "亲爱的U体育会员。由于银行智能数据系统和支付宝官方风险控制的进一步加强，我公司不断更新充值方式，尽最大努力避免风险控制。如果您的付款受到风险控制，请使用手机银行转账或选择虚拟货币存款"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "没有折扣"
+        },
+        "submit_autopromotion": {
+            "success_application": "申请已经成功",
+            "not_made_deposit": "您在3分钟内没有进行存款",
+            "entered_game_again": "您在存款后再次进入游戏，请不要在申请促销活动前进入游戏，",
+            "ready_applied": "您已经申请了这个促销活动",
+            "already_applied_discount": "这笔存款已经申请了折扣，请再次存款"
+        },
+        "checkdeposit": {
+            "no_data": "没有找到数据"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "存款金额不正确，请输入正确的存款金额",
+            "deposit_bank_incorrect": "存款银行不正确，请重新输入。",
+            "channel_maintenance": "存款渠道维护，请选择其他存款方式",
+            "verification_expired": "验证过期，请返回并刷新重新输入",
+            "ready_requested_promotion": "您已经申请了这个促销，请查看促销规则",
+            "fail_submit_deposit": "提交存款失败，请更新并重新提交"
+        },
+        "banktransfer": {
+            "error_sending": "发送错误，请在30秒后重新发送",
+            "incorrect_amount": "存款金额不正确，请输入正确的存款金额",
+            "unreviewed_deposit": "已经存在一个未审核的存款记录，请不要重新提交",
+            "verification_expired": "验证过期，请回去刷新后重新输入",
+            "already_requested_promotion": "您已经申请了这个促销，请查看促销规则",
+            "no_card": "目前没有可用的卡，请稍后再试"
+        },
+        "canceldeposit": {
+            "success_cancel": "存款请求已被成功取消！",
+            "failed_undo": "撤销失败，请刷新并重试"
+        },
+        "IPThrottling": {
+            "throttle_message": "你好，为了给你提供更好的用户体验，确保你的账户安全并防止IP监控。您的最后一次请求是在%i分钟%s秒之前，请等待5分钟后再进行充值请求，或在线联系客服寻求帮助。游戏愉快！"
+        },
+        "networkList": {
+            "error": "API上的错误"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verify_failed": "验证失败",
+        "invalid_game_account": "游戏账号或密码不正确！",
+        "account_locked": "账户被锁定，请联系在线客服！",
+        "system_error": "系统错误。稍后再试！",
+        "set_agent_remark": {
+            "successs": "成功"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verify_failed": "验证失败",
+        "verification_code": {
+            
+        },
+        "get_phone_account": {
+            "no_account": "错误，没有这样的账户"
+        }
+    },
+    "record": {
+        "verify_failed": "验证失败",
+        "agrecord": {
+            "no_data": "没有数据"
+        },
+        "ungerecord": {
+            "no_data": "无数据"
+        },
+        "btirecord": {
+            "no_data": "没有数据"
+        },
+        "imrecord": {
+            "no_data": "没有数据"
+        },
+        "imnativerecord": {
+            "no_data": "没有数据"
+        },
+        "ibcrecord": {
+            "no_data": "没有数据"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "没有数据"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "没有数据"
+        },
+        "imdjrecord": {
+            "no_data": "没有数据"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "没有数据"
+        },
+        "gdrecord": {
+            "no_data": "没有数据"
+        },
+        "abrecord": {
+            "no_data": "没有数据"
+        },
+        "ptrecord": {
+            "no_data": "没有数据"
+        },
+        "mgrecord": {
+            "no_data": "没有数据"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "没有数据"
+        },
+        "vrrecord": {
+            "no_data": "没有数据"
+        },
+        "cmdrecord": {
+            "no_data": "没有数据"
+        },
+        "tcg_sbo_record": {
+            "error": "错误",
+            "no_data": "没有数据"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verify_failed": "验证失败",
+        "unsuccessful_offer": "不成功的报价"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}
