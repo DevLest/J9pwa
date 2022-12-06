@@ -11,8 +11,8 @@ header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 //header("Access-Control-Allow-Origin: https://999j9azx.999game.online");
 header("Access-Control-Allow-Credentials:true");
-define("WEB_
-PATH", __DIR__);
+date_default_timezone_set('UTC');
+define("WEB_PATH", __DIR__);
 //error_reporting(E_ALL);
 include_once "core.class.php";
 if (!isset($_SESSION)) {
