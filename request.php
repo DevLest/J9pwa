@@ -2029,7 +2029,7 @@ function played_games($account, $game_code) {
         if (isset($data_list[$game_code])) {
             $data_list[$game_code] += 1;
         } else {
-            $data_list[$game_code] = 1;
+            array_push($data_list,[$game_code => 1]);
         }
 
     } else {
