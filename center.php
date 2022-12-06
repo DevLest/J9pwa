@@ -1220,6 +1220,10 @@ function loginMember($username, $password)
 		setcookie("account", $_SESSION['account'], time()+86400);
 		setcookie("member_name", urlencode($_SESSION['member_name']), time()+86400);
 
+        $bet_records = $core->uniterecord_sum(cleanString($re['account']), date('Y-m-d 00:00:00', strtotime($re['regTime'])), date('Y-m-d 23:59:59', time()));
+        $total_deposit = $core->record_list_summary($re['account'], "deposit", date('Y-m-d 00:00:00', strtotime($re['regTime'])), date('Y-m-d 23:59:59', time()));
+        $friends = $core->agent_rank_list($re['account']);
+
 		$imageResult = $core->get_imgurl($account);
 
 		return json_encode([
@@ -1247,6 +1251,10 @@ function loginMember($username, $password)
 				'nickName' => $re['nickName'],
 				'userID' => $re['uid'],
                 'agent_percentage' => ($re['agent_percentage'] != "") ? $re['agent_percentage'] * 100 : null,
+                'total_win' => floatval($bet_records[0]['win']),
+                'total_bets' => floatval($bet_records[0]['bet']),
+                'total_deposit' => floatval($total_deposit[0]['amount']),
+                'total_referrals' => floatval($friends['total_referrals']),
 				]
 		]);
 	}
@@ -1701,6 +1709,11 @@ function verify_email_code($email, $code)
 
 }
 
+function cleanString($string) {
+   $string = str_replace(' ', '-', $string);
+
+   return preg_replace('/[^A-Za-z0-9\-\_]/', '', $string);
+}
 
 
 ?>
