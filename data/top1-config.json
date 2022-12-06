@@ -1,0 +1,319 @@
+[{
+        "currency": "AED",
+        "min_amount": 0,
+        "max_amount": 0,
+        "link": "https://api.top1pay.com/static/bank/USDT/AED.svg"
+    },
+    {
+        "currency": "ARS",
+        "min_amount": 10649,
+        "max_amount": 887354.81,
+        "link": "https://api.top1pay.com/static/bank/USDT/ARS.svg"
+    },
+    {
+        "currency": "AUD",
+        "min_amount": 22,
+        "max_amount": 77972.1,
+        "link": "https://api.top1pay.com/static/bank/USDT/AUD.svg"
+    },
+    {
+        "currency": "BGN",
+        "min_amount": 27,
+        "max_amount": 20000,
+        "link": "https://api.top1pay.com/static/bank/USDT/BGN.svg"
+    },
+    {
+        "currency": "BRL",
+        "min_amount": 77,
+        "max_amount": 65000,
+        "link": "https://api.top1pay.com/static/bank/USDT/BRL.svg"
+    },
+    {
+        "currency": "CAD",
+        "min_amount": 20,
+        "max_amount": 16000,
+        "link": "https://api.top1pay.com/static/bank/USDT/CAD.svg"
+    },
+    {
+        "currency": "CHF",
+        "min_amount": 14,
+        "max_amount": 49450.02,
+        "link": "https://api.top1pay.com/static/bank/USDT/CHF.svg"
+    },
+    {
+        "currency": "CLP",
+        "min_amount": 56413,
+        "max_amount": 4701029.56,
+        "link": "https://api.top1pay.com/static/bank/USDT/CLP.svg"
+    },
+    {
+        "currency": "COP",
+        "min_amount": 130000,
+        "max_amount": 42500000,
+        "link": "https://api.top1pay.com/static/bank/USDT/COP.svg"
+    },
+    {
+        "currency": "CZK",
+        "min_amount": 750,
+        "max_amount": 260000,
+        "link": "https://api.top1pay.com/static/bank/USDT/CZK.svg"
+    },
+    {
+        "currency": "DKK",
+        "min_amount": 106,
+        "max_amount": 371877.23,
+        "link": "https://api.top1pay.com/static/bank/USDT/DKK.svg"
+    },
+    {
+        "currency": "DOP",
+        "min_amount": 2000,
+        "max_amount": 680000,
+        "link": "https://api.top1pay.com/static/bank/USDT/DOP.svg"
+    },
+    {
+        "currency": "EGP",
+        "min_amount": 550,
+        "max_amount": 185000,
+        "link": "https://api.top1pay.com/static/bank/USDT/EGP.svg"
+    },
+    {
+        "currency": "EUR",
+        "min_amount": 15,
+        "max_amount": 50000,
+        "link": "https://api.top1pay.com/static/bank/USDT/EUR.svg"
+    },
+    {
+        "currency": "GBP",
+        "min_amount": 21.51,
+        "max_amount": 43027.59,
+        "link": "https://api.top1pay.com/static/bank/USDT/GBP.svg"
+    },
+    {
+        "currency": "HKD",
+        "min_amount": 112,
+        "max_amount": 90000,
+        "link": "https://api.top1pay.com/static/bank/USDT/HKD.svg"
+    },
+    {
+        "currency": "HRK",
+        "min_amount": 107,
+        "max_amount": 75000,
+        "link": "https://api.top1pay.com/static/bank/USDT/HRK.svg"
+    },
+    {
+        "currency": "HUF",
+        "min_amount": 24809,
+        "max_amount": 2067402.81,
+        "link": "https://api.top1pay.com/static/bank/USDT/HUF.svg"
+    },
+    {
+        "currency": "IDR",
+        "min_amount": 230000,
+        "max_amount": 170000000,
+        "link": "https://api.top1pay.com/static/bank/USDT/IDR.svg"
+    },
+    {
+        "currency": "ILS",
+        "min_amount": 50,
+        "max_amount": 40000,
+        "link": "https://api.top1pay.com/static/bank/USDT/ILS.svg"
+    },
+    {
+        "currency": "INR",
+        "min_amount": 5179,
+        "max_amount": 431537.15,
+        "link": "https://api.top1pay.com/static/bank/USDT/INR.svg"
+    },
+    {
+        "currency": "ISK",
+        "min_amount": 8935,
+        "max_amount": 744501.49,
+        "link": "https://api.top1pay.com/static/bank/USDT/ISK.svg"
+    },
+    {
+        "currency": "JOD",
+        "min_amount": 25,
+        "max_amount": 8000,
+        "link": "https://api.top1pay.com/static/bank/USDT/JOD.svg"
+    },
+    {
+        "currency": "JPY",
+        "min_amount": 2080,
+        "max_amount": 1250000,
+        "link": "https://api.top1pay.com/static/bank/USDT/JPY.png"
+    },
+    {
+        "currency": "KES",
+        "min_amount": 3315.74,
+        "max_amount": 1250000,
+        "link": "https://api.top1pay.com/static/bank/USDT/KES.svg"
+    },
+    {
+        "currency": "KRW",
+        "min_amount": 19474,
+        "max_amount": 12000000,
+        "link": "https://api.top1pay.com/static/bank/USDT/KRW.svg"
+    },
+    {
+        "currency": "KWD",
+        "min_amount": 10,
+        "max_amount": 3500,
+        "link": "https://api.top1pay.com/static/bank/USDT/KWD.svg"
+    },
+    {
+        "currency": "KZT",
+        "min_amount": 6967,
+        "max_amount": 2322425,
+        "link": "https://api.top1pay.com/static/bank/USDT/KZT.svg"
+    },
+    {
+        "currency": "LKR",
+        "min_amount": 7000,
+        "max_amount": 2150000,
+        "link": "https://api.top1pay.com/static/bank/USDT/LKR.svg"
+    },
+    {
+        "currency": "MAD",
+        "min_amount": 320,
+        "max_amount": 110000,
+        "link": "https://api.top1pay.com/static/bank/USDT/MAD.svg"
+    },
+    {
+        "currency": "MDL",
+        "min_amount": 291,
+        "max_amount": 97072,
+        "link": "https://api.top1pay.com/static/bank/USDT/MDL.svg"
+    },
+    {
+        "currency": "MKD",
+        "min_amount": 877,
+        "max_amount": 292525,
+        "link": "https://api.top1pay.com/static/bank/USDT/MKD.svg"
+    },
+    {
+        "currency": "MXN",
+        "min_amount": 287,
+        "max_amount": 260000,
+        "link": "https://api.top1pay.com/static/bank/USDT/MXN.svg"
+    },
+    {
+        "currency": "MYR",
+        "min_amount": 65,
+        "max_amount": 50000,
+        "link": "https://api.top1pay.com/static/bank/USDT/MYR.svg"
+    },
+    {
+        "currency": "NGN",
+        "min_amount": 12015.48,
+        "max_amount": 4500000,
+        "link": "https://api.top1pay.com/static/bank/USDT/NGN.svg"
+    },
+    {
+        "currency": "NOK",
+        "min_amount": 146,
+        "max_amount": 110000,
+        "link": "https://api.top1pay.com/static/bank/USDT/NOK.svg"
+    },
+    {
+        "currency": "NZD",
+        "min_amount": 23,
+        "max_amount": 82908.15,
+        "link": "https://api.top1pay.com/static/bank/USDT/NZD.svg"
+    },
+    {
+        "currency": "OMR",
+        "min_amount": 15,
+        "max_amount": 4300,
+        "link": "https://api.top1pay.com/static/bank/USDT/OMR.svg"
+    },
+    {
+        "currency": "PEN",
+        "min_amount": 130,
+        "max_amount": 40000,
+        "link": "https://api.top1pay.com/static/bank/USDT/PEN.svg"
+    },
+    {
+        "currency": "PHP",
+        "min_amount": 3526,
+        "max_amount": 293824.18,
+        "link": "https://api.top1pay.com/static/bank/USDT/PHP.svg"
+    },
+    {
+        "currency": "PKR",
+        "min_amount": 5500,
+        "max_amount": 1950000,
+        "link": "https://api.top1pay.com/static/bank/USDT/PKR.svg"
+    },
+    {
+        "currency": "PLN",
+        "min_amount": 66,
+        "max_amount": 235528.65,
+        "link": "https://api.top1pay.com/static/bank/USDT/PLN.svg"
+    },
+    {
+        "currency": "QAR",
+        "min_amount": 0,
+        "max_amount": 0,
+        "link": "https://api.top1pay.com/static/bank/USDT/QAR.svg"
+    },
+    {
+        "currency": "RON",
+        "min_amount": 70,
+        "max_amount": 48000,
+        "link": "https://api.top1pay.com/static/bank/USDT/RON.svg"
+    },
+    {
+        "currency": "SAR",
+        "min_amount": 0,
+        "max_amount": 0,
+        "link": "https://api.top1pay.com/static/bank/USDT/SAR.svg"
+    },
+    {
+        "currency": "SEK",
+        "min_amount": 154,
+        "max_amount": 105000,
+        "link": "https://api.top1pay.com/static/bank/USDT/SEK.svg"
+    },
+    {
+        "currency": "SGD",
+        "min_amount": 20,
+        "max_amount": 16000,
+        "link": "https://api.top1pay.com/static/bank/USDT/SGD.svg"
+    },
+    {
+        "currency": "THB",
+        "min_amount": 521,
+        "max_amount": 370000,
+        "link": "https://api.top1pay.com/static/bank/USDT/THB.svg"
+    },
+    {
+        "currency": "TRY",
+        "min_amount": 400,
+        "max_amount": 80000,
+        "link": "https://api.top1pay.com/static/bank/USDT/TRY.svg"
+    },
+    {
+        "currency": "TWD",
+        "min_amount": 457,
+        "max_amount": 340000,
+        "link": "https://api.top1pay.com/static/bank/USDT/TWD.svg"
+    },
+    {
+        "currency": "USD",
+        "min_amount": 15,
+        "max_amount": 52459.24,
+        "link": "https://api.top1pay.com/static/bank/USDT/USD.svg"
+    },
+    {
+        "currency": "VND",
+        "min_amount": 365474,
+        "max_amount": 250000000,
+        "link": "https://api.top1pay.com/static/bank/USDT/VND.svg"
+    },
+    {
+        "currency": "ZAR",
+        "min_amount": 455.79,
+        "max_amount": 195000,
+        "link": "https://api.top1pay.com/static/bank/USDT/ZAR.svg"
+    }
+]
