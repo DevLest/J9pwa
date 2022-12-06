@@ -1301,8 +1301,8 @@ function sendWelcomeEmail()
 		$mail->AddAttachment( "data/Bonus terms and conditions.pdf" , 'Bonus terms and conditions.pdf' );
 		$mail->AddAttachment( "data/Terms and Conditions.pdf" , 'Terms and Conditions.pdf' );
 
-		$mail->setFrom('support@999.game', '999Game');
-		$mail->addReplyTo('support@999.game', '999Game');
+		$mail->setFrom('support@999.game', 'AGame');
+		$mail->addReplyTo('support@999.game', 'AGame');
 		$mail->addAddress($_SESSION['email'], $_SESSION['member_name']);
 		$mail->isHTML(true);
 
@@ -1587,7 +1587,7 @@ function sendWelcomeEmail()
 									<td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
 										<div
 										style='font-family:Rubik, sans-serif;font-size:12px;line-height:1;text-align:center;color:#888888;'>
-										Copyright © 2022 999Game. " . $lang_email->sendWelcomeEmail->body_6 . "</div>
+										Copyright © 2022 AGame. " . $lang_email->sendWelcomeEmail->body_6 . "</div>
 									</td>
 									</tr>
 								</table>
@@ -1641,8 +1641,8 @@ function send_verification_email($email)
 		$mail->Port       = 465;
 		$mail->CharSet = 'UTF-8';
 
-		$mail->setFrom('support@999.game', '999Game');
-		$mail->addReplyTo('support@999.game', '999Game');
+		$mail->setFrom('support@999.game', 'AGame');
+		$mail->addReplyTo('support@999.game', 'AGame');
 		$mail->addAddress($email, $name);
 		$mail->isHTML(true);
 
