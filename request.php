@@ -359,8 +359,8 @@ function send_reset_password($data)
             $mail->Port = 465;
             $mail->CharSet = 'UTF-8';
 
-            $mail->setFrom('support@999.game', '999Game');
-            $mail->addReplyTo('support@999.game', '999Game');
+            $mail->setFrom('support@999.game', 'AGame');
+            $mail->addReplyTo('support@999.game', 'AGame');
             $mail->addAddress($re['email'], $re['realName']);
             $mail->isHTML(true);
 
@@ -646,7 +646,7 @@ function send_reset_password($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:12px;line-height:1;text-align:center;color:#888888;'>
-                                                Copyright © 2022 999Game. " . $lang_email->send_reset_password->body_7 . "</div>
+                                                Copyright © 2022 AGame. " . $lang_email->send_reset_password->body_7 . "</div>
                                             </td>
                                           </tr>
                                         </table>
@@ -744,8 +744,8 @@ function send_verification_email($data)
         $mail->Port = 465;
         $mail->CharSet = 'UTF-8';
 
-        $mail->setFrom('support@999.game', '999Game');
-        $mail->addReplyTo('support@999.game', '999Game');
+        $mail->setFrom('support@999.game', 'AGame');
+        $mail->addReplyTo('support@999.game', 'AGame');
         $mail->addAddress($data->email, $name);
         $mail->isHTML(true);
 
@@ -1039,7 +1039,7 @@ function send_verification_email($data)
                                             <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                             <div
                                                 style='font-family:Rubik, sans-serif;font-size:12px;line-height:18px;text-align:center;color:#888888;'>
-                                                Copyright © 2022 999Game. " . $lang_email->send_verification_email->body_5 . "</div>
+                                                Copyright © 2022 AGame. " . $lang_email->send_verification_email->body_5 . "</div>
                                             </td>
                                         </tr>
                                         </table>
@@ -1655,6 +1655,10 @@ function loginMember($username, $password)
 		$_SESSION['email'] = $re['email'];
 		setcookie("account", $_SESSION['account'], time()+86400);
 		setcookie("member_name", urlencode($_SESSION['member_name']), time()+86400);
+        
+        $bet_records = $core->uniterecord_sum(cleanString($re['account']), date('Y-m-d 00:00:00', strtotime($re['regTime'])), date('Y-m-d 23:59:59', time()));
+        $total_deposit = $core->record_list_summary($re['account'], "deposit", date('Y-m-d 00:00:00', strtotime($re['regTime'])), date('Y-m-d 23:59:59', time()));
+        $friends = $core->agent_rank_list($re['account']);
 
 		$imageResult = $core->get_imgurl($account);
 
@@ -1683,6 +1687,10 @@ function loginMember($username, $password)
 				'nickName' => $re['nickName'],
 				'userID' => $re['uid'],
                 'agent_percentage' => ($re['agent_percentage'] != "") ? $re['agent_percentage'] * 100 : null,
+                'total_win' => floatval($bet_records[0]['win']),
+                'total_bets' => floatval($bet_records[0]['bet']),
+                'total_deposit' => floatval($total_deposit[0]['amount']),
+                'total_referrals' => floatval($friends['total_referrals']),
 				]
 		]);
 	}

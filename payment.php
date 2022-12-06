@@ -4,9 +4,9 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials:true");
 define("WEB_PATH", __DIR__);
 
-ini_set('display_errors', '1');
+/*ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 
 include_once "core.class.php";
 
@@ -41,6 +41,9 @@ switch ($data->type) {
     case "onlinepay_list_v1":
         echo onlinepay_list_v1($data);
         break;
+    case "fiat_list":
+        echo fiat_list($data);
+        break;
     case "monlinepay_bank":
         echo monlinepay_bank($data);
         break;
@@ -67,6 +70,9 @@ switch ($data->type) {
         break;
     case "network_list":
         echo networkList($data);
+        break;
+      case "top1paysubmit":
+        echo top1paysubmit($data);
         break;
 }
 
@@ -232,6 +238,13 @@ function pay_limit($data)
             break;
     }
     return ['minimum' => $amount_low, 'maximum' => $amount_max];
+}
+
+function fiat_list($data){
+    $file = __DIR__."/data/top1-config.json";
+    $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_UNICODE);
+    
+    return json_encode(['status' => 1, 'info' => $filedata]);
 }
 
 function memberLogin($data)
@@ -650,7 +663,46 @@ function canceldeposit($data)
         return json_encode(array('status' => 0, 'info' => $lang->canceldeposit->failed_undo), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
+function top1paysubmit($data)
+{
+    global $lang;
 
+    $jsonparams = [
+        'merchant_ref' => "n".date("Y-m-d H:i:s",time()).rand(100,999),
+    
+        'product' => 'TRC20Buy',
+        'amount' => $data->amount,
+        'extra' => ['fiat_currency'=>$data->currency],
+    
+    ];
+
+    $params = [
+        'merchant_no' => 1160036,
+        'timestamp' => time(),
+        'sign_type' => 'MD5',
+        'params' => json_encode($jsonparams),
+        'extend_params'=>$data->username_email
+    
+    ];
+    $str="1160036".json_encode($jsonparams).'MD5'.time().'fafe00c991cebd9ae8f58fea04ab6dde';
+    $params['sign']=md5($str);
+
+    $ch = curl_init();	
+    curl_setopt($ch,CURLOPT_URL, "https://api.top1pay.com/api/gateway/pay");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   
+    $response=curl_exec($ch);
+    curl_close($ch);
+    
+    $url=json_decode(json_decode($response)->params)->payurl;
+
+    return json_encode(array('status' => 1, 'info' => $url));
+  
+}
 function IPThrottling()
 {
     global $lang;
@@ -866,4 +918,13 @@ function get999Address($email, $network){
     }
 
     return json_encode(['status' => 0, 'info' => "Error on API", "msg" => print_r($response)]);
+}
+
+function removeBomUtf8($s)
+{
+    if (substr($s, 0, 3) == chr(hexdec('EF')) . chr(hexdec('BB')) . chr(hexdec('BF'))) {
+        return substr($s, 3);
+    } else {
+        return $s;
+    }
 }
