@@ -355,16 +355,16 @@ function get_balance($account, $gameid)
        
 
         $active_currencies = [
-            // "WIN",
-            // "BNB",
-            // "TRX",
+            "WIN",
+            "BNB",
+            "TRX",
             "USDT", 
-            // "BCH", 
-            // "LTC", 
-            // "DOGE",
-            // "XRP",
-            // "ADA",
-            // "TUSD",
+            "BCH", 
+            "LTC", 
+            "DOGE",
+            "XRP",
+            "ADA",
+            "TUSD",
             "mBTC",
             "mETH"
         ];
