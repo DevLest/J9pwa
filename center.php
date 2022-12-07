@@ -1231,7 +1231,7 @@ function loginMember($username, $password)
         $played_games = $cachFile->get($account, '', 'data', 'played_games');
         
         if (is_array($played_games)) {
-            rsort($played_games);
+            arsort($played_games);
             $played_games = array_slice(array_keys($played_games), 0, 3);
 			$top_games = [];
 
