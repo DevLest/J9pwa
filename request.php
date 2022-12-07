@@ -1979,6 +1979,50 @@ function sports_token($data)
 function free_spin_amount($data)
 {
     global $lang;
+    $history = [];
+    $core = new core();
+    $start_date = "";
+    $end_date = "";
+
+    if (!isset($data->username)) {
+        return json_encode(['status' => 0, 'info' => 'Por favor ingrese nombre de usuario'], JSON_UNESCAPED_UNICODE);
+    }
+
+    if (isset($data->range)) {
+        switch ($data->range) {
+            case 2: //3 Days
+                $start_date = date('Y-m-d 00:00:00', strtotime(' - 3 days'));
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+            case 3: // last week
+                $start_date = date('Y-m-d 00:00:00', strtotime("monday last week"));
+                $end_date = date('Y-m-d 23:59:59', strtotime("sunday last week"));
+                break;
+            case 4: // this month
+                $start_date = date('Y-m-1 00:00:00', time());
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+            case 5: // last month
+                $start_date = date('Y-m-d 00:00:00', strtotime("first day of previous month"));
+                $end_date = date('Y-m-d 23:59:59', strtotime("last day of previous month"));
+                break;
+            case 6: // 3 months
+                $start_date = date('Y-m-d 00:00:00', strtotime("-3 month"));
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+            case 7: // custom
+                $start_date = date('Y-m-d 00:00:00', strtotime($data->s_date));
+                $end_date = date('Y-m-d 23:59:59', strtotime($data->e_date));
+                break;
+            default: // 24h
+                $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
+                $end_date = date('Y-m-d H:i:s', time());
+                break;
+        }
+    } else {
+        $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
+        $end_date = date('Y-m-d H:i:s', time());
+    }
     
     $params = [
         "playerId" => "usd_" . cleanString($data->username_email),
@@ -2004,6 +2048,21 @@ function free_spin_amount($data)
 
     $free_spin['total_amount'] = $total;
 
+    $free_bonuses = $core->record_list_v2($data->username, "free_spin", $start_date, $end_date, 3);
+
+    if (is_array($free_bonuses)) {
+        foreach ($free_bonuses as $v) {
+            array_push($history, [
+                "type" => "Vuelta Gratis",
+                "amount" => $v['amount'],
+                "process_time" => date('Y-m-d H:i:s', strtotime($v['add_time'])),
+                "status" => "Processed",
+                "verifyStatus" => 1,
+            ]);
+        }
+    }
+    $free_spin['history'] = $history;
+    
     if (count($free_spin) > 0) {
         return json_encode(['status' => 1, 'info' => $free_spin]);
     } else {
