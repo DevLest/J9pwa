@@ -1241,7 +1241,7 @@ function loginMember($username, $password)
 				foreach ($filedata as $detail) {
 					if (!$detail['state']) continue;
 						
-					if (isset($detail['id']) == $played) {
+					if ($detail['id'] == $played) {
 						array_push($top_games, [
 							"name" => $detail['name'],
 							"imgURL" => $detail['pic'],
