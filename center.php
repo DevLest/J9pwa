@@ -1185,11 +1185,12 @@ function getClientIP()
 
 function loginMember($username, $password)
 {
+    include_once WEB_PATH . "/common/cache_file.class.php";
 	global $lang;
 
 	$account = strtolower(trim($username));
 	$password = trim($password);
-	
+    $cachFile = new cache_file();
 	$core = new core();
 
 	//check reset password request
@@ -1226,6 +1227,15 @@ function loginMember($username, $password)
 
 		$imageResult = $core->get_imgurl($account);
 
+        $played_games = $cachFile->get($account, '', 'data', 'played_games');
+        
+        if (is_array($played_games)) {
+            rsort($played_games);
+            $played_games = array_slice($played_games, 0, 3);
+        } else {
+            $played_games = [];
+        }
+
 		return json_encode([
 			'status'=>1,
 			'info'=> [
@@ -1255,6 +1265,7 @@ function loginMember($username, $password)
                 'total_bets' => floatval($bet_records[0]['bet']),
                 'total_deposit' => floatval($total_deposit[0]['amount']),
                 'total_referrals' => floatval($friends['total_referrals']),
+                'most_played' => $played_games,
 				]
 		]);
 	}

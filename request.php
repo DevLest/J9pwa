@@ -1623,11 +1623,12 @@ function create_md5content($id, $account, $email, $time)
 
 function loginMember($username, $password)
 {
+    include_once WEB_PATH . "/common/cache_file.class.php";
     global $lang;
 
 	$account = strtolower(trim($username));
 	$password = trim($password);
-	
+    $cachFile = new cache_file();
 	$core = new core();
 
 	//check reset password request
@@ -1663,6 +1664,15 @@ function loginMember($username, $password)
         $friends = $core->agent_rank_list($re['account']);
 
 		$imageResult = $core->get_imgurl($account);
+        
+        $played_games = $cachFile->get($account, '', 'data', 'played_games');
+        
+        if (is_array($played_games)) {
+            rsort($played_games);
+            $played_games = array_slice($played_games, 0, 3);
+        } else {
+            $played_games = [];
+        }
 
 		return json_encode([
 			'status'=>1,
@@ -1693,6 +1703,7 @@ function loginMember($username, $password)
                 'total_bets' => floatval($bet_records[0]['bet']),
                 'total_deposit' => floatval($total_deposit[0]['amount']),
                 'total_referrals' => floatval($friends['total_referrals']),
+                'most_played' => $played_games,
 				]
 		]);
 	}
@@ -2079,7 +2090,6 @@ function cleanString($string) {
 
 function played_games($account, $game_code) {
     include_once WEB_PATH . "/common/cache_file.class.php";
-    $core = new core();
     $cachFile = new cache_file();
 
     $data_list = $cachFile->get($account, '', 'data', 'played_games');
@@ -2088,7 +2098,7 @@ function played_games($account, $game_code) {
         if (isset($data_list[$game_code])) {
             $data_list[$game_code] += 1;
         } else {
-            array_merge($data_list,[$game_code => 1]);
+            $data_list = array_merge($data_list,[$game_code => 1]);
         }
     } else {
         $data_list = [
