@@ -20,9 +20,9 @@ if (!isset($_SESSION)) {
 }
 
 // if (isset($data->debug)) {
-    ini_set('display_errors', '1');
+   /* ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
-    error_reporting(E_ALL);
+    error_reporting(E_ALL);*/
 // }
 
 $lang = json_decode(file_get_contents("./language/".(isset($data->lang) ? $data->lang : "en").".json"));
