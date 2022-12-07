@@ -1968,8 +1968,6 @@ function convert_currency($data)
 function sports_token($data)
 {
     global $lang;
-
-    if ()
     
     $game_url = json_decode(play_game($data));
 
