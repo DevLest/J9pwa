@@ -2082,20 +2082,19 @@ function played_games($account, $game_code) {
     $core = new core();
     $cachFile = new cache_file();
 
-    $data_list = json_decode($cachFile->get($account, '', 'data', 'played_games'));
+    $data_list = $cachFile->get($account, '', 'data', 'played_games');
 
     if (is_array($data_list)) {
         if (isset($data_list[$game_code])) {
             $data_list[$game_code] += 1;
         } else {
-            array_push($data_list,[$game_code => 1]);
+            array_merge($data_list,[$game_code => 1]);
         }
-
     } else {
         $data_list = [
             $game_code => 1
         ];
     }
     
-    $cachFile->set($account, json_encode($data_list), '', 'data', 'played_games');
+    $cachFile->set($account, $data_list, '', 'data', 'played_games');
 }
