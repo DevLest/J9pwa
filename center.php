@@ -2,6 +2,7 @@
 header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 define("WEB_PATH", __DIR__);
+date_default_timezone_set("UTC");
 
 include_once ("core.class.php");
 if(!isset($_SESSION))
@@ -1237,7 +1238,6 @@ function loginMember($username, $password)
 			$filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
 
 			foreach ($played_games as $played) {
-
 				foreach ($filedata as $detail) {
 					if (!$detail['state']) continue;
 						
@@ -1746,6 +1746,15 @@ function cleanString($string) {
    $string = str_replace(' ', '-', $string);
 
    return preg_replace('/[^A-Za-z0-9\-\_]/', '', $string);
+}
+
+function removeBomUtf8($s)
+{
+    if (substr($s, 0, 3) == chr(hexdec('EF')) . chr(hexdec('BB')) . chr(hexdec('BF'))) {
+        return substr($s, 3);
+    } else {
+        return $s;
+    }
 }
 
 

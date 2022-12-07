@@ -130,6 +130,7 @@ function getGameData($category = "", $format = 0, $seach_string = "", $game_code
         "PP" => "PragmaticPlay",
         "PS" => "Playson",
         "PT" => "PlayTech",
+        "PG" => "PocketGames",
         "RB" => "RubyPlay",
         "RELAX" => "Relax",
         "SPB" => "Spribe",
@@ -141,7 +142,19 @@ function getGameData($category = "", $format = 0, $seach_string = "", $game_code
         "EZG" => "Ezugi",
         "MPLAY" => "MPlay",
         "REVOLVER" => "Revolver",
+        "RELAX" => "RELAX",
+        "RP" => "RubyPlay",
         "TB" => "TVB",
+        "GAMEART" => "GameArt",
+        "EVO" => "Evolution",
+        "BETBY" => "Betby",
+        "REDTIGER" => "RedTiger",
+        "NETENT" => "Netent",
+        "RT" => "RedTiger",
+        "NT" => "Netent",
+        "SLOTMILL" => "Slotmill",
+        "INBET" => "InBet",
+        "EM" => "Everymatrix",
     ];
 
     $filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
@@ -262,6 +275,12 @@ function play_game($data)
             "MBTC" => 1236,
             "METH" => 1238,
             "USD" => 1240,
+            "BNB" => 1241,
+            "TRX" => 1242,
+            "BCH" => 1243,
+            "LTC" => 1244,
+            "DOGE" => 1245,
+            "ADA" => 1246,
         ];
 
         $platform = (isset($data->platform)) ? $data->platform : 0;
