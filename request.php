@@ -274,6 +274,8 @@ function play_game($data)
             "USDT" => 1232,
             "MBTC" => 1236,
             "METH" => 1238,
+            "BTC" => 1236,
+            "ETH" => 1238,
             "USD" => 1240,
             "BNB" => 1241,
             "TRX" => 1242,
@@ -1966,6 +1968,8 @@ function convert_currency($data)
 function sports_token($data)
 {
     global $lang;
+
+    if ()
     
     $game_url = json_decode(play_game($data));
 
