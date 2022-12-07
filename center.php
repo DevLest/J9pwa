@@ -1231,7 +1231,29 @@ function loginMember($username, $password)
         
         if (is_array($played_games)) {
             rsort($played_games);
-            $played_games = array_slice($played_games, 0, 3);
+            $played_games = array_slice(array_keys($played_games), 0, 3);
+			$top_games = [];
+
+			$filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
+
+			foreach ($played_games as $played) {
+
+				foreach ($filedata as $detail) {
+					if (!$detail['state']) continue;
+						
+					if (isset($detail['id']) == $played) {
+						array_push($top_games, [
+							"name" => $detail['name'],
+							"imgURL" => $detail['pic'],
+							"gameInfo" => [
+								"gameCode" => $detail['id'],
+								"gameCodeAlias" => isset($detail['alias_code']) ? $detail['alias_code'] : "",
+							],
+						]);
+					} else continue;
+				}
+			}
+            $played_games = $top_games;
         } else {
             $played_games = [];
         }
