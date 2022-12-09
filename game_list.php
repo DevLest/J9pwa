@@ -8,7 +8,15 @@ $gameIDs = [
     "USDT" => 1232,
     "MBTC" => 1236,
     "METH" => 1238,
+    "BTC" => 1236,
+    "ETH" => 1238,
     "USD" => 1240,
+    "BNB" => 1241,
+    "TRX" => 1242,
+    "BCH" => 1243,
+    "LTC" => 1244,
+    "DOGE" => 1245,
+    "ADA" => 1246,
 ];
 
 $currency = [
@@ -79,9 +87,10 @@ $platformNames = [
     "REDTIGER" => "RedTiger",
     "NETENT" => "Netent",
     "RT" => "RedTiger",
-    "GAMEART" => "GameArt",
     "NT" => "Netent",
     "SLOTMILL" => "Slotmill",
+    "INBET" => "InBet",
+    "EM" => "Everymatrix",
 ];
 
 $pin_games = [

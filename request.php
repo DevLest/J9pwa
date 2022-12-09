@@ -130,6 +130,7 @@ function getGameData($category = "", $format = 0, $seach_string = "", $game_code
         "PP" => "PragmaticPlay",
         "PS" => "Playson",
         "PT" => "PlayTech",
+        "PG" => "PocketGames",
         "RB" => "RubyPlay",
         "RELAX" => "Relax",
         "SPB" => "Spribe",
@@ -141,7 +142,19 @@ function getGameData($category = "", $format = 0, $seach_string = "", $game_code
         "EZG" => "Ezugi",
         "MPLAY" => "MPlay",
         "REVOLVER" => "Revolver",
+        "RELAX" => "RELAX",
+        "RP" => "RubyPlay",
         "TB" => "TVB",
+        "GAMEART" => "GameArt",
+        "EVO" => "Evolution",
+        "BETBY" => "Betby",
+        "REDTIGER" => "RedTiger",
+        "NETENT" => "Netent",
+        "RT" => "RedTiger",
+        "NT" => "Netent",
+        "SLOTMILL" => "Slotmill",
+        "INBET" => "InBet",
+        "EM" => "Everymatrix",
     ];
 
     $filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
@@ -261,7 +274,15 @@ function play_game($data)
             "USDT" => 1232,
             "MBTC" => 1236,
             "METH" => 1238,
+            "BTC" => 1236,
+            "ETH" => 1238,
             "USD" => 1240,
+            "BNB" => 1241,
+            "TRX" => 1242,
+            "BCH" => 1243,
+            "LTC" => 1244,
+            "DOGE" => 1245,
+            "ADA" => 1246,
         ];
 
         $platform = (isset($data->platform)) ? $data->platform : 0;
@@ -278,6 +299,8 @@ function play_game($data)
 
         $core = new core();
         $game_link = $core->game_mobile_login($username, $gameId, ['game_code' => $gameCode, 'table_alias' => $gameAlias, 'mobile' => $platform, 'mode' => $mode]);
+
+        played_games($username, $gameCode);
 
         return json_encode(['status' => 1, 'info' => $game_link]);
     }
@@ -1621,11 +1644,101 @@ function create_md5content($id, $account, $email, $time)
 
 function loginMember($username, $password)
 {
+	$gameIDs = [
+		"USDT" => 1232,
+		"MBTC" => 1236,
+		"METH" => 1238,
+		"BTC" => 1236,
+		"ETH" => 1238,
+		"USD" => 1240,
+		"BNB" => 1241,
+		"TRX" => 1242,
+		"BCH" => 1243,
+		"LTC" => 1244,
+		"DOGE" => 1245,
+		"ADA" => 1246,
+	];
+	
+	$currency = [
+		"BGAMING" => ["mBTC", "USDT", "mETH", "USD"],
+		"BNG" => ["mBTC", "USDT", "mETH", "USD"],
+		"CALETA" => ["mBTC", "USDT", "mETH", "USD"],
+		"ENDORPHINA" => ["mBTC", "USDT", "mETH", "USD"],
+		"HAB" => ["mBTC", "USDT", "mETH", "USD"],
+		"MG" => ["USD"],
+		"PGSOFT" => ["mBTC", "USD"],
+		"PNG" => ["mBTC", "USD"],
+		"PP" => ["mBTC", "USDT", "mETH", "USD"],
+		"PS" => ["mBTC", "USDT", "mETH", "USD"],
+		"PT" => ["USD"],
+		"PG" => ["USD"],
+		"RB" => ["USD"],
+		"RELAX" => ["USD"],
+		"SPB" => ["mBTC", "mETH", "USD"],
+		"SS" => ["mBTC", "USDT", "mETH", "USD"],
+		"SW" => ["USD"],
+		"BG" => ["mBTC", "USDT", "mETH", "USD"],
+		"CQ9" => ["mBTC", "USDT", "mETH", "USD"],
+		"EM" => ["USD"],
+		"EZG" => ["mBTC", "USDT", "mETH", "USD"],
+		"MPLAY" => ["mBTC", "mETH", "USD"],
+		"REVOLVER" => ["mBTC", "mETH", "USD"],
+		"RELAX" => ["USD"],
+		"TB" => ["mBTC", "USDT", "mETH", "USD"],
+		"REDTIGER" => ["USD"],
+		"NETENT" => ["USD"],
+		"GAMEART" => ["USD"],
+		"EVO" => ["USD"],
+		"BETBY" => ["USD"],
+		"GAMEART" => ["USD"],
+		"SLOTMILL" => ["USD"],
+	];
+	
+	$platformNames = [
+		"BGAMING" => "BGaming",
+		"BNG" => "Booongo",
+		"CALETA" => "Caleta",
+		"ENDORPHINA" => "Endorphina",
+		"HAB" => "Habanero",
+		"MG" => "Microgaming",
+		"PGSOFT" => "PGSoft",
+		"PNG" => "Play'N'GO",
+		"PP" => "PragmaticPlay",
+		"PS" => "Playson",
+		"PT" => "PlayTech",
+		"PG" => "PocketGames",
+		"RB" => "RubyPlay",
+		"RELAX" => "Relax",
+		"SPB" => "Spribe",
+		"SS" => "SuperSpade",
+		"SW" => "Skywind",
+		"BG" => "BetGames",
+		"CQ9" => "CQGames",
+		"EM" => "EveryMatrix",
+		"EZG" => "Ezugi",
+		"MPLAY" => "MPlay",
+		"REVOLVER" => "Revolver",
+		"RELAX" => "RELAX",
+		"RP" => "RubyPlay",
+		"TB" => "TVB",
+		"GAMEART" => "GameArt",
+		"EVO" => "Evolution",
+		"BETBY" => "Betby",
+		"REDTIGER" => "RedTiger",
+		"NETENT" => "Netent",
+		"RT" => "RedTiger",
+		"NT" => "Netent",
+		"SLOTMILL" => "Slotmill",
+		"INBET" => "InBet",
+		"EM" => "Everymatrix",
+	];
+
+    include_once WEB_PATH . "/common/cache_file.class.php";
     global $lang;
 
 	$account = strtolower(trim($username));
 	$password = trim($password);
-	
+    $cachFile = new cache_file();
 	$core = new core();
 
 	//check reset password request
@@ -1661,6 +1774,49 @@ function loginMember($username, $password)
         $friends = $core->agent_rank_list($re['account']);
 
 		$imageResult = $core->get_imgurl($account);
+        
+        $played_games = $cachFile->get($account, '', 'data', 'played_games');
+        
+        if (is_array($played_games)) {
+            arsort($played_games);
+            $played_games = array_slice(array_keys($played_games), 0, 3);
+			$top_games = [];
+
+			$filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
+
+			foreach ($played_games as $played) {
+
+				foreach ($filedata as $detail) {
+					if (!$detail['state']) continue;
+					
+    				$currency_data = [];
+					foreach ($currency[$detail['platform']] as $curr) {
+						array_push($currency_data, [
+							"symbol" => $curr,
+							"gameId" => (isset($gameIDs[strtoupper($curr)])) ? $gameIDs[strtoupper($curr)] : 1240,
+							"icon" => "https://999j9azx.999game.online/j9pwa/images/$curr.svg",
+						]);
+					}
+						
+					if ($detail['id'] == $played) {
+						array_push($top_games, [
+							"platform" => $platformNames[$detail['platform']],
+							"category" => $detail['tag'],
+							"currency" => $currency_data,
+							"name" => $detail['name'],
+							"imgURL" => $detail['pic'],
+							"gameInfo" => [
+								"gameCode" => $detail['id'],
+								"gameCodeAlias" => isset($detail['alias_code']) ? $detail['alias_code'] : "",
+							],
+						]);
+					} else continue;
+				}
+			}
+            $played_games = $top_games;
+        } else {
+            $played_games = [];
+        }
 
 		return json_encode([
 			'status'=>1,
@@ -1691,6 +1847,7 @@ function loginMember($username, $password)
                 'total_bets' => floatval($bet_records[0]['bet']),
                 'total_deposit' => floatval($total_deposit[0]['amount']),
                 'total_referrals' => floatval($friends['total_referrals']),
+                'most_played' => $played_games,
 				]
 		]);
 	}
@@ -1902,7 +2059,6 @@ function get_images($data)
 
 function convert_currency($data)
 {
-
     include_once WEB_PATH . "/common/cache_file.class.php";
     $cachFile = new cache_file();
     $data = $cachFile->get("mxn_to_usdt", '', 'data', "mx", substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
@@ -1978,6 +2134,50 @@ function sports_token($data)
 function free_spin_amount($data)
 {
     global $lang;
+    $history = [];
+    $core = new core();
+    $start_date = "";
+    $end_date = "";
+
+    if (!isset($data->username)) {
+        return json_encode(['status' => 0, 'info' => 'Por favor ingrese nombre de usuario'], JSON_UNESCAPED_UNICODE);
+    }
+
+    if (isset($data->range)) {
+        switch ($data->range) {
+            case 2: //3 Days
+                $start_date = date('Y-m-d 00:00:00', strtotime(' - 3 days'));
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+            case 3: // last week
+                $start_date = date('Y-m-d 00:00:00', strtotime("monday last week"));
+                $end_date = date('Y-m-d 23:59:59', strtotime("sunday last week"));
+                break;
+            case 4: // this month
+                $start_date = date('Y-m-1 00:00:00', time());
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+            case 5: // last month
+                $start_date = date('Y-m-d 00:00:00', strtotime("first day of previous month"));
+                $end_date = date('Y-m-d 23:59:59', strtotime("last day of previous month"));
+                break;
+            case 6: // 3 months
+                $start_date = date('Y-m-d 00:00:00', strtotime("-3 month"));
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+            case 7: // custom
+                $start_date = date('Y-m-d 00:00:00', strtotime($data->s_date));
+                $end_date = date('Y-m-d 23:59:59', strtotime($data->e_date));
+                break;
+            default: // 24h
+                $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
+                $end_date = date('Y-m-d 23:59:59', time());
+                break;
+        }
+    } else {
+        $start_date = date('Y-m-d H:i:s', strtotime('-24 hours'));
+        $end_date = date('Y-m-d 23:59:59', time());
+    }
     
     $params = [
         "playerId" => "usd_" . cleanString($data->username_email),
@@ -2003,6 +2203,21 @@ function free_spin_amount($data)
 
     $free_spin['total_amount'] = $total;
 
+    $free_bonuses = $core->record_list_v2($data->username, "free_spin", $start_date, $end_date, 3);
+
+    if (is_array($free_bonuses)) {
+        foreach ($free_bonuses as $v) {
+            array_push($history, [
+                "type" => "Vuelta Gratis",
+                "amount" => $v['amount'],
+                "process_time" => date('Y-m-d H:i:s', strtotime($v['add_time'])),
+                "status" => "Processed",
+                "verifyStatus" => 1,
+            ]);
+        }
+    }
+    $free_spin['history'] = $history;
+    
     if (count($free_spin) > 0) {
         return json_encode(['status' => 1, 'info' => $free_spin]);
     } else {
@@ -2015,4 +2230,25 @@ function cleanString($string) {
    $string = str_replace(' ', '-', $string);
 
    return preg_replace('/[^A-Za-z0-9\-\_]/', '', $string);
+}
+
+function played_games($account, $game_code) {
+    include_once WEB_PATH . "/common/cache_file.class.php";
+    $cachFile = new cache_file();
+
+    $data_list = $cachFile->get($account, '', 'data', 'played_games');
+
+    if (is_array($data_list)) {
+        if (isset($data_list[$game_code])) {
+            $data_list[$game_code] += 1;
+        } else {
+            $data_list = array_merge($data_list,[$game_code => 1]);
+        }
+    } else {
+        $data_list = [
+            $game_code => 1
+        ];
+    }
+    
+    $cachFile->set($account, $data_list, '', 'data', 'played_games');
 }

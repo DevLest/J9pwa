@@ -152,7 +152,7 @@ $ch = curl_init();
 					$records = $ipdb->lookup($ip, \IP2Location\Database::ALL);
 					//print_r($records); exit;
                                         
-                                        $countrylist=array("AW","BQ","CW","FR","NL","AU","UK","ES","BQ","MF","AS");
+                                        $countrylist=array("SG");
 					if(in_array($ip,$countrylist))
 					{
 						$arr = array('status'=>0,'info'=>$ip);

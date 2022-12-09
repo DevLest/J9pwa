@@ -19,6 +19,7 @@
         ];
 
         $game_type = "slots";
+        $deescription = "";
 
         $url = "https://data.vsr888.com/game/list";
         $result = https_submit($url, $params);
@@ -28,6 +29,7 @@
             foreach ($result->records as $index => $games)
             {
                 $game_type = $games->gameType;
+                $deescription = (isset($games->deescription)) ? $games->deescription : "";
             }
         }
 
@@ -35,6 +37,7 @@
             "gameCode" => $detail['id'],
             "gameName" => $detail['name'],
             "gameType" => $game_type,
+            "description" => $deescription,
         ];
     }
 

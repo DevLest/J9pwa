@@ -2,6 +2,7 @@
 header("Content-type: text/html; charset=utf-8");
 header("Access-Control-Allow-Origin: *");
 define("WEB_PATH", __DIR__);
+date_default_timezone_set("UTC");
 
 include_once ("core.class.php");
 if(!isset($_SESSION))
@@ -1185,11 +1186,101 @@ function getClientIP()
 
 function loginMember($username, $password)
 {
+	$gameIDs = [
+		"USDT" => 1232,
+		"MBTC" => 1236,
+		"METH" => 1238,
+		"BTC" => 1236,
+		"ETH" => 1238,
+		"USD" => 1240,
+		"BNB" => 1241,
+		"TRX" => 1242,
+		"BCH" => 1243,
+		"LTC" => 1244,
+		"DOGE" => 1245,
+		"ADA" => 1246,
+	];
+	
+	$currency = [
+		"BGAMING" => ["mBTC", "USDT", "mETH", "USD"],
+		"BNG" => ["mBTC", "USDT", "mETH", "USD"],
+		"CALETA" => ["mBTC", "USDT", "mETH", "USD"],
+		"ENDORPHINA" => ["mBTC", "USDT", "mETH", "USD"],
+		"HAB" => ["mBTC", "USDT", "mETH", "USD"],
+		"MG" => ["USD"],
+		"PGSOFT" => ["mBTC", "USD"],
+		"PNG" => ["mBTC", "USD"],
+		"PP" => ["mBTC", "USDT", "mETH", "USD"],
+		"PS" => ["mBTC", "USDT", "mETH", "USD"],
+		"PT" => ["USD"],
+		"PG" => ["USD"],
+		"RB" => ["USD"],
+		"RELAX" => ["USD"],
+		"SPB" => ["mBTC", "mETH", "USD"],
+		"SS" => ["mBTC", "USDT", "mETH", "USD"],
+		"SW" => ["USD"],
+		"BG" => ["mBTC", "USDT", "mETH", "USD"],
+		"CQ9" => ["mBTC", "USDT", "mETH", "USD"],
+		"EM" => ["USD"],
+		"EZG" => ["mBTC", "USDT", "mETH", "USD"],
+		"MPLAY" => ["mBTC", "mETH", "USD"],
+		"REVOLVER" => ["mBTC", "mETH", "USD"],
+		"RELAX" => ["USD"],
+		"TB" => ["mBTC", "USDT", "mETH", "USD"],
+		"REDTIGER" => ["USD"],
+		"NETENT" => ["USD"],
+		"GAMEART" => ["USD"],
+		"EVO" => ["USD"],
+		"BETBY" => ["USD"],
+		"GAMEART" => ["USD"],
+		"SLOTMILL" => ["USD"],
+	];
+	
+	$platformNames = [
+		"BGAMING" => "BGaming",
+		"BNG" => "Booongo",
+		"CALETA" => "Caleta",
+		"ENDORPHINA" => "Endorphina",
+		"HAB" => "Habanero",
+		"MG" => "Microgaming",
+		"PGSOFT" => "PGSoft",
+		"PNG" => "Play'N'GO",
+		"PP" => "PragmaticPlay",
+		"PS" => "Playson",
+		"PT" => "PlayTech",
+		"PG" => "PocketGames",
+		"RB" => "RubyPlay",
+		"RELAX" => "Relax",
+		"SPB" => "Spribe",
+		"SS" => "SuperSpade",
+		"SW" => "Skywind",
+		"BG" => "BetGames",
+		"CQ9" => "CQGames",
+		"EM" => "EveryMatrix",
+		"EZG" => "Ezugi",
+		"MPLAY" => "MPlay",
+		"REVOLVER" => "Revolver",
+		"RELAX" => "RELAX",
+		"RP" => "RubyPlay",
+		"TB" => "TVB",
+		"GAMEART" => "GameArt",
+		"EVO" => "Evolution",
+		"BETBY" => "Betby",
+		"REDTIGER" => "RedTiger",
+		"NETENT" => "Netent",
+		"RT" => "RedTiger",
+		"NT" => "Netent",
+		"SLOTMILL" => "Slotmill",
+		"INBET" => "InBet",
+		"EM" => "Everymatrix",
+	];
+
+    include_once WEB_PATH . "/common/cache_file.class.php";
 	global $lang;
 
 	$account = strtolower(trim($username));
 	$password = trim($password);
-	
+    $cachFile = new cache_file();
 	$core = new core();
 
 	//check reset password request
@@ -1226,6 +1317,48 @@ function loginMember($username, $password)
 
 		$imageResult = $core->get_imgurl($account);
 
+        $played_games = $cachFile->get($account, '', 'data', 'played_games');
+        
+        if (is_array($played_games)) {
+            arsort($played_games);
+            $played_games = array_slice(array_keys($played_games), 0, 3);
+			$top_games = [];
+
+			$filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
+
+			foreach ($played_games as $played) {
+				foreach ($filedata as $detail) {
+					if (!$detail['state']) continue;
+					
+    				$currency_data = [];
+					foreach ($currency[$detail['platform']] as $curr) {
+						array_push($currency_data, [
+							"symbol" => $curr,
+							"gameId" => (isset($gameIDs[strtoupper($curr)])) ? $gameIDs[strtoupper($curr)] : 1240,
+							"icon" => "https://999j9azx.999game.online/j9pwa/images/$curr.svg",
+						]);
+					}
+						
+					if ($detail['id'] == $played) {
+						array_push($top_games, [
+							"platform" => $platformNames[$detail['platform']],
+							"category" => $detail['tag'],
+							"currency" => $currency_data,
+							"name" => $detail['name'],
+							"imgURL" => $detail['pic'],
+							"gameInfo" => [
+								"gameCode" => $detail['id'],
+								"gameCodeAlias" => isset($detail['alias_code']) ? $detail['alias_code'] : "",
+							],
+						]);
+					} else continue;
+				}
+			}
+            $played_games = $top_games;
+        } else {
+            $played_games = [];
+        }
+
 		return json_encode([
 			'status'=>1,
 			'info'=> [
@@ -1255,6 +1388,7 @@ function loginMember($username, $password)
                 'total_bets' => floatval($bet_records[0]['bet']),
                 'total_deposit' => floatval($total_deposit[0]['amount']),
                 'total_referrals' => floatval($friends['total_referrals']),
+                'most_played' => $played_games,
 				]
 		]);
 	}
@@ -1713,6 +1847,15 @@ function cleanString($string) {
    $string = str_replace(' ', '-', $string);
 
    return preg_replace('/[^A-Za-z0-9\-\_]/', '', $string);
+}
+
+function removeBomUtf8($s)
+{
+    if (substr($s, 0, 3) == chr(hexdec('EF')) . chr(hexdec('BB')) . chr(hexdec('BF'))) {
+        return substr($s, 3);
+    } else {
+        return $s;
+    }
 }
 
 
