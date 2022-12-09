@@ -8,39 +8,32 @@ ini_set('display_startup_errors', '1');
 
 error_reporting(E_ALL);
 
-echo "test123";
-
-
-die();
-
-
-
 include_once("client/phprpc_client.php");
 
 define("WEB_PATH", __DIR__);
 
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS");
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Expose-Headers: Content-Length");
-header('Content-Type: application/json');
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers");
+// header('Access-Control-Allow-Origin: *');
+// header('Content-Type: application/json');
+// header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS");
+// header("Access-Control-Allow-Credentials: true");
+// header("Access-Control-Expose-Headers: Content-Length");
+// header('Content-Type: application/json');
+// header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers");
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    die();
-}
+// if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+//     http_response_code(200);
+//     die();
+// }
 
-// dt_server_side_processing
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $d = $_GET;
-    if(isset($_GET['dt_server_side_processing']) && $_GET['dt_server_side_processing'] == 1 ) {
-        // header('Content-Type: text/html; charset=UTF-8');
-        dt_server_side_processing($d);
-    }
-    exit();
-}
+// // dt_server_side_processing
+// if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+//     $d = $_GET;
+//     if(isset($_GET['dt_server_side_processing']) && $_GET['dt_server_side_processing'] == 1 ) {
+//         // header('Content-Type: text/html; charset=UTF-8');
+//         dt_server_side_processing($d);
+//     }
+//     exit();
+// }
 
 
 $api_key = 'fghrtrvdfger';
@@ -51,6 +44,7 @@ $checksum .= 'financial_reports';
 $checksum .= $api_key;
 $checksum_new = hash('sha256', $checksum);
 $auth_check = $checksum_new;
+
 $d = (object) json_decode(file_get_contents('php://input'), true);
 
 $auth = $d->auth;
@@ -62,58 +56,23 @@ if ($auth_check != $auth) {
 }
 
 
-
-if (isset($d->type) && $d->type == "get_all_games_data") {
-    get_all_games_data($d);
+if (isset($d->type) && $d->type == "export_financial") {
+    export_financial($d);
 }
 
-if (isset($d->type) && $d->type == "get_single_games_data") {
-    get_single_games_data($d->id);
-}
 
-if (isset($d->type) && $d->type == "update_games_data") {
-    update_games_data($d);
-}
+function export_financial($d)
+{   
+    date_default_timezone_set('Asia/Manila');
 
-if (isset($d->type) && $d->type == "enable_games_data") {
-    enable_games_data($d->id);
-}
+    // $date1 = date('Y-m-d H:i:s');
+    $date1 = "2022-11-30 17:33:07";
+    $d->date = (new DateTime($date1))->format("Ymd");
+    
+    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforfinancial_report.php");
+    $response = $client->export_financial($d);
 
-if (isset($d->type) && $d->type == "disable_games_data") {
-    disable_games_data($d->id);
-}
-if (isset($d->type) && $d->type == "add_new_game") {
-    add_new_game($d);
-}
-
-if (isset($d->type) && $d->type == "delete_game") {
-    delete_game($d->id);
-}
-if (isset($d->type) && $d->type == "get_all_category") {
-    get_all_category();
-}
-
-if (isset($d->type) && $d->type == "apply_changes_to_frontend") {
-    apply_changes_to_frontend();
-}
-
-if (isset($d->type) && $d->type == "games_total_count") {
-    games_total_count();
-}
-
-// if (isset($d->type) && $d->type == "dt_server_side_processing") {
-//     dt_server_side_processing();
-// }
-
-
-
-
-
-function dt_server_side_processing()
-{
-
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
-    $response = $client->dt_server_side_processing();
+    // var_dump($response);
 
     echo json_encode($response);
 }
