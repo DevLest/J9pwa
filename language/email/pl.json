@@ -1,0 +1,33 @@
+{
+    "request": {
+        "send_reset_password": {
+            "subject": "Resetowanie hasła do konta",
+            "body_1": "Cześć",
+            "body_2": "Nie pamiętasz hasła do gry 999? Ze względów bezpieczeństwa wygenerowaliśmy dla Ciebie hasło tymczasowe.",
+            "body_3": "Pamiętaj, aby zmienić tymczasowe hasło przy następnym wejściu do gry 999.",
+            "body_4": "Zmień hasło",
+            "body_5": "Jeśli nie próbowałeś zmienić hasła, skontaktuj się natychmiast z obsługą klienta pod adresem",
+            "body_6": "Ta wiadomość e-mail zawiera podstawowe informacje dotyczące Twojego konta 999Game. Polityka 999Game zakłada poszanowanie i ochronę prywatności osób fizycznych. Przeczytaj naszą Politykę prywatności.",
+            "body_7": "Wszelkie prawa zastrzeżone."
+        },
+        "send_verification_email": {
+            "subject": "Weryfikacja adresu e-mail",
+            "body_1": "Kod weryfikacyjny",
+            "body_2": "Ten kod weryfikacyjny jest przeznaczony do <br>weryfikacji użytkownika.",
+            "body_3": "Jeśli nie złożyłeś tej prośby,<br>proszę natychmiast skontaktować się z obsługą klienta pod adresem support@999.game.",
+            "body_4": "Ta wiadomość e-mail zawiera podstawowe informacje dotyczące Twojego konta 999Game. Polityka 999Game zakłada poszanowanie i ochronę prywatności osób. Przeczytaj naszą Politykę prywatności.",
+            "body_5": "Wszelkie prawa zastrzeżone."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Pospiesz się! Dzisiaj jest dla Ciebie specjalny nieograniczony bonus 180%!",
+            "body_1": "Ciesz się nową i nieskomplikowaną grą 999",
+            "body_2": "Ten rok 2022 ulepszamy dla Ciebie, a naszym głównym celem jest to, abyś w pełni się bawił.",
+            "body_3": "Pamiętaj, twoja nazwa użytkownika w 999Game to:",
+            "body_4": "Chcemy, abyś zaczął w najlepszy możliwy sposób, dokonaj pierwszej wpłaty w wysokości co najmniej 10 USDT, a my zwrócimy Ci 180% aż do 600USDT.",
+            "body_5": "Ta wiadomość e-mail zawiera podstawowe informacje dotyczące Twojego konta 999Game. Polityka 999Game zakłada poszanowanie i ochronę prywatności osób fizycznych. Przeczytaj naszą Politykę prywatności.",
+            "body_6": "Wszelkie prawa zastrzeżone."
+        }
+    }
+}

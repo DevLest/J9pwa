@@ -1,5 +1,5 @@
 {
-    "demande" : {
+    "request" : {
         "send_reset_password" : {
             "subject" : "Réinitialisation du mot de passe du compte",
             "body_1" : "Bonjour",

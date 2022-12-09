@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "Nabigo ang pag-verify",
+        "play_game": {
+            "invalid": "Mga Di-wastong Parameter"
+        },
+        "change_account_info": {
+            "success_message_1": "Matagumpay na nabago ang impormasyon"
+        },
+        "send_reset_password": {
+            "mail_success": "Naipadala na ang mensahe",
+            "mail_error": "Error sa pagpapadala ng reset code",
+            "code_error": "Error sa pagpapadala ng reset code | Password code Ivanlid",
+            "smtp_catch": "Error sa pagpapadala ng reset code. Error: ",
+            "check_email": "Hindi nakarehistro ang email sa anumang guest account"
+        },
+        "verify_reset_password": {
+            "code_expired": "Nag-expire na ang verification code! Mangyaring humiling ng bagong code."
+        },
+        "reset_password": {
+            "verification_code_incorrect": "Ang verification code ay hindi tama, pakisubukang muli",
+            "verification_code_error": "Error sa code verification. Mangyaring makipag-ugnayan sa customer support."
+        },
+        "get_transaction": {
+            "empty_date_range": "Pakilagay ang hanay ng petsa",
+            "empty_username": "Pakilagay ang username"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "Walang data ng account!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "Pakilagay ang hanay ng petsa",
+            "empty_username": "Pakilagay ang username"
+        },
+        "verify_agent": {
+            "empty_agent_name": "Hindi maaaring walang laman ang pangalan ng ahente",
+            "agent_not_found": "Hindi nahanap ang ahente! Ilagay ang tamang pangalan ng ahente kung naaangkop, iwanang blangko kung wala ka nito."
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "Walang nakitang kaibigan!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "Pakilagay ang Email",
+            "success_email_sent": "Naipadala na ang verification email",
+            "error_sending_code": "Error sa pagpapadala ng reset code"
+        },
+        "verify_email_code": {
+            "email_verified": "Na-verify ang Email",
+            "error_email_verify": "Error sa Pagpapatunay ng email"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "Error sa pag-parse ng Data ng URL",
+            "error_parsing_url": "Error sa pag-parse ng URL",
+            "no_redirection_url": "Error! Walang redirection URL"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "Walang bonus na magagamit pansamantala"
+        },
+        "oauth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "Pansamantalang password ay nag-expire na",
+            "invalid_account": "Mali ang game account o password!",
+            "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+            "system_error": "Error sa system. Subukang muli mamaya!"
+        }
+    },
+    "center": {
+        "auth_check": "Nabigo ang pag-verify",
+        "invalid_email": "Mangyaring magpasok ng wastong email address",
+        "empty_verification_code": "Pakilagay ang verification code",
+        "agent_not_found": "Hindi nahanap ang ahente! Ilagay ang tamang pangalan ng ahente kung naaangkop, iwanang blangko kung wala ka nito.",
+        "taken_member_account": "Nabigo ang pagpaparehistro, nairehistro na ang account ng miyembro",
+        "registration_failed": "Nabigo ang pagpaparehistro, Mangyaring makipag-ugnayan sa Admin",
+        "taken_phone_number": "Nabigo ang pagpaparehistro, ang numero ng telepono ay nairehistro na",
+        "taken_email": "Nabigo ang pagpaparehistro, ang email ay nairehistro na",
+        "invalid_account": "Mali ang game account o password!",
+        "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+        "system_error": "Error sa system. Subukang muli mamaya!",
+        "inconsistent_password": "Dalawang beses na ipinasok ang hindi tugmang password",
+        "re_enter_password": "Ang password ay hindi nakakatugon sa mga kinakailangan, mangyaring muling ipasok",
+        "success_reset_password": "Nakumpleto ang pag-reset ng password!!",
+        "withdrawal_password_exists": "Mayroong password sa pag-withdraw",
+        "withdrawal_password_not_exists": "Ang withdrawal password ay hindi umiiral",
+        "success_set_withdrawal_password": "Matagumpay na naitakda ang password sa pag-withdraw",
+        "success_change_withdrawal_password": "Matagumpay na naitakda ang password sa pag-withdraw",
+        "invalid_old_withdrawal": "Ang lumang password sa pag-withdraw ay hindi naipasok nang tama",
+        "sending_failed_10_sec": "Nabigong ipadala, mangyaring muling ipadala pagkatapos ng 10 segundo",
+        "operation_failed": "Nabigo ang operasyon, mangyaring maghintay ng ilang segundo at subukang muli",
+        "error_select_transfer_type": "Error sa pagpapadala, piliin ang uri ng paglilipat",
+        "transfer_amount_small": "Ang halaga ng paglilipat ay dapat na isang integer na higit sa 1",
+        "success_transfer": "Ang paglipat ay matagumpay!",
+        "insufficient_main_account": "Hindi sapat na balanse sa pangunahing account",
+        "insufficient_game_account": "Hindi sapat na balanse sa game account",
+        "failed_transfer_contact_cs": "Nabigo ang paglipat, mangyaring makipag-ugnayan sa online na serbisyo sa customer",
+        "success_transfer_one_click": "Matagumpay na paglipat sa isang click!",
+        "empty_opened_province_city": "Ang lalawigan at lungsod kung saan binuksan ang account ay hindi maaaring walang laman",
+        "success_bank_information_link": "Matagumpay na naiugnay ang bagong impormasyon ng bangko",
+        "many_bound_bank_information": "Ang nakatali na impormasyon sa bangko ay hindi maaaring lumampas sa 5 piraso",
+        "failed_information_link_contact_cs": "Nabigo ang link ng impormasyon, mangyaring makipag-ugnayan sa online na serbisyo sa customer",
+        "sending_failed_3_min": "Nabigong ipadala, mangyaring ipadala muli pagkatapos ng 3 minuto",
+        "existing_unreviewed_withdrawal": "Isang hindi pa nasuri na rekord ng withdrawal ay umiiral na, mangyaring huwag itong muling isumite",
+        "withdawal_anomaly": "May anomalya sa iyong pag-withdraw, mangyaring makipag-ugnayan sa online na serbisyo sa customer upang i-verify at iproseso",
+        "failed_withdrawal_request_min_withdrawal": "Nabigo ang kahilingan sa withdrawal, hindi wasto ang minimum na halaga ng withdraw",
+        "failed_withdrawal_request_max_withdrawal": "Nabigo ang kahilingan sa withdrawal, hindi wasto ang maximum na halaga ng withdraw",
+        "success_withdrawal_request": "Matagumpay na kahilingan sa withdrawal",
+        "insufficient_main_account_fill": "Hindi sapat na balanse sa pangunahing account，Mangyaring punan",
+        "wrong_background_password": "Maling password sa background",
+        "failed_withdrawal_request_contact": "Nabigo ang kahilingan sa pag-withdraw, mangyaring makipag-ugnayan sa online na serbisyo sa customer",
+        "game_maintenance": "Walang ginagawa o pagpapanatili ng laro",
+        "incorrect_deposit_account": "Ang halaga ng deposito ay hindi tama, mangyaring ipasok ang tamang halaga ng deposito",
+        "success_deposit_review": "Ang deposito ay matagumpay na naipadala at nasa ilalim ng pagsusuri",
+        "duplicate_deposit_request": "Hiniling mo na ang promosyon na ito, pakisuri ang mga panuntunan sa promosyon",
+        "failed_submit_deposit_update": "Nabigong magsumite ng deposito, paki-update at muling isumite",
+        "sending_failed_30_sec": "Nabigong ipadala, mangyaring muling ipadala pagkatapos ng 30 segundo",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "Mayroon nang hindi nasuri na rekord ng deposito, mangyaring huwag itong muling isumite",
+        "expired_verification_reenter": "Nag-expire ang verification, mangyaring bumalik at i-refresh para muling makapasok",
+        "success_point_redeem": "Ang mga puntos ay matagumpay na natubos, mangyaring suriin ang balanse",
+        "point_not_reach_monthly_redemption_limit": "Hindi naabot ng mga puntos ang tinukoy na halaga o naabot na ang buwanang limitasyon sa pagtubos",
+        "insufficient_points": "Hindi sapat na puntos, o mas mababa sa pinakamababang halaga",
+        "incorrect_deposit_bank_reenter": "Ang deposito na bangko ay hindi tama, mangyaring muling ilagay ito.",
+        "jumping_for_you": "Paglukso para sa iyo, mangyaring maghintay",
+        "deposit_channel_maintenance": "Pagpanatili ng channel ng deposito, pumili ng ibang paraan ng deposito",
+        "mobile_payment_maintenance": "Pagpapanatili ng sistema ng pagbabayad sa mobile, gumamit ng iba pang paraan upang magdeposito.",
+        "wechat_payment_maintenance": "Pagpapanatili ng sistema ng pagbabayad sa Wechat, gumamit ng ibang paraan para magdeposito.",
+        "login_auth": {
+            "invalid_account": "Mali ang game account o password!",
+            "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+            "system_error": "Error sa system. Subukang muli mamaya!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "Pansamantalang password ay nag-expire na",
+            "invalid_account": "Mali ang game account o password!",
+            "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+            "system_error": "Error sa system. Subukang muli mamaya!"
+        },
+        "send_verification_email": {
+            "enter_email": "Pakilagay ang Email",
+            "success_email_sent": "Naipadala na ang verification email",
+            "mail_error": "Error sa pagpapadala ng reset code",
+            "smtp_catch": "Error sa pagpapadala ng reset code. Error: "
+        },
+        "verify_email_code": {
+            "email_verified": "Na-verify ang Email",
+            "error_email_verify": "Error sa Pagpapatunay ng email | Hindi tugma ang code"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "Nabigo ang pag-verify",
+        "invalid_game_account": "Ang laro account o password ay hindi tama!",
+        "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+        "system_error": "Error sa system. Subukang muli mamaya!",
+        "get_transferlist": {
+            "maintenance": "Pagpapanatili ng platform ng gaming"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "Nabigo ang query"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "Hindi makakuha ng impormasyon sa bank card"
+        },
+        "bank_unbind": {
+            "fail_unlink": "Nabigong i-unlink ang impormasyon, pakisubukang muli o makipag-ugnayan sa customer service online"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>Uri ng Bangko</td><td>Pangalan</td><td>Impormasyon ng numero ng card</td></tr>",
+            "header_2": "<tr><td>Mga Paraan ng Pagbabayad</td><td>Pangalan ng AliPay</td><td>Alipay Account</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "Walang nakitang nauugnay na data",
+            "no_records": "Walang mga tala"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "Matagumpay na kanselahin ang pag-withdraw",
+            "fail_cancel_under_review": "Kanselahin ang pag-withdraw nang may pagkabigo，Ang serbisyo ng customer ay sinusuri na.",
+            "fail_cancel_contact": "Kanselahin ang pag-withdraw nang may pagkabigo，Makipag-ugnayan sa online na serbisyo sa customer"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "I-click muli ang Ilapat pagkatapos ng 3 minuto.",
+            "fail_terms_and_condition": "Tumatasta ka sa mga palakasan o live na laro na nagiging dahilan upang hindi mo matugunan ang mga tuntunin at kundisyon ng alok.",
+            "success_rescue_bonus": "Ang pagkuha ng Rescue Bonus ay matagumpay, mangyaring suriin",
+            "invalid_application_date": "Nabigo ang aplikasyon sa pagkuha, hindi wasto ang petsa ng aplikasyon",
+            "fail_pending_withdrawal": "Ang kahilingan sa rescue bonus ay tinanggihan dahil sa isang nakabinbing kahilingan sa withdrawal",
+            "fail_not_meet_terms_and_condition": "Nabigo ang kahilingan sa rescue bonus. Hindi matugunan ang mga tuntunin at kundisyon ng alok",
+            "fail_max_balance": "Nabigo ang kahilingan sa rescue bonus dahil ang kabuuang balanse ng iyong account ay higit sa 15MXN",
+            "fail_min_loss_profit": "Nabigo ang kahilingan sa rescue bonus. Ang pinakamababang kita sa pagkawala ay dapat na higit sa 900MXN",
+            "bonus_claimed_yesterday": "Na-claim na kahapon ang rescue bonus, pakisuri ang record",
+            "fail_refer_terms_and_condition": "Nabigo ang kahilingan sa rescue bonus. Mangyaring sumangguni sa mga tuntunin at kundisyon ng alok",
+            "system_error": "Error sa system, mangyaring mag-log in muli"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "Matagumpay na natanggal ang data",
+            "faile_delete": "Nabigong tanggalin ang data, paki-refresh at subukang muli"
+        },
+        "syn_password": {
+            "unactivated_function": "Ang pagpapaandar ay hindi naisaaktibo."
+        },
+        "get_number": {
+            "query_fail": "Nabigo ang query",
+            "water_running": " Tubig na umaagos"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "Matagumpay ang kahilingan sa diskwento",
+            "condition_not_met": "Hindi natugunan o nailapat ang mga kundisyon",
+            "check_official_website": "Bago ang oras ng aplikasyon, mangyaring suriin ang opisyal na website para sa higit pang mga detalye.",
+            "system_error": "Error sa system. Subukang muli mamaya"
+        },
+        "umangat sa pwesto": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "Binabati kita, ang laro ay matagumpay na na-unlock!",
+            "maintenance": "Paumanhin, ang platform ng laro ay nasa ilalim ng pagpapanatili....",
+            "fail_unlock_contact": "Nabigo ang pag-unlock ng laro, mangyaring makipag-ugnayan sa customer service",
+            "unknown_error": "Hindi alam na error, mangyaring makipag-ugnayan sa customer service",
+            "system_error": "Error sa system, mangyaring mag-log in muli"
+        },
+        "gameapi_active": {
+            "success_activated": "Binabati kita, matagumpay na na-activate ang laro!",
+            "maintenance": "Paumanhin, ang platform ng laro ay nasa ilalim ng pagpapanatili....",
+            "account_activated": "Na-activate na ang account",
+            "unknown_error": "Hindi alam na error, mangyaring makipag-ugnayan sa customer service",
+            "system_error": "Error sa system, mangyaring mag-log in muli"
+        },
+        "gameapi_password": {
+            "success_sync": "Binabati kita, matagumpay mong na-sync ang mga password!",
+            "maintenance": "Paumanhin, ang platform ng laro ay nasa ilalim ng pagpapanatili....",
+            "fail_sync_contact": "Nabigong i-sync ang password, mangyaring makipag-ugnayan sa customer service",
+            "unknown_error": "Hindi alam na error, mangyaring makipag-ugnayan sa customer service",
+            "system_error": "Error sa system, mangyaring mag-log in muli"
+        },
+        "gameapi_logout": {
+            "success_offline": "Binabati kita, matagumpay na napilitang offline ang laro!",
+            "maintenance": "Paumanhin, ang platform ng laro ay nasa ilalim ng pagpapanatili....",
+            "fail_disconnect_contact": "Hindi mapilitan ang pagdiskonekta, mangyaring makipag-ugnayan sa customer service",
+            "unknown_error": "Hindi alam na error, mangyaring makipag-ugnayan sa customer service",
+            "system_error": "Error sa system, mangyaring mag-log in muli"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "Kumpleto ang pagtanggap! Pakisuri ang balanse",
+            "fail_claim_retry": "Hindi ma-claim, pakisubukang muli mamaya",
+            "fail_claim_no_amount": "Ang halaga ay 0 at hindi maaaring i-claim",
+            "fail_claim_status_incorrect": "Ang katayuan ay hindi tama, mangyaring i-update at i-click upang makatanggap",
+            "succes_receive": "Binabati kita, matagumpay mong natanggap!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "I-click ang Ilapat pagkatapos ng 2 minuto",
+            "success_request": "Binabati kita, matagumpay ang kahilingan, awtomatikong inilipat ang diskwento sa platform ng laro.",
+            "fail_request_not_meet_condition": "Ang kabuuang halaga ng deposito ay hindi nakakatugon sa mga kondisyon ng kahilingan",
+            "duplicate_request": "Hiniling mo na ang alok na ito, bumalik ka bukas",
+            "system_error": "Error sa system. Pakisubukang muli mamaya",
+            "event_not_started": "Ang kaganapan ay hindi pa nagsimula o tapos na"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>Tala ng diskwento ngayong araw</td></tr><tr><td>Dalas</td><td>Discount</td><td>Kabuuan deposit</td><td>Oras ng aplikasyon</td ></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>Tala ng diskwento ngayong araw</td></tr><td>Dalas</td><td>Kabuuang halagang itinaya</td><td> Oras ng aplikasyon </td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "I-click ang Ilapat pagkatapos ng 2 minuto",
+            "success_request": "Binabati kita, matagumpay ang kahilingan, awtomatikong inilipat ang diskwento sa platform ng laro.",
+            "fail_request_not_meet_condition": "当日Ang kabuuang halagang itinaya ng QT ay hindi nakakatugon sa mga kinakailangan ng aplikasyon",
+            "duplicate_request": "Hiniling mo na ang alok na ito, bumalik ka bukas",
+            "system_error": "Error sa system. Pakisubukang muli mamaya",
+            "event_not_started": "Ang kaganapan ay hindi pa nagsimula o tapos na"
+        },
+        "get_prize_new": {
+            "go_back": "Mangyaring $left_time Bumalik sa pagkain ng meatballs sa ilang segundo.",
+            "today_deposit": "Ang deposito ngayon ay higit pa sa $money_arr[$name] Para kainin itong plato ng mga bola-bola",
+            "incorrect_operation": "Hindi tama ang iyong operasyon, paki-refresh ang pahina.",
+            "ate_dumpling": "Kumain ka nitong dumpling",
+            "not_enough_deposit": "Hindi sapat ang iyong deposito",
+            "system_error": "Error sa system. Subukang muli mamaya",
+            "event_not_started": "Hindi pa nagsisimula ang kaganapan."
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>Mga kamakailang rekord ng paglabas</th></tr><tr><th>Uri ng pera ng regalo</th><th>Halaga ng pera ng regalo</th> <th>Tagal ng paglabas</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>Halagang inisyu(USDT)</td><td>Oras ng pagpapalabas</td></tr>",
+            "no_record": "Kamakailang walang mga tala"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "Paumanhin, ikaw ay pansamantalang miyembro na ngayon at hindi makakasali sa kaganapang ito.",
+            "received_gift": "Natanggap mo ang regalo ng swerte mula sa APP",
+            "success_receive": "Matagumpay na natanggap! Pakisuri ang balanse",
+            "received_lucky_gift": "Nakatanggap ka ng masuwerteng regalo mula sa di-wastong app",
+            "system_busy": "Ang sistema ay abala, pakisubukang muli mamaya",
+            "unknown_error": "Naganap ang isang hindi kilalang error, pakisubukang muli mamaya",
+            "event_not_started": "Hindi pa nagsisimula ang kaganapan.",
+            "event_ended": "Natapos na ang kaganapan"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "Natanggap ang deposito ng aplikasyon ngayon, masuwerteng regalo",
+            "success_receive": "Matagumpay na natanggap! Pakisuri ang balanse",
+            "received_lucky_gift": "Nagdeposito ka ng mga masuwerteng regalo sa pamamagitan ng app ngayon.",
+            "system_busy": "Ang sistema ay abala, pakisubukang muli mamaya",
+            "app_failed_did_not_use_app": "Nabigo ang application, hindi mo ginamit ang APP para magdeposito ngayon",
+            "unknown_error": "Naganap ang isang hindi kilalang error, pakisubukang muli mamaya",
+            "event_not_started": "Hindi pa nagsisimula ang kaganapan.",
+            "event_ended": "Natapos na ang kaganapan"
+        },
+        "checkdeposit": {
+            "select_card": "<p>Kumusta, pumili muna ng bank card</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "Ang kahilingan sa deposito ay matagumpay na nakansela!",
+            "fail_undo": "Nabigo ang pag-undo, paki-refresh at subukang muli"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "Regalo ng peraAng halaga ay 0 at hindi maaaring i-claim",
+            "incorrect_status": "Hindi tama ang status, paki-update at i-click para makatanggap",
+            "success_transfer": "Ang paglipat ay matagumpay!",
+            "could_not_receive": "Hindi matanggap, paki-update at i-click para makatanggap",
+            "login_info_expired": "Nag-expire na ang iyong impormasyon sa pag-log in, mangyaring mag-log in muli"
+        },
+        "get_bet": {
+            "calculating_water_flow": "Simulang kalkulahin ang daloy ng tubig",
+            "event_ended": "Natapos na ang kaganapang ito",
+            "enter_first": "Pakipasok muna"
+        },
+        "change_information": {
+            "incorrect_verification": "Ang verification code ay hindi tama, pakisubukang muli",
+            "success_verification": "Matagumpay na Pagpapatunay",
+            "failed_verification": "Nabigo ang pag-verify"
+        },
+        "change_phone_verify": {
+            "success_verification": "Matagumpay na Pagpapatunay",
+            "failed_verification": "Nabigo ang pag-verify"
+        },
+        "verification_code": {
+            "number_busy": "Abala na ang numerong ito, pakipalitan ito ng bagong numero",
+            "unable_open": "Hindi mabuksan ang file!",
+            "success_submit": "Matagumpay na naisumite"
+        },
+        "get_vip_level": {
+            "failed_query": "Nabigo ang query"
+        },
+        "upload_pictures": {
+            "success": "tagumpay",
+            "illegal_file": "Ilegal na format ng file"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "tagumpay"
+        },
+        "auto_transfer_in": {
+            "success": "tagumpay"
+        },
+        "agent_member_deposit": {
+            "no_data": "Walang nakitang nauugnay na data"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "Walang nakitang nauugnay na data"
+        },
+        "agent_member_fanshui": {
+            "no_data": "Walang nakitang nauugnay na data"
+        },
+        "agent_member_promotions": {
+            "no_data": "Walang nakitang nauugnay na data"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "tagumpay"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "Inulit, pakipalitan"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "tagumpay"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "Nabigo ang pag-verify",
+        "invalid_game_account": "Mali ang game account o password!",
+        "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+        "system_error": "Error sa system. Subukang muli mamaya!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "Hindi matagumpay na alok"
+        },
+        "clear_cache": {
+            "complete": "Nakumpleto ang pag-update",
+            "fail": "Nabigong i-update"
+        },
+        "logout": {
+            "account_closed": "Isinara na ang iyong account",
+            "no_account": "Walang nakitang naka-log in na account"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "Hindi matagumpay na alok"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "Hindi matagumpay na alok"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "Walang diskwento"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "Nabigo ang pag-verify",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "Hindi tinukoy ang payType",
+            "ensure_bank_support": "Pakitiyak na ang bank card na iyong gagamitin ay sumusuporta sa paraan ng pagbabayad na ito.",
+            "paypal_deposit": "Magdedeposito ka na sa pamamagitan ng Paypal. Ididirekta ka sa Paypal para gamitin ang serbisyong ito.",
+            "usdt_deposit": "Magdedeposito ka na sa pamamagitan ng USDT transfer. Mangyaring piliin ang tamang network at chain na gagamitin."
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "tagumpay!",
+            "invalid_game_account": "Mali ang game account o password!",
+            "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+            "system_error": "Error sa system. Subukang muli mamaya!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "Minamahal na mga miyembro ng U Sports: Dahil sa higit na pagpapalakas ng intelligent data system ng bangko at opisyal na kontrol sa panganib ng Alipay, patuloy na ina-update ng aming kumpanya ang paraan ng pag-recharge at ginagawa ang lahat ng makakaya upang maiwasan ang kontrol sa panganib. Kung ang iyong pagbabayad ay napapailalim sa panganib kontrolin, gamitin ang mobile banking para ilipat ang bayad o piliin ang virtual na currency na deposito"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "Walang diskwento"
+        },
+        "submit_autopromotion": {
+            "success_application": "nagtagumpay ang aplikasyon",
+            "not_made_deposit": "Hindi ka nagdeposito sa loob ng 3 minuto",
+            "entered_game_again": "Pumasok ka muli sa laro pagkatapos magdeposito, mangyaring huwag pumasok sa laro bago mag-apply para sa mga promosyon,",
+            "already_applied": "Nag-apply ka na para sa promosyon na ito",
+            "already_applied_discount": "Ang depositong ito ay nag-apply na para sa isang diskwento, mangyaring magdeposito muli"
+        },
+        "checkdeposit": {
+            "no_data": "Walang nakitang data"
+        },
+        "online na pagbabayad": {
+            "deposit_amount_incorrect": "Ang halaga ng deposito ay hindi tama, mangyaring ipasok ang tamang halaga ng deposito",
+            "deposit_bank_incorrect": "Ang deposito na bangko ay hindi tama, mangyaring muling ilagay ito.",
+            "channel_maintenance": "Pagpanatili ng channel ng deposito, pumili ng ibang paraan ng pagdedeposito",
+            "verification_expired": "Nag-expire na ang verification, mangyaring bumalik at i-refresh para muling makapasok",
+            "already_requested_promotion": "Hiniling mo na ang promosyon na ito, pakisuri ang mga patakaran sa promosyon",
+            "fail_submit_deposit": "Nabigong magsumite ng deposito, paki-update at muling isumite"
+        },
+        "banktransfer": {
+            "error_sending": "Error sa pagpapadala, mangyaring ipadala muli pagkatapos ng 30 segundo",
+            "incorrect_amount": "Ang halaga ng deposito ay hindi tama, mangyaring ilagay ang tamang halaga ng deposito",
+            "unreviewed_deposit": "Mayroon nang hindi nasuri na rekord ng deposito, mangyaring huwag itong muling isumite",
+            "verification_expired": "Nag-expire na ang verification, mangyaring bumalik at i-refresh para muling makapasok",
+            "already_requested_promotion": "Hiniling mo na ang promosyon na ito, pakisuri ang mga patakaran sa promosyon",
+            "no_card": "Walang available na card sa ngayon, pakisubukang muli mamaya"
+        },
+        "canceldeposit": {
+            "success_cancel": "Matagumpay na nakansela ang kahilingan sa deposito!",
+            "failed_undo": "Nabigo ang pag-undo, paki-refresh at subukang muli"
+        },
+        "IPThrottling": {
+            "throttle_message": "Kumusta, upang mabigyan ka ng mas magandang karanasan ng gumagamit, upang matiyak ang seguridad ng iyong account at upang maiwasan ang pagsubaybay sa IP. Ang iyong huling kahilingan ay %i minuto %s segundo ang nakalipas, mangyaring maghintay ng 5 minuto bago gumawa ng kahilingan sa muling pagkarga. o makipag-ugnayan sa customer service online para sa tulong. Happy gaming!"
+        },
+        "networkList": {
+            "error": "Error sa API"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "Nabigo ang pag-verify",
+        "invalid_game_account": "Ang laro account o password ay hindi tama!",
+        "account_locked": "Naka-lock ang account, mangyaring makipag-ugnayan sa online customer service!",
+        "system_error": "Error sa system. Subukang muli mamaya!",
+        "set_agent_remark": {
+            "success": "tagumpay"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "Nabigo ang pag-verify",
+        "verification_code": {
+           
+        },
+        "get_phone_account": {
+            "no_account": "Error, walang ganoong account"
+        }
+    },
+    "record": {
+        "verification_failed": "Nabigo ang pag-verify",
+        "agrecord": {
+            "no_data": "Walang data"
+        },
+        "uniterecord": {
+            "no_data": "Walang data"
+        },
+        "btirecord": {
+            "no_data": "Walang data"
+        },
+        "imrecord": {
+            "no_data": "Walang data"
+        },
+        "imnativerecord": {
+            "no_data": "Walang data"
+        },
+        "ibcrecord": {
+            "no_data": "Walang data"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "Walang data"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "Walang data"
+        },
+        "imdjrecord": {
+            "no_data": "Walang data"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "Walang data"
+        },
+        "gdrecord": {
+            "no_data": "Walang data"
+        },
+        "abrecord": {
+            "no_data": "Walang data"
+        },
+        "ptrecord": {
+            "no_data": "Walang data"
+        },
+        "mgrecord": {
+            "no_data": "Walang data"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "Walang data"
+        },
+        "vrrecord": {
+            "no_data": "Walang data"
+        },
+        "cmdrecord": {
+            "no_data": "Walang data"
+        },
+        "tcg_sbo_record": {
+            "error": "error",
+            "no_data": "Walang data"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "Nabigo ang pag-verify",
+        "unsuccessful_offer": "Hindi matagumpay na alok"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}

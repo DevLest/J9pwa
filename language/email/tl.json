@@ -1,0 +1,33 @@
+{
+    "request": {
+        "send_reset_password": {
+            "subject": "I-reset ang Password ng Account",
+            "body_1": "Hello ",
+            "body_2": "Nakalimutan ang iyong password sa 999 Game? Para sa mga kadahilanang pangseguridad, nakabuo kami ng pansamantalang password para sa iyo.",
+            "body_3": "Tandaang palitan ang iyong pansamantalang password sa susunod na pagpasok mo sa 999 Game.",
+            "body_4": "Palitan ang password",
+            "body_5": "Kung hindi mo sinubukang palitan ang iyong password, mangyaring makipag-ugnayan kaagad sa customer service sa",
+            "body_6": "Ang email ng serbisyong ito ay naglalaman ng mahahalagang impormasyon na may kaugnayan sa iyong 999Game account. Ang patakaran ng 999Game ay igalang at protektahan ang privacy ng mga indibidwal. Basahin ang aming Patakaran sa Privacy.",
+            "body_7": "Lahat ng karapatan ay nakalaan."
+        },
+        "send_verification_email": {
+            "subject": "Pagpapatunay ng Email",
+            "body_1": "Verification Code",
+            "body_2": "Ang verification code na ito ay inilaan para sa<br>validation ng user.",
+            "body_3": "Kung hindi mo ginawa ang kahilingang ito,<br>mangyaring makipag-ugnayan kaagad sa customer service sa support@999.game.",
+            "body_4": "Ang email ng serbisyong ito ay naglalaman ng mahahalagang impormasyon na may kaugnayan sa iyong 999Game account. Ang patakaran ng 999Game ay igalang at protektahan ang privacy ng mga indibidwal. Basahin ang aming Patakaran sa Privacy.",
+            "body_5": "Lahat ng karapatan ay nakalaan."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Magmadali! May espesyal na unlimited na 180% na bonus para sa iyo ngayon!",
+            "body_1": "I-enjoy ang bago at hindi kumplikadong 999Game",
+            "body_2": "Ngayong 2022 ay pinagbubuti namin para sa iyo at ang aming pangunahing layunin ay ang masiyahan ka sa iyong sarili nang lubos.",
+            "body_3": "Tandaan, ang iyong username sa 999Game ay:",
+            "body_4": "Gusto naming magsimula ka sa pinakamahusay na posibleng paraan para dito, gawin ang iyong unang deposito na hindi bababa sa 10USDT at bibigyan ka namin ng 180% back up hanggang 600USDT.",
+            "body_5": "Ang email ng serbisyong ito ay naglalaman ng mahahalagang impormasyon na may kaugnayan sa iyong 999Game account. Ang patakaran ng 999Game ay igalang at protektahan ang privacy ng mga indibidwal. Basahin ang aming Patakaran sa Privacy.",
+            "body_6": "Lahat ng karapatan ay nakalaan."
+        }
+    }
+}

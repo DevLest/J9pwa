@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "확인 실패",
+        "play_game": {
+            "invalid": "잘못된 매개변수"
+        },
+        "change_account_info": {
+            "success_message_1": "정보가 성공적으로 수정되었습니다."
+        },
+        "send_reset_password": {
+            "mail_success": "메시지가 전송되었습니다",
+            "mail_error": "초기화 코드 전송 오류",
+            "code_error": "재설정 코드 전송 오류 | 암호 코드 Ivanli",
+            "smtp_catch": "초기화 코드를 보내는 중 오류가 발생했습니다. 오류: ",
+            "check_email": "게스트 계정에 등록되지 않은 이메일"
+        },
+        "verify_reset_password": {
+            "code_expired": "인증 코드가 만료되었습니다! 새 코드를 요청하세요."
+        },
+        "reset_password": {
+            "verification_code_incorrect": "확인 코드가 올바르지 않습니다. 다시 시도하십시오.",
+            "verification_code_error": "코드 확인 오류. 고객 지원팀에 문의하십시오."
+        },
+        "get_transaction": {
+            "empty_date_range": "날짜 범위를 입력하세요",
+            "empty_username": "사용자 이름을 입력하세요"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "계정 데이터가 없습니다!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "날짜 범위를 입력하세요",
+            "empty_username": "사용자 이름을 입력하세요"
+        },
+        "verify_agent": {
+            "empty_agent_name": "에이전트 이름은 비워둘 수 없습니다.",
+            "agent_not_found": "에이전트를 찾을 수 없습니다! 해당하는 경우 올바른 에이전트 이름을 입력하고 없으면 공백으로 두십시오."
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "친구를 찾을 수 없습니다!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "이메일을 입력하세요",
+            "success_email_sent": "확인 이메일이 전송되었습니다",
+            "error_sending_code": "재설정 코드 전송 오류"
+        },
+        "verify_email_code": {
+            "email_verified": "이메일 확인됨",
+            "error_email_verify": "이메일 확인 오류"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "URL 데이터 구문 분석 오류",
+            "error_parsing_url": "URL 구문 분석 오류",
+            "no_redirection_url": "오류! 리디렉션 URL 없음"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "그동안 사용할 수 있는 보너스 없음"
+        },
+        "oauth_register": {
+
+        },
+        "로그인 회원": {
+            "expire_temporary_password": "임시 비밀번호 만료",
+            "invalid_account": "게임 계정 또는 비밀번호가 잘못되었습니다!",
+            "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!"
+        }
+    },
+    "center": {
+        "auth_check": "확인 실패",
+        "invalid_email": "올바른 이메일 주소를 입력하세요",
+        "empty_verification_code": "인증 코드를 입력하세요",
+        "agent_not_found": "에이전트를 찾을 수 없습니다! 해당하는 경우 올바른 에이전트 이름을 입력하고 없으면 공백으로 두십시오.",
+        "taken_member_account": "등록 실패, 회원 계정이 등록되었습니다",
+        "registration_failed": "등록 실패, 관리자에게 문의하세요",
+        "taken_phone_number": "등록 실패, 전화번호가 등록되었습니다",
+        "taken_email": "등록 실패, 이메일이 등록되었습니다",
+        "invalid_account": "게임 계정 또는 비밀번호가 잘못되었습니다!",
+        "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+        "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!",
+        "inconsistent_password": "일치하지 않는 비밀번호를 두 번 입력했습니다.",
+        "re_enter_password": "비밀번호가 요구 사항을 충족하지 않습니다. 다시 입력하십시오.",
+        "success_reset_password": "비밀번호 재설정 완료!!",
+        "withdrawal_password_exists": "출금 비밀번호가 존재합니다",
+        "withdrawal_password_not_exists": "출금 비밀번호가 존재하지 않습니다",
+        "success_set_withdrawal_password": "출금 비밀번호 설정 성공",
+        "success_change_withdrawal_password": "출금 비밀번호 설정 성공",
+        "invalid_old_withdrawal": "이전 출금 비밀번호가 잘못 입력되었습니다",
+        "sending_failed_10_sec": "보내지 못했습니다. 10초 후에 다시 보내주세요.",
+        "operation_failed": "작업이 실패했습니다. 몇 초 후에 다시 시도하십시오.",
+        "error_select_transfer_type": "전송 오류, 전송 유형 선택",
+        "transfer_amount_small": "이체 금액은 1보다 큰 정수여야 합니다.",
+        "success_transfer": "전송에 성공했습니다!",
+        "insufficient_main_account": "주 계정의 잔액 부족",
+        "insufficient_game_account": "게임 계정 잔액 부족",
+        "failed_transfer_contact_cs": "전송 실패, 온라인 고객 서비스에 문의하십시오",
+        "success_transfer_one_click": "클릭 한 번으로 전송 성공!",
+        "empty_opened_province_city": "계정이 개설된 주와 도시는 비워둘 수 없습니다.",
+        "success_bank_information_link": "은행 정보의 새로운 연결이 성공적으로 완료되었습니다.",
+        "many_bound_bank_information": "귀속 은행 정보는 5개를 초과할 수 없습니다.",
+        "failed_information_link_contact_cs": "정보 링크에 실패했습니다. 온라인 고객 서비스에 문의하십시오.",
+        "sending_failed_3_min": "보내지 못했습니다. 3분 후에 다시 보내주세요.",
+        "existing_unreviewed_withdrawal": "검토되지 않은 철회 기록이 이미 존재합니다. 다시 제출하지 마십시오.",
+        "withdawal_anomaly": "철회에 이상이 있습니다. 확인 및 처리를 위해 온라인 고객 서비스에 문의하십시오.",
+        "failed_withdrawal_request_min_withdrawal": "출금 요청 실패, 최소 출금 금액이 유효하지 않음",
+        "failed_withdrawal_request_max_withdrawal": "출금 요청 실패, 최대 출금 금액이 유효하지 않음",
+        "success_withdrawal_request": "출금 요청 성공",
+        "insufficient_main_account_fill":"주 계정의 잔액이 부족합니다. 입력하세요.",
+        "wrong_background_password":"잘못된 백그라운드 비밀번호",
+        "failed_withdrawal_request_contact":"철회 요청 실패, 온라인 고객 서비스에 문의하십시오",
+        "game_maintenance": "유휴 또는 게임 유지 관리",
+        "incorrect_deposit_account": "입금 금액이 잘못되었습니다. 정확한 입금액을 입력하십시오.",
+        "success_deposit_review": "입금이 성공적으로 전송되었으며 검토 중입니다.",
+        "duplicate_deposit_request": "이 프로모션을 이미 요청했습니다. 프로모션 규칙을 검토하십시오.",
+        "failed_submit_deposit_update": "예치금 제출에 실패했습니다. 업데이트하고 다시 제출하십시오.",
+        "sending_failed_30_sec": "보내지 못했습니다. 30초 후에 다시 보내주세요.",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "검토되지 않은 입금 기록이 이미 존재합니다. 다시 제출하지 마십시오.",
+        "expired_verification_reenter": "확인이 만료되었습니다. 돌아가서 새로고침하여 다시 입력하세요.",
+        "success_point_redeem": "포인트가 성공적으로 사용되었습니다. 잔액을 확인하세요.",
+        "point_not_reach_monthly_redemption_limit": "포인트가 지정된 값에 도달하지 않았거나 월 사용 한도에 도달했습니다.",
+        "insufficient_points": "점수 부족 또는 최소값 미만",
+        "incorrect_deposit_bank_reenter": "입금 은행이 올바르지 않습니다. 다시 입력하십시오.",
+        "jumping_for_you": "점프 중입니다. 잠시만 기다려 주세요.",
+        "deposit_channel_maintenance": "입금 채널 유지 관리, 다른 입금 방법 선택",
+        "mobile_payment_maintenance": "모바일 결제 시스템 점검, 다른 방법으로 입금하세요.",
+        "wechat_payment_maintenance": "Wechat 결제 시스템 점검, 다른 방법으로 입금하세요.",
+        "login_auth": {
+            "invalid_account": "게임 계정 또는 비밀번호가 잘못되었습니다!",
+            "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "임시 비밀번호 만료",
+            "invalid_account": "게임 계정 또는 비밀번호가 잘못되었습니다!",
+            "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!"
+        },
+        "send_verification_email": {
+            "enter_email": "이메일을 입력하세요",
+            "success_email_sent": "확인 이메일이 전송되었습니다",
+            "mail_error": "초기화 코드 전송 오류",
+            "smtp_catch": "재설정 코드를 보내는 중 오류가 발생했습니다. 오류: "
+        },
+        "verify_email_code": {
+            "email_verified": "이메일 확인됨",
+            "error_email_verify": "이메일 확인 오류 | 코드가 일치하지 않음"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "확인 실패",
+        "invalid_game_account": "게임 계정 또는 비밀번호가 올바르지 않습니다!",
+        "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+        "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!",
+        "get_transferlist": {
+            "maintenance": "게임 플랫폼 유지 관리"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+           "query_failed": "조회 실패"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "은행 카드 정보를 가져올 수 없습니다."
+        },
+        "bank_unbind": {
+            "fail_unlink": "정보 연결을 해제하지 못했습니다. 다시 시도하거나 온라인으로 고객 서비스에 문의하십시오."
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>은행 유형</td><td>이름</td><td>카드 번호 정보</td></tr>",
+            "header_2": "<tr><td>결제 방법</td><td>AliPay 이름</td><td>Alipay 계정</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "관련 데이터를 찾을 수 없음",
+            "no_records": "기록 없음"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "출금 취소 성공",
+            "fail_cancel_under_review": "실패로 철회 취소，고객 서비스가 이미 검토 중입니다.",
+            "fail_cancel_contact": "실패로 철회 취소，온라인 고객 서비스에 문의"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "3분 후에 적용을 다시 클릭하세요.",
+            "fail_terms_and_condition": "프로모션 이용 약관을 충족할 수 없게 만드는 스포츠 또는 라이브 게임에 베팅했습니다.",
+            "success_rescue_bonus": "구출 보너스 사용에 성공했습니다. 확인하십시오.",
+            "invalid_application_date": "교환 신청 실패, 신청 날짜가 유효하지 않음",
+            "fail_pending_withdrawal": "보류 중인 출금 요청으로 인해 구조 보너스 요청이 거부되었습니다.",
+            "fail_not_meet_terms_and_condition": "구출 보너스 요청이 실패했습니다. 제공 조건을 충족할 수 없습니다.",
+            "fail_max_balance": "총 계정 잔액이 15MXN보다 커서 구조 보너스 요청이 실패했습니다.",
+            "fail_min_loss_profit": "구조 보너스 요청이 실패했습니다. 최소 손실 이익은 900MXN보다 커야 합니다.",
+            "bonus_claimed_yesterday": "어제 구조 보너스가 청구되었습니다. 기록을 확인하세요.",
+            "fail_refer_terms_and_condition": "구출 보너스 요청이 실패했습니다. 제공 약관을 참조하십시오.",
+            "system_error": "시스템 오류, 다시 로그인하십시오"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "데이터 삭제 성공",
+            "faile_delete": "데이터를 삭제하지 못했습니다. 새로고침하고 다시 시도하세요."
+        },
+        "syn_password": {
+            "unactivated_function": "기능이 활성화되지 않았습니다."
+        },
+        "get_number": {
+            "query_fail": "조회 실패",
+            "water_running": " 물 흐르기"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "할인 요청 성공",
+            "condition_not_met": "조건이 충족되지 않거나 적용되지 않음",
+            "check_official_website": "지원 시간 전에 공식 웹 사이트에서 자세한 내용을 확인하십시오.",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하십시오."
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "축하합니다. 게임이 성공적으로 잠금 해제되었습니다!",
+            "maintenance": "죄송합니다. 게임 플랫폼이 점검 중입니다....",
+            "fail_unlock_contact": "게임 잠금 해제에 실패했습니다. 고객 서비스에 문의하십시오.",
+            "unknown_error": "알 수 없는 오류입니다. 고객 서비스에 문의하십시오.",
+            "system_error": "시스템 오류, 다시 로그인하십시오"
+        },
+        "gameapi_active": {
+            "success_activated": "축하합니다. 게임이 성공적으로 활성화되었습니다!",
+            "maintenance": "죄송합니다. 게임 플랫폼이 점검 중입니다....",
+            "account_activated": "계정이 활성화되었습니다",
+            "unknown_error": "알 수 없는 오류입니다. 고객 서비스에 문의하십시오.",
+            "system_error": "시스템 오류, 다시 로그인하십시오"
+        },
+        "gameapi_password": {
+            "success_sync": "축하합니다. 성공적으로 비밀번호를 동기화했습니다!",
+            "maintenance": "죄송합니다. 게임 플랫폼이 점검 중입니다....",
+            "fail_sync_contact": "비밀번호를 동기화하지 못했습니다. 고객 서비스에 문의하십시오.",
+            "unknown_error": "알 수 없는 오류입니다. 고객 서비스에 문의하십시오.",
+            "system_error": "시스템 오류, 다시 로그인하십시오"
+        },
+        "gameapi_logout": {
+            "success_offline": "축하합니다. 게임이 성공적으로 오프라인 상태가 되었습니다!",
+            "maintenance": "죄송합니다. 게임 플랫폼이 점검 중입니다....",
+            "fail_disconnect_contact": "강제로 연결을 끊을 수 없습니다. 고객 서비스에 문의하십시오.",
+            "unknown_error": "알 수 없는 오류입니다. 고객 서비스에 문의하십시오.",
+            "system_error": "시스템 오류, 다시 로그인하십시오"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "수령 완료! 잔액을 확인하세요",
+            "fail_claim_retry": "청구할 수 없습니다. 나중에 다시 시도하십시오.",
+            "fail_claim_no_amount": "금액이 0이며 청구할 수 없습니다.",
+            "fail_claim_status_incorrect": "상태가 올바르지 않습니다. 업데이트하고 수신하려면 클릭하십시오.",
+            "succes_receive": "축하합니다. 성공적으로 수신했습니다!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "2분 후 적용 클릭",
+            "success_request": "축하합니다. 요청이 성공했습니다. 할인이 자동으로 게임 플랫폼으로 이전되었습니다.",
+            "fail_request_not_meet_condition": "예치금 총액이 요청 조건을 충족하지 않습니다.",
+            "duplicate_request": "이 제안을 이미 요청했습니다. 내일 다시 오세요.",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하십시오",
+            "event_not_started": "이벤트가 시작되지 않았거나 완료되었습니다."
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>오늘의 할인 기록</td></tr><tr><td>빈도</td><td>할인</td><td>총액 입금</td><td>신청 시간</td ></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>오늘의 할인 기록</td></tr><td>빈도</td><td>총 베팅 금액</td><td> 적용 시간 </td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "2분 후 적용 클릭",
+            "success_request": "축하합니다. 요청이 성공했습니다. 할인이 자동으로 게임 플랫폼으로 이전되었습니다.",
+            "fail_request_not_meet_condition": "当日 QT에 베팅한 총 금액이 애플리케이션의 요구 사항을 충족하지 않습니다.",
+            "duplicate_request": "이 제안을 이미 요청했습니다. 내일 다시 오세요.",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하십시오",
+            "event_not_started": "이벤트가 시작되지 않았거나 완료되었습니다."
+        },
+        "get_prize_new": {
+            "go_back": "$left_time 잠시 후 미트볼 먹기로 돌아가세요.",
+            "today_deposit": "오늘의 예치금은 $money_arr[$name] 이 미트볼 한 접시를 먹기에 충분합니다.",
+            "incorrect_operation": "작업이 잘못되었습니다. 페이지를 새로고침하세요.",
+            "ate_dumpling": "이 만두를 먹었습니다",
+            "not_enough_deposit": "예치금이 충분하지 않습니다",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하십시오.",
+            "event_not_started": "이벤트가 아직 시작되지 않았습니다."
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>최근 출시 기록</th></tr><tr><th>선물 금액 유형</th><th>선물 금액</th> <th>출시 시간</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>발행량(USDT)</td><td>발행 시간</td></tr>",
+            "no_record": "최근 기록 없음"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "죄송합니다. 이제 임시 회원이 되어 이 이벤트에 참여할 수 없습니다.",
+            "received_gift": "앱에서 행운의 선물을 받았습니다",
+            "success_receive": "성공적으로 수신했습니다! 잔액을 확인하세요",
+            "received_lucky_gift": "잘못된 앱에서 행운의 선물을 받았습니다",
+            "system_busy": "시스템이 사용 중입니다. 나중에 다시 시도하십시오.",
+            "unknown_error": "알 수 없는 오류가 발생했습니다. 나중에 다시 시도하십시오.",
+            "event_not_started": "이벤트가 아직 시작되지 않았습니다.",
+            "event_ended": "이벤트가 종료되었습니다."
+        },
+        "app_pay_give": {
+            "application_deposit_received": "오늘 신청 입금 완료, 행운의 선물",
+            "success_receive": "성공적으로 수신했습니다! 잔액을 확인하세요",
+            "received_lucky_gift": "오늘 앱을 통해 행운의 선물을 입금하셨습니다.",
+            "system_busy": "시스템이 사용 중입니다. 나중에 다시 시도하십시오.",
+            "app_failed_did_not_use_app": "신청이 실패했습니다. 오늘 입금하기 위해 APP를 사용하지 않았습니다.",
+            "unknown_error": "알 수 없는 오류가 발생했습니다. 나중에 다시 시도하십시오.",
+            "event_not_started": "이벤트가 아직 시작되지 않았습니다.",
+            "event_ended": "이벤트가 종료되었습니다."
+        },
+        "checkdeposit": {
+            "select_card": "<p>안녕하세요, 먼저 은행 카드를 선택하세요</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "입금 요청이 성공적으로 취소되었습니다!",
+            "fail_undo": "취소 실패, 새로 고침 후 다시 시도하십시오."
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "선물 금액이 0이며 청구할 수 없습니다.",
+            "incorrect_status": "상태가 올바르지 않습니다. 업데이트하고 수신하려면 클릭하세요",
+            "success_transfer": "전송에 성공했습니다!",
+            "could_not_receive": "받을 수 없습니다. 업데이트하고 수신하려면 클릭하세요",
+            "login_info_expired": "로그인 정보가 만료되었습니다. 다시 로그인하십시오."
+        },
+        "get_bet": {
+            "calculating_water_flow": "물 흐름 계산 시작",
+            "event_ended": "이 이벤트는 종료되었습니다",
+            "enter_first": "먼저 입력하세요"
+        },
+        "change_information": {
+            "incorrect_verification": "확인 코드가 올바르지 않습니다. 다시 시도하십시오.",
+            "success_verification": "인증 성공",
+            "failed_verification": "확인 실패"
+        },
+        "change_phone_verify": {
+            "success_verification": "인증 성공",
+            "failed_verification": "확인 실패"
+        },
+        "verification_code": {
+            "number_busy": "이 번호는 이미 사용 중입니다. 새 번호로 바꾸십시오.",
+            "unable_open": "파일을 열 수 없습니다!",
+            "success_submit": "제출 성공"
+        },
+        "get_vip_level": {
+            "failed_query": "조회 실패"
+        },
+        "upload_pictures": {
+            "success": "성공",
+            "illegal_file": "잘못된 파일 형식"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "성공"
+        },
+        "auto_transfer_in": {
+            "success": "성공"
+        },
+        "agent_member_deposit": {
+            "no_data": "관련 데이터를 찾을 수 없음"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "관련 데이터를 찾을 수 없음"
+        },
+        "agent_member_fanshui": {
+            "no_data": "관련 데이터를 찾을 수 없음"
+        },
+        "agent_member_promotions": {
+            "no_data": "관련 데이터를 찾을 수 없음"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "성공"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "반복, 변경해주세요"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "성공"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "확인 실패",
+        "invalid_game_account": "게임 계정 또는 비밀번호가 잘못되었습니다!",
+        "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+        "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "실패한 제안"
+        },
+        "clear_cache": {
+            "complete": "업데이트 완료",
+            "fail": "업데이트 실패"
+        },
+        "logout": {
+            "account_closed": "귀하의 계정이 폐쇄되었습니다",
+            "no_account": "로그인한 계정이 감지되지 않음"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "실패한 제안"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "실패한 제안"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "할인 없음"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "확인 실패",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType이 정의되지 않음",
+            "ensure_bank_support": "사용할 은행 카드가 이 결제 수단을 지원하는지 확인하세요.",
+            "paypal_deposit": "Paypal을 통해 입금하려고 합니다. 이 서비스를 사용하려면 Paypal로 연결됩니다.",
+            "usdt_deposit": "USDT 전송을 통해 입금하려고 합니다. 사용할 올바른 네트워크와 체인을 선택하십시오."
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "성공!",
+            "invalid_game_account": "게임 계정 또는 비밀번호가 잘못되었습니다!",
+            "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+            "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "U Sports 회원님께: 은행의 지능형 데이터 시스템과 Alipay의 공식적인 위험 통제가 더욱 강화됨에 따라 당사는 충전 방법을 지속적으로 업데이트하고 위험 통제를 피하기 위해 최선을 다하고 있습니다. 결제가 위험에 노출될 경우 제어, 모바일 뱅킹을 사용하여 지불을 이체하거나 가상 화폐 입금을 선택하십시오."
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "할인 없음"
+        },
+        "submit_autopromotion": {
+            "success_application": "신청이 성공했습니다",
+            "not_made_deposit": "3분 이내에 입금하지 않았습니다.",
+            "entered_game_again": "입금 후 게임에 다시 입장하셨습니다. 프로모션을 신청하기 전에 게임에 입장하지 마십시오.",
+            "already_applied": "이 프로모션에 이미 신청했습니다",
+            "already_applied_discount": "이 예치금은 이미 할인이 적용되었습니다. 다시 예치하십시오."
+        },
+        "checkdeposit": {
+            "no_data": "데이터를 찾을 수 없음"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "입금 금액이 잘못되었습니다. 정확한 입금액을 입력하세요.",
+            "deposit_bank_incorrect":"입금 은행이 올바르지 않습니다. 다시 입력하십시오.",
+            "channel_maintenance": "입금 채널 유지 관리, 다른 입금 방법 선택",
+            "verification_expired": "확인이 만료되었습니다. 돌아가서 새로고침하여 다시 입력하세요.",
+            "already_requested_promotion": "이 프로모션을 이미 요청했습니다. 프로모션 규칙을 검토하세요.",
+            "fail_submit_deposit": "예치금 제출에 실패했습니다. 업데이트하고 다시 제출하십시오."
+        },
+        "banktransfer": {
+            "error_sending": "보내기 오류, 30초 후에 다시 보내주세요",
+            "incorrect_amount": "입금 금액이 잘못되었습니다. 정확한 입금액을 입력하세요.",
+            "unreviewed_deposit": "검토되지 않은 입금 기록이 이미 존재합니다. 다시 제출하지 마십시오.",
+            "verification_expired": "확인이 만료되었습니다. 돌아가서 새로고침하여 다시 입력하세요.",
+            "already_requested_promotion": "이 프로모션을 이미 요청했습니다. 프로모션 규칙을 검토하세요.",
+            "no_card": "현재 사용할 수 있는 카드가 없습니다. 나중에 다시 시도하십시오."
+        },
+        "canceldeposit": {
+            "success_cancel": "입금 요청이 성공적으로 취소되었습니다!",
+            "failed_undo": "취소 실패, 새로 고침 후 다시 시도하십시오."
+        },
+        "IPThrottling": {
+            "throttle_message": "안녕하세요, 더 나은 사용자 경험을 제공하고, 계정의 보안을 유지하고, IP 모니터링을 방지하기 위해. 마지막 요청은 %i분 %s초 전이었습니다. 재충전 요청을 하기 전에 5분을 기다리십시오. 또는 온라인 고객 서비스에 도움을 요청하십시오. 즐거운 게임하세요!"
+        },
+        "networkList": {
+            "error": "API 오류"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "확인 실패",
+        "invalid_game_account": "게임 계정 또는 비밀번호가 올바르지 않습니다!",
+        "account_locked": "계정이 잠겨 있습니다. 온라인 고객 서비스에 문의하세요!",
+        "system_error": "시스템 오류입니다. 나중에 다시 시도하세요!",
+        "set_agent_remark": {
+            "success": "성공"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "확인 실패",
+        "agrecord": {
+           
+        },
+        "get_phone_account": {
+            "no_account": "오류, 해당 계정이 없습니다."
+        }
+    },
+    "record": {
+        "verification_failed": "확인 실패",
+        "agrecord": {
+            "no_data": "데이터 없음"
+        },
+        "uniterecord": {
+            "no_data": "데이터 없음"
+        },
+        "btirecord": {
+            "no_data": "데이터 없음"
+        },
+        "imrecord": {
+            "no_data": "데이터 없음"
+        },
+        "imnativerecord": {
+            "no_data": "데이터 없음"
+        },
+        "ibcrecord": {
+            "no_data": "데이터 없음"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+            
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "데이터 없음"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+            
+        },
+        "kychessrecord": {
+            "no_data": "데이터 없음"
+        },
+        "imdjrecord": {
+            "no_data": "데이터 없음"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "데이터 없음"
+        },
+        "gdrecord": {
+            "no_data": "데이터 없음"
+        },
+        "abrecord": {
+            "no_data": "데이터 없음"
+        },
+        "ptrecord": {
+            "no_data": "데이터 없음"
+        },
+        "mgrecord": {
+            "no_data": "데이터 없음"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "데이터 없음"
+        },
+        "vrrecord": {
+            "no_data": "데이터 없음"
+        },
+        "cmdrecord": {
+            "no_data": "데이터 없음"
+        },
+        "tcg_sbo_record": {
+            "error": "오류",
+            "no_data": "데이터 없음"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "확인 실패",
+        "unsuccessful_offer": "실패한 제안"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "request": {
+        "send_reset_password": {
+            "subject": "Hesap Parola Sıfırlama",
+            "body_1": "Merhaba",
+            "body_2": "999 Oyun şifrenizi mi unuttunuz? Güvenlik nedeniyle sizin için geçici bir şifre oluşturduk.",
+            "body_3": "999 Game'e bir sonraki girişinizde geçici şifrenizi değiştirmeyi unutmayın.",
+            "body_4": "Şifreyi değiştir",
+            "body_5": "Şifrenizi değiştirmeyi denemediyseniz, lütfen hemen adresinden müşteri hizmetleriyle iletişime geçin",
+            "body_6": "Bu hizmet e-postası, 999Game hesabınızla ilgili temel bilgileri içerir. 999Game'in politikası, bireylerin gizliliğine saygı duymak ve bunu korumaktır. Gizlilik Politikamızı okuyun.",
+            "body_7": "Tüm hakları saklıdır."
+        },
+        "send_verification_email": {
+            "subject": "E-posta Doğrulaması",
+            "body_1": "Doğrulama Kodu",
+            "body_2": "Bu doğrulama kodu,<br>kullanıcının doğrulanması için tasarlanmıştır.",
+            "body_3": "Bu talebi siz yapmadıysanız,<br>lütfen support@999.game adresinden hemen müşteri hizmetleri ile iletişime geçin.",
+            "body_4": "Bu hizmet e-postası, 999Game hesabınızla ilgili temel bilgileri içerir. 999Game'in politikası, bireylerin gizliliğine saygı duymak ve bunu korumaktır. Gizlilik Politikamızı okuyun.",
+            "body_5": "Tüm hakları saklıdır."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Acele edin! Bugün size özel sınırsız %180 bonus var!",
+            "body_1": "Yeni ve karmaşık olmayan 999Game'in keyfini çıkarın",
+            "body_2": "Bu 2022'yi sizin için iyileştiriyoruz ve asıl amacımız, keyfini sonuna kadar çıkarmanız.",
+            "body_3": "Unutmayın, 999Game'deki kullanıcı adınız:",
+            "body_4": "Bunun için mümkün olan en iyi şekilde başlamanızı istiyoruz, en az 10USDT'lik ilk para yatırma işleminizi yapın ve size 600USDT'ye kadar %180 geri vereceğiz.",
+            "body_5": "Bu hizmet e-postası, 999Game hesabınızla ilgili temel bilgileri içerir. 999Game'in politikası, bireylerin gizliliğine saygı duymak ve korumaktır. Gizlilik Politikamızı okuyun.",
+            "body_6": "Tüm hakları saklıdır."
+        }
+    }
+}

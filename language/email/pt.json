@@ -1,0 +1,33 @@
+{
+    "request": {
+        "send_reset_password": {
+            "subject": "Redefinir Senha da Conta",
+            "body_1": "Olá ",
+            "body_2": "Esqueceu sua senha do jogo 999? Por motivos de segurança, geramos uma senha temporária para você.",
+            "body_3": "Lembre-se de alterar sua senha temporária na próxima vez que entrar no 999 Game.",
+            "body_4": "Alterar senha",
+            "body_5": "Se você não tentou alterar sua senha, entre em contato com o atendimento ao cliente imediatamente em",
+            "body_6": "Este e-mail de serviço contém informações essenciais relacionadas à sua conta do 999Game. A política do 999Game é respeitar e proteger a privacidade dos indivíduos. Leia nossa Política de Privacidade.",
+            "body_7": "Todos os direitos reservados."
+        },
+        "send_verification_email": {
+            "subject": "Verificação de e-mail",
+            "body_1": "Código de Verificação",
+            "body_2": "Este código de verificação destina-se à<br>validação do usuário.",
+            "body_3": "Se você não fez esta solicitação,<br>entre em contato com o atendimento ao cliente imediatamente em support@999.game.",
+            "body_4": "Este e-mail de serviço contém informações essenciais relacionadas à sua conta do 999Game. A política do 999Game é respeitar e proteger a privacidade dos indivíduos. Leia nossa Política de Privacidade.",
+            "body_5": "Todos os direitos reservados."
+        }
+    },
+    "center": {
+        "sendWelcomeEmail": {
+            "subject": "Rápido! Há um bônus especial ilimitado de 180% para você hoje!",
+            "body_1": "Aproveite o novo e descomplicado 999Game",
+            "body_2": "Este 2022 melhoramos para você e nosso principal objetivo é que você se divirta ao máximo.",
+            "body_3": "Lembre-se, seu nome de usuário no 999Game é:",
+            "body_4": "Queremos que você comece da melhor maneira possível para isso, faça seu primeiro depósito de pelo menos 10USDT e nós lhe daremos 180% de volta até 600USDT.",
+            "body_5": "Este e-mail de serviço contém informações essenciais relacionadas à sua conta do 999Game. A política do 999Game é respeitar e proteger a privacidade dos indivíduos. Leia nossa Política de Privacidade.",
+            "body_6": "Todos os direitos reservados."
+        }
+    }
+}

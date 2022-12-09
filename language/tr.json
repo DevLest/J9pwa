@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "Doğrulama başarısız oldu",
+        "play_game": {
+            "invalid": "Geçersiz Parametreler"
+        },
+        "change_account_info": {
+            "success_message_1": "Bilgi başarıyla değiştirildi"
+        },
+        "send_reset_password": {
+            "mail_success": "Mesaj gönderildi",
+            "mail_error": "Sıfırlama kodu gönderiminde hata",
+            "code_error": "Sıfırlama kodu göndermede hata | Şifre kodu Ivanlid",
+            "smtp_catch": "Sıfırlama kodu göndermede hata. Hata: ",
+            "check_email": "E-posta herhangi bir misafir hesabında kayıtlı değil"
+        },
+        "verify_reset_password": {
+            "code_expired": "Doğrulama kodunun süresi doldu! Lütfen yeni bir kod isteyin."
+        },
+        "reset_password": {
+            "verification_code_incorrect": "Doğrulama kodu yanlış, lütfen tekrar deneyin",
+            "verification_code_error": "Kod doğrulamada hata. Lütfen müşteri desteği ile iletişime geçin."
+        },
+        "get_transaction": {
+            "empty_date_range": "Lütfen tarih aralığını giriniz",
+            "empty_username": "Lütfen kullanıcı adını giriniz"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "Hesap verisi yok!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "Lütfen tarih aralığını giriniz",
+            "empty_username": "Lütfen kullanıcı adını giriniz"
+        },
+        "verify_agent": {
+            "empty_agent_name": "Ajan adı boş olamaz",
+            "agent_not_found": "Temsilci bulunamadı! Varsa doğru acente adını girin, yoksa boş bırakın."
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "Arkadaş bulunamadı!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "Lütfen Email giriniz",
+            "success_email_sent": "Doğrulama e-postası gönderildi",
+            "error_sending_code": "Sıfırlama kodu gönderilirken hata oluştu"
+        },
+        "verify_email_code": {
+            "email_verified": "E-posta Doğrulandı",
+            "error_email_verify": "E-posta Doğrulanırken Hata"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "URL Verileri ayrıştırılırken hata oluştu",
+            "error_parsing_url": "URL ayrıştırma hatası",
+            "no_redirection_url": "Hata! Yönlendirme URL'si yok"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "Bu arada bonus yok"
+        },
+        "oauth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "Geçici parolanın süresi doldu",
+            "invalid_account": "Oyun hesabı veya şifresi yanlış!",
+            "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+            "system_error": "Sistem hatası. Daha sonra tekrar deneyin!"
+        }
+    },
+    "center": {
+        "auth_check": "Doğrulama başarısız oldu",
+        "invalid_email": "Lütfen geçerli bir e-posta adresi girin",
+        "empty_verification_code": "Lütfen doğrulama kodunu girin",
+        "agent_not_found": "Temsilci bulunamadı! Varsa doğru acente adını girin, yoksa boş bırakın.",
+        "taken_member_account": "Kayıt başarısız oldu, üye hesabı kaydedildi",
+        "registration_failed": "Kayıt başarısız oldu, Lütfen Yönetici ile iletişime geçin",
+        "taken_phone_number": "Kayıt başarısız oldu, telefon numarası kaydedildi",
+        "taken_email": "Kayıt başarısız oldu, e-posta kaydedildi",
+        "invalid_account": "Oyun hesabı veya şifresi yanlış!",
+        "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+        "system_error": "Sistem hatası. Daha sonra tekrar deneyin!",
+        "inconsistent_password": "İki kez tutarsız şifre girildi",
+        "re_enter_password": "Şifre gereksinimleri karşılamıyor, lütfen tekrar girin",
+        "success_reset_password": "Parola sıfırlama tamamlandı!!",
+        "withdrawal_password_exists": "Geri çekme şifresi var",
+        "withdrawal_password_not_exists": "Çekme şifresi mevcut değil",
+        "success_set_withdrawal_password": "Para çekme şifresi başarıyla ayarlandı",
+        "success_change_withdrawal_password": "Para çekme şifresi başarıyla ayarlandı",
+        "invalid_old_withdrawal": "Eski para çekme şifresi yanlış girilmiş",
+        "sending_failed_10_sec": "Gönderilemedi, lütfen 10 saniye sonra tekrar gönderin",
+        "process_failed": "İşlem başarısız oldu, lütfen birkaç saniye bekleyin ve tekrar deneyin",
+        "error_select_transfer_type": "Gönderim hatası, aktarım türünü seçin",
+        "transfer_amount_small": "Transfer tutarı 1'den büyük bir tamsayı olmalıdır",
+        "success_transfer": "Aktarım başarılı oldu!",
+        "insufficient_main_account": "Ana hesapta yetersiz bakiye",
+        "insufficient_game_account": "Oyun hesabında yetersiz bakiye",
+        "failed_transfer_contact_cs": "Aktarım başarısız oldu, lütfen çevrimiçi müşteri hizmetleriyle iletişime geçin",
+        "success_transfer_one_click": "Tek tıklamayla başarılı aktarım!",
+        "empty_opened_province_city": "Hesabın açıldığı il ve şehir boş olamaz",
+        "success_bank_information_link": "Banka bilgilerinin yeni bağlantısı başarıyla",
+        "many_bound_bank_information": "Bağlı banka bilgileri 5 adeti geçemez",
+        "failed_information_link_contact_cs": "Bilgi bağlantısı başarısız oldu, lütfen çevrimiçi müşteri hizmetleriyle iletişime geçin",
+        "sending_failed_3_min": "Gönderilemedi, lütfen 3 dakika sonra tekrar gönderin",
+        "existing_unreviewed_withdrawal": "İncelenmemiş bir para çekme kaydı zaten var, lütfen yeniden göndermeyin",
+        "withdawal_anomaly": "Para çekme işleminizde bir anormallik var, doğrulamak ve işleme koymak için lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin",
+        "failed_withdrawal_request_min_withdrawal": "Para çekme talebi başarısız oldu, Minimum para çekme tutarı geçersiz",
+        "failed_withdrawal_request_max_withdrawal": "Para çekme talebi başarısız oldu, Maksimum para çekme tutarı geçersiz",
+        "success_withdrawal_request": "Başarılı para çekme talebi",
+        "insufficient_main_account_fill":"Ana hesapta yetersiz bakiye，Lütfen doldurun",
+        "wrong_background_password":"Arka plan şifresi yanlış",
+        "failed_withdrawal_request_contact":"Para çekme talebi başarısız oldu, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin",
+        "game_maintenance": "Boşta veya oyun bakımı",
+        "incorrect_deposit_account": "Yatırılan tutar yanlış, lütfen doğru yatırılan tutarı girin",
+        "success_deposit_review": "Ödeme başarıyla gönderildi ve inceleniyor",
+        "duplicate_deposit_request": "Bu promosyonu zaten talep ettiniz, lütfen promosyon kurallarını inceleyin",
+        "failed_submit_deposit_update": "Ödeme gönderilemedi, lütfen güncelleyin ve yeniden gönderin",
+        "sending_failed_30_sec": "Gönderilemedi, lütfen 30 saniye sonra tekrar gönderin",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "İncelenmemiş bir para yatırma kaydı zaten var, lütfen yeniden göndermeyin",
+        "expired_verification_reenter": "Doğrulamanın süresi doldu, lütfen geri dönün ve yeniden girmek için yenileyin",
+        "success_point_redeem": "Puanlar başarıyla kullanıldı, lütfen bakiyeyi kontrol edin",
+        "point_not_reach_monthly_redemption_limit": "Puanlar belirtilen değere ulaşmadı veya aylık kullanım limitine ulaşıldı",
+        "insufficient_points": "Yetersiz puan veya minimum değerin altında",
+        "incorrect_deposit_bank_reenter": "Mevduat bankası yanlış, lütfen yeniden girin.",
+        "jumping_for_you": "Sizin için atlıyoruz, lütfen bekleyin",
+        "deposit_channel_maintenance": "Kanal bakımını yatırın, başka bir para yatırma yöntemi seçin",
+        "mobile_payment_maintenance": "Mobil ödeme sistemi bakımı, para yatırmak için diğer yöntemleri kullanın.",
+        "wechat_payment_maintenance": "Wechat ödeme sistemi bakımı, para yatırmak için diğer yöntemleri kullanın.",
+        "login_auth": {
+            "invalid_account": "Oyun hesabı veya şifresi yanlış!",
+            "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+            "system_error": "Sistem hatası. Daha sonra tekrar deneyin!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "Geçici parolanın süresi doldu",
+            "invalid_account": "Oyun hesabı veya şifresi yanlış!",
+            "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+            "system_error": "Sistem hatası. Daha sonra tekrar deneyin!"
+        },
+        "send_verification_email": {
+            "enter_email": "Lütfen Email giriniz",
+            "success_email_sent": "Doğrulama e-postası gönderildi",
+            "mail_error": "Sıfırlama kodu gönderiminde hata",
+            "smtp_catch": "Sıfırlama kodu gönderilirken hata oluştu. Hata: "
+        },
+        "verify_email_code": {
+            "email_verified": "E-posta Doğrulandı",
+            "error_email_verify": "E-posta Doğrulanırken Hata | Kod eşleşmedi"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "Doğrulama başarısız oldu",
+        "invalid_game_account": "Oyun hesabı veya şifresi yanlış!",
+        "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+        "system_error": "Sistem hatası. Daha sonra tekrar deneyin!",
+        "get_transferlist": {
+            "bakım": "Oyun platformu bakımı"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "Sorgu başarısız oldu"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "Banka kartı bilgileri alınamadı"
+        },
+        "bank_unbind": {
+            "fail_unlink": "Bilgilerin bağlantısı kaldırılamadı, lütfen tekrar deneyin veya çevrimiçi müşteri hizmetleriyle iletişime geçin"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>Banka Türü</td><td>Ad</td><td>Kart numarası bilgisi</td></tr>",
+            "header_2": "<tr><td>Ödeme Yöntemleri</td><td>AliPay Adı</td><td>Alipay Hesabı</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "İlgili veri bulunamadı",
+            "no_records": "Kayıt yok"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "Çekmeyi başarıyla iptal et",
+            "fail_cancel_under_review": "Başarısız olarak para çekmeyi iptal et，Müşteri hizmetleri zaten inceleniyor.",
+            "fail_cancel_contact": "Başarısız olarak para çekmeyi iptal et，Çevrimiçi müşteri hizmetleriyle iletişime geç"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "3 dakika sonra tekrar Apply'a tıklayın.",
+            "fail_terms_and_condition": "Teklifin hüküm ve koşullarını karşılayamayacak şekilde spor veya canlı oyunlara bahis oynuyorsunuz.",
+            "success_rescue_bonus": "Kurtarma Bonusu kullanımı başarılı, lütfen kontrol edin",
+            "invalid_application_date": "İade başvurusu başarısız oldu, başvuru tarihi geçersiz",
+            "fail_pending_withdrawal": "Bekleyen bir para çekme talebi nedeniyle kurtarma bonusu talebi reddedildi",
+            "fail_not_meet_terms_and_condition": "Kurtarma bonusu talebi başarısız oldu. Teklifin şart ve koşulları karşılanamadı",
+            "fail_max_balance": "Toplam hesap bakiyeniz 15MXN'den fazla olduğu için kurtarma bonusu talebi başarısız oldu",
+            "fail_min_loss_profit": "Kurtarma bonusu talebi başarısız oldu. Minimum kayıp karı 900MXN'den büyük olmalıdır",
+            "bonus_claimed_yesterday": "Kurtarma bonusu dün alındı, lütfen kaydı kontrol edin",
+            "fail_refer_terms_and_condition": "Kurtarma bonusu talebi başarısız oldu. Lütfen teklifin hüküm ve koşullarına bakın",
+            "system_error": "Sistem hatası, lütfen tekrar giriş yapın"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "Verileri başarıyla sil",
+            "faile_delete": "Veriler silinemedi, lütfen yenileyin ve tekrar deneyin"
+        },
+        "syn_password": {
+            "unactived_function": "İşlev etkinleştirilmemiş."
+        },
+        "get_number": {
+            "query_fail": "Sorgu başarısız oldu",
+            "water_running": " Su akıyor"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "İndirim talebi başarılı",
+            "condition_not_met": "Koşullar karşılanmadı veya uygulanmadı",
+            "check_official_website": "Başvuru saatinden önce lütfen daha fazla ayrıntı için resmi web sitesini kontrol edin.",
+            "system_error": "Sistem hatası. Daha sonra tekrar deneyin"
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "Tebrikler, oyun başarıyla açıldı!",
+            "maintenance": "Üzgünüz, oyun platformu bakımda......",
+            "fail_unlock_contact": "Oyun kilidi açılamadı, lütfen müşteri hizmetleri ile iletişime geçin",
+            "unknown_error": "Bilinmeyen hata, lütfen müşteri hizmetleri ile iletişime geçin",
+            "system_error": "Sistem hatası, lütfen tekrar giriş yapın"
+        },
+        "gameapi_aktif": {
+            "success_actived": "Tebrikler, oyun başarıyla etkinleştirildi!",
+            "maintenance": "Üzgünüz, oyun platformu bakımda......",
+            "account_actived": "Hesap etkinleştirildi",
+            "unknown_error": "Bilinmeyen hata, lütfen müşteri hizmetleri ile iletişime geçin",
+            "system_error": "Sistem hatası, lütfen tekrar giriş yapın"
+        },
+        "gameapi_password": {
+            "success_sync": "Tebrikler, şifreleri başarıyla senkronize ettiniz!",
+            "maintenance": "Üzgünüz, oyun platformu bakımda......",
+            "fail_sync_contact": "Şifre senkronize edilemedi, lütfen müşteri hizmetleri ile iletişime geçin",
+            "unknown_error": "Bilinmeyen hata, lütfen müşteri hizmetleri ile iletişime geçin",
+            "system_error": "Sistem hatası, lütfen tekrar giriş yapın"
+        },
+        "gameapi_logout": {
+            "success_offline": "Tebrikler, oyun başarıyla çevrimdışı olmaya zorlandı!",
+            "maintenance": "Üzgünüz, oyun platformu bakımda......",
+            "fail_disconnect_contact": "Bağlantı kesilmeye zorlanamadı, lütfen müşteri hizmetleri ile iletişime geçin",
+            "unknown_error": "Bilinmeyen hata, lütfen müşteri hizmetleri ile iletişime geçin",
+            "system_error": "Sistem hatası, lütfen tekrar giriş yapın"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "Alım tamamlandı! Lütfen bakiyeyi kontrol edin",
+            "fail_claim_retry": "Talep edilemedi, lütfen daha sonra tekrar deneyin",
+            "fail_claim_no_amount": "Miktar 0'dır ve talep edilemez",
+            "fail_claim_status_incorrect": "Durum yanlış, lütfen güncelleyin ve almak için tıklayın",
+            "succes_receive": "Tebrikler, başarıyla aldınız!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "2 dakika sonra Uygula'ya tıklayın",
+            "success_request": "Tebrikler, istek başarılı oldu, indirim otomatik olarak oyun platformuna aktarıldı.",
+            "fail_request_not_meet_condition": "Yatırılan toplam tutar, talep koşullarını karşılamıyor",
+            "duplicate_request": "Bu teklifi zaten istediniz, yarın tekrar gelin",
+            "system_error": "Sistem hatası. Lütfen daha sonra tekrar deneyin",
+            "event_not_started": "Etkinlik başlamadı veya bitmedi"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>Bugünün indirim kaydı</td></tr><tr><td>Sıklık</td><td>İndirim</td><td>Toplam para yatırma</td><td>Uygulama zamanı</td ></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>Bugünün indirim kaydı</td></tr><td>Sıklık</td><td>Bahis edilen toplam tutar</td><td> Başvuru zamanı </td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "2 dakika sonra Uygula'ya tıklayın",
+            "success_request": "Tebrikler, istek başarılı oldu, indirim otomatik olarak oyun platformuna aktarıldı.",
+            "fail_request_not_meet_condition": "QT'ye yatırılan toplam miktar, uygulamanın gereksinimlerini karşılamıyor",
+            "duplicate_request": "Bu teklifi zaten istediniz, yarın tekrar gelin",
+            "system_error": "Sistem hatası. Lütfen daha sonra tekrar deneyin",
+            "event_not_started": "Etkinlik başlamadı veya bitmedi"
+        },
+        "get_prize_new": {
+            "go_back": "Lütfen $left_time Saniyeler içinde köfte yemeye geri dönün.",
+            "today_deposit": "Bu köfte tabağını yemek için bugünün para yatırma tutarı $money_arr[$name] değerinden fazla",
+            "incorrect_operation": "İşleminiz yanlış, lütfen sayfayı yenileyin.",
+            "ate_dumpling": "Bu mantıyı yediniz",
+            "not_enough_deposit": "Yatırdığınız para yeterli değil",
+            "system_error": "Sistem hatası. Daha sonra tekrar deneyin",
+            "event_not_started": "Etkinlik henüz başlamadı."
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>Son sürüm kayıtları</th></tr><tr><th>Hediye türü</th><th>Hediye tutarı</th> <th>Yayın zamanı</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>Çıkarılan miktar(USDT)</td><td>Çıkış zamanı</td></tr>",
+            "no_record": "Son kayıt yok"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "Üzgünüz, artık geçici bir üyesiniz ve bu etkinliğe katılamazsınız.",
+            "required_gift": "APP'den şans hediyesi aldınız",
+            "success_receive": "Başarıyla alındı! Lütfen bakiyeyi kontrol edin",
+            "required_lucky_gift": "Geçersiz uygulamadan şanslı bir hediye aldınız",
+            "system_busy": "Sistem meşgul, lütfen daha sonra tekrar deneyin",
+            "unknown_error": "Bilinmeyen bir hata oluştu, lütfen daha sonra tekrar deneyin",
+            "event_not_started": "Etkinlik henüz başlamadı.",
+            "event_ended": "Etkinlik sona erdi"
+        },
+        "app_pay_give": {
+            "application_deposit_required": "Başvuru depozitosu bugün alındı, şanslı hediye",
+            "success_receive": "Başarıyla alındı! Lütfen bakiyeyi kontrol edin",
+            "required_lucky_gift": "Bugün uygulama üzerinden şanslı hediyeler yüklediniz.",
+            "system_busy": "Sistem meşgul, lütfen daha sonra tekrar deneyin",
+            "app_failed_did_not_use_app": "Uygulama başarısız oldu, bugün para yatırmak için APP'yi kullanmadınız",
+            "unknown_error": "Bilinmeyen bir hata oluştu, lütfen daha sonra tekrar deneyin",
+            "event_not_started": "Etkinlik henüz başlamadı.",
+            "event_ended": "Etkinlik sona erdi"
+        },
+        "checkdeposit": {
+            "select_card": "<p>Merhaba, önce bir banka kartı seçin</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "Para yatırma isteği başarıyla iptal edildi!",
+            "fail_undo": "Geri alma başarısız oldu, lütfen yenileyin ve tekrar deneyin"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "Hediye paraMiktar 0'dır ve talep edilemez",
+            "incorrect_status": "Durum yanlış, lütfen güncelleyin ve almak için tıklayın",
+            "success_transfer": "Aktarım başarılı oldu!",
+            "could_not_receive": "Alınamadı, lütfen güncelleyin ve almak için tıklayın",
+            "login_info_expired": "Giriş bilgilerinizin süresi doldu, lütfen tekrar giriş yapın"
+        },
+        "get_bet": {
+            "calculating_water_flow": "Su akışını hesaplamaya başla",
+            "event_end": "Bu etkinlik sona erdi",
+            "enter_first": "Lütfen önce girin"
+        },
+        "change_information": {
+            "incorrect_verification": "Doğrulama kodu hatalı, lütfen tekrar deneyin",
+            "success_verification": "Doğrulama Başarılı",
+            "failed_verification": "Doğrulama başarısız oldu"
+        },
+        "change_phone_verify değiştir": {
+            "success_verification": "Doğrulama Başarılı",
+            "failed_verification": "Doğrulama başarısız oldu"
+        },
+        "verification_code": {
+            "number_busy": "Bu numara zaten meşgul, lütfen yeni bir numara ile değiştirin",
+            "unable_open": "Dosya açılamıyor!",
+            "success_submit": "Başarıyla gönderildi"
+        },
+        "get_vip_level": {
+            "failed_query": "Sorgu başarısız oldu"
+        },
+        "upload_pictures": {
+            "success": "başarı",
+            "illegal_file": "Geçersiz dosya biçimi"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "başarı"
+        },
+        "auto_transfer_in": {
+            "success": "başarı"
+        },
+        "agent_member_deposit": {
+            "no_data": "İlgili veri bulunamadı"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "İlgili veri bulunamadı"
+        },
+        "agent_member_fanshui": {
+            "no_data": "İlgili veri bulunamadı"
+        },
+        "agent_member_promotions": {
+            "no_data": "İlgili veri bulunamadı"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "başarı"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "Tekrarlandı, lütfen değiştirin"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "başarı"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "Doğrulama başarısız oldu",
+        "invalid_game_account": "Oyun hesabı veya şifresi yanlış!",
+        "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+        "system_error": "Sistem hatası. Daha sonra tekrar deneyin!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "Başarısız teklif"
+        },
+        "clear_cache": {
+            "complete": "Güncelleme tamamlandı",
+            "fail": "Güncelleme başarısız oldu"
+        },
+        "logout": {
+            "account_closed": "Hesabınız kapatılmıştır",
+            "no_account": "Giriş yapmış bir hesap algılanmadı"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "Başarısız teklif"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "Başarısız teklif"
+        },
+        "get_autopromotion_list": {
+            "with_discount": "İndirimsiz"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "Doğrulama başarısız oldu",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType tanımlanmadı",
+            "ensure_bank_support": "Lütfen kullanacağınız banka kartının bu ödeme yöntemini desteklediğinden emin olun.",
+            "paypal_deposit": "Paypal ile para yatırmak üzeresiniz. Bu hizmeti kullanmak için Paypal'a yönlendirileceksiniz.",
+            "usdt_deposit": "USDT transferi yoluyla para yatırmak üzeresiniz. Lütfen kullanmak için doğru ağ ve zinciri seçin."
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "başarı!",
+            "invalid_game_account": "Oyun hesabı veya şifresi yanlış!",
+            "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+            "system_error": "Sistem hatası. Daha sonra tekrar deneyin!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "Sevgili U Sports üyeleri: Bankanın akıllı veri sisteminin ve Alipay'in resmi risk kontrolünün daha da güçlendirilmesi nedeniyle, şirketimiz yeniden yükleme yöntemini sürekli güncellemekte ve risk kontrolünden kaçınmak için elinden gelenin en iyisini yapmaktadır. Ödemeniz riske tabiyse kontrol edin, ödemeyi aktarmak için mobil bankacılığı kullanın veya sanal para yatırmayı seçin"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "with_discount": "İndirimsiz"
+        },
+        "submit_autopromotion": {
+            "success_application": "uygulama başarılı oldu",
+            "not_made_deposit": "3 dakika içinde para yatırmadınız",
+            "entered_game_again": "Para yatırdıktan sonra oyuna tekrar girdiniz, lütfen promosyonlara başvurmadan oyuna girmeyin",
+            "already_applied": "Bu promosyon için zaten başvurdunuz",
+            "already_applied_discount": "Bu ödeme zaten indirim için başvurdu, lütfen tekrar yatırın"
+        },
+        "checkdeposit": {
+            "no_data": "Veri bulunamadı"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "Yatırılan tutar yanlış, lütfen yatırılan tutarı doğru giriniz",
+            "deposit_bank_incorrect":"Mevduat bankası yanlış, lütfen tekrar giriniz.",
+            "channel_maintenance": "Kanal bakımını yatırın, başka bir para yatırma yöntemi seçin",
+            "verification_expired": "Doğrulamanın süresi doldu, lütfen geri dönün ve yeniden girmek için yenileyin",
+            "already_requested_promotion": "Bu promosyonu zaten talep ettiniz, lütfen promosyon kurallarını inceleyin",
+            "fail_submit_deposit": "Ödeme gönderilemedi, lütfen güncelleyin ve yeniden gönderin"
+        },
+        "banktransfer": {
+            "error_sending": "Gönderirken hata oluştu, lütfen 30 saniye sonra tekrar gönderin",
+            "incorrect_amount": "Yatırılan tutar yanlış, lütfen yatırılan tutarı doğru giriniz",
+            "unreviewed_deposit": "İncelenmemiş bir para yatırma kaydı zaten var, lütfen yeniden göndermeyin",
+            "verification_expired": "Doğrulamanın süresi doldu, lütfen geri dönün ve yeniden girmek için yenileyin",
+            "already_requested_promotion": "Bu promosyonu zaten talep ettiniz, lütfen promosyon kurallarını inceleyin",
+            "no_card": "Şu anda kullanılabilir kart yok, lütfen daha sonra tekrar deneyin"
+        },
+        "canceldeposit": {
+            "success_cancel": "Para yatırma isteği başarıyla iptal edildi!",
+            "failed_undo": "Geri alma başarısız oldu, lütfen yenileyin ve tekrar deneyin"
+        },
+        "IPThrottling": {
+            "throttle_message": "Merhaba, size daha iyi bir kullanıcı deneyimi sağlamak, hesabınızın güvenliğini sağlamak ve IP izlemeyi önlemek için. Son talebiniz %i dakika %s saniye önceydi, lütfen yeniden şarj talebinde bulunmadan önce 5 dakika bekleyin. veya yardım için çevrimiçi müşteri hizmetleriyle iletişime geçin. Mutlu oyunlar!"
+        },
+        "networkList": {
+            "error": "API'de hata"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "Doğrulama başarısız oldu",
+        "invalid_game_account": "Oyun hesabı veya şifresi yanlış!",
+        "account_locked": "Hesap kilitli, lütfen çevrimiçi müşteri hizmetleri ile iletişime geçin!",
+        "system_error": "Sistem hatası. Daha sonra tekrar deneyin!",
+        "set_agent_remark": {
+            "success": "başarı"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "Doğrulama başarısız oldu",
+        "verification_codeu": {
+           
+        },
+        "get_phone_account": {
+            "no_account": "Hata, böyle bir hesap yok"
+        }
+    },
+    "record": {
+        "verification_failed": "Doğrulama başarısız oldu",
+        "agrecord": {
+            "no_data": "Veri yok"
+        },
+        "uniterecord": {
+            "no_data": "Veri yok"
+        },
+        "btirecord": {
+            "no_data": "Veri yok"
+        },
+        "imrecord": {
+            "no_data": "Veri yok"
+        },
+        "imnativerecord": {
+            "no_data": "Veri yok"
+        },
+        "ibcrecord": {
+            "no_data": "Veri yok"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "Veri yok"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "Veri yok"
+        },
+        "imdjrecord": {
+            "no_data": "Veri yok"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "Veri yok"
+        },
+        "gdrecord": {
+            "no_data": "Veri yok"
+        },
+        "abrecord": {
+            "no_data": "Veri yok"
+        },
+        "ptrecord": {
+            "no_data": "Veri yok"
+        },
+        "mgrecord": {
+            "no_data": "Veri yok"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "Veri yok"
+        },
+        "vrrecord": {
+            "no_data": "Veri yok"
+        },
+        "cmdrecord": {
+            "no_data": "Veri yok"
+        },
+        "tcg_sbo_record": {
+            "error": "hata",
+            "no_data": "Veri yok"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "Doğrulama başarısız oldu",
+        "unsuccessful_offer": "Başarısız teklif"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}

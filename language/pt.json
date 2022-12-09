@@ -1,0 +1,754 @@
+{
+    "request": {
+        "auth_check": "Falha na verificação",
+        "play_game": {
+            "invalid": "Parâmetros inválidos"
+        },
+        "change_account_info": {
+            "success_message_1": "Informações modificadas com sucesso"
+        },
+        "send_reset_password": {
+            "mail_success": "A mensagem foi enviada",
+            "mail_error": "Erro ao enviar o código de reset",
+            "code_error": "Erro ao enviar o código de reset | Código de senha Ivanlid",
+            "smtp_catch": "Erro ao enviar o código de reset. Erro: ",
+            "check_email": "E-mail não registrado em nenhuma conta de convidado"
+        },
+        "verify_reset_password": {
+            "code_expired": "O código de verificação expirou! Solicite um novo código."
+        },
+        "reset_password": {
+            "verification_code_incorrect": "O código de verificação está incorreto, tente novamente",
+            "verification_code_error": "Erro na verificação do código. Entre em contato com o suporte ao cliente."
+        },
+        "get_transaction": {
+            "empty_date_range": "Por favor, insira o intervalo de datas",
+            "empty_username": "Por favor, digite o nome de usuário"
+        },
+        "search_game": {
+
+        },
+        "game_summary": {
+            "no_account_data": "Sem dados de conta!"
+        },
+        "get_account_summary": {
+            "empty_date_range": "Por favor, insira o intervalo de datas",
+            "empty_username": "Por favor, digite o nome de usuário"
+        },
+        "verify_agent": {
+            "empty_agent_name": "O nome do agente não pode estar vazio",
+            "agent_not_found": "Agente não encontrado! Digite o nome correto do agente, se aplicável, deixe em branco se não o tiver."
+        },
+        "app_version": {
+
+        },
+        "agent_rank_list": {
+
+        },
+        "agent_friends_list": {
+            "empty_friends": "Nenhum amigo encontrado!"
+        },
+        "get_images": {
+
+        },
+        "send_verification_email": {
+            "empty_email": "Por favor, digite o e-mail",
+            "success_email_sent": "E-mail de verificação enviado",
+            "error_sending_code": "Erro ao enviar o código de reset"
+        },
+        "verify_email_code": {
+            "email_verified": "Email verificado",
+            "error_email_verify": "Erro ao verificar e-mail"
+        },
+        "convert_currency": {
+
+        },
+        "sports_token": {
+            "error_parsing_url_data": "Erro ao analisar os dados do URL",
+            "error_parsing_url": "Erro ao analisar URL",
+            "no_redirection_url": "Erro! Nenhum URL de redirecionamento"
+        },
+        "free_spin_amount": {
+            "no_bonus_available": "Nenhum bônus disponível por enquanto"
+        },
+        "oauth_register": {
+
+        },
+        "loginMember": {
+            "expire_temporary_password": "Senha temporária expirada",
+            "invalid_account": "A conta ou senha do jogo está errada!",
+            "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+            "system_error": "Erro de sistema. Tente novamente mais tarde!"
+        }
+    },
+    "center": {
+        "auth_check": "Falha na verificação",
+        "invalid_email": "Por favor, insira um endereço de e-mail válido",
+        "empty_verification_code": "Insira o código de verificação",
+        "agent_not_found": "Agente não encontrado! Digite o nome correto do agente, se aplicável, deixe em branco se não o tiver.",
+        "taken_member_account": "Falha no registro, conta de membro foi registrada",
+        "registration_failed": "Falha no registro, entre em contato com o administrador",
+        "taken_phone_number": "Falha no registro, o número de telefone foi registrado",
+        "taken_email": "Falha no registro, o e-mail foi registrado",
+        "invalid_account": "A conta ou senha do jogo está errada!",
+        "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+        "system_error": "Erro de sistema. Tente novamente mais tarde!",
+        "inconsistent_password": "Senha inconsistente digitada duas vezes",
+        "re_enter_password": "A senha não atende aos requisitos, por favor, digite novamente",
+        "success_reset_password": "Redefinição de senha concluída!!",
+        "withdrawal_password_exists": "Existe senha de retirada",
+        "withdrawal_password_not_exists": "A senha de retirada não existe",
+        "success_set_withdrawal_password": "Senha de retirada definida com sucesso",
+        "success_change_withdrawal_password": "Senha de retirada definida com sucesso",
+        "invalid_old_withdrawal": "A senha de retirada antiga foi digitada incorretamente",
+        "sending_failed_10_sec": "Falha ao enviar, reenvie após 10 segundos",
+        "operation_failed": "Falha na operação, aguarde alguns segundos e tente novamente",
+        "error_select_transfer_type": "Erro ao enviar, selecione o tipo de transferência",
+        "transfer_amount_small": "Valor da transferência deve ser um inteiro maior que 1",
+        "success_transfer": "A transferência foi bem sucedida!",
+        "insufficient_main_account": "Saldo insuficiente na conta principal",
+        "insufficient_game_account": "Saldo insuficiente na conta do jogo",
+        "failed_transfer_contact_cs": "A transferência falhou, entre em contato com o atendimento ao cliente online",
+        "success_transfer_one_click": "Transferência bem-sucedida com um clique!",
+        "empty_opened_province_city": "A província e a cidade onde a conta é aberta não podem estar vazias",
+        "success_bank_information_link": "Nova vinculação de informações bancárias com sucesso",
+        "many_bound_bank_information": "As informações bancárias vinculadas não podem exceder 5 peças",
+        "failed_information_link_contact_cs": "Falha no link de informações, entre em contato com o atendimento ao cliente online",
+        "sending_failed_3_min": "Falha ao enviar, reenvie após 3 minutos",
+        "existing_unreviewed_withdrawal": "Já existe um registro de saque não revisado, por favor não o reenvie",
+        "withdawal_anomaly": "Existe uma anomalia no seu saque, entre em contato com o atendimento ao cliente online para verificar e processar",
+        "failed_withdrawal_request_min_withdrawal": "Falha na solicitação de retirada, valor mínimo de retirada inválido",
+        "failed_withdrawal_request_max_withdrawal": "Falha na solicitação de retirada, valor máximo de retirada inválido",
+        "success_withdrawal_request": "Solicitação de saque bem-sucedida",
+        "insufficient_main_account_fill":"Saldo insuficiente na conta principal，Por favor, preencha",
+        "wrong_background_password":"Senha de segundo plano incorreta",
+        "failed_withdrawal_request_contact":"A solicitação de retirada falhou, entre em contato com o atendimento ao cliente online",
+        "game_maintenance": "Ocioso ou manutenção do jogo",
+        "incorrect_deposit_account": "O valor do depósito está incorreto, por favor insira o valor correto do depósito",
+        "success_deposit_review": "O depósito foi enviado com sucesso e está em análise",
+        "duplicate_deposit_request": "Você já solicitou esta promoção, revise as regras da promoção",
+        "failed_submit_deposit_update": "Falha ao enviar o depósito, atualize e reenvie",
+        "sending_failed_30_sec": "Falha ao enviar, reenvie após 30 segundos",
+        "existing_unreviewed_withdrawal_do_not_resubmit": "Já existe um registro de depósito não revisado, não o reenvie",
+        "expired_verification_reenter": "A verificação expirou, volte e atualize para entrar novamente",
+        "success_point_redeem": "Os pontos foram resgatados com sucesso, verifique o saldo",
+        "point_not_reach_monthly_redemption_limit": "Os pontos não atingiram o valor especificado ou o limite de resgate mensal foi atingido",
+        "insufficient_points": "Pontos insuficientes ou menos que o valor mínimo",
+        "incorrect_deposit_bank_reenter": "O banco de depósito está incorreto, digite-o novamente.",
+        "jumping_for_you": "Pulando por você, por favor aguarde",
+        "deposit_channel_maintenance": "Manutenção do canal de depósito, escolha outro método de depósito",
+        "mobile_payment_maintenance": "Manutenção do sistema de pagamento móvel, use outros métodos para depositar.",
+        "wechat_payment_maintenance": "Manutenção do sistema de pagamento Wechat, use outros métodos para depositar.",
+        "login_auth": {
+            "invalid_account": "A conta ou senha do jogo está errada!",
+            "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+            "system_error": "Erro de sistema. Tente novamente mais tarde!"
+        },
+        "loginMember": {
+            "expire_temporary_password": "Senha temporária expirada",
+            "invalid_account": "A conta ou senha do jogo está errada!",
+            "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+            "system_error": "Erro de sistema. Tente novamente mais tarde!"
+        },
+        "send_verification_email": {
+            "enter_email": "Por favor, digite o e-mail",
+            "success_email_sent": "E-mail de verificação enviado",
+            "mail_error": "Erro ao enviar o código de reset",
+            "smtp_catch": "Erro ao enviar o código de reset. Erro: "
+        },
+        "verify_email_code": {
+            "email_verified": "Email verificado",
+            "error_email_verify": "Erro ao verificar e-mail | Código não encontrado"
+        }
+    },
+    "ajax_data": {
+        "auth_check": "Falha na verificação",
+        "invalid_game_account": "A conta ou senha do jogo está incorreta!",
+        "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+        "system_error": "Erro de sistema. Tente novamente mais tarde!",
+        "get_transferlist": {
+            "maintenance": "Manutenção da plataforma de jogos"
+        },
+        "get_transferlist_v1": {
+
+        },
+        "get_memberinfo": {
+
+        },
+        "get_balance": {
+            "query_failed": "Falha na consulta"
+        },
+        "get_bindCardBankType": {
+
+        },
+        "bank_list": {
+            "fail_get_bank_info": "Não foi possível obter as informações do cartão bancário"
+        },
+        "bank_unbind": {
+            "fail_unlink": "Falha ao desvincular as informações, tente novamente ou entre em contato com o atendimento ao cliente online"
+        },
+        "deposit_bank": {
+            "header_1": "<tr><td>Tipo de banco</td><td>Nome</td><td>Informações do número do cartão</td></tr>",
+            "header_2": "<tr><td>Formas de pagamento</td><td>Nome AliPay</td><td>Conta Alipay</td></tr>"
+        },
+        "onlinepay_bank": {
+
+        },
+        "record_list": {
+            "no_data": "Nenhum dado relacionado encontrado",
+            "no_records": "Sem registros"
+        },
+        "count_record": {
+
+        },
+        "cancel_debit": {
+            "success_cancel": "Cancelar retirada com sucesso",
+            "fail_cancel_under_review": "Cancelar retirada com falha，O atendimento ao cliente já está em revisão.",
+            "fail_cancel_contact": "Cancelar retirada com falha，Entre em contato com o atendimento ao cliente online"
+        },
+        "get_point": {
+
+        },
+        "apply_rescue": {
+            "apply_three_min": "Clique em Aplicar novamente após 3 minutos.",
+            "fail_terms_and_condition": "Você aposta em esportes ou jogos ao vivo que o impedem de cumprir os termos e condições da oferta.",
+            "success_rescue_bonus": "O resgate do Bônus de resgate foi bem-sucedido, verifique",
+            "invalid_application_date": "O aplicativo de resgate falhou, a data do aplicativo é inválida",
+            "fail_pending_withdrawal": "A solicitação de bônus de resgate foi rejeitada devido a uma solicitação de retirada pendente",
+            "fail_not_meet_terms_and_condition": "A solicitação do bônus de resgate falhou. Incapaz de atender aos termos e condições da oferta",
+            "fail_max_balance": "A solicitação do bônus de resgate falhou porque o saldo total da sua conta é maior que 15MXN",
+            "fail_min_loss_profit": "A solicitação do bônus de resgate falhou. O lucro mínimo de perda deve ser maior que 900MXN",
+            "bonus_claimed_yesterday": "O bônus de resgate foi reivindicado ontem, verifique o registro",
+            "fail_refer_terms_and_condition": "A solicitação do bônus de resgate falhou. Consulte os termos e condições da oferta",
+            "system_error": "Erro de sistema, por favor faça login novamente"
+        },
+        "get_msgcontent": {
+
+        },
+        "count_noread_message": {
+
+        },
+        "get_notice": {
+
+        },
+        "delete_message": {
+            "success_delete": "Excluir dados com sucesso",
+            "faile_delete": "Falha ao excluir dados, atualize e tente novamente"
+        },
+        "syn_password": {
+            "unactivated_function": "A função não foi ativada."
+        },
+        "get_number": {
+            "query_fail": "Falha na consulta",
+            "water_running": "Água correndo"
+        },
+        "get_lastweek_deposit": {
+
+        },
+        "aapply_special_spring": {
+            "success_discount_request": "A solicitação de desconto foi bem-sucedida",
+            "condition_not_met": "Condições não atendidas ou aplicadas",
+            "check_official_website": "Antes do momento da inscrição, verifique o site oficial para obter mais detalhes.",
+            "system_error": "Erro de sistema. Tente novamente mais tarde"
+        },
+        "get_promotion": {
+
+        },
+        "getRand": {
+
+        },
+        "return_null": {
+
+        },
+        "get_platform": {
+
+        },
+        "gameapi_unlock": {
+            "success_unlock": "Parabéns, o jogo foi desbloqueado com sucesso!",
+            "maintenance": "Desculpe, a plataforma do jogo está em manutenção....",
+            "fail_unlock_contact": "Falha no desbloqueio do jogo, entre em contato com o atendimento ao cliente",
+            "unknown_error": "Erro desconhecido, entre em contato com o atendimento ao cliente",
+            "system_error": "Erro de sistema, por favor faça login novamente"
+        },
+        "gameapi_active": {
+            "success_activated": "Parabéns, o jogo foi ativado com sucesso!",
+            "maintenance": "Desculpe, a plataforma do jogo está em manutenção....",
+            "account_activated": "A conta foi ativada",
+            "unknown_error": "Erro desconhecido, entre em contato com o atendimento ao cliente",
+            "system_error": "Erro de sistema, por favor faça login novamente"
+        },
+        "gameapi_password": {
+            "success_sync": "Parabéns, você sincronizou as senhas com sucesso!",
+            "maintenance": "Desculpe, a plataforma do jogo está em manutenção....",
+            "fail_sync_contact": "Falha ao sincronizar a senha, entre em contato com o atendimento ao cliente",
+            "unknown_error": "Erro desconhecido, entre em contato com o atendimento ao cliente",
+            "system_error": "Erro de sistema, por favor faça login novamente"
+        },
+        "gameapi_logout": {
+            "success_offline": "Parabéns, o jogo foi forçado a ficar offline com sucesso!",
+            "maintenance": "Desculpe, a plataforma do jogo está em manutenção....",
+            "fail_disconnect_contact": "Não foi possível forçar a desconexão, entre em contato com o atendimento ao cliente",
+            "unknown_error": "Erro desconhecido, entre em contato com o atendimento ao cliente",
+            "system_error": "Erro de sistema, por favor faça login novamente"
+        },
+        "washcodeself_list": {
+
+        },
+        "washcodeself_receive": {
+            "success_receive_complete": "Recebimento concluído! Verifique o saldo",
+            "fail_claim_retry": "Não foi possível reivindicar, tente novamente mais tarde",
+            "fail_claim_no_amount": "O valor é 0 e não pode ser reivindicado",
+            "fail_claim_status_incorrect": "O status está incorreto, atualize e clique para receber",
+            "succes_receive": "Parabéns, você recebeu com sucesso!"
+        },
+        "onlinepay_list_v1": {
+
+        },
+        "apply_nt_promotion": {
+            "limit_check": "Clique em Aplicar após 2 minutos",
+            "success_request": "Parabéns, a solicitação foi bem-sucedida, o desconto foi transferido automaticamente para a plataforma do jogo.",
+            "fail_request_not_meet_condition": "O valor total do depósito não atende às condições da solicitação",
+            "duplicate_request": "Você já solicitou esta oferta, volte amanhã",
+            "system_error": "Erro de sistema. Tente novamente mais tarde",
+            "event_not_started": "O evento não começou ou terminou"
+        },
+        "promotion_history": {
+            "header_1": "<tr><td colspan='4'>Recorde de desconto de hoje</td></tr><tr><td>Frequência</td><td>Desconto</td><td>Total depósito</td><td>Tempo de inscrição</td ></tr>"
+        },
+        "get_total_deposit": {
+
+        },
+        "get_qt_bet": {
+
+        },
+        "special_promotion_record": {
+            "header_1": "<tr><td colspan='4'>Recorde de desconto de hoje</td></tr><td>Frequência</td><td>Valor total apostado</td><td> Tempo de inscrição </td></tr>"
+        },
+        "apply_qt_promotion": {
+            "limit_check": "Clique em Aplicar após 2 minutos",
+            "success_request": "Parabéns, a solicitação foi bem-sucedida, o desconto foi transferido automaticamente para a plataforma do jogo.",
+            "fail_request_not_meet_condition": "当日Valor total apostado QT não atende aos requisitos do aplicativo",
+            "duplicate_request": "Você já solicitou esta oferta, volte amanhã",
+            "system_error": "Erro de sistema. Tente novamente mais tarde",
+            "event_not_started": "O evento não começou ou terminou"
+        },
+        "get_prize_new": {
+            "go_back": "Por favor $left_time Volte a comer almôndegas em segundos.",
+            "today_deposit": "O depósito de hoje é superior a $money_arr[$name] Para comer este prato de almôndegas",
+            "incorrect_operation": "Sua operação está incorreta, atualize a página.",
+            "ate_dumpling": "Você comeu este bolinho",
+            "not_enough_deposit": "Seu depósito não é suficiente",
+            "system_error": "Erro de sistema. Tente novamente mais tarde",
+            "event_not_started": "O evento ainda não começou."
+        },
+        "getRand_new": {
+
+        },
+        "chickenoregg_promotion_record": {
+
+        },
+        "check_egg_status_new": {
+
+        },
+        "get_laborPro_history": {
+
+        },
+        "apply_zongzi_promotion": {
+
+        },
+        "get_zongzi_bonus": {
+
+        },
+        "getRand_zongzi": {
+
+        },
+        "week_gift_list": {
+            "header_1": "<tr><th colspan='5'>Registros de lançamento recentes</th></tr><tr><th>Tipo de dinheiro do presente</th><th>Valor do dinheiro do presente</th> <th>Tempo de lançamento</th></th></tr>"
+        },
+        "august_gift_list": {
+            "header_1": "<tr><td>Valor emitido(USDT)</td><td>Tempo de liberação</td></tr>",
+            "no_record": "Recente sem registros"
+        },
+        "get_address": {
+
+        },
+        "app_first_login": {
+            "cannot_participate": "Desculpe, agora você é um membro temporário e não pode participar deste evento.",
+            "received_gift": "Você recebeu o presente da sorte do APP",
+            "success_receive": "Recebido com sucesso! Verifique o saldo",
+            "received_lucky_gift": "Você recebeu um presente da sorte do aplicativo inválido",
+            "system_busy": "O sistema está ocupado, tente novamente mais tarde",
+            "unknown_error": "Ocorreu um erro desconhecido, tente novamente mais tarde",
+            "event_not_started": "O evento ainda não começou.",
+            "event_ended": "O evento terminou"
+        },
+        "app_pay_give": {
+            "application_deposit_received": "Depósito de inscrição recebido hoje, presente da sorte",
+            "success_receive": "Recebido com sucesso! Verifique o saldo",
+            "received_lucky_gift": "Você depositou presentes da sorte através do aplicativo hoje.",
+            "system_busy": "O sistema está ocupado, tente novamente mais tarde",
+            "app_failed_did_not_use_app": "O aplicativo falhou, você não usou o APP para depositar hoje",
+            "unknown_error": "Ocorreu um erro desconhecido, tente novamente mais tarde",
+            "event_not_started": "O evento ainda não começou.",
+            "event_ended": "O evento terminou"
+        },
+        "checkdeposit": {
+            "select_card": "<p>Olá, primeiro selecione um cartão bancário</p>"
+        },
+        "canceldeposit": {
+            "success_cancel": "O pedido de depósito foi cancelado com sucesso!",
+            "fail_undo": "Falha ao desfazer, atualize e tente novamente"
+        },
+        "getDepositBankByBankid": {
+
+        },
+        "apply_bet_bonus": {
+            "empty_amount": "O valor do presente é 0 e não pode ser reivindicado",
+            "incorrect_status": "Status incorreto, atualize e clique para receber",
+            "success_transfer": "A transferência foi bem sucedida!",
+            "could_not_receive": "Não foi possível receber, atualize e clique para receber",
+            "login_info_expired": "Suas informações de login expiraram, por favor, faça o login novamente"
+        },
+        "get_bet": {
+            "calculating_water_flow": "Começar a calcular o fluxo de água",
+            "event_ended": "Este evento terminou",
+            "enter_first": "Por favor, digite primeiro"
+        },
+        "change_information": {
+            "incorrect_verification": "O código de verificação está incorreto, tente novamente",
+            "success_verification": "Verificação bem-sucedida",
+            "failed_verification": "Falha na verificação"
+        },
+        "change_phone_verify": {
+            "success_verification": "Verificação bem-sucedida",
+            "failed_verification": "Falha na verificação"
+        },
+        "verification_code": {
+            "number_busy": "Este número já está ocupado, substitua-o por um novo número",
+            "unable_open": "Não foi possível abrir o arquivo!",
+            "success_submit": "Enviado com sucesso"
+        },
+        "get_vip_level": {
+            "failed_query": "Falha na consulta"
+        },
+        "upload_pictures": {
+            "success": "sucesso",
+            "illegal_file": "Formato de arquivo ilegal"
+        },
+        "get_imgurl": {
+
+        },
+        "get_transfer_status": {
+
+        },
+        "change_transfer_status": {
+            "success": "sucesso"
+        },
+        "auto_transfer_in": {
+            "success": "sucesso"
+        },
+        "agent_member_deposit": {
+            "no_data": "Nenhum dado relacionado encontrado"
+        },
+        "agent_member_withdrawal": {
+            "no_data": "Nenhum dado relacionado encontrado"
+        },
+        "agent_member_fanshui": {
+            "no_data": "Nenhum dado relacionado encontrado"
+        },
+        "agent_member_promotions": {
+            "no_data": "Nenhum dado relacionado encontrado"
+        },
+        "agent_member_total": {
+
+        },
+        "add_game_collect": {
+            "success": "sucesso"
+        },
+        "get_collect_game": {
+
+        },
+        "remove_game_collect": {
+
+        },
+        "removeBomUtf8": {
+
+        },
+        "agent_percentage_set": {
+            "repeated": "Repetido, por favor mude"
+        },
+        "agent_percentage_list": {
+
+        },
+        "set_agent_percentage_default": {
+            "success": "sucesso"
+        }
+    },
+    "ajax_check": {
+        "verification_failed": "Falha na verificação",
+        "invalid_game_account": "A conta do jogo ou senha está errada!",
+        "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+        "system_error": "Erro de sistema. Tente novamente mais tarde!",
+        "get_promotion_content": {
+            "unsuccessful_offer": "Oferta malsucedida"
+        },
+        "clear_cache": {
+            "complete": "Atualização concluída",
+            "fail": "Falha na atualização"
+        },
+        "logout": {
+            "account_closed": "Sua conta foi encerrada",
+            "no_account": "Nenhuma conta conectada detectada"
+        },
+        "get_promotion_list": {
+            "unsuccessful_offer": "Oferta malsucedida"
+        },
+        "get_footer_list": {
+            "unsuccessful_offer": "Oferta malsucedida"
+        },
+        "get_autopromotion_list": {
+            "without_discount": "Sem desconto"
+        },
+        "get_duanxin": {
+
+        },
+        "Get": {
+
+        }
+    },
+    "payment": {
+        "verification_failed": "Falha na verificação",
+        "onlinepay_list_v1": {
+            "paytype_not_defined": "payType não definido",
+            "ensure_bank_support": "Certifique-se de que o cartão bancário que você usará suporta este método de pagamento.",
+            "paypal_deposit": "Você está prestes a depositar via Paypal. Você será direcionado ao Paypal para usar este serviço.",
+            "usdt_deposit": "Você está prestes a depositar via transferência USDT. Por favor, escolha a rede e cadeia corretas para usar."
+        },
+        "allowed_amounts": {
+
+        },
+        "pay_limit": {
+
+        },
+        "memberLogin": {
+            "success": "sucesso!",
+            "invalid_game_account": "A conta do jogo ou senha está errada!",
+            "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+            "system_error": "Erro de sistema. Tente novamente mais tarde!"
+        },
+        "checkLogin": {
+
+        },
+        "submitpay": {
+
+        },
+        "monlinepay_bank": {
+
+        },
+        "announcements": {
+            "dear_sports_member": "Caros membros do U Sports: Devido ao fortalecimento do sistema de dados inteligente do banco e ao controle de risco oficial do Alipay, nossa empresa atualiza constantemente o método de recarga e faz o possível para evitar o controle de risco. Se o seu pagamento estiver sujeito a risco controle, use o banco móvel para transferir o pagamento ou escolha o depósito em moeda virtual"
+        },
+        "autopromotion_list": {
+
+        },
+        "j9_autopromotion_list": {
+            "without_discount": "Sem desconto"
+        },
+        "submit_autopromotion": {
+            "success_application": "o aplicativo foi bem-sucedido",
+            "not_made_deposit": "Você não fez um depósito em 3 minutos",
+            "entered_game_again": "Você entrou no jogo novamente depois de depositar, por favor, não entre no jogo antes de se candidatar a promoções",
+            "already_applied": "Você já se inscreveu para esta promoção",
+            "already_applied_discount": "Este depósito já solicitou um desconto, por favor, deposite novamente"
+        },
+        "checkdeposit": {
+            "no_data": "Nenhum dado encontrado"
+        },
+        "onlinepayment": {
+            "deposit_amount_incorrect": "O valor do depósito está incorreto, por favor insira o valor correto do depósito",
+            "deposit_bank_incorrect":"O banco de depósito está incorreto, digite-o novamente.",
+            "channel_maintenance": "Manutenção do canal de depósito, escolha outro método de depósito",
+            "verification_expired": "A verificação expirou, volte e atualize para entrar novamente",
+            "already_requested_promotion": "Você já solicitou esta promoção, revise as regras da promoção",
+            "fail_submit_deposit": "Falha ao enviar o depósito, atualize e reenvie"
+        },
+        "banktransfer": {
+            "error_sending": "Erro ao enviar, reenvie após 30 segundos",
+            "incorrect_amount": "O valor do depósito está incorreto, por favor insira o valor correto do depósito",
+            "unreviewed_deposit": "Já existe um registro de depósito não revisado, por favor não o reenvie",
+            "verification_expired": "A verificação expirou, volte e atualize para entrar novamente",
+            "already_requested_promotion": "Você já solicitou esta promoção, revise as regras da promoção",
+            "no_card": "Nenhum cartão disponível no momento, tente novamente mais tarde"
+        },
+        "canceldeposit": {
+            "success_cancel": "O pedido de depósito foi cancelado com sucesso!",
+            "failed_undo": "Falha ao desfazer, atualize e tente novamente"
+        },
+        "IPThrottling": {
+            "throttle_message": "Olá, para lhe proporcionar uma melhor experiência de usuário, para garantir a segurança de sua conta e para evitar o monitoramento de IP. Sua última solicitação foi %i minutos %s segundos atrás, aguarde 5 minutos antes de fazer uma solicitação de recarga ou entre em contato com o atendimento ao cliente on-line para obter assistência. Bons jogos!"
+        },
+        "networkList": {
+            "error": "Erro na API"
+        },
+        "s6getAddress": {
+
+        }
+    },
+    "conduct": {
+        "verification_failed": "Falha na verificação",
+        "invalid_game_account": "A conta ou senha do jogo está incorreta!",
+        "account_locked": "A conta está bloqueada, entre em contato com o atendimento ao cliente online!",
+        "system_error": "Erro de sistema. Tente novamente mais tarde!",
+        "set_agent_remark": {
+            "success": "sucesso"
+        },
+        "deposit_address": {
+
+        },
+        "s6_deposit_address": {
+
+        },
+        "gettoken": {
+
+        },
+        "withdraw_transfer": {
+
+        },
+        "submit": {
+
+        }
+    },
+    "ajax_datav2": {
+        "verification_failed": "Falha na verificação",
+        "verification_code": {
+           
+        },
+        "get_phone_account": {
+            "no_account": "Erro, essa conta não existe"
+        }
+    },
+    "record": {
+        "verification_failed": "Falha na verificação",
+        "agrecord": {
+            "no_data": "Sem dados"
+        },
+        "uniterecord": {
+            "no_data": "Sem dados"
+        },
+        "btirecord": {
+            "no_data": "Sem dados"
+        },
+        "imrecord": {
+            "no_data": "Sem dados"
+        },
+        "imnativerecord": {
+            "no_data": "Sem dados"
+        },
+        "ibcrecord": {
+            "no_data": "Sem dados"
+        },
+        "leihuorecord": {
+
+        },
+        "sgwinrecord": {
+
+        },
+        "tcgrecord": {
+
+        },
+        "aviarecord": {
+
+        },
+        "imchessrecord": {
+            "no_data": "Sem dados"
+        },
+        "httpRequest": {
+
+        },
+        "base64": {
+
+        },
+        "sign": {
+
+        },
+        "kychessrecord": {
+            "no_data": "Sem dados"
+        },
+        "imdjrecord": {
+            "no_data": "Sem dados"
+        },
+        "imnativerecordbuyongle": {
+
+        },
+        "bgrecord": {
+            "no_data": "Sem dados"
+        },
+        "gdrecord": {
+            "no_data": "Sem dados"
+        },
+        "abrecord": {
+            "no_data": "Sem dados"
+        },
+        "ptrecord": {
+            "no_data": "Sem dados"
+        },
+        "mgrecord": {
+            "no_data": "Sem dados"
+        },
+        "mgAuthenticate": {
+
+        },
+        "cqrecord": {
+            "no_data": "Sem dados"
+        },
+        "vrrecord": {
+            "no_data": "Sem dados"
+        },
+        "cmdrecord": {
+            "no_data": "Sem dados"
+        },
+        "tcg_sbo_record": {
+            "error": "erro",
+            "no_data": "Sem dados"
+        },
+        "tcg_sbo_buildParams": {
+
+        },
+        "tcg_sbo_encryptText": {
+
+        },
+        "generate_imsb_time_stamp": {
+
+        },
+        "return_timestamp": {
+
+        },
+        "formatted_date": {
+
+        }
+    },
+    "footer": {
+        "verification_failed": "Falha na verificação",
+        "unsuccessful_offer": "Oferta malsucedida"
+    },
+    "ajax_limit": {
+        "onlinepay_limit": {
+
+        },
+        "mobilepay_limit": {
+
+        },
+        "weixinpay_limit": {
+
+        },
+        "alipay_limit": {
+
+        },
+        "tenpay_limit": {
+
+        },
+        "bankpay_limit": {
+
+        }
+    }
+}
