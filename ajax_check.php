@@ -263,7 +263,7 @@ function get_promotion_list($account, $language = "en"){
                      $result1[$k]['title']=$v['title'];
                       $result1[$k]['startTime']=$v['startTime'];
                        $result1[$k]['endTime']=$v['endTime'];
-                        $result1[$k]['bannerurl']="https://img.999.game/promo_banners/$language/".$v['sPicURL'];
+                        $result1[$k]['bannerurl']="https://img.999.game/promo_banners/$language/".str_replace(".jpg",".webp",$v['sPicURL']);
                        //  $result1[$k]['content']=$v['content'];
                 }
                 

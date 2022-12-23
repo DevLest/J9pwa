@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
 }
 
 $bot_id = 5664886742;
-$redirectUrl = "https%3A%2F%2F999j9azx.u2d8899.com%2Fj9pwa%2Foauth%2Ftelegram%2Fget_data.php";
+$redirectUrl = "https%3A%2F%2Fsghsrthth9i9.u2d12345.com%2Fmexicopwa%2Foauth%2Ftelegram%2Fget_data.php";
 
 try
 {

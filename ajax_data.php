@@ -362,7 +362,7 @@ function get_balance($account, $gameid)
             "BCH", 
             "LTC", 
             "DOGE",
-            "XRP",
+            //"XRP",
             "ADA",
             "TUSD",
             "mBTC",
