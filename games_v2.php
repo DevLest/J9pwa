@@ -1,5 +1,8 @@
 <?php
 
+echo "GAMES v2";
+die();
+
 ini_set('memory_limit', '-1');
 
 ini_set('display_errors', '1');
@@ -37,6 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     exit();
 }
+
+
+// Live
+// $backoffice_url = "http://j9adminaxy235.32sun.com/phprpc/";
+
+// Test
+$backoffice_url = "http://testj9adminaxy235.32sun.com/phprpc/";
 
 
 $api_key = 'fghrtrvdfger';
@@ -108,7 +118,7 @@ if (isset($d->type) && $d->type == "games_total_count") {
 function dt_server_side_processing()
 {
 
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client("cashierforgames_v2.php");
     $response = $client->dt_server_side_processing();
 
     echo json_encode($response);
@@ -117,7 +127,7 @@ function dt_server_side_processing()
 function get_all_games_data($d)
 {
 
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->get_all_games_data($d);
 
     // echo count($response);
@@ -193,7 +203,7 @@ function get_all_games_data($d)
 
 function get_single_games_data($id)
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->get_single_games_data($id);
 
     $response[0]['category'] = unserialize($response[0]['category']);
@@ -203,27 +213,27 @@ function get_single_games_data($id)
 
 function update_games_data($data)
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->update_games_data($data);
     echo json_encode($response);
 }
 
 function enable_games_data($id)
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->enable_games_data($id);
     echo json_encode($response);
 }
 
 function disable_games_data($id)
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->disable_games_data($id);
     echo json_encode($response);
 }
 function delete_game($id)
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->delete_game($id);
     echo json_encode($response);
 }
@@ -231,7 +241,7 @@ function delete_game($id)
 
 function add_new_game($data)
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->add_new_game($data);
     echo json_encode($response);
 }
@@ -239,7 +249,7 @@ function add_new_game($data)
 
 function get_all_category()
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->get_all_category();
     echo json_encode($response);
 }
@@ -247,7 +257,9 @@ function get_all_category()
 
 function games_total_count()
 {
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+	echo "HEY123";
+
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->games_total_count();
     echo json_encode($response);
 }
@@ -256,7 +268,7 @@ function games_total_count()
 function apply_changes_to_frontend()
 {
 
-    $client = new PHPRPC_Client("http://j9adminaxy235.32sun.com/phprpc/cashierforgames_v2.php");
+    $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->get_all_games_data_v2();
 
     // GET ALL CATEGORIES
