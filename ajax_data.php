@@ -319,7 +319,6 @@ function get_balance($account, $gameid, $fiat = "")
     global $lang;
     $core = new core();
     $result = $core->get_balance($account, $gameid);
-    $symbol = "";
     $fiat_cmc = "";
     
     if ($fiat != "") {
@@ -328,7 +327,6 @@ function get_balance($account, $gameid, $fiat = "")
 
         foreach ($fiat_list as $fiat_data) {
             if ($fiat_data['currency'] == $fiat) {
-                $symbol = $fiat_data['symbol'];
                 $fiat_cmc = $fiat_data['cmc_id'];
             }
 
@@ -417,7 +415,6 @@ function get_balance($account, $gameid, $fiat = "")
             $current = str_replace(".png", "", $file);
             $balance = 0.00;
             $fiat_conversion = 0.00;
-            $fiat_symbol = "";
 
             if (in_array($current, $active_currencies)) {
                 foreach ($result as $currency => $value) {
@@ -439,7 +436,6 @@ function get_balance($account, $gameid, $fiat = "")
                     }
 
                     $fiat_conversion = $price;
-                    $fiat_symbol = $symbol;
                 }
                 
                 if (in_array(strtoupper($current), $pinned)) {
@@ -447,11 +443,7 @@ function get_balance($account, $gameid, $fiat = "")
                         "currency" => $current,
                         "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
                         "balance" => $balance,
-                        "fiat" => [
-                            'symbol' => $fiat_symbol,
-                            'currency' => $fiat,
-                            'amount' => $fiat_conversion,
-                        ],
+                        "fiatAmount" => $fiat_conversion
                     ]);
                 }
                 else if($current == "mBTC" || $current == "mETH"){
@@ -459,11 +451,7 @@ function get_balance($account, $gameid, $fiat = "")
                         "currency" => $current,
                         "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
                         "balance" => $balance,
-                        "fiat" => [
-                            'symbol' => $fiat_symbol,
-                            'currency' => $fiat,
-                            'amount' => $fiat_conversion,
-                        ],
+                        "fiatAmount" => $fiat_conversion
                     ]);
                 }
                 else {
@@ -471,11 +459,7 @@ function get_balance($account, $gameid, $fiat = "")
                         "currency" => $current,
                         "icon" => "https://999j9azx.999game.online/j9pwa/images/currency/$file",
                         "balance" => $balance,
-                        "fiat" => [
-                            'symbol' => $fiat_symbol,
-                            'currency' => $fiat,
-                            'amount' => $fiat_conversion,
-                        ],
+                        "fiatAmount" => $fiat_conversion
                     ]);
                 }
             }   
