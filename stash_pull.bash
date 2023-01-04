@@ -1,4 +1,4 @@
-cd /data/999j9azx.u2d8899.com/j9pwa &&
+cd /www/wwwroot/999j9azx.u2d8899.com/j9pwa &&
 git add . &&
 git stash  &&
 git pull &&
