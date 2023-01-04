@@ -155,7 +155,8 @@ $ch = curl_init();
                                         $countrylist=array("SG");
 					if(in_array($ip,$countrylist))
 					{
-						$arr = array('status'=>0,'info'=>$ip);
+						//$arr = array('status'=>0,'info'=>$ip);
+						$arr = array('status'=>1,'info'=>$ip);
 					}else{
 						$arr = array('status'=>1,'info'=>$ip);
 					}
