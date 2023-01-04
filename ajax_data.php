@@ -421,21 +421,22 @@ function get_balance($account, $gameid, $fiat = "")
                     if (in_array($currency, $active_currencies)) {
                         if ($currency == $current) {
                             $balance = (float) $value;
+
+                            if ($fiat != "" && $balance > 0){
+                                ini_set('user_agent', 'My-Application/2.5');
+                                $fiat_conversion = json_decode(file_get_contents("https://api.coinmarketcap.com/data-api/v3/tools/price-conversion?amount=1&convert_id=$fiat_cmc&id=".$currecy_id[$current]));
+                                $qoute = $fiat_conversion->data->quote;
+            
+                                $price = sprintf('%.8f', floatval($qoute[0]->price));
+                                
+                                if ($current == 'mETH' || $current == 'mBTC') {
+                                    $price = $price * 1000;
+                                }
+            
+                                $fiat_conversion = $balance * (float) $price;
+                            }
                         }
                     } 
-                }
-
-                if ($fiat != ""){
-                    $fiat_conversion = json_decode(file_get_contents("https://api.coinmarketcap.com/data-api/v3/tools/price-conversion?amount=1&convert_id=$fiat_cmc&id=".$currecy_id[$current]));
-                    $qoute = $fiat_conversion->data->quote;
-
-                    $price = sprintf('%.8f', floatval($qoute[0]->price));
-                    
-                    if ($current == 'mETH' || $current == 'mBTC') {
-                        $price = $price * 1000;
-                    }
-
-                    $fiat_conversion = (float) $price;
                 }
                 
                 if (in_array(strtoupper($current), $pinned)) {
