@@ -435,7 +435,7 @@ function get_balance($account, $gameid, $fiat = "")
                         $price = $price * 1000;
                     }
 
-                    $fiat_conversion = $price;
+                    $fiat_conversion = (float) $price;
                 }
                 
                 if (in_array(strtoupper($current), $pinned)) {
