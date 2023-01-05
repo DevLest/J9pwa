@@ -1255,7 +1255,7 @@ function loginMember($username, $password)
 		"SS" => "SuperSpade",
 		"SW" => "Skywind",
 		"BG" => "BetGames",
-		"CQ9" => "CQGames",
+		"CQ9" => "CQ9",
 		"EM" => "EveryMatrix",
 		"EZG" => "Ezugi",
 		"MPLAY" => "MPlay",

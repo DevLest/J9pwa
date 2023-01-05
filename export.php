@@ -22,7 +22,7 @@ $platformNames = [
 
 	"CALETA" => "Caleta",
 
-	"CQ9" => "CQGames",
+	"CQ9" => "CQ9",
 
 	"EM" => "EveryMatrix",
 

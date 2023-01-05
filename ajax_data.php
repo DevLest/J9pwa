@@ -2922,7 +2922,7 @@ function get_collect_game($account)
         "BG" => "BetGames",
         "BNG" => "Booongo",
         "CALETA" => "Caleta",
-        "CQ9" => "CQGames",
+        "CQ9" => "CQ9",
         "EM" => "EveryMatrix",
         "EZG" => "Ezugi",
         "HAB" => "Habanero",
