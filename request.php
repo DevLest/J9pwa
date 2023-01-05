@@ -617,28 +617,28 @@ function send_reset_password($data)
                                               <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
                                                 <a href='https://bitcoin.org/en/' target='_blank' rel='noopener noreferrer nofollow'
-                                                  style='text-decoration: none'><img src='https://img.999.game/email/bitcoin.png'
+                                                  style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/bitcoin.png'
                                                     width='120px' style='margin: 0 auto'> </a><a href='https://www.ethereum.org/'
                                                   target='_blank' rel='noopener noreferrer nofollow'
-                                                  style='text-decoration: none'><img src='https://img.999.game/email/ethereum.png'
+                                                  style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/ethereum.png'
                                                     width='120px' style='margin: 0 auto'> </a><a href='https://tether.to/en/'
                                                   target='_blank' rel='noopener noreferrer nofollow'
-                                                  style='text-decoration: none'><img src='https://img.999.game/email/tether.png'
+                                                  style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/tether.png'
                                                     width='120px' style='margin: 0 auto'> </a><a href='https://tron.network/'
                                                   target='_blank' rel='noopener noreferrer nofollow'
-                                                  style='text-decoration: none'><img src='https://img.999.game/email/tron.png'
+                                                  style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/tron.png'
                                                     width='120px' style='margin: 0 auto'> </a><a
                                                   href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
                                                   rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/binance.png' width='120px'> </a><a
+                                                    src='https://999j9azx.999game.online/images/999/email/binance.png' width='120px'> </a><a
                                                   href='https://dogecoin.com/' target='_blank' rel='noopener noreferrer nofollow'
-                                                  style='text-decoration: none'><img src='https://img.999.game/email/dogecoin.png'
+                                                  style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/dogecoin.png'
                                                     width='120px'> </a><a href='https://cardano.org/' target='_blank'
                                                   rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/cardano.png' width='120px'> </a><a
+                                                    src='https://999j9azx.999game.online/images/999/email/cardano.png' width='120px'> </a><a
                                                   href='https://ripple.com/xrp/' target='_blank' rel='noopener noreferrer nofollow'
                                                   style='text-decoration: none; width: 120px'><img
-                                                    src='https://img.999.game/email/xrp.png' width='120px'></a></div>
+                                                    src='https://999j9azx.999game.online/images/999/email/xrp.png' width='120px'></a></div>
                                             </td>
                                           </tr>
                                         </table>
@@ -887,7 +887,7 @@ function send_verification_email($data)
                                                 <tbody>
                                                 <tr>
                                                     <td style='width:128px;'><img height='auto'
-                                                        src='https://img.999.game/email/999game.png'
+                                                        src='https://999j9azx.999game.online/images/999/email/999game.png'
                                                         style='border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;'
                                                         width='128'></td>
                                                 </tr>
@@ -902,9 +902,9 @@ function send_verification_email($data)
                                 </tbody>
                             </table>
                             </div>
-                            <table align='center' background='https://img.999.game/email/background.png' border='0' cellpadding='0'
+                            <table align='center' background='https://999j9azx.999game.online/images/999/email/background.png' border='0' cellpadding='0'
                             cellspacing='0' role='presentation'
-                            style='background:url(https://img.999.game/email/background.png) top center / contain no-repeat;width:100%;'>
+                            style='background:url(https://999j9azx.999game.online/images/999/email/background.png) top center / contain no-repeat;width:100%;'>
                             <tbody>
                                 <tr>
                                 <td>
@@ -1011,27 +1011,27 @@ function send_verification_email($data)
                                             <div
                                                 style='font-family:Rubik, sans-serif;font-size:15px;line-height:18px;text-align:center;color:#888888;'>
                                                 <a href='https://bitcoin.org/en/' target='_blank' rel='noopener noreferrer nofollow'
-                                                style='text-decoration: none'><img src='https://img.999.game/email/bitcoin.png'
+                                                style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/bitcoin.png'
                                                     width='120px'> </a><a href='https://www.ethereum.org/' target='_blank'
                                                 rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/ethereum.png' width='120px'> </a><a
+                                                    src='https://999j9azx.999game.online/images/999/email/ethereum.png' width='120px'> </a><a
                                                 href='https://tether.to/en/' target='_blank' rel='noopener noreferrer nofollow'
-                                                style='text-decoration: none'><img src='https://img.999.game/email/tether.png'
+                                                style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/tether.png'
                                                     width='120px'> </a><a href='https://tron.network/' target='_blank'
                                                 rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/tron.png' width='120px'> </a><a
+                                                    src='https://999j9azx.999game.online/images/999/email/tron.png' width='120px'> </a><a
                                                 href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
                                                 rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-                                                    src='https://img.999.game/email/binance.png' width='120px'> </a>
+                                                    src='https://999j9azx.999game.online/images/999/email/binance.png' width='120px'> </a>
                                                     <a href='https://dogecoin.com/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/dogecoin.png' width='120px'> </a>
+											src='https://999j9azx.999game.online/images/999/email/dogecoin.png' width='120px'> </a>
 											<a href='https://cardano.org/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/cardano.png' width='120px'> </a>
+											src='https://999j9azx.999game.online/images/999/email/cardano.png' width='120px'> </a>
 											<a href='https://ripple.com/xrp/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/xrp.png' width='120px'> </a></div>
+											src='https://999j9azx.999game.online/images/999/email/xrp.png' width='120px'> </a></div>
                                             </td>
                                         </tr>
                                         </table>

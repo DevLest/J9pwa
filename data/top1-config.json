@@ -2,7 +2,7 @@
         "currency": "ARS",
         "min_amount": 10649,
         "max_amount": 887354.81,
-        "link": "https://img.999.game/currency/fiat/ARS.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/ARS.png",
         "symbol" : "$",
         "cmc_id" : "2821"
     },
@@ -10,7 +10,7 @@
         "currency": "AUD",
         "min_amount": 22,
         "max_amount": 77972.1,
-        "link": "https://img.999.game/currency/fiat/AUD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/AUD.png",
         "symbol" : "A$",
         "cmc_id" : "2782"
     },
@@ -18,7 +18,7 @@
         "currency": "BGN",
         "min_amount": 27,
         "max_amount": 20000,
-        "link": "https://img.999.game/currency/fiat/BGN.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/BGN.png",
         "symbol" : "Лв.",
         "cmc_id" : "2814"
     },
@@ -26,7 +26,7 @@
         "currency": "BRL",
         "min_amount": 77,
         "max_amount": 65000,
-        "link": "https://img.999.game/currency/fiat/BRL.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/BRL.png",
         "symbol" : "R$",
         "cmc_id" : "2783"
     },
@@ -34,7 +34,7 @@
         "currency": "CAD",
         "min_amount": 20,
         "max_amount": 16000,
-        "link": "https://img.999.game/currency/fiat/CAD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/CAD.png",
         "symbol" : "C$",
         "cmc_id" : "2784"
     },
@@ -42,7 +42,7 @@
         "currency": "CHF",
         "min_amount": 14,
         "max_amount": 49450.02,
-        "link": "https://img.999.game/currency/fiat/CHF.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/CHF.png",
         "symbol" : "Fr.",
         "cmc_id" : "2785"
     },
@@ -50,7 +50,7 @@
         "currency": "CLP",
         "min_amount": 56413,
         "max_amount": 4701029.56,
-        "link": "https://img.999.game/currency/fiat/default.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/default.png",
         "symbol" : "$",
         "cmc_id" : "2786"
     },
@@ -58,7 +58,7 @@
         "currency": "COP",
         "min_amount": 130000,
         "max_amount": 42500000,
-        "link": "https://img.999.game/currency/fiat/COP.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/COP.png",
         "symbol" : "$",
         "cmc_id" : "2820"
     },
@@ -66,7 +66,7 @@
         "currency": "CZK",
         "min_amount": 750,
         "max_amount": 260000,
-        "link": "https://img.999.game/currency/fiat/CZK.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/CZK.png",
         "symbol" : "Kč",
         "cmc_id" : "2788"
     },
@@ -74,7 +74,7 @@
         "currency": "DKK",
         "min_amount": 106,
         "max_amount": 371877.23,
-        "link": "https://img.999.game/currency/fiat/DKK.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/DKK.png",
         "symbol" : "Kr.",
         "cmc_id" : "2789"
     },
@@ -82,7 +82,7 @@
         "currency": "DOP",
         "min_amount": 2000,
         "max_amount": 680000,
-        "link": "https://img.999.game/currency/fiat/DOP.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/DOP.png",
         "symbol" : "rd$",
         "cmc_id" : "3536"
     },
@@ -90,7 +90,7 @@
         "currency": "EGP",
         "min_amount": 550,
         "max_amount": 185000,
-        "link": "https://img.999.game/currency/fiat/EGP.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/EGP.png",
         "symbol" : "ج.م",
         "cmc_id" : "3538"
     },
@@ -98,7 +98,7 @@
         "currency": "EUR",
         "min_amount": 15,
         "max_amount": 50000,
-        "link": "https://img.999.game/currency/fiat/EUR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/EUR.png",
         "symbol" : "€",
         "cmc_id" : "2790"
     },
@@ -106,7 +106,7 @@
         "currency": "GBP",
         "min_amount": 21.51,
         "max_amount": 43027.59,
-        "link": "https://img.999.game/currency/fiat/GBP.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/GBP.png",
         "symbol" : "£",
         "cmc_id" : "2791"
     },
@@ -114,7 +114,7 @@
         "currency": "HKD",
         "min_amount": 112,
         "max_amount": 90000,
-        "link": "https://img.999.game/currency/fiat/HKD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/HKD.png",
         "symbol" : "HK$",
         "cmc_id" : "2792"
     },
@@ -122,7 +122,7 @@
         "currency": "HRK",
         "min_amount": 107,
         "max_amount": 75000,
-        "link": "https://img.999.game/currency/fiat/HRK.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/HRK.png",
         "symbol" : "kn",
         "cmc_id" : ""
     },
@@ -130,7 +130,7 @@
         "currency": "HUF",
         "min_amount": 24809,
         "max_amount": 2067402.81,
-        "link": "https://img.999.game/currency/fiat/HUF.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/HUF.png",
         "symbol" : "Ft",
         "cmc_id" : "2793"
     },
@@ -138,7 +138,7 @@
         "currency": "IDR",
         "min_amount": 230000,
         "max_amount": 170000000,
-        "link": "https://img.999.game/currency/fiat/IDR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/IDR.png",
         "symbol" : "Rp",
         "cmc_id" : "2794"
     },
@@ -146,7 +146,7 @@
         "currency": "ILS",
         "min_amount": 50,
         "max_amount": 40000,
-        "link": "https://img.999.game/currency/fiat/ILS.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/ILS.png",
         "symbol" : "₪",
         "cmc_id" : "2795"
     },
@@ -154,7 +154,7 @@
         "currency": "INR",
         "min_amount": 5179,
         "max_amount": 431537.15,
-        "link": "https://img.999.game/currency/fiat/INR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/INR.png",
         "symbol" : "₹",
         "cmc_id" : "2796"
     },
@@ -162,7 +162,7 @@
         "currency": "ISK",
         "min_amount": 8935,
         "max_amount": 744501.49,
-        "link": "https://img.999.game/currency/fiat/ISK.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/ISK.png",
         "symbol" : "Íkr",
         "cmc_id" : "2818"
     },
@@ -170,7 +170,7 @@
         "currency": "JOD",
         "min_amount": 25,
         "max_amount": 8000,
-        "link": "https://img.999.game/currency/fiat/JOD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/JOD.png",
         "symbol" : "د.ا",
         "cmc_id" : "3546"
     },
@@ -178,7 +178,7 @@
         "currency": "JPY",
         "min_amount": 2080,
         "max_amount": 1250000,
-        "link": "https://img.999.game/currency/fiat/JPY.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/JPY.png",
         "symbol" : "¥",
         "cmc_id" : "2797"
     },
@@ -186,7 +186,7 @@
         "currency": "KES",
         "min_amount": 3315.74,
         "max_amount": 1250000,
-        "link": "https://img.999.game/currency/fiat/KES.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/KES.png",
         "symbol" : "Sh",
         "cmc_id" : "3547"
     },
@@ -194,7 +194,7 @@
         "currency": "KRW",
         "min_amount": 19474,
         "max_amount": 12000000,
-        "link": "https://img.999.game/currency/fiat/KRW.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/KRW.png",
         "symbol" : "₩",
         "cmc_id" : "2798"
     },
@@ -202,7 +202,7 @@
         "currency": "KWD",
         "min_amount": 10,
         "max_amount": 3500,
-        "link": "https://img.999.game/currency/fiat/KWD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/KWD.png",
         "symbol" : "د.ك",
         "cmc_id" : "3550"
     },
@@ -210,7 +210,7 @@
         "currency": "KZT",
         "min_amount": 6967,
         "max_amount": 2322425,
-        "link": "https://img.999.game/currency/fiat/KZT.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/KZT.png",
         "symbol" : "₸",
         "cmc_id" : "3551"
     },
@@ -218,7 +218,7 @@
         "currency": "LKR",
         "min_amount": 7000,
         "max_amount": 2150000,
-        "link": "https://img.999.game/currency/fiat/LKR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/LKR.png",
         "symbol" : "රු",
         "cmc_id" : "3553"
     },
@@ -226,7 +226,7 @@
         "currency": "MAD",
         "min_amount": 320,
         "max_amount": 110000,
-        "link": "https://img.999.game/currency/fiat/MAD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/MAD.png",
         "symbol" : "د.م.",
         "cmc_id" : "3554"
     },
@@ -234,7 +234,7 @@
         "currency": "MDL",
         "min_amount": 291,
         "max_amount": 97072,
-        "link": "https://img.999.game/currency/fiat/MDL.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/MDL.png",
         "symbol" : "L",
         "cmc_id" : "3555"
     },
@@ -242,7 +242,7 @@
         "currency": "MKD",
         "min_amount": 877,
         "max_amount": 292525,
-        "link": "https://img.999.game/currency/fiat/MKD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/MKD.png",
         "symbol" : "Ден",
         "cmc_id" : "3556"
     },
@@ -250,7 +250,7 @@
         "currency": "MXN",
         "min_amount": 287,
         "max_amount": 260000,
-        "link": "https://img.999.game/currency/fiat/MXN.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/MXN.png",
         "symbol" : "mex$",
         "cmc_id" : "2799"
     },
@@ -258,7 +258,7 @@
         "currency": "MYR",
         "min_amount": 65,
         "max_amount": 50000,
-        "link": "https://img.999.game/currency/fiat/MYR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/MYR.png",
         "symbol" : "RM",
         "cmc_id" : "2800"
     },
@@ -266,7 +266,7 @@
         "currency": "NGN",
         "min_amount": 12015.48,
         "max_amount": 4500000,
-        "link": "https://img.999.game/currency/fiat/NGN.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/NGN.png",
         "symbol" : "₦",
         "cmc_id" : "2819"
     },
@@ -274,7 +274,7 @@
         "currency": "NOK",
         "min_amount": 146,
         "max_amount": 110000,
-        "link": "https://img.999.game/currency/fiat/NOK.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/NOK.png",
         "symbol" : "kr",
         "cmc_id" : "2801"
     },
@@ -282,7 +282,7 @@
         "currency": "NZD",
         "min_amount": 23,
         "max_amount": 82908.15,
-        "link": "https://img.999.game/currency/fiat/NZD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/NZD.png",
         "symbol" : "$",
         "cmc_id" : "2802"
     },
@@ -290,7 +290,7 @@
         "currency": "OMR",
         "min_amount": 15,
         "max_amount": 4300,
-        "link": "https://img.999.game/currency/fiat/OMR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/OMR.png",
         "symbol" : "ر.ع.",
         "cmc_id" : "3562"
     },
@@ -298,7 +298,7 @@
         "currency": "PEN",
         "min_amount": 130,
         "max_amount": 40000,
-        "link": "https://img.999.game/currency/fiat/PEN.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/PEN.png",
         "symbol" : "S/.",
         "cmc_id" : "2822"
     },
@@ -306,7 +306,7 @@
         "currency": "PHP",
         "min_amount": 3526,
         "max_amount": 293824.18,
-        "link": "https://img.999.game/currency/fiat/PHP.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/PHP.png",
         "symbol" : "₱",
         "cmc_id" : "2803"
     },
@@ -314,7 +314,7 @@
         "currency": "PKR",
         "min_amount": 5500,
         "max_amount": 1950000,
-        "link": "https://img.999.game/currency/fiat/PKR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/PKR.png",
         "symbol" : "₨",
         "cmc_id" : "2804"
     },
@@ -322,7 +322,7 @@
         "currency": "PLN",
         "min_amount": 66,
         "max_amount": 235528.65,
-        "link": "https://img.999.game/currency/fiat/PLN.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/PLN.png",
         "symbol" : "zł",
         "cmc_id" : "2805"
     },
@@ -330,7 +330,7 @@
         "currency": "RON",
         "min_amount": 70,
         "max_amount": 48000,
-        "link": "https://img.999.game/currency/fiat/RON.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/RON.png",
         "symbol" : "lei",
         "cmc_id" : "2817"
     },
@@ -338,7 +338,7 @@
         "currency": "SEK",
         "min_amount": 154,
         "max_amount": 105000,
-        "link": "https://img.999.game/currency/fiat/SEK.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/SEK.png",
         "symbol" : "kr",
         "cmc_id" : "2807"
     },
@@ -346,7 +346,7 @@
         "currency": "SGD",
         "min_amount": 20,
         "max_amount": 16000,
-        "link": "https://img.999.game/currency/fiat/SGD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/SGD.png",
         "symbol" : "s$",
         "cmc_id" : "2808"
     },
@@ -354,7 +354,7 @@
         "currency": "THB",
         "min_amount": 521,
         "max_amount": 370000,
-        "link": "https://img.999.game/currency/fiat/THB.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/THB.png",
         "symbol" : "฿",
         "cmc_id" : "2809"
     },
@@ -362,7 +362,7 @@
         "currency": "TRY",
         "min_amount": 400,
         "max_amount": 80000,
-        "link": "https://img.999.game/currency/fiat/TRY.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/TRY.png",
         "symbol" : "₺",
         "cmc_id" : "2810"
     },
@@ -370,7 +370,7 @@
         "currency": "TWD",
         "min_amount": 457,
         "max_amount": 340000,
-        "link": "https://img.999.game/currency/fiat/TWD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/TWD.png",
         "symbol" : "nt$",
         "cmc_id" : "2811"
     },
@@ -378,7 +378,7 @@
         "currency": "USD",
         "min_amount": 15,
         "max_amount": 52459.24,
-        "link": "https://img.999.game/currency/fiat/USD.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/USD.png",
         "symbol" : "$",
         "cmc_id" : "2781"
     },
@@ -386,7 +386,7 @@
         "currency": "VND",
         "min_amount": 365474,
         "max_amount": 250000000,
-        "link": "https://img.999.game/currency/fiat/VND.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/VND.png",
         "symbol" : "₫",
         "cmc_id" : "2823"
     },
@@ -394,7 +394,7 @@
         "currency": "ZAR",
         "min_amount": 455.79,
         "max_amount": 195000,
-        "link": "https://img.999.game/currency/fiat/ZAR.png",
+        "link": "https://999j9azx.999game.online/images/999/currency/fiat/ZAR.png",
         "symbol" : "R",
         "cmc_id" : "2812"
     }

@@ -1548,7 +1548,7 @@ function sendWelcomeEmail()
 										style='border-collapse:collapse;border-spacing:0px;'>
 										<tbody>
 											<tr>
-											<td style='width:128px;'><img height='auto' src='https://img.999.game/email/999game.png'
+											<td style='width:128px;'><img height='auto' src='https://999j9azx.999game.online/images/999/email/999game.png'
 												style='border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;'
 												width='128'></td>
 											</tr>
@@ -1579,7 +1579,7 @@ function sendWelcomeEmail()
 										<tbody>
 											<tr>
 											<td style='width:718px;'><a href='https://999.game/promotions' target='_blank'><img
-													height='auto' src='https://img.999.game/email/main-banner.png'
+													height='auto' src='https://999j9azx.999game.online/images/999/email/main-banner.png'
 													style='border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;'
 													width='718'></a></td>
 											</tr>
@@ -1670,27 +1670,27 @@ function sendWelcomeEmail()
 										<div
 										style='font-family:Rubik, sans-serif;font-size:15px;line-height:1;text-align:center;color:#888888;'>
 										<a href='https://bitcoin.org/en/' target='_blank' rel='noopener noreferrer nofollow'
-											style='text-decoration: none'><img src='https://img.999.game/email/bitcoin.png'
+											style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/bitcoin.png'
 											width='140px' style='padding: 16px'> </a><a href='https://www.ethereum.org/'
 											target='_blank' rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/ethereum.png' width='140px' style='padding: 16px'> </a><a
+											src='https://999j9azx.999game.online/images/999/email/ethereum.png' width='140px' style='padding: 16px'> </a><a
 											href='https://tether.to/en/' target='_blank' rel='noopener noreferrer nofollow'
-											style='text-decoration: none'><img src='https://img.999.game/email/tether.png' width='140px'
+											style='text-decoration: none'><img src='https://999j9azx.999game.online/images/999/email/tether.png' width='140px'
 											style='padding: 16px'> </a><a href='https://tron.network/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/tron.png' width='140px' style='padding: 16px'> </a><a
+											src='https://999j9azx.999game.online/images/999/email/tron.png' width='140px' style='padding: 16px'> </a><a
 											href='https://docs.binance.org/smart-chain/guides/bsc-intro.html' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/binance.png' width='140px' style='padding: 16px'> </a>
+											src='https://999j9azx.999game.online/images/999/email/binance.png' width='140px' style='padding: 16px'> </a>
 											<a href='https://dogecoin.com/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/dogecoin.png' width='140px' style='padding: 16px'> </a>
+											src='https://999j9azx.999game.online/images/999/email/dogecoin.png' width='140px' style='padding: 16px'> </a>
 											<a href='https://cardano.org/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/cardano.png' width='140px' style='padding: 16px'> </a>
+											src='https://999j9azx.999game.online/images/999/email/cardano.png' width='140px' style='padding: 16px'> </a>
 											<a href='https://ripple.com/xrp/' target='_blank'
 											rel='noopener noreferrer nofollow' style='text-decoration: none'><img
-											src='https://img.999.game/email/xrp.png' width='140px' style='padding: 16px'> </a></div>
+											src='https://999j9azx.999game.online/images/999/email/xrp.png' width='140px' style='padding: 16px'> </a></div>
 									</td>
 									</tr>
 								</table>
