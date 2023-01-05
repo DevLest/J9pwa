@@ -3,15 +3,15 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
     
-    $json = file_get_contents(__DIR__.'/data/games.json');
+    $json = file_get_contents(__DIR__.'/../data/games.json');
     $array = json_decode($json,true);
     $error_images = [];
 
     foreach ( $array as $data ) {
         $path_parts = pathinfo($data['pic']);
 
-        // $img = __DIR__.str_replace('https://999j9azx.u2d8899.com/j9pwa/','',$data['pic']);
-        $img = $data['pic'];
+        $img = __DIR__.str_replace('https://999j9azx.999game.online/','../../',$data['pic']);
+        // $img = $data['pic'];
         try {
             if (file_exists($img)) {
                 if (filesize($img) >= 1) {
