@@ -1272,7 +1272,6 @@ function loginMember($username, $password)
 		"NT" => "Netent",
 		"SLOTMILL" => "Slotmill",
 		"INBET" => "InBet",
-		"EM" => "Everymatrix",
 	];
 
     include_once WEB_PATH . "/common/cache_file.class.php";

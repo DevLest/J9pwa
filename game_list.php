@@ -90,7 +90,6 @@ $platformNames = [
     "NT" => "Netent",
     "SLOTMILL" => "Slotmill",
     "INBET" => "InBet",
-    "EM" => "Everymatrix",
 ];
 
 $pin_games = [

@@ -154,7 +154,6 @@ function getGameData($category = "", $format = 0, $seach_string = "", $game_code
         "NT" => "Netent",
         "SLOTMILL" => "Slotmill",
         "INBET" => "InBet",
-        "EM" => "Everymatrix",
     ];
 
     $filedata = json_decode(removeBomUtf8(file_get_contents(WEB_PATH . "/data/games.json")), JSON_UNESCAPED_UNICODE);
@@ -1730,7 +1729,6 @@ function loginMember($username, $password)
 		"NT" => "Netent",
 		"SLOTMILL" => "Slotmill",
 		"INBET" => "InBet",
-		"EM" => "Everymatrix",
 	];
 
     include_once WEB_PATH . "/common/cache_file.class.php";
