@@ -104,6 +104,10 @@ $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_
 $newJson = [];
 $pinned = [];
 
+include_once WEB_PATH . "/common/cache_file.class.php";
+$cacheFile = new cache_file();
+$cacheData = $cacheFile->get("game_data", '', 'data', "999", substr(__DIR__, 0, strrpos(__DIR__, '/')) . DIRECTORY_SEPARATOR . "common" . DIRECTORY_SEPARATOR . "caches" . DIRECTORY_SEPARATOR);
+
 foreach ($filedata as $detail) {
     if (!$detail['state']) {
         continue;
@@ -134,6 +138,7 @@ foreach ($filedata as $detail) {
                     "gameCode" => $detail['id'],
                     "gameCodeAlias" => isset($detail['alias_code']) ? explode(",", $detail['alias_code'])[0] : "",
                     "jackpot_amount" => $jackpot,
+                    "description" => $cacheData[$detail['id']]['description']
                 ],
             ]);
             continue;
@@ -156,6 +161,7 @@ foreach ($filedata as $detail) {
                         "gameCode" => $detail['id'],
                         "gameCodeAlias" => isset($detail['alias_code']) ? explode(",", $detail['alias_code'])[0] : "",
                         "jackpot_amount" => $jackpot,
+                        "description" => $cacheData[$detail['id']]['description']
                     ],
                 ]);
             }
