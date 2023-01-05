@@ -1234,6 +1234,7 @@ function loginMember($username, $password)
 		"BETBY" => ["USD"],
 		"GAMEART" => ["USD"],
 		"SLOTMILL" => ["USD"],
+		"INBET" => ["USD"],
 	];
 	
 	$platformNames = [
