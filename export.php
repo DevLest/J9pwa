@@ -45,6 +45,7 @@ $platformNames = [
 	"TB" => "TVB",
 
 	"SS" => "SuperSpade",
+	"INBET" => "InBet",
 
 ];
 

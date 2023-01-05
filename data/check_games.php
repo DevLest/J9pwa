@@ -114,6 +114,7 @@ $platformNames = [
         "GAMEART" => "GameArt",
         "EVO" => "Evolution",
         "BETBY" => "Betby",
+        "INBET" => "InBet",
     ];
     $file = "games.json";
     $filedata = json_decode(removeBomUtf8(file_get_contents($file)), JSON_UNESCAPED_UNICODE);
