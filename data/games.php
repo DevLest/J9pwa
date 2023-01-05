@@ -36,7 +36,6 @@
         "EZG" => "Ezugi",
         "MPLAY" => "MPlay",
         "REVOLVER" => "Revolver",
-        "RELAX" => "RELAX",
         "RP" => "RubyPlay",
         "TB" => "TVB",
         "REDTIGER" => "RedTiger",
