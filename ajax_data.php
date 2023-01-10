@@ -2653,7 +2653,7 @@ function upload_pictures($account)
         if ($_FILES["file"]["error"] > 0) {
             return json_encode(array('status' => 0, 'info' => $_FILES["file"]["error"]));
         } else {
-            $url = "memberimg/" . $account . date("YmdHis") . '.png';
+            $url = "/j9pwa/memberimg/" . $account . date("YmdHis") . '.png';
 
             try {
                 $core = new core();
