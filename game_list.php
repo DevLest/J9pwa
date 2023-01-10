@@ -74,6 +74,7 @@ $platformNames = [
     "SW" => "Skywind",
     "BG" => "BetGames",
     "CQ9" => "CQ9",
+    //"CQ9" => "CQGames",
     "EM" => "EveryMatrix",
     "EZG" => "Ezugi",
     "MPLAY" => "MPlay",

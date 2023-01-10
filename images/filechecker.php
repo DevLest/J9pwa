@@ -10,7 +10,7 @@
     foreach ( $array as $data ) {
         $path_parts = pathinfo($data['pic']);
 
-        $img = __DIR__.str_replace('https://999j9azx.999game.online/','../../',$data['pic']);
+        $img = __DIR__.str_replace('https://999j9azx.999game.online/','/../../',$data['pic']);
         // $img = $data['pic'];
         try {
             if (file_exists($img)) {

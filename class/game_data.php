@@ -19,25 +19,36 @@
         ];
 
         $game_type = "slots";
-        $deescription = "";
+        $description = "";
 
         $url = "https://data.vsr888.com/game/list";
         $result = https_submit($url, $params);
 
-        if (!$result->error)
+        if (isset($result->error) && !$result->error)
         {
-            foreach ($result->records as $index => $games)
+            if (isset($result->records))
             {
-                $game_type = $games->gameType;
-                $deescription = (isset($games->deescription)) ? $games->deescription : "";
+                foreach ($result->records as $index => $games)
+                {
+                    $game_type = $games->gameType;
+                    if (isset($games->description) && $games->description != "") {
+                        $description = $games->description;
+                        echo $games->gameCode."\n";
+                    }
+                }
             }
+            else {
+                echo "error on records -------------------------------------- \n";
+            }
+        } else {
+            echo "error on result ****************************** \n";
         }
 
         $game[$detail['id']] = [
             "gameCode" => $detail['id'],
             "gameName" => $detail['name'],
             "gameType" => $game_type,
-            "description" => $deescription,
+            "description" => $description,
         ];
     }
 

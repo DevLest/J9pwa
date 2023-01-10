@@ -31,7 +31,8 @@
         "SS" => "SuperSpade",
         "SW" => "Skywind",
         "BG" => "BetGames",
-        "CQ9" => "CQ9",
+	"CQ9" => "CQ9",
+        //"CQ9" => "CQGames",
         "EM" => "EveryMatrix",
         "EZG" => "Ezugi",
         "MPLAY" => "MPlay",
@@ -83,7 +84,8 @@
         $platform = str_replace(".webp", "", $image);
         array_push($output, [
             'name' => isset($platformNames[strtoupper($platform)]) ? $platformNames[strtoupper($platform)] : ucwords($platform),
-            'imgURL' => "https://999j9azx.999game.online/images/999/game_providers_logo/$image",
+            //'imgURL' => "https://img.999.game/game_providers_logo/$image",
+	    'imgURL' => "https://999j9azx.999game.online/images/999/game_providers_logo/$image",
             'category' => [],
         ]);
     }

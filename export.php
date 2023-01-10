@@ -1,5 +1,6 @@
 <?php
 
+
 ini_set('display_errors', '1');
 
 ini_set('display_startup_errors', '1');
@@ -21,8 +22,10 @@ $platformNames = [
 	"BNG" => "Booongo",
 
 	"CALETA" => "Caleta",
-
+	
 	"CQ9" => "CQ9",
+
+	//"CQ9" => "CQGames",
 
 	"EM" => "EveryMatrix",
 
@@ -61,6 +64,7 @@ $platformNames = [
 // print_r($data);
 // echo "</pre>";
 
+// $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 // $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 
 // echo "<pre>";
@@ -75,6 +79,7 @@ $platformNames = [
  */
 // if(isset($_POST['export']) && $_POST['export'] == "go") {
 	
+//     $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.u2d8899.com/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 //     $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 
 // 	// Excel file name for download 
@@ -148,7 +153,7 @@ $fileName = "games-data_" . date('Y-m-d') . ".xls";
 // game name $v['eName']
 // game code  $v['id']
 // enable status ($v['state'] == 0) ? 'Disabled' : 'Enabled'
-$fields = array('GAME NAME', 'GAME CODE', 'PROVIDER','STATUS'); 
+$fields = array('GAME NAME', 'GAME CODE', 'PROVIDER','STATUS','CATEGORY','IMAGE URL');  
  
 // Display column names as first row 
 $excelData = implode("\t", array_values($fields)) . "\n"; 
@@ -162,13 +167,18 @@ $excelData = implode("\t", array_values($fields)) . "\n";
 $filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);$filedata = json_decode(removeBomUtf8(file_get_contents("https://999j9azx.999game.online/j9pwa/data/games.json")), JSON_UNESCAPED_UNICODE);
 foreach($filedata as $row) { 
 
+	
+
+    $category = (is_array($row['tag']) == true) ? implode(",",$row['tag']) : $row['tag']; 
     $status = ($row['state'] == 1)?'Enabled':'Disabled'; 
     $lineData = array(
         $row['eName'], 
         $row['id'], 
         // $platformNames[$row['platform']], 
         $row['platform'], 
-        $status
+        $status,
+        $category, 
+        $row['pic']
     ); 
     array_walk($lineData, 'filterData'); 
     $excelData .= implode("\t", array_values($lineData)) . "\n";    

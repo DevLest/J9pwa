@@ -1,7 +1,5 @@
 <?php
 
-echo "GAMES v2";
-die();
 
 ini_set('memory_limit', '-1');
 
@@ -257,8 +255,6 @@ function get_all_category()
 
 function games_total_count()
 {
-	echo "HEY123";
-
     $client = new PHPRPC_Client($GLOBALS['backoffice_url']."cashierforgames_v2.php");
     $response = $client->games_total_count();
     echo json_encode($response);
@@ -374,3 +370,4 @@ function apply_changes_to_frontend()
 
     echo json_encode(['success',]);
 }
+?>

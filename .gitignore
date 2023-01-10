@@ -25,3 +25,10 @@ oauth/google/google-api-client/vendor
 oauth/google/google-api-client/
 oauth/facebook/vendor
 common/caches
+
+/phpseclib
+/newJs
+/newFonts
+/newCss
+/email
+/download

@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', '1');
     error_reporting(E_ALL);
     
-    $json = file_get_contents('/www/wwwroot/999j9azx.999game.online/j9pwa/data/games.json');
+    $json = file_get_contents('/www/wwwroot/999j9azx.u2d8899.com/j9pwa/data/games.json');
     $array = json_decode($json,true);
     $error_images = [];
 
@@ -21,21 +21,21 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // $f = fopen('php://output', 'w'); 
+        $f = fopen('php://output', 'w'); 
     
-        // fputcsv($f,[
-        //     "Name", "Game Code", "Platform", "Category", "Image", "Original Image"
-        // ]);
+        fputcsv($f,[
+            "Name", "Game Code", "Platform", "Category", "Image", "Original Image"
+        ]);
 
-        // foreach ($error_images as $line) { 
-        //     fputcsv($f, $line, ","); 
-        // }
-        // rewind($f);
-        // header('Content-Type: text/csv');
-        // header("Content-Transfer-Encoding: Binary"); 
-        // header('Content-Disposition: attachment; filename="Mexplay_active_games'.date('y-m-d_h-s').'.csv";');
-        // readfile($f); 
-        // fpassthru($f);
+        foreach ($error_images as $line) { 
+            fputcsv($f, $line, ","); 
+        }
+        rewind($f);
+        header('Content-Type: text/csv');
+        header("Content-Transfer-Encoding: Binary"); 
+        header('Content-Disposition: attachment; filename="999_active_games'.date('y-m-d_h-s').'.csv";');
+        readfile($f); 
+        fpassthru($f);
     }
     else
     {echo "<!DOCTYPE html>
