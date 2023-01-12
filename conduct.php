@@ -126,7 +126,7 @@ if(isset($_POST['type']) && $_POST['type'] == "set_agent_remark")
 			'token' => gettoken($username_email),
 			'api_key' => 'ymOvnKnMvCiNrB1M0VoN0YR1',
 			'item_id' => $currencyid,
-			'bak' => 'ffx',
+			'bak' => time(),
 			'chain_tag' => $net_work,
 			'nonce' => '555647',
 			'timestamp' => time(),
@@ -135,20 +135,22 @@ if(isset($_POST['type']) && $_POST['type'] == "set_agent_remark")
 		$url='ThirdApi/Assets/getDepositAddress';
 		$re=submit($params,$url);
 		
+		//print_r($re);
 		return json_encode(array('status'=>1,'info'=>$re->data->address));  
 	}
      
-	 function gettoken($username_email){
-$params = [
-        'client_user_id' => "j9".$username_email,
-        'api_key' => 'ymOvnKnMvCiNrB1M0VoN0YR1',
-        'nonce' => '555647',
-        'timestamp' => time(),
-  ];
-$url='ThirdApi/User/getUserInfo';
-$re=submit($params,$url);
-return $re->data->token;
-}
+	function gettoken($username_email){
+		$params = [
+			'client_user_id' => "j9".$username_email,
+			'api_key' => 'ymOvnKnMvCiNrB1M0VoN0YR1',
+			'nonce' => '555647',
+			'timestamp' => time(),
+		];
+		$url='ThirdApi/User/getUserInfo';
+		$re=submit($params,$url);
+		return $re->data->token;
+	}
+	
 	function withdraw_transfer($currency,$account,$amount)
 	{    
 		$data['currency'] = $currency;
@@ -176,29 +178,29 @@ return $re->data->token;
 	}
 	
 	function submit($params,$url){
-ksort($params);
-$md5str = "";
-foreach ($params as $key => $val) {
-    $md5str = $md5str . $key . "=" . $val . "&";
-}
-$md5str= substr($md5str,0,-1);
- //print_r($md5str."t8Ol8wkBglmOAb6r7dPkko8f93LQlloC9IsNIb9Q5QiASL9avx0u3Nj8O4mPcInz5lGg0BwRhZA1Rf7ZONpQLqDCEcyZuDyFukE");
- //echo "      <br>";
- $sign = md5($md5str."ebeLpvtkkx03jCnYkge971L1XZ1Cxcvjuke1yFzEd3Z9JIVZXEknCuhkeSZHzZW6NLKIRWDKKnChbDzYXhaVxUTIdcm4fCbeykr");
-$params['sign']= $sign ;
-//$params['sign']=strtoupper($sign);
-//print_r($params);
-	           $ch = curl_init();	
-	curl_setopt($ch,CURLOPT_URL, "https://api.s6nn.com/".$url);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_HEADER, false);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));  
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   
-	$response=curl_exec($ch);
-	curl_close($ch);
- //print_r( json_decode($response)); exit;//A0 为成功
- return json_decode($response); //A0 为成功
+		ksort($params);
+		$md5str = "";
+		foreach ($params as $key => $val) {
+			$md5str = $md5str . $key . "=" . $val . "&";
+		}
+		$md5str= substr($md5str,0,-1);
+		//print_r($md5str."t8Ol8wkBglmOAb6r7dPkko8f93LQlloC9IsNIb9Q5QiASL9avx0u3Nj8O4mPcInz5lGg0BwRhZA1Rf7ZONpQLqDCEcyZuDyFukE");
+		//echo "      <br>";
+		$sign = md5($md5str."ebeLpvtkkx03jCnYkge971L1XZ1Cxcvjuke1yFzEd3Z9JIVZXEknCuhkeSZHzZW6NLKIRWDKKnChbDzYXhaVxUTIdcm4fCbeykr");
+		$params['sign']= $sign ;
+		//$params['sign']=strtoupper($sign);
+		//print_r($params);
+		$ch = curl_init();	
+		curl_setopt($ch,CURLOPT_URL, "https://api.s6nn.com/".$url);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   
+		$response=curl_exec($ch);
+		curl_close($ch);
+		//print_r( json_decode($response)); exit;//A0 为成功
+		return json_decode($response); //A0 为成功
   
   }

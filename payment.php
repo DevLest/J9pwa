@@ -425,7 +425,7 @@ function submit_autopromotion($data)
     }
         $core = new core();
     $info = $core->submit_autopromotion($data->username_email,$data->promotion_id);
-  //print_r($info);exit;
+
     if($info==1){
          return json_encode(["status" => 1, "info" => $lang->submit_autopromotion->success_application], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     } elseif($info==1011) {
@@ -526,9 +526,9 @@ function onlinepayment($data)
         $amount = $amount * 6.4;
         $amount = number_format($amount, '2', ".", "");
     }
-    //print_r($data);exit;
+
     $re = $core->onlinepay($_SESSION['account'], $amount, $billno, $monlinepay_info['pay_name'], $data->autopromo);
-    //print_r($re);exit;
+
     if ($re == 1) {
         // 三方通用提交
         $params = [
@@ -850,6 +850,7 @@ function s6getAddress($email, $password, $network, $currencyId){
         "net_work" => $network,
         "currency_id" => $currencyId,
     ];
+   // print_r($postData);
 
     $curl = curl_init();
     
@@ -905,7 +906,6 @@ function get999Address($email, $network){
 
     $response = json_decode($response);
 
-    print_r($response);
     if (isset($response->data)) {
         array_push($account, [
             "address" => $response->data->address,

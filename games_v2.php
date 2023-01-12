@@ -366,6 +366,10 @@ function apply_changes_to_frontend()
 
     $filename = WEB_PATH . '/data/games.json';
 
+    // Change file permission games.json
+    // $output = shell_exec('chmod -R 777 '.$filename);
+    // $output = shell_exec('chmod 777 '.$filename);
+
     file_put_contents($filename, $games);
 
     echo json_encode(['success',]);
