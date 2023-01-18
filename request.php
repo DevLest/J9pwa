@@ -37,6 +37,26 @@ if ($auth_check != $auth) {
     exit();
 }
 
+$skip_methods = [
+    "send_verification_email",
+    "sports_token",
+    "play_game",
+    "agent_rank_list",
+    "agent_friends_list",
+    "verify_agent",
+    "app_version",
+    "verify_reset_password",
+    "reset_password",
+    "search_game",
+    "verify_email_code",
+    "crypto_tutorials",
+];
+
+if (!check_login($data) && !in_array($data->type, $skip_methods)) { 
+    echo json_encode(['status' => 0, 'info' => "Auth Error"]);
+    exit();
+}
+
 $data->username = (isset($data->username_email)) ? $data->username_email : "";
 
 switch ($data->type) {
@@ -99,6 +119,9 @@ switch ($data->type) {
         break;
     case "free_spin_amount":
         echo free_spin_amount($data);
+        break;
+    case "crypto_tutorials":
+        echo crypto_tutorials($data);
         break;
 }
 
@@ -2247,4 +2270,19 @@ function played_games($account, $game_code) {
     }
     
     $cachFile->set($account, $data_list, '', 'data', 'played_games');
+}
+
+function check_login($data){
+
+    $login = loginMember($data->username, $data->password);
+
+    if (is_array($login)) return true;
+
+    return false;
+}
+
+function crypto_tutorials($data){
+    $file= file_get_contents(__DIR__.'/data/tutorials/'.$data->crypto);
+    
+    return json_encode(['status' => 1, 'info' => $file]);
 }
