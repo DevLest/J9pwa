@@ -10,6 +10,8 @@
 ./memberimg/*
 ./images
 oauth/google/google-api-client/vendor/*
+oauth/twitter/vendor/*
+oauth/twitter/vendor
 oauth/google/google-api-client/
 oauth/facebook/vendor/*
 common/caches/*
