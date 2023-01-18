@@ -2282,7 +2282,7 @@ function check_login($data){
 }
 
 function crypto_tutorials($data){
-    $file= file_get_contents(__DIR__.'/data/tutorials/'.$data->crypto);
+    $file= file_get_contents(__DIR__.'/data/tutorials/'.$data->crypto.".html");
     
     return json_encode(['status' => 1, 'info' => $file]);
 }
