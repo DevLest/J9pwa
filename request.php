@@ -2282,7 +2282,25 @@ function check_login($data){
 }
 
 function crypto_tutorials($data){
-    $file= file_get_contents(__DIR__.'/data/tutorials/'.$data->crypto.".html");
+    $path = 'images/currency';
+    $files = array_diff(scandir($path), array('.', '..'));
+
+    $output = [];
+    $description = [
+        "bybit" => "Recommemded",
+        "houbi" => "Recommemded",
+        "s6global" => "Recommemded for CNY and PHP",
+    ];
     
-    return json_encode(['status' => 1, 'info' => $file]);
+    foreach ($files as $file) {
+        $current = strtolower(str_replace(".html", "", $file));
+
+        array_push($output, [
+            "icon" => "https://999j9azx.999game.online/j9pwa/images/crpto_data/$current.png",
+            "description" => isset($description[$current]) ? $description[$current] : "Low Fees",
+            "html" => file_get_contents(__DIR__.'/data/tutorials/'.$file)
+        ]);
+    }
+    
+    return json_encode(['status' => 1, 'info' => $output]);
 }
