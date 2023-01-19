@@ -2282,7 +2282,7 @@ function check_login($data){
 }
 
 function crypto_tutorials($data){
-    $path = 'images/currency';
+    $path = __DIR__.'/data/tutorials/';
     $files = array_diff(scandir($path), array('.', '..'));
 
     $output = [];
@@ -2298,7 +2298,7 @@ function crypto_tutorials($data){
         array_push($output, [
             "icon" => "https://999j9azx.999game.online/j9pwa/images/crpto_data/$current.png",
             "description" => isset($description[$current]) ? $description[$current] : "Low Fees",
-            "html" => file_get_contents(__DIR__.'/data/tutorials/'.$file)
+            "html" => file_get_contents($path.$file)
         ]);
     }
     
