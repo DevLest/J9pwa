@@ -2296,6 +2296,7 @@ function crypto_tutorials($data){
         $current = strtolower(str_replace(".html", "", $file));
 
         array_push($output, [
+            "name" => strtoupper($current),
             "icon" => "https://999j9azx.999game.online/j9pwa/images/crpto_data/$current.png",
             "description" => isset($description[$current]) ? $description[$current] : "Low Fees",
             "html" => file_get_contents($path.$file)
